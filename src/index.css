@@ -39,3 +39,11 @@
   --text-color: RGB(62, 64, 67);
   --icon-bg-color: RGB(216, 221, 221);
 }
+.dark {
+  --foreground: RGB(224, 238, 238);
+  --background: RGB(18, 19, 21);
+  --text-color: RGB(193, 191, 188);
+  --icon-bg-color: RGB(39, 34, 34);
+}
+
+@custom-variant dark (&:where(.dark, .dark *));

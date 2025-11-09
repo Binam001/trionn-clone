@@ -8,7 +8,7 @@ const LandingPage = () => {
     gsap.fromTo(
       "#text-1",
       { rotationX: 90, opacity: 0, y: 50 },
-      { rotationX: 0, opacity: 1, y: 0, duration: 1, ease: "power3.out" }
+      { rotationX: 0, opacity: 1, y: 0, duration: 1.5, ease: "power3.out" }
     );
   });
   return (

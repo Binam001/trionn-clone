@@ -7,9 +7,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   return (
-    <div className="px-28">
+    <div className="px-28 bg-(--background)">
       <Navbar />
-      <div className="mt-36">
+      <div className="pt-36">
         <LandingPage />
       </div>
     </div>

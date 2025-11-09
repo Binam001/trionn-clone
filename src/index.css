@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne&display=swap");
+
+@import "tailwindcss";
+
+@font-face {
+  font-family: "daysoftype";
+  src: url("./assets/fonts/Dirtyline-36daysoftype-2022.woff") format("woff");
+  /* font-weight: nornal; */
+  font-style: regular;
+}
+
+.syne-normal {
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* .daysoftype {
+  font-family: "daysoftype";
+  font-feature-settings: "ss01";
+  text-transform: uppercase;
+} */
+
+/* .dirtyline-special {
+  @apply font-[daysoftype] uppercase [font-feature-settings:'ss01'];
+} */
+
+/* @layer components {
+  .display-font {
+    @apply font-[daysoftype] uppercase;
+    font-feature-settings: "ss01";
+  }
+} */
+
+:root {
+  --foreground: RGB(0, 0, 0);
+  --background: RGB(255, 255, 255);
+  --text-color: RGB(62, 64, 67);
+  --icon-bg-color: RGB(216, 221, 221);
+}

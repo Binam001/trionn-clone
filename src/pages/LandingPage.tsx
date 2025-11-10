@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import CircularBrand from "../components/CircularBrand";
 import IntroVideo from "../components/IntroVideo";
 import RecentWork from "../components/RecentWork";
+import ViewProject from "../components/ViewProject";
 
 const LandingPage = () => {
   useGSAP(() => {
@@ -25,19 +26,21 @@ const LandingPage = () => {
   });
   return (
     <main>
-      <div
-        id="text1"
-        className="text-[50px] md:text-[32px] lg:text-[130px] text-center leading-[0.9] text-(--foreground) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
-      >
-        <p>roar in the</p>
-        <p>digital wilderness.</p>
-      </div>
+      <div className="py-16 md:py-0">
+        <div
+          id="text1"
+          className="text-[50px] md:text-[110px] lg:text-[135px] text-center leading-[0.9] text-(--foreground) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
+        >
+          <p>roar in the</p>
+          <p>digital wilderness.</p>
+        </div>
 
-      <p className="text-sm md:text-base text-(--text-color) uppercase text-center syne-normal">
-        We roar with success, delivering the TRIONN®
-        <br /> through versatile design, branding and the latest
-        <br /> tech development to companies.
-      </p>
+        <p className="text-sm md:text-base text-(--text-color) uppercase text-center syne-normal">
+          We roar with success, delivering the TRIONN®
+          <br /> through versatile design, branding and the latest
+          <br /> tech development to companies.
+        </p>
+      </div>
 
       <div className="flex justify-center">
         <a href="#intro-video">
@@ -59,6 +62,7 @@ const LandingPage = () => {
       <CircularBrand />
 
       <RecentWork />
+      <ViewProject />
 
       <div className="h-dvh"></div>
     </main>

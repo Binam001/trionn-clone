@@ -101,7 +101,7 @@ const ViewProject = () => {
               <h1 className="text-[50px] md:text-[40px] lg:text-[70px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
                 {project.title}
               </h1>
-              <p className="text-xl">{project.tag}</p>
+              <p className="text-xl syne-normal">{project.tag}</p>
             </div>
             <div className="hidden lg:block">
               <Button href={project.webapp} title="View project" />
@@ -112,7 +112,7 @@ const ViewProject = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className={`rounded-4xl ${
+                className={`rounded-4xl border ${
                   project.id % 2 !== 0 ? "oddIndexImage" : "evenIndexImage"
                 }`}
               />

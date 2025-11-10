@@ -8,6 +8,7 @@ import RecentWork from "../components/section/RecentWork";
 import ViewProject from "../components/section/ViewProject";
 import About from "../components/section/About";
 import Progress from "../components/section/Progress";
+import Partner from "../components/section/Partner";
 
 const LandingPage = () => {
   useGSAP(() => {
@@ -61,6 +62,8 @@ const LandingPage = () => {
       <About />
 
       <Progress />
+
+      <Partner />
 
       <div className="h-dvh"></div>
     </main>

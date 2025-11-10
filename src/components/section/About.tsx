@@ -58,7 +58,7 @@ const About = () => {
         </p>
       </div>
       <div className="flex flex-col gap-8 md:justify-self-end w-[80%] lg:w-[50%]">
-        <p className="text5 text-xl text-(--text-color-2) overflow-hidden">
+        <p className="text5 text-xl text-(--text-color-2) overflow-hidden syne-normal">
           We roar with creativity, staying updated with the latest tech to make
           your brand a formidable force in the digital wilderness and deliver
           exceptional website and app experiences.

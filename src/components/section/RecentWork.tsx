@@ -54,7 +54,7 @@ const RecentWork = () => {
       <div className="flex justify-between items-center">
         <p
           id="text3"
-          className="w-[90%] md:w-[40%] lg:w-[35%] text-2xl lg:text-3xl text-(--text-color-2) overflow-hidden"
+          className="w-[90%] md:w-[40%] lg:w-[35%] text-2xl lg:text-3xl text-(--text-color-2) overflow-hidden syne-normal"
         >
           In the creative wilderness, clients find our work truly beloved.
         </p>

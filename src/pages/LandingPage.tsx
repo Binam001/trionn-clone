@@ -4,8 +4,9 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import CircularBrand from "../components/CircularBrand";
 import IntroVideo from "../components/IntroVideo";
-import RecentWork from "../components/RecentWork";
-import ViewProject from "../components/ViewProject";
+import RecentWork from "../components/section/RecentWork";
+import ViewProject from "../components/section/ViewProject";
+import About from "../components/section/About";
 
 const LandingPage = () => {
   useGSAP(() => {
@@ -14,15 +15,6 @@ const LandingPage = () => {
       { rotationX: 90, opacity: 0, y: 50 },
       { rotationX: 0, opacity: 1, y: 0, duration: 1.5, ease: "power3.out" }
     );
-
-    gsap.from(".text2", {
-      xPercent: 25,
-      stagger: 0.1,
-      scrollTrigger: {
-        trigger: ".text2",
-        scrub: 1.5,
-      },
-    });
   });
   return (
     <main>
@@ -62,8 +54,10 @@ const LandingPage = () => {
       <CircularBrand />
 
       <RecentWork />
+
       <ViewProject />
 
+      <About />
       <div className="h-dvh"></div>
     </main>
   );

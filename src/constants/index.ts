@@ -26,4 +26,27 @@ const viewProjects = [
   },
 ];
 
-export default viewProjects;
+const progress = [
+  {
+    id: 1,
+    title: "awards & recognition",
+    count: 50,
+  },
+  {
+    id: 2,
+    title: "projects completed",
+    count: 900,
+  },
+  {
+    id: 3,
+    title: "creative minds",
+    count: 20,
+  },
+  {
+    id: 4,
+    title: "years of experience",
+    count: 20,
+  },
+];
+
+export { viewProjects, progress };

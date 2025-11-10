@@ -1,5 +1,5 @@
-import viewProjects from "../constants";
-import Button from "./Button";
+import { viewProjects } from "../../constants";
+import Button from "../Button";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useMediaQuery } from "react-responsive";
@@ -60,7 +60,7 @@ const ViewProject = () => {
             trigger: el,
             start,
             end,
-            scrub: 1,
+            scrub: 1.5,
           },
         }
       );
@@ -76,7 +76,7 @@ const ViewProject = () => {
             trigger: el,
             start,
             end,
-            scrub: 1,
+            scrub: 1.5,
           },
         }
       );
@@ -97,7 +97,7 @@ const ViewProject = () => {
             id="content"
             className="w-full lg:w-[40%] flex flex-col gap-10 justify-center"
           >
-            <div className="text-(--text-color) text-center space-y-3">
+            <div className="text-(--text-color) text-center lg:text-start space-y-3">
               <h1 className="text-[50px] md:text-[40px] lg:text-[70px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
                 {project.title}
               </h1>
@@ -120,6 +120,9 @@ const ViewProject = () => {
           </div>
         </div>
       ))}
+      <div className="flex justify-center mt-12 lg:hidden">
+        <Button title="View all work" />
+      </div>
     </div>
   );
 };

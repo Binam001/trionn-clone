@@ -1,23 +1,13 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
-import Button from "./Button";
+import Button from "../Button";
 
 const RecentWork = () => {
   useGSAP(() => {
     const paragraphSplit = new SplitText("#text3", {
       type: "lines",
       linesClass: "line-wrapper",
-    });
-    gsap.from("#text3", {
-      y: 50,
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: "#text3 span",
-        start: "top center",
-        end: "center top",
-        scrub: 2,
-      },
     });
 
     gsap.from(paragraphSplit.lines, {
@@ -35,11 +25,13 @@ const RecentWork = () => {
     });
 
     gsap.from("#btn1", {
+      opacity: 0,
       yPercent: 100,
       duration: 2,
       scrollTrigger: {
         trigger: "#btn1",
         start: "top bottom",
+        end: "bottom center",
         scrub: 1,
       },
     });

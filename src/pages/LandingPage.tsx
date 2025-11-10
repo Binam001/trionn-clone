@@ -7,6 +7,7 @@ import IntroVideo from "../components/IntroVideo";
 import RecentWork from "../components/section/RecentWork";
 import ViewProject from "../components/section/ViewProject";
 import About from "../components/section/About";
+import Progress from "../components/section/Progress";
 
 const LandingPage = () => {
   useGSAP(() => {
@@ -21,7 +22,7 @@ const LandingPage = () => {
       <div className="py-16 md:py-0">
         <div
           id="text1"
-          className="text-[50px] md:text-[110px] lg:text-[135px] text-center leading-[0.9] text-(--foreground) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
+          className="text-[50px] md:text-[110px] lg:text-[100px] text-center leading-[0.75] text-(--foreground) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
         >
           <p>roar in the</p>
           <p>digital wilderness.</p>
@@ -58,6 +59,9 @@ const LandingPage = () => {
       <ViewProject />
 
       <About />
+
+      <Progress />
+
       <div className="h-dvh"></div>
     </main>
   );

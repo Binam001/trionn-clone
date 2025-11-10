@@ -9,7 +9,14 @@ const RecentWork = () => {
       type: "lines",
       linesClass: "line-wrapper",
     });
-
+    gsap.from(".text2", {
+      xPercent: 25,
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: ".text2",
+        scrub: 1.5,
+      },
+    });
     gsap.from(paragraphSplit.lines, {
       opacity: 0,
       yPercent: 100,

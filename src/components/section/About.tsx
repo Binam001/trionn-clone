@@ -9,7 +9,14 @@ const About = () => {
       type: "lines",
       linesClass: "line-wrapper",
     });
-
+    gsap.from(".text4", {
+      xPercent: 25,
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: ".text4",
+        scrub: 1.5,
+      },
+    });
     gsap.from(paragraphSplit.lines, {
       opacity: 0,
       yPercent: 100,

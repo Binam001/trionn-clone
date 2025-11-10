@@ -1,9 +1,9 @@
 import Navbar from "./components/Navbar";
 import LandingPage from "./pages/LandingPage";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger, SplitText } from "gsap/all";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 function App() {
   return (

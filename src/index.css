@@ -32,17 +32,21 @@
     font-feature-settings: "ss01";
   }
 } */
-
+html {
+  scroll-behavior: smooth;
+}
 :root {
   --foreground: RGB(0, 0, 0);
   --background: RGB(255, 255, 255);
   --text-color: RGB(62, 64, 67);
+  -text-color-2: RGB(0, 0, 0);
   --icon-bg-color: RGB(216, 221, 221);
 }
 .dark {
   --foreground: RGB(224, 238, 238);
   --background: RGB(18, 19, 21);
-  --text-color: RGB(193, 191, 188);
+  --text-color: RGB(224, 238, 238);
+  --text-color-2: RGB(197, 252, 252);
   --icon-bg-color: RGB(39, 34, 34);
 }
 

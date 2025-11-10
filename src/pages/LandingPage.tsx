@@ -2,8 +2,9 @@ import { CircleArrowDown } from "lucide-react";
 import Button from "../components/Button";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import introVideo from "../assets/videos/intro-video.mp4";
 import CircularBrand from "../components/CircularBrand";
+import IntroVideo from "../components/IntroVideo";
+import RecentWork from "../components/RecentWork";
 
 const LandingPage = () => {
   useGSAP(() => {
@@ -13,22 +14,19 @@ const LandingPage = () => {
       { rotationX: 0, opacity: 1, y: 0, duration: 1.5, ease: "power3.out" }
     );
 
-    gsap.from(".intro-video", {
-      yPercent: -50,
-      scale: 0.2,
+    gsap.from(".text2", {
+      xPercent: 25,
+      stagger: 0.1,
       scrollTrigger: {
-        trigger: ".intro-video",
-        start: "top 70%",
-        end: "bottom center",
+        trigger: ".text2",
         scrub: 1.5,
-        // markers: true,
       },
     });
   });
   return (
     <main>
       <div
-        id="text-1"
+        id="text1"
         className="text-[50px] md:text-[32px] lg:text-[130px] text-center leading-[0.9] text-(--foreground) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
       >
         <p>roar in the</p>
@@ -42,11 +40,13 @@ const LandingPage = () => {
       </p>
 
       <div className="flex justify-center">
-        <CircleArrowDown
-          size={32}
-          strokeWidth={1}
-          className="text-(--text-color)/50 mt-5"
-        />
+        <a href="#intro-video">
+          <CircleArrowDown
+            size={32}
+            strokeWidth={1}
+            className="text-(--text-color)/50 mt-5"
+          />
+        </a>
       </div>
 
       <div className="flex justify-between">
@@ -54,19 +54,13 @@ const LandingPage = () => {
         <Button title="Get in touch" />
       </div>
 
-      {/* intro video */}
-      <div className="intro-video mt-20">
-        <video
-          src={introVideo}
-          muted
-          playsInline
-          loop
-          autoPlay
-          className="w-ful h-1/2 rounded-4xl"
-        />
-      </div>
+      <IntroVideo />
 
       <CircularBrand />
+
+      <RecentWork />
+
+      <div className="h-dvh"></div>
     </main>
   );
 };

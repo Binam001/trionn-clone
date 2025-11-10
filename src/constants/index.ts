@@ -1,6 +1,6 @@
-import project1Img from "../assets/images/project1.png";
-import project2Img from "../assets/images/project2.png";
-import project3Img from "../assets/images/project3.jpg";
+import project1Img from "../assets/images/loftloom-main-landscape.webp";
+import project2Img from "../assets/images/imusic-main-landscape.webp";
+import project3Img from "../assets/images/technis-main-landscape.webp";
 import client1 from "../assets/images/malte-kramer.webp";
 import client2 from "../assets/images/doug-petrie.webp";
 import client3 from "../assets/images/zoltan-csonka.webp";
@@ -10,24 +10,21 @@ import client5 from "../assets/images/stephen-dash.webp";
 const viewProjects = [
   {
     id: 1,
-    title: "dynamic code visualizer",
-    tag: "Visualize, Learn",
+    title: "loftloom",
+    tag: "UI Design, UX, Wireframe",
     image: project1Img,
-    webapp: "https://dynamic-code-visualizer-v2.vercel.app/",
   },
   {
     id: 2,
-    title: "navigate the city",
-    tag: "Track, Map, Route",
+    title: "imusic",
+    tag: "Research, UX, UI Design",
     image: project2Img,
-    webapp: "https://navigate-the-city.vercel.app/",
   },
   {
     id: 3,
-    title: "online attendance management system",
-    tag: "Attendance, Manage, Report",
+    title: "technis",
+    tag: "UX, UI Design, Development",
     image: project3Img,
-    webapp: "https://github.com/Binam001/Project-OAMS",
   },
 ];
 

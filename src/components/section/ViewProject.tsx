@@ -89,26 +89,26 @@ const ViewProject = () => {
           key={project.id}
           className={`flex gap-4 lg:gap-20 py-4 lg:py-16 ${
             project.id % 2 !== 0
-              ? "flex-col-reverse lg:flex-row"
-              : "flex-col-reverse lg:flex-row-reverse"
+              ? "flex-col-reverse text-center lg:text-start lg:flex-row"
+              : "flex-col-reverse text-center lg:text-end lg:flex-row-reverse"
           }`}
         >
           <div
             id="content"
-            className="w-full lg:w-[40%] flex flex-col gap-10 justify-center"
+            className="w-full lg:w-[40%] flex flex-col gap-20 justify-center"
           >
-            <div className="text-(--text-color) text-center lg:text-start space-y-3">
+            <div className="text-(--text-color) space-y-3">
               <h1 className="text-[50px] md:text-[40px] lg:text-[70px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
                 {project.title}
               </h1>
               <p className="text-xl syne-normal">{project.tag}</p>
             </div>
             <div className="hidden lg:block">
-              <Button href={project.webapp} title="View project" />
+              <Button href="#" title="View project" />
             </div>
           </div>
           <div className="w-full lg:w-[60%]">
-            <a href={project.webapp} target="_blank" rel="noopener noreferrer">
+            <a href="#" target="_blank" rel="noopener noreferrer">
               <img
                 src={project.image}
                 alt={project.title}

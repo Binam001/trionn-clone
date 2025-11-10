@@ -10,7 +10,8 @@ const RecentWork = () => {
       linesClass: "line-wrapper",
     });
     gsap.from(".text2", {
-      xPercent: 25,
+      xPercent: -25,
+      opacity: 0,
       stagger: 0.1,
       scrollTrigger: {
         trigger: ".text2",

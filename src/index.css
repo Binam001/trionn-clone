@@ -41,6 +41,7 @@ html {
   --text-color: RGB(62, 64, 67);
   -text-color-2: RGB(0, 0, 0);
   --icon-bg-color: RGB(216, 221, 221);
+  --card-bg: RGB(225, 234, 234);
 }
 .dark {
   --foreground: RGB(224, 238, 238);
@@ -48,6 +49,7 @@ html {
   --text-color: RGB(224, 238, 238);
   --text-color-2: RGB(197, 252, 252);
   --icon-bg-color: RGB(39, 34, 34);
+  --card-bg: RGB(22, 23, 26);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));

@@ -10,7 +10,8 @@ const About = () => {
       linesClass: "line-wrapper",
     });
     gsap.from(".text4", {
-      xPercent: 25,
+      xPercent: -25,
+      opacity: 0,
       stagger: 0.1,
       scrollTrigger: {
         trigger: ".text4",
@@ -56,7 +57,7 @@ const About = () => {
           endures.
         </p>
       </div>
-      <div className="flex flex-col gap-8 md:float-right w-[80%] lg:w-[50%]">
+      <div className="flex flex-col gap-8 md:justify-self-end w-[80%] lg:w-[50%]">
         <p className="text5 text-xl text-(--text-color-2) overflow-hidden">
           We roar with creativity, staying updated with the latest tech to make
           your brand a formidable force in the digital wilderness and deliver

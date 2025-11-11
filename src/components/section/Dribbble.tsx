@@ -18,6 +18,7 @@ const Dribbble = () => {
     const evenRZ = isTablet ? 0 : 45;
     const oddXp = isTablet ? -300 : -120;
     const evenXp = isTablet ? 150 : 120;
+    const start = isTablet ? "top center" : "top 80%";
 
     gsap.utils.toArray<HTMLElement>(".oddDribbbleCard").forEach((el) => {
       gsap.to(el, {
@@ -26,7 +27,7 @@ const Dribbble = () => {
         opacity: 0,
         scrollTrigger: {
           trigger: el,
-          start: "top 80%",
+          start,
           scrub: 1.3,
         },
       });

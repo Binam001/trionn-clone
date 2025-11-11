@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { Cat } from "lucide-react";
+// import { Cat } from "lucide-react";
+import leo from "../assets/images/leo.png";
 
 const CircularBrand = () => {
   useGSAP(() => {
@@ -44,7 +45,12 @@ const CircularBrand = () => {
       </svg>
 
       <div className="absolute inset-0 flex items-center justify-center">
-        <Cat className="size-5 lg:size-16 text-(--foreground)/60 rounded-full ring ring-offset-8" />
+        {/* <Cat className="size-5 lg:size-16 text-(--foreground)/60 rounded-full ring ring-offset-8" /> */}
+        <img
+          src={leo}
+          alt="leo"
+          className="size-10 lg:size-20 object-cover invert dark:invert-0"
+        />
       </div>
     </div>
   );

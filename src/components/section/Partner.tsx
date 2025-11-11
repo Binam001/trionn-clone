@@ -78,7 +78,7 @@ const Partner = () => {
             {clients.map((client) => (
               <div
                 key={client.id}
-                className="embla__slide bg-(--card-bg) border border-(--text-color) hover:border-none w-[350px] h-[500px] lg:w-[500px] lg:h-[600px] rounded-4xl flex flex-col items-center justify-center text-center gap-20 shrink-0 hover:scale-[0.95] duration-300 transition-transform"
+                className="embla__slide bg-(--card-bg) border border-(--text-color) hover:border-none w-[350px] h-[550px] lg:w-[500px] lg:h-[600px] rounded-4xl flex flex-col items-center justify-center text-center gap-20 shrink-0 hover:scale-[0.95] duration-300 transition-transform"
               >
                 <div className="">
                   <img
@@ -110,17 +110,17 @@ const Partner = () => {
             {clientsMessage.map((cltmsg) => (
               <div
                 key={cltmsg.id}
-                className="embla__slide bg-(--card-bg) border border-(--text-color) hover:border-none w-[350px] h-[500px] lg:w-[500px] lg:h-[600px] rounded-4xl px-10 flex flex-col items-center justify-center text-center gap-20 shrink-0 hover:scale-[0.95] duration-300 transition-transform"
+                className="embla__slide bg-(--card-bg) border border-(--text-color) hover:border-none w-[350px] h-[550px] lg:w-[500px] lg:h-[600px] rounded-4xl px-10 flex flex-col items-center justify-center text-center gap-10 shrink-0 hover:scale-[0.95] duration-300 transition-transform"
               >
                 <div className="">
                   <div className="flex justify-center">
                     <img
                       src={doubleQuoteMark}
                       alt="double-quote-mark"
-                      className="invert dark:invert-0 size-16"
+                      className="invert dark:invert-0 size-10"
                     />
                   </div>
-                  <div className="syne-normal text-xl">
+                  <div className="syne-normal text-lg">
                     <p className="">{cltmsg.message}</p>
                   </div>
                 </div>
@@ -129,7 +129,7 @@ const Partner = () => {
                   <img
                     src={cltmsg.image}
                     alt={cltmsg.name}
-                    className="size-32 rounded-full"
+                    className="size-24 rounded-full"
                   />
                   <h1>{cltmsg.name}</h1>
                   <p>{cltmsg.position}</p>

@@ -160,6 +160,29 @@ const socialLists = [
   },
 ];
 
+const sideMenuLists = [
+  {
+    id: 1,
+    name: "work",
+  },
+  {
+    id: 2,
+    name: "about",
+  },
+  {
+    id: 1,
+    name: "services",
+  },
+  {
+    id: 1,
+    name: "team",
+  },
+  {
+    id: 1,
+    name: "contact",
+  },
+];
+
 export {
   viewProjects,
   progress,
@@ -167,4 +190,5 @@ export {
   clientsMessage,
   dribbble,
   socialLists,
+  sideMenuLists,
 };

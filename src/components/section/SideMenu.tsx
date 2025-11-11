@@ -1,5 +1,5 @@
 import { CircleX } from "lucide-react";
-import { socialLists } from "../../constants";
+import { sideMenuLists, socialLists } from "../../constants";
 
 const SideMenu = ({
   setOpen,
@@ -19,38 +19,20 @@ const SideMenu = ({
       </button>
       <div className="flex py-14">
         <ul className="w-1/2 text-[100px] leading-[0.8] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
-          <li className="group relative duration-500 transition-all">
-            <span className="block group-hover:ml-16 transition-all duration-500">
-              work
-            </span>
-            <div className="absolute left-0 top-[40%] -translate-y-[40%] hidden group-hover:block size-8 bg-(--text-color) rounded-full"></div>
-          </li>
-          <li className="group relative duration-500 transition-all">
-            <span className="block group-hover:ml-16 transition-all duration-500">
-              about
-            </span>
-            <div className="absolute left-0 top-[40%] -translate-y-[40%] hidden group-hover:block size-8 bg-(--text-color) rounded-full"></div>
-          </li>
-          <li className="group relative duration-500 transition-all">
-            <span className="block group-hover:ml-16 transition-all duration-500">
-              services
-            </span>
-            <div className="absolute left-0 top-[40%] -translate-y-[40%] hidden group-hover:block size-8 bg-(--text-color) rounded-full"></div>
-          </li>
-          <li className="group relative duration-500 transition-all">
-            <span className="block group-hover:ml-16 transition-all duration-500">
-              team
-            </span>
-            <div className="absolute left-0 top-[40%] -translate-y-[40%] hidden group-hover:block size-8 bg-(--text-color) rounded-full"></div>
-          </li>
-          <li className="group relative duration-500 transition-all">
-            <span className="block group-hover:ml-16 transition-all duration-500">
-              contact
-            </span>
-            <div className="absolute left-0 top-[40%] -translate-y-[40%] hidden group-hover:block size-8 bg-(--text-color) rounded-full"></div>
-          </li>
+          {sideMenuLists.map((sideMenuItem) => (
+            <li
+              key={sideMenuItem.id}
+              className="group relative duration-500 transition-all"
+            >
+              <a href="#">
+                <span className="block group-hover:ml-16 transition-all duration-500">
+                  {sideMenuItem.name}
+                </span>
+              </a>
+              <div className="absolute left-0 top-[40%] -translate-y-[40%] hidden group-hover:block size-8 bg-(--text-color) rounded-full"></div>
+            </li>
+          ))}
         </ul>
-
         <div className="w-1/2 text-end flex flex-col justify-end gap-10">
           <div className="flex flex-col gap-4 text-2xl">
             <a href="">hello@trionn.com</a>

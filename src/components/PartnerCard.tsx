@@ -8,7 +8,7 @@ const PartnerCard = () => {
       {clients.map((client) => (
         <div
           key={client.id}
-          className="bg-(--card-bg) border border-(--text-color) hover:border-none w-[500px] h-[600px] rounded-4xl flex flex-col items-center justify-center text-center gap-20 shrink-0 hover:scale-[0.95] duration-300 transition-transform"
+          className="bg-(--card-bg) border border-(--text-color) hover:border-none w-[350px] h-[500px] lg:w-[500px] lg:h-[600px] rounded-4xl flex flex-col items-center justify-center text-center gap-20 shrink-0 hover:scale-[0.95] duration-300 transition-transform"
         >
           <div className="">
             <img

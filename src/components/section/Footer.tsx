@@ -52,7 +52,7 @@ const Footer = () => {
         </div>
         <button
           id="talkBtn"
-          className="px-12 py-4 rounded-4xl bg-(--text-color-2) text-(--background) text-lg self-start lg:self-center mt-20 lg:mt-0"
+          className="px-12 py-4 rounded-4xl bg-(--text-color) text-(--background) text-lg self-start lg:self-center cursor-pointer mt-20 lg:mt-0"
         >
           Let's talk!
         </button>

@@ -12,6 +12,11 @@ import dribbble3 from "../assets/images/dribbble3.webp";
 import dribbble4 from "../assets/images/dribbble4.webp";
 import dribbble5 from "../assets/images/dribbble5.webp";
 import dribbble6 from "../assets/images/dribbble6.webp";
+import socialImage1 from "../assets/images/basketBall.svg";
+import socialImage2 from "../assets/images/linkedin.svg";
+import socialImage3 from "../assets/images/instagram.svg";
+import socialImage4 from "../assets/images/behance.svg";
+import socialImage5 from "../assets/images/facebook.svg";
 
 const viewProjects = [
   {
@@ -127,4 +132,39 @@ const dribbble = [
   },
 ];
 
-export { viewProjects, progress, clients, clientsMessage, dribbble };
+const socialLists = [
+  {
+    id: 1,
+    name: "Dribble",
+    image: socialImage1,
+  },
+  {
+    id: 2,
+    name: "LinkedIn",
+    image: socialImage2,
+  },
+  {
+    id: 3,
+    name: "Instagram",
+    image: socialImage3,
+  },
+  {
+    id: 4,
+    name: "Behance",
+    image: socialImage4,
+  },
+  {
+    id: 5,
+    name: "Facebook",
+    image: socialImage5,
+  },
+];
+
+export {
+  viewProjects,
+  progress,
+  clients,
+  clientsMessage,
+  dribbble,
+  socialLists,
+};

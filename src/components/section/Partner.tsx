@@ -44,7 +44,7 @@ const Partner = () => {
       >
         partner
       </div>
-      <div className="flex flex-col lg:justify-between">
+      <div className="flex flex-col lg:flex-row lg:justify-between">
         <div
           id="love"
           className="text-[70px] md:text-[80px] lg:text-[200px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"

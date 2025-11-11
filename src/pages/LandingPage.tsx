@@ -11,6 +11,8 @@ import Progress from "../components/section/Progress";
 import Partner from "../components/section/Partner";
 import ScrollMarquee from "../components/section/ScrollMarquee";
 import Dribbble from "../components/section/Dribbble";
+import SocialLink from "../components/section/SocialLink";
+import Footer from "../components/section/Footer";
 
 const LandingPage = () => {
   useGSAP(() => {
@@ -19,6 +21,24 @@ const LandingPage = () => {
       { rotationX: 90, opacity: 0, y: 50 },
       { rotationX: 0, opacity: 1, y: 0, duration: 1.5, ease: "power3.out" }
     );
+
+    gsap.from("#join1Text, #join2Text", {
+      xPercent: 50,
+      opacity: 0,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: "#join1Text, #join2Text",
+        scrub: 1.5,
+      },
+    });
+    gsap.from("#join3Text", {
+      xPercent: -50,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: "#join3Text",
+        scrub: 1.5,
+      },
+    });
   });
   return (
     <main>
@@ -54,22 +74,27 @@ const LandingPage = () => {
       </div>
 
       <IntroVideo />
-
       <CircularBrand />
-
       <RecentWork />
-
       <ViewProject />
-
       <About />
-
       <Progress />
-
       <Partner />
-
       <ScrollMarquee />
-
       <Dribbble />
+
+      <div
+        id="join"
+        className="flex flex-col items-center text-[200px] leading-[0.8] text-(--foreground) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
+      >
+        <span id="join1Text">join our</span>
+        <span id="join2Text">jungle</span>
+        <span id="join3Text">trek</span>
+      </div>
+
+      <SocialLink />
+
+      <Footer />
 
       {/* <div className="h-dvh"></div> */}
     </main>

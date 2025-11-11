@@ -17,7 +17,7 @@ const SideMenu = ({
           <CircleX size={40} />
         </div>
       </button>
-      <div className="flex py-14">
+      <div className="md:flex py-14">
         <ul className="w-1/2 text-[100px] leading-[0.8] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
           {sideMenuLists.map((sideMenuItem) => (
             <li
@@ -33,12 +33,14 @@ const SideMenu = ({
             </li>
           ))}
         </ul>
-        <div className="w-1/2 text-end flex flex-col justify-end gap-10">
+        <div className="w-1/2 text-end flex md:flex-col md:justify-end gap-10">
           <div className="flex flex-col gap-4 text-2xl">
             <a href="">hello@trionn.com</a>
-            <a href="">+91 98241 82099</a>
+            <a href="" className="hidden md:block">
+              +91 98241 82099
+            </a>
           </div>
-          <div className="flex justify-end">
+          <div className="hidden lg:flex justify-end gap-2">
             {socialLists.map((social) => (
               <div key={social.id} className="">
                 <a href="#">

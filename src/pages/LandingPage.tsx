@@ -9,6 +9,7 @@ import ViewProject from "../components/section/ViewProject";
 import About from "../components/section/About";
 import Progress from "../components/section/Progress";
 import Partner from "../components/section/Partner";
+import ScrollMarquee from "../components/section/ScrollMarquee";
 
 const LandingPage = () => {
   useGSAP(() => {
@@ -64,6 +65,8 @@ const LandingPage = () => {
       <Progress />
 
       <Partner />
+
+      <ScrollMarquee />
 
       <div className="h-dvh"></div>
     </main>

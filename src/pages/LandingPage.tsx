@@ -85,7 +85,7 @@ const LandingPage = () => {
 
       <div
         id="join"
-        className="flex flex-col items-center text-[200px] leading-[0.8] text-(--foreground) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
+        className="flex flex-col items-center text-[80px] lg:text-[200px] leading-[0.8] text-(--foreground) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
       >
         <span id="join1Text">join our</span>
         <span id="join2Text">jungle</span>

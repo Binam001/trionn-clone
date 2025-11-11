@@ -19,7 +19,7 @@ const SocialLink = () => {
       {socialLists.map((social) => (
         <div
           key={social.id}
-          className="px-20 lg:px-56 hover:scale-[1.2] duration-500 transition-transform"
+          className="px-5 lg:px-56 hover:scale-[1.2] duration-500 transition-transform"
         >
           <div id="social" className="">
             <div className="flex justify-between items-center my-5">

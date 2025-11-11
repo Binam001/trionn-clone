@@ -16,7 +16,7 @@ const Dribbble = () => {
 
     const oddRZ = isTablet ? 0 : -45;
     const evenRZ = isTablet ? 0 : 45;
-    const oddXp = isTablet ? -200 : -120;
+    const oddXp = isTablet ? -300 : -120;
     const evenXp = isTablet ? 150 : 120;
 
     gsap.utils.toArray<HTMLElement>(".oddDribbbleCard").forEach((el) => {

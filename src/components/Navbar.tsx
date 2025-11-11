@@ -25,7 +25,7 @@ const Navbar = () => {
     setIsPlaying(!isPlaying);
   };
   return (
-    <nav className="fixed top-0 left-0 right-0 px-3 md:px-10 lg:px-20 z-50">
+    <nav className="fixed top-0 left-0 right-0 px-3 md:px-10 lg:px-28 z-50">
       <div className="flex justify-between items-center mt-5 lg:mt-10">
         <div className="cursor-pointer">
           <a href="#text1">

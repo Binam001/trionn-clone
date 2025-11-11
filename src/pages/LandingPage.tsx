@@ -59,7 +59,7 @@ const LandingPage = () => {
       </div>
 
       <div className="flex justify-center">
-        <a href="#intro-video">
+        <a href="#introVideo">
           <CircleArrowDown
             size={32}
             strokeWidth={1}

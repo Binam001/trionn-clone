@@ -85,7 +85,9 @@ const Footer = () => {
         <p>
           © 2025 TRIONN<sup>®</sup>
         </p>
-        <CircleArrowDown size={32} strokeWidth={1} className="rotate-180" />
+        <a href="#text1">
+          <CircleArrowDown size={32} strokeWidth={1} className="rotate-180" />
+        </a>
       </div>
 
       <div className="">

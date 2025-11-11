@@ -4,7 +4,7 @@ import {
 } from "../lightswind/3d-scroll-trigger";
 const ScrollMarquee = () => {
   return (
-    <ThreeDScrollTriggerContainer className="mt-32">
+    <ThreeDScrollTriggerContainer className="my-40">
       <ThreeDScrollTriggerRow baseVelocity={10} direction={1}>
         <div className="text-(--text-color) font-bold leading-none text-[90px] lg:text-[150px] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
           - wild ideas! -

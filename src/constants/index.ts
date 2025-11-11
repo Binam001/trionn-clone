@@ -6,6 +6,12 @@ import client2 from "../assets/images/doug-petrie.webp";
 import client3 from "../assets/images/zoltan-csonka.webp";
 import client4 from "../assets/images/albert-mizuno.webp";
 import client5 from "../assets/images/stephen-dash.webp";
+import dribbble1 from "../assets/images/dribbble1.webp";
+import dribbble2 from "../assets/images/dribbble2.webp";
+import dribbble3 from "../assets/images/dribbble3.webp";
+import dribbble4 from "../assets/images/dribbble4.webp";
+import dribbble5 from "../assets/images/dribbble5.webp";
+import dribbble6 from "../assets/images/dribbble6.webp";
 
 const viewProjects = [
   {
@@ -94,4 +100,31 @@ const clientsMessage = [
   },
 ];
 
-export { viewProjects, progress, clients, clientsMessage };
+const dribbble = [
+  {
+    id: 1,
+    image: dribbble1,
+  },
+  {
+    id: 2,
+    image: dribbble2,
+  },
+  {
+    id: 3,
+    image: dribbble3,
+  },
+  {
+    id: 4,
+    image: dribbble4,
+  },
+  {
+    id: 5,
+    image: dribbble5,
+  },
+  {
+    id: 6,
+    image: dribbble6,
+  },
+];
+
+export { viewProjects, progress, clients, clientsMessage, dribbble };

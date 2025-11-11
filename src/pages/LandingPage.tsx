@@ -10,6 +10,7 @@ import About from "../components/section/About";
 import Progress from "../components/section/Progress";
 import Partner from "../components/section/Partner";
 import ScrollMarquee from "../components/section/ScrollMarquee";
+import Dribbble from "../components/section/Dribbble";
 
 const LandingPage = () => {
   useGSAP(() => {
@@ -68,7 +69,9 @@ const LandingPage = () => {
 
       <ScrollMarquee />
 
-      <div className="h-dvh"></div>
+      <Dribbble />
+
+      {/* <div className="h-dvh"></div> */}
     </main>
   );
 };

@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 function App() {
   const isLargeDevice = useMediaQuery({ minWidth: 1024 });
   return (
-    <div className="px-3 md:px-10 lg:px-28 bg-(--background)">
+    <div className="px-3 md:px-10 lg:px-28 bg-(--background) overflow-hidden">
       {isLargeDevice ? (
         <SmokeyCursor
           simulationResolution={64}

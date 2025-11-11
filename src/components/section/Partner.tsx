@@ -110,7 +110,7 @@ const Partner = () => {
             {clientsMessage.map((cltmsg) => (
               <div
                 key={cltmsg.id}
-                className="embla__slide bg-(--card-bg) border border-(--text-color) hover:border-none w-[500px] h-[600px] rounded-4xl px-10 flex flex-col items-center justify-center text-center gap-20 shrink-0 hover:scale-[0.95] duration-300 transition-transform"
+                className="embla__slide bg-(--card-bg) border border-(--text-color) hover:border-none w-[350px] h-[500px] lg:w-[500px] lg:h-[600px] rounded-4xl px-10 flex flex-col items-center justify-center text-center gap-20 shrink-0 hover:scale-[0.95] duration-300 transition-transform"
               >
                 <div className="">
                   <div className="flex justify-center">

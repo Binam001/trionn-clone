@@ -23,6 +23,7 @@ const Dribbble = () => {
       gsap.to(el, {
         xPercent: oddXp,
         rotateZ: oddRZ,
+        opacity: 0,
         scrollTrigger: {
           trigger: el,
           start: "top 80%",

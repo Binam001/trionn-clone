@@ -7,6 +7,7 @@ const IntroVideo = () => {
     gsap.from(".intro-video", {
       yPercent: -50,
       scale: 0.2,
+      borderRadius: "100%",
       scrollTrigger: {
         trigger: ".intro-video",
         start: "top 70%",
@@ -14,6 +15,17 @@ const IntroVideo = () => {
         scrub: 1.5,
       },
     });
+    // gsap.from(".intro-video", {
+    //   yPercent: -50,
+    //   scale: 0.2,
+    //   borderRadius: "100%",
+    //   scrollTrigger: {
+    //     trigger: ".intro-video",
+    //     start: "top 70%",
+    //     end: "bottom center",
+    //     scrub: 1.5,
+    //   },
+    // });
   });
   return (
     <div id="intro-video" className="intro-video mt-20">

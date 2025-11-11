@@ -7,7 +7,7 @@ const SideMenu = ({
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   return (
-    <div className="text-(--text-color) px-20">
+    <div className="text-(--text-color) px-8 lg:px-20">
       <button
         onClick={() => setOpen(false)}
         className="w-full flex justify-end gap-4 py-10 pr-10 text-2xl font-bold"
@@ -18,7 +18,7 @@ const SideMenu = ({
         </div>
       </button>
       <div className="md:flex py-14">
-        <ul className="w-1/2 text-[100px] leading-[0.8] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+        <ul className="w-1/2 text-[80px] lg:text-[100px] leading-[0.8] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
           {sideMenuLists.map((sideMenuItem) => (
             <li
               key={sideMenuItem.id}

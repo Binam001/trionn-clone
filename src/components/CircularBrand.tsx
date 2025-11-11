@@ -17,7 +17,7 @@ const CircularBrand = () => {
     });
   });
   return (
-    <div className="circular-brand fixed size-28 lg:size-40 right-10 bottom-10 border border-(--foreground) rounded-full p-2 z-10">
+    <div className="circular-brand fixed size-20 lg:size-40 right-10 bottom-10 border border-(--foreground) rounded-full p-2 z-10">
       <svg
         className="w-full h-full animate-[spin_6s_linear_infinite]"
         viewBox="0 0 100 100"
@@ -44,7 +44,7 @@ const CircularBrand = () => {
       </svg>
 
       <div className="absolute inset-0 flex items-center justify-center">
-        <Cat className="size-8 lg:size-16 text-(--foreground)/60 rounded-full ring ring-offset-8" />
+        <Cat className="size-5 lg:size-16 text-(--foreground)/60 rounded-full ring ring-offset-8" />
       </div>
     </div>
   );

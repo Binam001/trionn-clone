@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import footerLogo from "../../assets/images/footer-logo.svg";
+import { CircleArrowDown } from "lucide-react";
 
 const Footer = () => {
   useGSAP(() => {
@@ -80,10 +81,11 @@ const Footer = () => {
 
       <hr className="text-(--text-color) h-1 w-full my-10" />
 
-      <div className="text-(--text-color)/50 text-xl my-10">
+      <div className="text-(--text-color)/70 text-xl my-10 flex justify-between">
         <p>
           © 2025 TRIONN<sup>®</sup>
         </p>
+        <CircleArrowDown size={32} strokeWidth={1} className="rotate-180" />
       </div>
 
       <div className="">

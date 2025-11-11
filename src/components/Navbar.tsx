@@ -1,7 +1,7 @@
 import { Menu } from "lucide-react";
 import logo from "../assets/logo.svg";
-import soundBar from "../assets/sound-bar.svg";
-import animatedSoundBar from "../assets/animated-sound-bar.svg";
+import soundBar from "../assets/images/sound-bar.svg";
+import animatedSoundBar from "../assets/images/animated-sound-bar.svg";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { useRef, useState } from "react";
 import audio from "../assets/audio/relaxing-afternoon-full-version-relaxing-and-easy-piano-music-112850.mp3";

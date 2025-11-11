@@ -12,6 +12,7 @@
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@tailwindcss/vite": "^4.1.17",
+    "embla-carousel-react": "^8.6.0",
     "lightswind": "^3.1.18",
     "lucide-react": "^0.553.0",
     "react": "^19.1.1",

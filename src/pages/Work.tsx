@@ -78,9 +78,7 @@ const Work = () => {
       <div className="mt-32">
         {workLists.map((workItem, idx) => {
           // Check if current item is the first id of any pair
-          const pair = groupedPairs.find(
-            ([first, second]) => workItem.id === first
-          );
+          const pair = groupedPairs.find(([first]) => workItem.id === first);
           if (pair) {
             const nextItem = workLists[idx + 1];
             if (nextItem && nextItem.id === pair[1]) {
@@ -110,7 +108,7 @@ const Work = () => {
             }
           }
           // Skip rendering second item of any pair
-          if (groupedPairs.some(([first, second]) => workItem.id === second))
+          if (groupedPairs.some(([second]) => workItem.id === second))
             return null;
 
           // Render all other items normally

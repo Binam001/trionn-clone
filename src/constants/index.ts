@@ -36,7 +36,6 @@ import socialImage2 from "../assets/images/linkedin.svg";
 import socialImage3 from "../assets/images/instagram.svg";
 import socialImage4 from "../assets/images/behance.svg";
 import socialImage5 from "../assets/images/facebook.svg";
-import { cn } from "../components/lib/utils";
 
 const viewProjects = [
   {

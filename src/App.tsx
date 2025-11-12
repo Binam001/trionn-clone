@@ -9,7 +9,6 @@ import Work from "./pages/Work";
 import AboutUs from "./pages/AboutUs";
 import Services from "./pages/Services";
 import Team from "./pages/Team";
-import CircularBrand from "./components/CircularBrand";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -28,7 +27,6 @@ function App() {
         />
       ) : null}
       <Navbar />
-      {/* <CircularBrand /> */}
       <div className="pt-36">
         <Routes>
           <Route path="/" element={<LandingPage />} />

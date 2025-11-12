@@ -1,21 +1,6 @@
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import leoLogo from "../assets/images/Lion.svg";
 
 const CircularBrand = () => {
-  // useGSAP(() => {
-  //   gsap.from(".circular-brand", {
-  //     xPercent: 200,
-  //     opacity: 0,
-  //     duration: 2,
-  //     scrollTrigger: {
-  //       trigger: ".circular-brand",
-  //       start: "top 10%",
-  //       end: "bottom center",
-  //       scrub: 1,
-  //     },
-  //   });
-  // });
   return (
     // <div className="circular-brand fixed right-10 bottom-10 size-20 lg:size-32 border border-(--foreground) rounded-full p-1 lg:p-2 z-10">
     //   <svg

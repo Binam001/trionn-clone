@@ -4,32 +4,12 @@ import introVideo from "../assets/videos/intro-video.mp4";
 
 const IntroVideo = () => {
   useGSAP(() => {
-    // gsap.fromTo(
-    //   ".intro-video",
-    //   {
-    //     yPercent: -50,
-    //     scale: 0.2,
-    //     borderRadius: "100%",
-    //   },
-    //   {
-    //     yPercent: 0,
-    //     scale: 1,
-    //     borderRadius: "20%",
-    //     scrollTrigger: {
-    //       trigger: ".intro-video",
-    //       start: "top 70%",
-    //       end: "bottom center",
-    //       scrub: 1.5,
-    //     },
-    //   }
-    // );
-
-    gsap.from(".intro-video", {
-      yPercent: -50,
-      scale: 0.2,
-      borderRadius: "100%",
+    gsap.from("#introVideo", {
+      yPercent: -65,
+      scale: 0.15,
+      borderRadius: "500px",
       scrollTrigger: {
-        trigger: ".intro-video",
+        trigger: "#introVideo",
         start: "top 70%",
         end: "bottom center",
         scrub: 1.5,
@@ -37,8 +17,9 @@ const IntroVideo = () => {
     });
   });
   return (
-    <div id="introVideo" className="intro-video mt-18">
+    <div className="mt-18">
       <video
+        id="introVideo"
         src={introVideo}
         muted
         playsInline

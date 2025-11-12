@@ -56,7 +56,7 @@ const Progress = () => {
           }
            p-6 rounded-4xl
           transition-colors duration-500 ease-in-out cursor-pointer
-          ${item.id % 2 === 0 ? "lg:relative lg:top-16 evenCard" : "oddCard"}
+          ${item.id % 2 === 0 ? "lg:relative lg:top-1/2 evenCard" : "oddCard"}
           `}
           key={item.id}
         >

@@ -7,7 +7,7 @@ import { useMediaQuery } from "react-responsive";
 const ViewProject = () => {
   const isTablet = useMediaQuery({ maxWidth: 770 });
   useGSAP(() => {
-    const start = isTablet ? "top 80%" : "top bottom";
+    const start = isTablet ? "top 80%" : "top 100%";
     const end = isTablet ? "center 90%" : "center center";
     gsap.from("#content", {
       y: 150,
@@ -17,7 +17,7 @@ const ViewProject = () => {
       scrollTrigger: {
         trigger: "#content",
         start: "top 80%",
-        scrub: 1.5,
+        scrub: 1.2,
       },
     });
 
@@ -60,7 +60,7 @@ const ViewProject = () => {
             trigger: el,
             start,
             end,
-            scrub: 1.5,
+            scrub: 1.2,
           },
         }
       );
@@ -95,7 +95,7 @@ const ViewProject = () => {
         >
           <div
             id="content"
-            className="w-full lg:w-[40%] flex flex-col gap-20 justify-center"
+            className="w-full lg:w-[40%] flex flex-col pt-10 gap-20 justify-center"
           >
             <div className="text-(--text-color) space-y-3">
               <h1 className="text-[50px] md:text-[40px] lg:text-[70px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
@@ -107,12 +107,13 @@ const ViewProject = () => {
               <Button href="#" title="View project" />
             </div>
           </div>
-          <div className="w-full lg:w-[60%]">
+
+          <div className="w-full lg:w-[60%] relative">
             <a href="#" target="_blank" rel="noopener noreferrer">
               <img
                 src={project.image}
                 alt={project.title}
-                className={`rounded-4xl border ${
+                className={`rounded-4xl absolute -top-18 ${
                   project.id % 2 !== 0 ? "oddIndexImage" : "evenIndexImage"
                 }`}
               />

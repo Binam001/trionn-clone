@@ -1,4 +1,3 @@
-import { Menu } from "lucide-react";
 import logo from "../assets/logo.svg";
 import soundBar from "../assets/images/sound-bar.svg";
 import animatedSoundBar from "../assets/images/animated-sound-bar.svg";
@@ -25,55 +24,70 @@ const Navbar = () => {
     setIsPlaying(!isPlaying);
   };
   return (
-    <nav className="fixed top-0 left-0 right-0 px-3 md:px-10 lg:px-28 z-50">
-      <div className="flex justify-between items-center mt-5 lg:mt-10">
-        <div className="cursor-pointer">
-          <a href="#text1">
-            <img
-              className="w-20 md:w-28 invert dark:invert-0"
-              src={logo}
-              alt="trionn"
-            />
-          </a>
-        </div>
+    <>
+      <nav className="fixed top-0 left-0 right-0 px-3 md:px-10 lg:px-20 z-60">
+        <div className="flex justify-between items-center mt-5 lg:mt-[22px]">
+          <div className="cursor-pointer">
+            <a href="/">
+              <img
+                className="w-18 md:w-24 invert dark:invert-0"
+                src={logo}
+                alt="trionn"
+              />
+            </a>
+          </div>
 
-        <div className="flex gap-4 text-(--foreground)">
-          <ThemeSwitcher />
-          <button
-            onClick={toggleAudio}
-            className="p-1 bg-(--icon-bg-color) rounded-full cursor-pointer"
-          >
-            <img
-              src={!isPlaying ? soundBar : animatedSoundBar}
-              alt="sound-bar"
-              className="size-8 dark:invert-0 invert"
-            />
-          </button>
-          <audio ref={audioRef} src={audio} />
-        </div>
-
-        <div className="flex items-center gap-4 text-(--foreground)">
-          {!open && (
+          <div className="flex gap-2 text-(--foreground)">
+            <ThemeSwitcher />
             <button
-              onClick={() => setOpen(true)}
-              className="flex items-center gap-4 text-base md:text-xl font-[daysoftype] uppercase**[font-feature-settings:'ss01']** cursor-pointer"
+              onClick={toggleAudio}
+              className="p-1 bg-(--icon-bg-color) rounded-full cursor-pointer"
             >
-              menu
-              <div className="p-3 md:p-4 bg-(--icon-bg-color) rounded-full cursor-pointer">
-                <Menu />
-              </div>
+              <img
+                src={!isPlaying ? soundBar : animatedSoundBar}
+                alt="sound-bar"
+                className="size-6 dark:invert-0 invert"
+              />
             </button>
-          )}
-        </div>
+            <audio ref={audioRef} src={audio} />
+          </div>
 
-        <div
-          className={`fixed top-0 left-0 h-full w-full bg-(--sideMenu-bg) shadow-lg transition-transform duration-300 
-          ${open ? "translate-x-0" : "-translate-x-full"}`}
-        >
-          {open && <SideMenu setOpen={setOpen} />}
+          <div className="flex items-center gap-4 text-(--foreground)">
+            {!open ? (
+              <button
+                onClick={() => setOpen(true)}
+                className="flex items-center gap-4 text-sm font-[daysoftype] uppercase**[font-feature-settings:'ss01']** cursor-pointer"
+              >
+                menu
+                <div className="bg-(--icon-bg-color) size-11 rounded-full justify-center flex items-center mx-auto">
+                  <div className="w-fit items-end flex gap-1 justify-center flex-col">
+                    <div className="w-6 h-0.5 bg-(--text-color) transition-all duration-300" />
+                    <div className="w-4 h-0.5 bg-(--text-color) transition-all duration-300" />
+                  </div>
+                </div>
+              </button>
+            ) : (
+              <button
+                onClick={() => setOpen(false)}
+                className="flex items-center gap-4 text-sm font-[daysoftype] uppercase**[font-feature-settings:'ss01']** cursor-pointer"
+              >
+                close
+                <div className="bg-(--icon-bg-color) size-11 rounded-full flex flex-col justify-center items-center mx-auto relative">
+                  <div className="absolute w-6 h-0.5 bg-(--text-color) rotate-45 transition-all duration-300" />
+                  <div className="absolute w-6 h-0.5 bg-(--text-color) -rotate-45 transition-all duration-300" />
+                </div>
+              </button>
+            )}
+          </div>
         </div>
+      </nav>
+      <div
+        className={`fixed top-0 left-0 h-full w-full bg-(--sideMenu-bg) shadow-lg transition-transform duration-300 
+          ${open ? "translate-x-0" : "-translate-x-full"} z-40`}
+      >
+        {open && <SideMenu setOpen={setOpen} />}
       </div>
-    </nav>
+    </>
   );
 };
 

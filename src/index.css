@@ -52,12 +52,13 @@ html {
 }
 :root {
   --foreground: RGB(0, 0, 0);
-  --background: RGB(255, 255, 255);
+  --background: RGB(238, 243, 243);
   --text-color: RGB(62, 64, 67);
   -text-color-2: RGB(0, 0, 0);
   --icon-bg-color: RGB(216, 221, 221);
   --card-bg: RGB(225, 234, 234);
   --sideMenu-bg: RGB(238, 243, 243);
+  /* --button-text-color: rgb(63, 65, 68); */
 }
 .dark {
   --foreground: RGB(224, 238, 238);
@@ -69,15 +70,26 @@ html {
   --sideMenu-bg: RGB(18, 19, 21);
 }
 
-/* .embla {
+.embla {
+  /* max-width: 100%; */
+  /* max-width: 48rem; */
+  --slide-height: 19rem;
+  --slide-spacing: 1rem;
+  --slide-size: 40%;
+}
+.embla__viewport {
   overflow: hidden;
-} */
-/* .embla__container {
+}
+.embla__container {
   display: flex;
-} */
-/* .embla__slide {
-  flex: 0 0 100%;
-  min-width: 0;
-} */
+  touch-action: pan-y pinch-zoom;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+.embla__slide {
+  transform: translate3d(0, 0, 0);
+  flex: 0 0 var(--slide-size);
+  /* min-width: 0; */
+  padding-left: var(--slide-spacing);
+}
 
 @custom-variant dark (&:where(.dark, .dark *));

@@ -2,7 +2,6 @@ import { CircleArrowDown } from "lucide-react";
 import Button from "../components/Button";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import CircularBrand from "../components/CircularBrand";
 import IntroVideo from "../components/IntroVideo";
 import RecentWork from "../components/section/RecentWork";
 import ViewProject from "../components/section/ViewProject";
@@ -13,14 +12,20 @@ import ScrollMarquee from "../components/section/ScrollMarquee";
 import Dribbble from "../components/section/Dribbble";
 import SocialLink from "../components/section/SocialLink";
 import Footer from "../components/section/Footer";
+import CircularBrand from "../components/CircularBrand";
 
 const LandingPage = () => {
   useGSAP(() => {
     gsap.fromTo(
-      "#text-1",
+      "#text1",
       { rotationX: 90, opacity: 0, y: 50 },
       { rotationX: 0, opacity: 1, y: 0, duration: 1.5, ease: "power3.out" }
     );
+    gsap.from("#introDesc", {
+      y: 30,
+      opacity: 0,
+      duration: 1.5,
+    });
 
     gsap.from("#join1Text, #join2Text", {
       xPercent: 50,
@@ -39,19 +44,35 @@ const LandingPage = () => {
         scrub: 1.5,
       },
     });
+
+    gsap.from(".circular-brand", {
+      xPercent: 200,
+      opacity: 0,
+      duration: 2,
+      scrollTrigger: {
+        trigger: ".circular-brand",
+        start: "top 10%",
+        end: "bottom center",
+        scrub: 1,
+      },
+    });
   });
   return (
     <main>
       <div className="py-16 md:py-0">
+        <CircularBrand />
         <div
           id="text1"
-          className="text-[50px] md:text-[110px] lg:text-[100px] text-center leading-[0.75] text-(--foreground) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
+          className="text-[50px] md:text-[110px] lg:text-[115px] text-center leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
         >
           <p>roar in the</p>
           <p>digital wilderness.</p>
         </div>
 
-        <p className="text-sm md:text-base text-(--text-color) uppercase text-center syne-normal">
+        <p
+          id="introDesc"
+          className="text-xs text-(--text-color) uppercase text-center syne-normal mt-5"
+        >
           We roar with success, delivering the TRIONN®
           <br /> through versatile design, branding and the latest
           <br /> tech development to companies.
@@ -61,20 +82,19 @@ const LandingPage = () => {
       <div className="flex justify-center">
         <a href="#introVideo">
           <CircleArrowDown
-            size={32}
+            size={30}
             strokeWidth={1}
             className="text-(--text-color)/50 mt-5"
           />
         </a>
       </div>
 
-      <div className="flex justify-between">
+      <div className="flex justify-between mt-10">
         <Button title="Explore work" />
         <Button title="Get in touch" />
       </div>
 
       <IntroVideo />
-      <CircularBrand />
       <RecentWork />
       <ViewProject />
       <About />

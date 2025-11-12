@@ -44,9 +44,9 @@ const ThemeSwitcher = () => {
   return (
     <button onClick={toggleTheme} className="rounded-full cursor-pointer">
       {theme === "light" ? (
-        <img src={sun} alt="sun" className="size-10 invert dark:invert-0" />
+        <img src={moon} alt="moon" className="size-8 invert dark:invert-0" />
       ) : (
-        <img src={moon} alt="moon" className="size-10 invert dark:invert-0" />
+        <img src={sun} alt="sun" className="size-8 invert dark:invert-0" />
       )}
     </button>
   );

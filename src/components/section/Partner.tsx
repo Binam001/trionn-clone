@@ -23,6 +23,7 @@ const Partner = () => {
       stagger: 0.1,
       scrollTrigger: {
         trigger: "#partner",
+        start: "top 80%",
         scrub: 1.5,
       },
     });
@@ -32,6 +33,7 @@ const Partner = () => {
       stagger: 0.1,
       scrollTrigger: {
         trigger: "#love",
+        start: "top 80%",
         scrub: 1.5,
       },
     });
@@ -50,7 +52,7 @@ const Partner = () => {
     });
   });
   return (
-    <div className="mt-40 text-(--text-color)">
+    <div className="mt-80 text-(--text-color)">
       <div
         id="partner"
         className="text-[70px] md:text-[80px] lg:text-[200px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"

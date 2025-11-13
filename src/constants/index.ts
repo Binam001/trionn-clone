@@ -36,6 +36,45 @@ import socialImage2 from "../assets/images/linkedin.svg";
 import socialImage3 from "../assets/images/instagram.svg";
 import socialImage4 from "../assets/images/behance.svg";
 import socialImage5 from "../assets/images/facebook.svg";
+import partnerSideAImg1 from "../assets/images/aboutUs/luxurypresence.svg";
+import partnerSideAImg2 from "../assets/images/aboutUs/fast-resume.svg";
+import partnerSideAImg3 from "../assets/images/aboutUs/technis.svg";
+import partnerSideAImg4 from "../assets/images/aboutUs/betterpenny.svg";
+import partnerSideAImg5 from "../assets/images/aboutUs/ockto.svg";
+import partnerSideAImg6 from "../assets/images/aboutUs/credible.svg";
+import partnerSideAImg7 from "../assets/images/aboutUs/reyden.svg";
+import partnerSideAImg8 from "../assets/images/aboutUs/casting-networks.svg";
+import partnerSideAImg9 from "../assets/images/aboutUs/yellowtail.svg";
+import partnerSideAImg10 from "../assets/images/aboutUs/joonko.svg";
+import partnerSideBImg1 from "../assets/images/aboutUs/hulamaids.svg";
+import partnerSideBImg2 from "../assets/images/aboutUs/helm.webp";
+import partnerSideBImg3 from "../assets/images/aboutUs/flowrow.webp";
+import partnerSideBImg4 from "../assets/images/aboutUs/foreverdolls.svg";
+import partnerSideBImg5 from "../assets/images/aboutUs/spotlight-news.svg";
+import partnerSideBImg6 from "../assets/images/aboutUs/known-singles.svg";
+import partnerSideBImg7 from "../assets/images/aboutUs/essence-realty.svg";
+import partnerSideBImg8 from "../assets/images/aboutUs/larry-lake.svg";
+import techStackAImg1 from "../assets/images/services/angular.svg";
+import techStackAImg2 from "../assets/images/services/bootstrap.svg";
+import techStackAImg3 from "../assets/images/services/css3.svg";
+import techStackAImg4 from "../assets/images/services/figma.svg";
+import techStackAImg5 from "../assets/images/services/html5.svg";
+import techStackAImg6 from "../assets/images/services/jquery.svg";
+import techStackAImg7 from "../assets/images/services/js.svg";
+import techStackAImg8 from "../assets/images/services/jsfoundation.svg";
+import techStackAImg9 from "../assets/images/services/laravel.svg";
+import techStackAImg10 from "../assets/images/services/less.svg";
+import techStackBImg1 from "../assets/images/services/magento.svg";
+import techStackBImg2 from "../assets/images/services/nextjs.svg";
+import techStackBImg3 from "../assets/images/services/nodejs.svg";
+import techStackBImg4 from "../assets/images/services/php.svg";
+import techStackBImg5 from "../assets/images/services/react.svg";
+import techStackBImg6 from "../assets/images/services/sass.svg";
+import techStackBImg7 from "../assets/images/services/shopify.svg";
+import techStackBImg8 from "../assets/images/services/sketch.svg";
+import techStackBImg9 from "../assets/images/services/tailwindcss.svg";
+import techStackBImg10 from "../assets/images/services/wordpress.svg";
+import techStackBImg11 from "../assets/images/services/xd.svg";
 
 const viewProjects = [
   {
@@ -204,7 +243,7 @@ const sideMenuLists = [
   {
     id: 2,
     name: "about",
-    to: "/about",
+    to: "/aboutus",
   },
   {
     id: 3,
@@ -286,7 +325,6 @@ const workLists = [
     tag: "UI Design, UX, Wireframe",
     image: project9Img,
     className: "w-[80%]",
-    // className: "w-[80%] ml-54",
   },
   {
     id: 10,
@@ -374,6 +412,327 @@ const workLists = [
   },
 ];
 
+const partnerSideA = [
+  {
+    id: 1,
+    image: partnerSideAImg1,
+  },
+  {
+    id: 2,
+    image: partnerSideAImg2,
+  },
+  {
+    id: 3,
+    image: partnerSideAImg3,
+  },
+  {
+    id: 4,
+    image: partnerSideAImg4,
+  },
+  {
+    id: 5,
+    image: partnerSideAImg5,
+  },
+  {
+    id: 6,
+    image: partnerSideAImg6,
+  },
+  {
+    id: 7,
+    image: partnerSideAImg7,
+  },
+  {
+    id: 8,
+    image: partnerSideAImg8,
+  },
+  {
+    id: 9,
+    image: partnerSideAImg9,
+  },
+  {
+    id: 10,
+    image: partnerSideAImg10,
+  },
+];
+
+const partnerSideB = [
+  {
+    id: 1,
+    image: partnerSideBImg1,
+  },
+  {
+    id: 2,
+    image: partnerSideBImg2,
+  },
+  {
+    id: 3,
+    image: partnerSideBImg3,
+  },
+  {
+    id: 4,
+    image: partnerSideBImg4,
+  },
+  {
+    id: 5,
+    image: partnerSideBImg5,
+  },
+  {
+    id: 6,
+    image: partnerSideBImg6,
+  },
+  {
+    id: 7,
+    image: partnerSideBImg7,
+  },
+  {
+    id: 8,
+    image: partnerSideBImg8,
+  },
+];
+
+// const awardLists = [
+//   {
+//     id: 1,
+//     name: "A' Design Awards & competition",
+//     title: "Silver Medal",
+//     image: award1,
+//   },
+//   {
+//     id: 2,
+//     name: "AWWWARDS",
+//     title: "2x - Honnerable Mention",
+//     image: award2,
+//   },
+//   {
+//     id: 3,
+//     name: "CSS Design Awards",
+//     title: "2x - Website of the day",
+//     image: award3,
+//   },
+//   {
+//     id: 4,
+//     name: "CSS Winners",
+//     title: "2x - Website of the day",
+//     image: award4,
+//   },
+//   {
+//     id: 5,
+//     name: "CSS Reels",
+//     title: "Featured of the day",
+//     image: award5,
+//   },
+//   {
+//     id: 6,
+//     name: "Web Guru",
+//     title: "2x - Guru of the day",
+//     image: award6,
+//   },
+// ];
+
+const serviceLists = [
+  {
+    id: 1,
+    title1: "design",
+    desc: "Your designs, a fierce roar in the digital wilderness, carve an indelible social footprint, capturing the very essence of your unique identity.",
+    content: [
+      "User interface",
+      "Web & Mobile apps",
+      "User experience",
+      "SaaS product design",
+      "Websites",
+      "Design systems",
+      "Visual design",
+      "Interaction design",
+      "Prototypes",
+    ],
+  },
+  {
+    id: 2,
+    title1: "develop",
+    title2: "ment",
+    desc: "In this design jungle, we don't just roar concepts; we bring them to life with practicality, emphasizing micro animations and interactions.",
+    content: [
+      "React JS",
+      "HTML5 & CSS3",
+      "Next JS",
+      "LESS & SASS",
+      "Node JS",
+      "Bootstrap",
+      "Angular JS",
+      "Tailwind",
+      "WordPress",
+      "Foundation",
+      "Magento",
+      "Javascript",
+      "Shopify",
+      "jQuery",
+      "Laravel",
+      "PHP",
+    ],
+  },
+  {
+    id: 3,
+    title1: "brand",
+    title2: "ing",
+    desc: "Our goal is your brand's wild influence. Exclusive logos, mockups, and corporate identities make your unique value stand out.",
+    content: [
+      "Visual identity",
+      "Graphic designs",
+      "Branding strategy",
+      "Style guide",
+      "Mockups",
+      "Typography",
+    ],
+  },
+];
+
+// const processLists = [
+//   {
+//     id: 1,
+//     title: "Resaerch and Planning",
+//     lists: [
+//       "Project Planning",
+//       "Expectations Setting",
+//       "Competitor Analysis",
+//       "Digital Strategy",
+//       "UX Research",
+//     ],
+//   },
+//   {
+//     id: 1,
+//     title: "Resaerch and Planning",
+//     lists: [
+//       "Project Planning",
+//       "Expectations Setting",
+//       "Competitor Analysis",
+//       "Digital Strategy",
+//       "UX Research",
+//     ],
+//   },
+//   {
+//     id: 1,
+//     title: "Resaerch and Planning",
+//     lists: [
+//       "Project Planning",
+//       "Expectations Setting",
+//       "Competitor Analysis",
+//       "Digital Strategy",
+//       "UX Research",
+//     ],
+//   },
+//   {
+//     id: 1,
+//     title: "Resaerch and Planning",
+//     lists: [
+//       "Project Planning",
+//       "Expectations Setting",
+//       "Competitor Analysis",
+//       "Digital Strategy",
+//       "UX Research",
+//     ],
+//   },
+//   {
+//     id: 1,
+//     title: "Resaerch and Planning",
+//     lists: [
+//       "Project Planning",
+//       "Expectations Setting",
+//       "Competitor Analysis",
+//       "Digital Strategy",
+//       "UX Research",
+//     ],
+//   },
+// ];
+
+const techStackListsA = [
+  {
+    id: 1,
+    image: techStackAImg1,
+  },
+  {
+    id: 2,
+    image: techStackAImg2,
+  },
+  {
+    id: 3,
+    image: techStackAImg3,
+  },
+  {
+    id: 4,
+    image: techStackAImg4,
+  },
+  {
+    id: 5,
+    image: techStackAImg5,
+  },
+  {
+    id: 6,
+    image: techStackAImg6,
+  },
+  {
+    id: 7,
+    image: techStackAImg7,
+  },
+  {
+    id: 8,
+    image: techStackAImg8,
+  },
+  {
+    id: 9,
+    image: techStackAImg9,
+  },
+  {
+    id: 10,
+    image: techStackAImg10,
+  },
+];
+const techStackListsB = [
+  {
+    id: 1,
+    image: techStackBImg1,
+  },
+  {
+    id: 2,
+    image: techStackBImg2,
+  },
+  {
+    id: 3,
+    image: techStackBImg3,
+  },
+  {
+    id: 4,
+    image: techStackBImg4,
+  },
+  {
+    id: 5,
+    image: techStackBImg5,
+  },
+  {
+    id: 6,
+    image: techStackBImg6,
+  },
+  {
+    id: 7,
+    image: techStackBImg7,
+  },
+  {
+    id: 8,
+    image: techStackBImg8,
+  },
+  {
+    id: 9,
+    image: techStackBImg9,
+  },
+  {
+    id: 10,
+    image: techStackBImg10,
+  },
+  {
+    id: 11,
+    image: techStackBImg11,
+  },
+];
+
 export {
   viewProjects,
   progress,
@@ -383,4 +742,11 @@ export {
   socialLists,
   sideMenuLists,
   workLists,
+  partnerSideA,
+  partnerSideB,
+  // awardLists,
+  serviceLists,
+  // processLists,
+  techStackListsA,
+  techStackListsB,
 };

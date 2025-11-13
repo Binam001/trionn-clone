@@ -1,5 +1,202 @@
+import { CircleArrowDown } from "lucide-react";
+import CircularBrand from "../components/CircularBrand";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import lionGroup from "../assets/images/lionGroup.webp";
+import Button from "../components/Button";
+import Progress from "../components/section/Progress";
+import Partner from "../components/section/Partner";
+import Footer from "../components/section/Footer";
+import {
+  ThreeDScrollTriggerContainer,
+  ThreeDScrollTriggerRow,
+} from "../components/lightswind/3d-scroll-trigger";
+import { partnerSideA, partnerSideB } from "../constants";
+import ImageReveal from "../components/lightswind/image-reveal";
+
 const AboutUs = () => {
-  return <div>AboutUs</div>;
+  useGSAP(() => {
+    gsap.from(".secondDescSpan", {
+      // height: 0,
+      y: 100,
+      opacity: 0,
+      duration: 1.5,
+      scrollTrigger: {
+        trigger: "#secondDesc",
+        start: "top 80%",
+        scrub: 1.5,
+      },
+    });
+
+    gsap.to(".textShadow1, .textShadow2", {
+      xPercent: 100,
+      // width: 0,
+      // opacity: 0,
+      stagger: 0.2,
+      duration: 1.5,
+      scrollTrigger: {
+        trigger: ".textShadow1, .textShadow2",
+        start: "top bottom",
+        scrub: 1.5,
+      },
+    });
+  });
+
+  return (
+    <div className="flex flex-col items-center gap-8">
+      <CircularBrand />
+      <div
+        id="workTitle"
+        className="flex flex-col w-full text-[50px] md:text-[110px] lg:text-[90px] text-center leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
+      >
+        <span>a</span>
+        <span>versatile</span>
+        <span>design agency.</span>
+      </div>
+
+      <div
+        id="workDesc"
+        className="flex flex-col text-center uppercase text-xs syne-normal text-(--text-color-2)"
+      >
+        <span>Combining the latest trends in design, tech, branding and</span>
+        <span>
+          many other fields is what we do best. We don't settle to view
+        </span>
+        <span>the world from one perspective.</span>
+      </div>
+
+      <div className="flex justify-center">
+        <a href="#secondDesc">
+          <CircleArrowDown
+            size={30}
+            strokeWidth={1}
+            className="text-(--text-color)/50 mt-8"
+          />
+        </a>
+      </div>
+
+      <div
+        id="secondDesc"
+        className="flex flex-col text-center syne-normal text-(--text-color-2) text-[50px] mt-40"
+      >
+        <span className="secondDescSpan">
+          TRIONN® has a roaring 20+ years history
+        </span>
+        <span className="secondDescSpan">of empowering companies in the</span>
+        <span className="secondDescSpan">corporate jungle.</span>
+      </div>
+
+      <div className="relative">
+        <img src={lionGroup} alt="lion group" />
+        <div className="flex flex-col justify-center items-center w-full h-full absolute top-0 text-(--text-color) text-center leading-[0.75] text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+          <span>majestic</span>
+          <span>designs</span>
+          <span>since</span>
+          <span>2000</span>
+        </div>
+      </div>
+
+      <div className="">
+        <div className="syne-normal text-(--text-color-2) text-[48px] mt-40 leading-14">
+          <p>
+            Embracing the journey, we cater to every need, collaborating to pave
+            the road for our diverse creative services to flourish in the
+            business jungle. We are the roaring digital agency, boldly
+            navigating the entire digital spectrum, from user research to
+            branding, development, and evaluation.
+          </p>
+        </div>
+        <div className="mt-10 flex">
+          <div className="w-1/2">
+            <Button title="TRIONN® name story" />
+          </div>
+          <div className="text-(--text-color) syne-normal w-1/2 space-y-4 text-xl">
+            <p>
+              Infused with the lion's determination, we partner intimately with
+              clients, exploring their lofty goals and subtle nuances, adeptly
+              shifting from the theoretical to the pragmatic, bringing their
+              vision to fruition.
+            </p>
+            <p>
+              We meticulously craft Web Interfaces, Brands, IOS and Android
+              application designs, and bespoke Web solutions, Content
+              management, and e-commerce development, bringing their vision to
+              life with a roar of creativity.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <Progress />
+
+      <div className="mt-40 max-w-[100vw] px-20">
+        <Partner />
+      </div>
+
+      <div className="syne-normal text-(--text-color) text-center text-[44px] mt-20">
+        <p>We've worked for...</p>
+
+        <div className="w-screen">
+          <ThreeDScrollTriggerContainer className="my-10">
+            <ThreeDScrollTriggerRow baseVelocity={3} direction={1}>
+              {partnerSideA.map(({ id, image }) => (
+                <div
+                  key={id}
+                  className="size-90 bg-(--card-bg) mx-1 rounded-3xl flex justify-center items-center mb-1"
+                >
+                  <img
+                    src={image}
+                    alt={`partnerSideAImg + ${id}`}
+                    className="invert dark:invert-0 size-40"
+                  />
+                </div>
+              ))}
+            </ThreeDScrollTriggerRow>
+            <ThreeDScrollTriggerRow baseVelocity={3} direction={-1}>
+              {partnerSideB.map(({ id, image }) => (
+                <div
+                  key={id}
+                  className="size-90 bg-(--card-bg) mx-1 rounded-3xl flex justify-center items-center"
+                >
+                  <img
+                    key={id}
+                    src={image}
+                    alt={`partnerSideBImg + ${id}`}
+                    className="invert dark:invert-0 size-40"
+                  />
+                </div>
+              ))}
+            </ThreeDScrollTriggerRow>
+          </ThreeDScrollTriggerContainer>
+        </div>
+      </div>
+
+      <div className="text-center space-y-4">
+        <div className="relative text-[200px] leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+          <div className="relative">
+            <p>honors</p>
+            <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-6 opacity-90"></div>
+          </div>
+
+          <div className="relative">
+            <p>& awards</p>
+            <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-6 opacity-90"></div>
+          </div>
+        </div>
+        <p className="syne-normal mx-auto text-3xl text-(--text-color) w-[55%]">
+          We're India's top award-winning digital agency, carving our own path
+          in the digital jungle, and the journey persists.
+        </p>
+      </div>
+
+      <div className="w-full mt-20">
+        <ImageReveal />
+        <p className="text-(--text-color-2)/60 text-center">and many more...</p>
+      </div>
+
+      <Footer />
+    </div>
+  );
 };
 
 export default AboutUs;

@@ -55,7 +55,7 @@ const Work = () => {
       gsap.to(el, {
         xPercent: 100,
         // width: 0,
-        opacity: 0,
+        // opacity: 0,
         duration: 1.5,
         scrollTrigger: {
           trigger: card || el,
@@ -87,7 +87,7 @@ const Work = () => {
       </div>
 
       <div className="flex justify-center">
-        <a href="#introVideo">
+        <a href="#workImageSection">
           <CircleArrowDown
             size={30}
             strokeWidth={1}
@@ -96,7 +96,7 @@ const Work = () => {
         </a>
       </div>
 
-      <div className="mt-32">
+      <div id="workImageSection" className="mt-32">
         {workLists.map((workItem, idx) => {
           // Check if current item is the first id of any pair
           const pair = groupedPairs.find(

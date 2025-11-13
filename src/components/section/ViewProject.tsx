@@ -113,7 +113,7 @@ const ViewProject = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className={`rounded-4xl absolute -top-18 ${
+                className={`rounded-4xl lg:absolute lg:-top-18 ${
                   project.id % 2 !== 0 ? "oddIndexImage" : "evenIndexImage"
                 }`}
               />

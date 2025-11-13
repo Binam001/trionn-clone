@@ -5,7 +5,7 @@ import {
 const ScrollMarquee = () => {
   return (
     <div className="w-screen">
-      <ThreeDScrollTriggerContainer className="my-40 -mx-20">
+      <ThreeDScrollTriggerContainer className="my-40 -mx-2 md:-mx-10 lg:-mx-20">
         <ThreeDScrollTriggerRow baseVelocity={10} direction={1}>
           <div className="text-(--text-color) font-bold leading-none text-[90px] lg:text-[150px] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
             - wild ideas! -

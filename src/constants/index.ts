@@ -229,7 +229,7 @@ const workLists = [
     title: "loftloom",
     tag: "UI Design, UX, Wireframe",
     image: project1Img,
-    className: "w-full h-[650px]",
+    className: "w-full",
   },
   {
     id: 2,

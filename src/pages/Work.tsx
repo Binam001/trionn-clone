@@ -3,6 +3,7 @@ import CircularBrand from "../components/CircularBrand";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { workLists } from "../constants";
+import Footer from "../components/section/Footer";
 
 const groupedPairs = [
   [11, 12],
@@ -34,14 +35,27 @@ const Work = () => {
       opacity: 0,
       duration: 1.5,
     });
-    gsap.from("#loftloom", {
-      x: 30,
-      duration: 1,
-      scrollTrigger: {
-        trigger: "#loftloom",
-        start: "top 80%",
-        scrub: 1.5,
-      },
+    // gsap.from("#loftloom", {
+    //   x: 30,
+    //   duration: 1,
+    //   scrollTrigger: {
+    //     trigger: "#loftloom",
+    //     start: "top 80%",
+    //     scrub: 1.5,
+    //   },
+    // });
+
+    gsap.utils.toArray<HTMLElement>("#card").forEach((el) => {
+      gsap.from(el, {
+        xPercent: 20,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: el,
+          start: "top 80%",
+          end: "center center",
+          scrub: 1.5,
+        },
+      });
     });
   });
   return (
@@ -78,22 +92,27 @@ const Work = () => {
       <div className="mt-32">
         {workLists.map((workItem, idx) => {
           // Check if current item is the first id of any pair
-          const pair = groupedPairs.find(([first]) => workItem.id === first);
+          const pair = groupedPairs.find(
+            //@ts-ignore
+            ([first, second]) => workItem.id === first
+          );
           if (pair) {
             const nextItem = workLists[idx + 1];
             if (nextItem && nextItem.id === pair[1]) {
               return (
                 <div
-                  className="flex flex-row items-center mt-20"
+                  // style={{ backgroundColor: "blue" }}
+                  className={`flex flex-row items-center mt-20 gap-8`}
+                  // className={`${workItem.className} rounded-3xl flex bg-red-600`}
                   key={`group-${pair[0]}-${pair[1]}`}
                 >
                   {[workItem, nextItem].map((item) => (
-                    <div key={item.id} className="flex-1">
+                    <div key={item.id} className="">
                       <img
-                        id="loftloom"
+                        id="card"
                         src={item.image}
                         alt={item.title}
-                        className={`${item.className} rounded-3xl`}
+                        className={`rounded-3xl`}
                       />
                       <div className="text-(--text-color) mt-10">
                         <p className="text-[50px] md:text-[40px] lg:text-[50px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
@@ -108,17 +127,22 @@ const Work = () => {
             }
           }
           // Skip rendering second item of any pair
-          if (groupedPairs.some(([second]) => workItem.id === second))
+          //@ts-ignore
+          if (groupedPairs.some(([first, second]) => workItem.id === second))
             return null;
 
           // Render all other items normally
           return (
-            <div key={workItem.id} className="mt-20">
+            <div
+              key={workItem.id}
+              // className="mt-20"
+              className={`${workItem.className} mt-20`}
+            >
               <img
-                id="loftloom"
+                id="card"
                 src={workItem.image}
                 alt={workItem.title}
-                className={`${workItem.className} rounded-3xl`}
+                className={`rounded-3xl`}
               />
               <div className="text-(--text-color) mt-10">
                 <p className="text-[50px] md:text-[40px] lg:text-[50px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
@@ -130,6 +154,8 @@ const Work = () => {
           );
         })}
       </div>
+
+      <Footer />
     </div>
   );
 };

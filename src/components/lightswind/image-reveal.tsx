@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import { MoveUpRight as ArrowIcon } from "lucide-react";
 
 import award1 from "../../assets/images/aboutUs/adesignaward.webp";
 import award2 from "../../assets/images/aboutUs/awwwards.webp";
@@ -164,7 +163,6 @@ const ImageReveal: React.FC = () => {
             className="flex justify-between w-full text-(--text-color)"
           >
             <div className="text-3xl w-full">{item.label}</div>
-            {/* <div className="text-2xl">{item.title}</div> */}
           </li>
           <hr className="text-(--text-color) h-1 w-full my-10" />
         </div>

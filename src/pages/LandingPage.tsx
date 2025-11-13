@@ -13,6 +13,7 @@ import Dribbble from "../components/section/Dribbble";
 import SocialLink from "../components/section/SocialLink";
 import Footer from "../components/section/Footer";
 import CircularBrand from "../components/CircularBrand";
+import { motion } from "framer-motion";
 
 const LandingPage = () => {
   useGSAP(() => {
@@ -58,7 +59,11 @@ const LandingPage = () => {
     });
   });
   return (
-    <main>
+    <motion.div
+    // initial={{ opacity: 0 }}
+    // animate={{ opacity: 1 }}
+    // exit={{ opacity: 0, x: 1000 }}
+    >
       <div className="py-16 md:py-0">
         <CircularBrand />
         <div
@@ -117,7 +122,7 @@ const LandingPage = () => {
       <Footer />
 
       {/* <div className="h-dvh"></div> */}
-    </main>
+    </motion.div>
   );
 };
 

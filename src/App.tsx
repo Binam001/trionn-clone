@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import LandingPage from "./pages/LandingPage";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Work from "./pages/Work";
 import AboutUs from "./pages/AboutUs";
 import Services from "./pages/Services";
@@ -14,6 +14,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 function App() {
   const isLargeDevice = useMediaQuery({ minWidth: 1024 });
+  const location = useLocation();
   return (
     <div className="px-3 md:px-10 lg:px-20 bg-(--background) overflow-hidden">
       {isLargeDevice ? (
@@ -28,7 +29,7 @@ function App() {
       ) : null}
       <Navbar />
       <div className="pt-36">
-        <Routes>
+        <Routes location={location} key={location.pathname}>
           <Route path="/" element={<LandingPage />} />
           <Route path="/Work" element={<Work />} />
           <Route path="/AboutUs" element={<AboutUs />} />

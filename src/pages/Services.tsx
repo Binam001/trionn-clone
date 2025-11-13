@@ -46,7 +46,7 @@ const Services = () => {
       </div>
 
       <div className="flex justify-center">
-        <a href="#secondDesc">
+        <a href="#thirdPage2ndDesc">
           <CircleArrowDown
             size={30}
             strokeWidth={1}

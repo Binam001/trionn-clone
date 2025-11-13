@@ -35,15 +35,6 @@ const Work = () => {
       opacity: 0,
       duration: 1.5,
     });
-    // gsap.from("#loftloom", {
-    //   x: 30,
-    //   duration: 1,
-    //   scrollTrigger: {
-    //     trigger: "#loftloom",
-    //     start: "top 80%",
-    //     scrub: 1.5,
-    //   },
-    // });
 
     gsap.utils.toArray<HTMLElement>("#card").forEach((el) => {
       gsap.from(el, {
@@ -53,6 +44,22 @@ const Work = () => {
           trigger: el,
           start: "top 80%",
           end: "center center",
+          scrub: 1.5,
+        },
+      });
+    });
+
+    gsap.utils.toArray<HTMLElement>(".textShadow").forEach((el) => {
+      const card = el.closest(".mt-20")?.querySelector(".card");
+
+      gsap.to(el, {
+        xPercent: 100,
+        // width: 0,
+        opacity: 0,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: card || el,
+          start: "bottom 75%",
           scrub: 1.5,
         },
       });
@@ -101,23 +108,39 @@ const Work = () => {
             if (nextItem && nextItem.id === pair[1]) {
               return (
                 <div
-                  // style={{ backgroundColor: "blue" }}
                   className={`flex flex-row items-center mt-20 gap-8`}
-                  // className={`${workItem.className} rounded-3xl flex bg-red-600`}
                   key={`group-${pair[0]}-${pair[1]}`}
                 >
                   {[workItem, nextItem].map((item) => (
                     <div key={item.id} className="">
                       <img
-                        id="card"
+                        // id="card"
                         src={item.image}
                         alt={item.title}
-                        className={`rounded-3xl`}
+                        className={`card rounded-3xl`}
                       />
                       <div className="text-(--text-color) mt-10">
-                        <p className="text-[50px] md:text-[40px] lg:text-[50px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
-                          {item.title}
-                        </p>
+                        {/* <div className="">
+                          <p className="relative text-[50px] md:text-[40px] lg:text-[50px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+                            {item.title}
+                          </p>
+                          <div
+                            // id="textShadow"
+                            className="textShadow bg-(--background) w-full h-full absolute top-0 -mt-1 opacity-90"
+                          ></div>
+                        </div> */}
+                        <div className="">
+                          <p
+                            // id="workImageTitle"
+                            className="relative text-[50px] md:text-[40px] lg:text-[50px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
+                          >
+                            {item.title}
+                            <div
+                              // id="textShadow"
+                              className="textShadow bg-(--background) w-full h-full absolute top-0 -mt-1 opacity-90"
+                            ></div>
+                          </p>
+                        </div>
                         <p className="text-xl syne-normal">{item.tag}</p>
                       </div>
                     </div>
@@ -133,21 +156,27 @@ const Work = () => {
 
           // Render all other items normally
           return (
-            <div
-              key={workItem.id}
-              // className="mt-20"
-              className={`${workItem.className} mt-20`}
-            >
+            <div key={workItem.id} className={`${workItem.className} mt-20`}>
               <img
-                id="card"
+                // id="card"
+                // id={`card=workItem.id.toString()`}
                 src={workItem.image}
                 alt={workItem.title}
-                className={`rounded-3xl`}
+                className="card rounded-3xl"
               />
               <div className="text-(--text-color) mt-10">
-                <p className="text-[50px] md:text-[40px] lg:text-[50px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
-                  {workItem.title}
-                </p>
+                <div className="">
+                  <p
+                    // id="workImageTitle"
+                    className="relative text-[50px] md:text-[40px] lg:text-[50px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
+                  >
+                    {workItem.title}
+                    <div
+                      // id="textShadow"
+                      className="textShadow bg-(--background) w-full h-full absolute top-0 -mt-1 opacity-90"
+                    ></div>
+                  </p>
+                </div>
                 <p className="text-xl syne-normal">{workItem.tag}</p>
               </div>
             </div>

@@ -36,9 +36,9 @@ const Work = () => {
       duration: 1.5,
     });
 
-    gsap.utils.toArray<HTMLElement>("#card").forEach((el) => {
+    gsap.utils.toArray<HTMLElement>(".card").forEach((el) => {
       gsap.from(el, {
-        xPercent: 20,
+        xPercent: 30,
         duration: 1.5,
         scrollTrigger: {
           trigger: el,
@@ -108,7 +108,7 @@ const Work = () => {
             if (nextItem && nextItem.id === pair[1]) {
               return (
                 <div
-                  className={`flex flex-row items-center mt-20 gap-8`}
+                  className={`lg:flex lg:flex-row lg:items-center mt-20 gap-8 space-y-8 lg:space-y-0`}
                   key={`group-${pair[0]}-${pair[1]}`}
                 >
                   {[workItem, nextItem].map((item) => (

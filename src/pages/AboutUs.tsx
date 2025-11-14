@@ -2,6 +2,7 @@ import { CircleArrowDown } from "lucide-react";
 import CircularBrand from "../components/CircularBrand";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { SplitText } from "gsap/all";
 import lionGroup from "../assets/images/lionGroup.webp";
 import Button from "../components/Button";
 import Progress from "../components/section/Progress";
@@ -13,20 +14,23 @@ import {
 } from "../components/lightswind/3d-scroll-trigger";
 import { partnerSideA, partnerSideB } from "../constants";
 import ImageReveal from "../components/lightswind/image-reveal";
-
+// import { animation } from "../components/animation/index";
 const AboutUs = () => {
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   animation();
+  // });
   useGSAP(() => {
-    gsap.from(".secondDescSpan", {
-      // height: 0,
-      y: 100,
-      opacity: 0,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: "#secondDesc",
-        start: "top 80%",
-        scrub: 1.5,
-      },
-    });
+    // gsap.from(".secondDescSpan", {
+    //   // height: 0,
+    //   y: 100,
+    //   opacity: 0,
+    //   duration: 1.5,
+    //   scrollTrigger: {
+    //     trigger: "#secondDesc",
+    //     start: "top 80%",
+    //     scrub: 1.5,
+    //   },
+    // });
 
     gsap.to(".textShadow1, .textShadow2", {
       xPercent: 100,
@@ -40,6 +44,95 @@ const AboutUs = () => {
         scrub: 1.5,
       },
     });
+
+    // const paragraphSplit = new SplitText(".secondDesc, .thirdDesc", {
+    //   type: "lines",
+    //   linesClass: "line-wrapper",
+    // });
+
+    // gsap.from(paragraphSplit.lines, {
+    //   y: 100,
+    //   opacity: 0,
+    //   duration: 0.8,
+    //   stagger: 0.2,
+    //   scrollTrigger: {
+    //     trigger: ".secondDesc, .thirdDesc",
+    //     start: "top bottom",
+    //     scrub: 1.5,
+    //   },
+    // });
+
+    const secondParagraphSplit = new SplitText(".secondDesc", {
+      type: "lines",
+      linesClass: "line-wrapper",
+    });
+
+    gsap.from(secondParagraphSplit.lines, {
+      y: 100,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ".secondDesc",
+        start: "top bottom",
+        end: "top center",
+        scrub: 1.5,
+      },
+    });
+    const thirdParagraphSplit = new SplitText(".thirdDesc", {
+      type: "lines",
+      linesClass: "line-wrapper",
+    });
+
+    gsap.from(thirdParagraphSplit.lines, {
+      y: 100,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ".thirdDesc",
+        start: "top bottom",
+        end: "center 30%",
+        scrub: 1.5,
+      },
+    });
+
+    gsap.from(".imgText span", {
+      y: 100,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ".imgText",
+        start: "top bottom",
+        end: "30% center",
+        scrub: 1.5,
+      },
+    });
+    gsap.from("#btn", {
+      opacity: 0,
+      yPercent: 100,
+      duration: 1.5,
+      scrollTrigger: {
+        trigger: "#btn",
+        start: "top bottom",
+        end: "bottom center",
+        scrub: 1,
+      },
+    });
+    gsap.from(".thirdDescP p", {
+      opacity: 0,
+      yPercent: 100,
+      duration: 1.5,
+      delay: 1,
+      stagger: 1,
+      scrollTrigger: {
+        trigger: ".thirdDescP",
+        start: "top bottom",
+        end: "bottom center",
+        scrub: 1,
+      },
+    });
   });
 
   return (
@@ -47,7 +140,7 @@ const AboutUs = () => {
       <CircularBrand />
       <div
         id="workTitle"
-        className="flex flex-col w-full text-[50px] md:text-[110px] lg:text-[90px] text-center leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
+        className="flex flex-col w-full text-[50px] md:text-[90px] text-center leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
       >
         <span>a</span>
         <span>versatile</span>
@@ -55,8 +148,8 @@ const AboutUs = () => {
       </div>
 
       <div
-        id="workDesc"
-        className="flex flex-col text-center uppercase text-xs syne-normal text-(--text-color-2)"
+        // id="firstDesc"
+        className="firstDesc flex flex-col text-center uppercase text-xs syne-normal text-(--text-color-2)"
       >
         <span>Combining the latest trends in design, tech, branding and</span>
         <span>
@@ -66,7 +159,7 @@ const AboutUs = () => {
       </div>
 
       <div className="flex justify-center">
-        <a href="#secondDesc">
+        <a href="#aboutSecondDesc">
           <CircleArrowDown
             size={30}
             strokeWidth={1}
@@ -76,8 +169,8 @@ const AboutUs = () => {
       </div>
 
       <div
-        id="secondDesc"
-        className="flex flex-col text-center syne-normal text-(--text-color-2) text-[50px] mt-40"
+        id="aboutSecondDesc"
+        className="secondDesc flex flex-col text-center syne-normal text-(--text-color) text-3xl lg:text-[50px] mt-0 lg:mt-40 w-full"
       >
         <span className="secondDescSpan">
           TRIONN® has a roaring 20+ years history
@@ -86,9 +179,13 @@ const AboutUs = () => {
         <span className="secondDescSpan">corporate jungle.</span>
       </div>
 
-      <div className="relative">
-        <img src={lionGroup} alt="lion group" />
-        <div className="flex flex-col justify-center items-center w-full h-full absolute top-0 text-(--text-color) text-center leading-[0.75] text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+      <div className="relative mt-20 w-full">
+        <img
+          src={lionGroup}
+          alt="lion group"
+          className="w-full h-full object-cover"
+        />
+        <div className="imgText flex flex-col justify-center items-center w-full h-full absolute top-0 text-(--text-color) text-center leading-[0.75] text-[120px] lg:text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
           <span>majestic</span>
           <span>designs</span>
           <span>since</span>
@@ -97,8 +194,8 @@ const AboutUs = () => {
       </div>
 
       <div className="">
-        <div className="syne-normal text-(--text-color-2) text-[48px] mt-40 leading-14">
-          <p>
+        <div className="thirdDesc syne-normal text-(--text-color-2) text-4xl lg:text-[48px] mt-40 leading-12 lg:leading-14">
+          <p className="">
             Embracing the journey, we cater to every need, collaborating to pave
             the road for our diverse creative services to flourish in the
             business jungle. We are the roaring digital agency, boldly
@@ -107,10 +204,10 @@ const AboutUs = () => {
           </p>
         </div>
         <div className="mt-10 flex">
-          <div className="w-1/2">
+          <div id="btn" className="w-1/2">
             <Button title="TRIONN® name story" />
           </div>
-          <div className="text-(--text-color) syne-normal w-1/2 space-y-4 text-xl">
+          <div className="thirdDescP text-(--text-color) syne-normal w-1/2 space-y-4 text-xl">
             <p>
               Infused with the lion's determination, we partner intimately with
               clients, exploring their lofty goals and subtle nuances, adeptly
@@ -127,7 +224,9 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <Progress />
+      <div className="w-full">
+        <Progress />
+      </div>
 
       <div className="mt-40 max-w-[100vw] px-20">
         <Partner />
@@ -142,7 +241,7 @@ const AboutUs = () => {
               {partnerSideA.map(({ id, image }) => (
                 <div
                   key={id}
-                  className="size-90 bg-(--card-bg) mx-1 rounded-3xl flex justify-center items-center mb-1"
+                  className="size-60 lg:size-90 bg-(--card-bg) mx-1 rounded-3xl flex justify-center items-center mb-1"
                 >
                   <img
                     src={image}
@@ -156,7 +255,7 @@ const AboutUs = () => {
               {partnerSideB.map(({ id, image }) => (
                 <div
                   key={id}
-                  className="size-90 bg-(--card-bg) mx-1 rounded-3xl flex justify-center items-center"
+                  className="size-60 lg:size-90 bg-(--card-bg) mx-1 rounded-3xl flex justify-center items-center"
                 >
                   <img
                     key={id}
@@ -172,15 +271,15 @@ const AboutUs = () => {
       </div>
 
       <div className="text-center space-y-4">
-        <div className="relative text-[200px] leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+        <div className="relative text-[120px] lg:text-[200px] leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
           <div className="relative">
             <p>honors</p>
-            <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-6 opacity-90"></div>
+            <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div>
           </div>
 
           <div className="relative">
             <p>& awards</p>
-            <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-6 opacity-90"></div>
+            <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div>
           </div>
         </div>
         <p className="syne-normal mx-auto text-3xl text-(--text-color) w-[55%]">

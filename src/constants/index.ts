@@ -75,6 +75,34 @@ import techStackBImg8 from "../assets/images/services/sketch.svg";
 import techStackBImg9 from "../assets/images/services/tailwindcss.svg";
 import techStackBImg10 from "../assets/images/services/wordpress.svg";
 import techStackBImg11 from "../assets/images/services/xd.svg";
+import teamImg1 from "../assets/images/team/sunny_rathod.webp";
+import teamImg2 from "../assets/images/team/prabhatsinh_maka.webp";
+import teamImg3 from "../assets/images/team/gaurav_joshi.webp";
+import teamImg4 from "../assets/images/team/viral_maru.webp";
+import teamImg5 from "../assets/images/team/bhagirathsinh_jadeja.webp";
+import teamImg6 from "../assets/images/team/rushi_vasani.webp";
+import teamImg7 from "../assets/images/team/ayaz_kadri.webp";
+import teamImg8 from "../assets/images/team/umang_vaghamshi.webp";
+import teamImg9 from "../assets/images/team/nilesh_gujarati.webp";
+import teamImg10 from "../assets/images/team/vaishnavi_kacha.webp";
+import teamImg11 from "../assets/images/team/dhaval_bhadukiya.webp";
+import teamImg12 from "../assets/images/team/dhruv_solanki.webp";
+import teamImg13 from "../assets/images/team/rahul_solanki.webp";
+import teamImg14 from "../assets/images/team/sandip_rathod.webp";
+import eventListAImg1 from "../assets/images/event/1.webp";
+import eventListAImg2 from "../assets/images/event/2.webp";
+import eventListAImg3 from "../assets/images/event/3.webp";
+import eventListAImg4 from "../assets/images/event/4.webp";
+import eventListAImg5 from "../assets/images/event/5.webp";
+import eventListAImg6 from "../assets/images/event/6.webp";
+import eventListAImg7 from "../assets/images/event/7.webp";
+import eventListBImg1 from "../assets/images/event/8.webp";
+import eventListBImg2 from "../assets/images/event/9.webp";
+import eventListBImg3 from "../assets/images/event/10.webp";
+import eventListBImg4 from "../assets/images/event/11.webp";
+import eventListBImg5 from "../assets/images/event/12.webp";
+import eventListBImg6 from "../assets/images/event/13.webp";
+import eventListBImg7 from "../assets/images/event/14.webp";
 
 const viewProjects = [
   {
@@ -159,25 +187,6 @@ const clients = [
       "The Trionn team is extremely reliable, professional and talented. It has been a great pleasure collaborating with them over many months.",
   },
 ];
-
-// const clientsMessage = [
-//   {
-//     id: 1,
-//     image: client4,
-//     name: "Albert Mizuno",
-//     position: "Founder of The Mizuno",
-//     message:
-//       "We had a fantastic experience partnering with Trionn for our website. The communication and collaboration were excellent, resulting in a top-notch design and functionality. We highly recommend Trionn to businesses in the service sector or anyone in need of a web design & development solution.",
-//   },
-//   {
-//     id: 2,
-//     image: client5,
-//     name: "Stephen Dash",
-//     position: "Founder & CEO of Credible",
-//     message:
-//       "The Trionn team is extremely reliable, professional and talented. It has been a great pleasure collaborating with them over many months.",
-//   },
-// ];
 
 const dribbble = [
   {
@@ -275,14 +284,14 @@ const workLists = [
     title: "8octa",
     tag: "Research, Branding",
     image: project4Img,
-    className: "w-[35%]",
+    className: "w-full md:w-1/2 lg:w-[35%]",
   },
   {
     id: 3,
     title: "imusic",
     tag: "Research, UX, UI Design",
     image: project2Img,
-    className: "w-[70%]",
+    className: "w-full lg:w-[70%]",
   },
   {
     id: 4,
@@ -296,21 +305,21 @@ const workLists = [
     title: "merit global",
     tag: "UX, UI Design, Development",
     image: project5Img,
-    className: "w-[70%]",
+    className: "w-full lg:w-[70%]",
   },
   {
     id: 6,
     title: "reyden",
     tag: "UX, UI Design, Development",
     image: project6Img,
-    className: "w-[35%]",
+    className: "w-full md:w-[55%] lg:w-[35%]",
   },
   {
     id: 7,
     title: "crowdmouth",
     tag: "UI Design, UX, Wireframe",
     image: project7Img,
-    className: "w-[80%] ml-20",
+    className: "w-full w-[80%] lg:ml-20",
   },
   {
     id: 8,
@@ -324,21 +333,21 @@ const workLists = [
     title: "shore",
     tag: "UI Design, UX, Wireframe",
     image: project9Img,
-    className: "w-[80%]",
+    className: "w-full w-[80%]",
   },
   {
     id: 10,
     title: "keypro",
     tag: "UI Design, UX, Wireframe",
     image: project10Img,
-    className: "w-[75%]",
+    className: "w-full w-[75%]",
   },
   {
     id: 11,
     title: "essence reality",
     tag: "Research, UX, UI Design",
     image: project11Img,
-    className: "w-[80%] h-3/4",
+    className: "w-full md:w-[55%] lg:w-[80%] h-3/4",
   },
   {
     id: 12,
@@ -359,14 +368,14 @@ const workLists = [
     title: "forever dolls",
     tag: "UX Research, UI Design",
     image: project14Img,
-    className: "w-[70%] ml-20",
+    className: "w-full lg:w-[70%] lg:ml-20",
   },
   {
     id: 15,
     title: "aeomax",
     tag: "UX, UI Design, Wireframe",
     image: project15Img,
-    className: "w-[75%]",
+    className: "w-full lg:w-[75%]",
   },
   {
     id: 16,
@@ -380,7 +389,7 @@ const workLists = [
     title: "financr",
     tag: "UX, UI Design, Wireframe",
     image: project17Img,
-    className: "w-[80%] ml-10 h-1/2",
+    className: "w-full md:w-[55%] lg:w-[80%] lg:ml-10 h-1/2",
   },
   {
     id: 18,
@@ -401,14 +410,14 @@ const workLists = [
     title: "ogre",
     tag: "UX, UI Design, Wireframe",
     image: project20Img,
-    className: "w-[80%] ml-10",
+    className: "w-full md:w-[55%] lg:w-[80%] lg:ml-10",
   },
   {
     id: 21,
     title: "flow row",
     tag: "UX, UI Design, Wireframe",
     image: project21Img,
-    className: "w-[80%]",
+    className: "w-full lg:w-[80%]",
   },
 ];
 
@@ -489,45 +498,6 @@ const partnerSideB = [
     image: partnerSideBImg8,
   },
 ];
-
-// const awardLists = [
-//   {
-//     id: 1,
-//     name: "A' Design Awards & competition",
-//     title: "Silver Medal",
-//     image: award1,
-//   },
-//   {
-//     id: 2,
-//     name: "AWWWARDS",
-//     title: "2x - Honnerable Mention",
-//     image: award2,
-//   },
-//   {
-//     id: 3,
-//     name: "CSS Design Awards",
-//     title: "2x - Website of the day",
-//     image: award3,
-//   },
-//   {
-//     id: 4,
-//     name: "CSS Winners",
-//     title: "2x - Website of the day",
-//     image: award4,
-//   },
-//   {
-//     id: 5,
-//     name: "CSS Reels",
-//     title: "Featured of the day",
-//     image: award5,
-//   },
-//   {
-//     id: 6,
-//     name: "Web Guru",
-//     title: "2x - Guru of the day",
-//     image: award6,
-//   },
-// ];
 
 const serviceLists = [
   {
@@ -733,6 +703,194 @@ const techStackListsB = [
   },
 ];
 
+const teamLists = [
+  {
+    id: 1,
+    name: "Sunny Rathod",
+    position: "Founder & CEO",
+    image: teamImg1,
+  },
+  {
+    id: 2,
+    name: "Prabhatsinh Maka",
+    position: "Project manager",
+    image: teamImg2,
+  },
+  {
+    id: 3,
+    name: "Gaurav Joshi",
+    position: "Project manager",
+    image: teamImg3,
+  },
+  {
+    id: 4,
+    name: "Viral Maru",
+    position: "Sr. Developer",
+    image: teamImg4,
+  },
+  {
+    id: 5,
+    name: "Bhagirathsinh jadeja",
+    position: "Sr. Designer",
+    image: teamImg5,
+  },
+  {
+    id: 6,
+    name: "Rushi Vasani",
+    position: "Project manager",
+    image: teamImg6,
+  },
+  {
+    id: 7,
+    name: "Ayaz kadri",
+    position: "Sr. Designer",
+    image: teamImg7,
+  },
+  {
+    id: 8,
+    name: "Umang Vaghamshi",
+    position: "Sr. Developer",
+    image: teamImg8,
+  },
+  {
+    id: 9,
+    name: "Nilesh Gujarati",
+    position: "Designer",
+    image: teamImg9,
+  },
+  {
+    id: 10,
+    name: "Vaishnavi Kacha",
+    position: "Designer",
+    image: teamImg10,
+  },
+  {
+    id: 11,
+    name: "Dhaval Bhadukiya",
+    position: "Sr. Designer",
+    image: teamImg11,
+  },
+  {
+    id: 12,
+    name: "Dhruv Solanki",
+    position: "Developer",
+    image: teamImg12,
+  },
+  {
+    id: 13,
+    name: "Rahul Solanki",
+    position: "Developer",
+    image: teamImg13,
+  },
+  {
+    id: 14,
+    name: "Sandip Rathod",
+    position: "Developer",
+    image: teamImg14,
+  },
+];
+
+const teamHireLists = [
+  {
+    id: 1,
+    post: "Web/Mobile designers",
+  },
+  {
+    id: 2,
+    post: "Front-end designers",
+  },
+  {
+    id: 3,
+    post: "Back-end designers",
+  },
+];
+
+const eventListsA = [
+  {
+    id: 1,
+    image: eventListAImg1,
+  },
+  {
+    id: 2,
+    image: eventListAImg2,
+  },
+  {
+    id: 3,
+    image: eventListAImg3,
+  },
+  {
+    id: 4,
+    image: eventListAImg4,
+  },
+  {
+    id: 5,
+    image: eventListAImg5,
+  },
+  {
+    id: 6,
+    image: eventListAImg6,
+  },
+  {
+    id: 7,
+    image: eventListAImg7,
+  },
+];
+const eventListsB = [
+  {
+    id: 1,
+    image: eventListBImg1,
+  },
+  {
+    id: 2,
+    image: eventListBImg2,
+  },
+  {
+    id: 3,
+    image: eventListBImg3,
+  },
+  {
+    id: 4,
+    image: eventListBImg4,
+  },
+  {
+    id: 5,
+    image: eventListBImg5,
+  },
+  {
+    id: 6,
+    image: eventListBImg6,
+  },
+  {
+    id: 7,
+    image: eventListBImg7,
+  },
+];
+
+const footerLinks = [
+  {
+    id: 1,
+    title: "Email",
+    link: ["hello@trionn.com"],
+  },
+  {
+    id: 2,
+    title: "Phone",
+    link: ["+91 98241 82099"],
+  },
+  {
+    id: 3,
+    title: "Teams",
+    link: ["Talk to Trionn"],
+  },
+  {
+    id: 4,
+    title: "Follow on",
+    // link: "hello@trionn.com",
+    // social: ["Dribbble", "LinkedIn", "Instagram", "Behance", "Facebook"],
+    link: ["Dribbble", "LinkedIn", "Instagram", "Behance", "Facebook"],
+  },
+];
+
 export {
   viewProjects,
   progress,
@@ -749,4 +907,9 @@ export {
   // processLists,
   techStackListsA,
   techStackListsB,
+  teamLists,
+  teamHireLists,
+  eventListsA,
+  eventListsB,
+  footerLinks,
 };

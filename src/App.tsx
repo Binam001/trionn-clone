@@ -9,6 +9,7 @@ import Work from "./pages/Work";
 import AboutUs from "./pages/AboutUs";
 import Services from "./pages/Services";
 import Team from "./pages/Team";
+import Contact from "./pages/Contact";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -35,6 +36,7 @@ function App() {
           <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/Services" element={<Services />} />
           <Route path="/Team" element={<Team />} />
+          <Route path="/Contact" element={<Contact />} />
         </Routes>
       </div>
     </div>

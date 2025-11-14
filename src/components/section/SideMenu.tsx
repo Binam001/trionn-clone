@@ -33,9 +33,9 @@ const SideMenu = ({ setOpen }: SideMenuProps) => {
         </ul>
 
         <div className="w-1/2 text-end flex md:flex-col md:justify-end gap-10">
-          <div className="flex flex-col gap-4 text-2xl">
+          <div className="md:flex flex-col gap-4 text-2xl hidden">
             <a href="">hello@trionn.com</a>
-            <a href="" className="hidden md:block">
+            <a href="" className="">
               +91 98241 82099
             </a>
           </div>

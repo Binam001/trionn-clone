@@ -7,7 +7,7 @@ const PartnerCard = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true });
 
   return (
-    <section className="embla -mx-28">
+    <section className="embla -mx-28 mt-20">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {clients.map((client) => (
@@ -16,7 +16,6 @@ const PartnerCard = () => {
                 className={`bg-(--card-bg) border-2 border-(--text-color) hover:border-none w-[350px] h-[540px] lg:w-[500px] lg:h-[580px] rounded-4xl flex flex-col items-center justify-center text-center gap-20  hover:scale-[0.95] duration-300  ${
                   [4, 5].includes(client.id) ? "flex-col-reverse" : ""
                 }
-                 ${client.id === 5 && "mr-10"}
                 `}
               >
                 <div className="flex flex-col items-center gap-4">

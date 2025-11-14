@@ -18,15 +18,13 @@ const Work = () => {
       {
         opacity: 0,
         y: 50,
-        // skewY: 45,
         rotationX: 90,
       },
       {
         opacity: 1,
         y: 0,
-        // skewY: 0,
         rotationX: 0,
-        duration: 1.5,
+        duration: 2,
         ease: "power3.out",
       }
     );
@@ -34,6 +32,7 @@ const Work = () => {
       y: 30,
       opacity: 0,
       duration: 1.5,
+      delay: 1,
     });
 
     gsap.utils.toArray<HTMLElement>(".card").forEach((el) => {

@@ -556,63 +556,63 @@ const serviceLists = [
   },
 ];
 
-// const processLists = [
-//   {
-//     id: 1,
-//     title: "Resaerch and Planning",
-//     lists: [
-//       "Project Planning",
-//       "Expectations Setting",
-//       "Competitor Analysis",
-//       "Digital Strategy",
-//       "UX Research",
-//     ],
-//   },
-//   {
-//     id: 1,
-//     title: "Resaerch and Planning",
-//     lists: [
-//       "Project Planning",
-//       "Expectations Setting",
-//       "Competitor Analysis",
-//       "Digital Strategy",
-//       "UX Research",
-//     ],
-//   },
-//   {
-//     id: 1,
-//     title: "Resaerch and Planning",
-//     lists: [
-//       "Project Planning",
-//       "Expectations Setting",
-//       "Competitor Analysis",
-//       "Digital Strategy",
-//       "UX Research",
-//     ],
-//   },
-//   {
-//     id: 1,
-//     title: "Resaerch and Planning",
-//     lists: [
-//       "Project Planning",
-//       "Expectations Setting",
-//       "Competitor Analysis",
-//       "Digital Strategy",
-//       "UX Research",
-//     ],
-//   },
-//   {
-//     id: 1,
-//     title: "Resaerch and Planning",
-//     lists: [
-//       "Project Planning",
-//       "Expectations Setting",
-//       "Competitor Analysis",
-//       "Digital Strategy",
-//       "UX Research",
-//     ],
-//   },
-// ];
+const processLists = [
+  {
+    id: 1,
+    title: "Research and Planning",
+    lists: [
+      "Project Planning",
+      "Expectations Setting",
+      "Competitor Analysis",
+      "Digital Strategy",
+      "UX Research",
+    ],
+  },
+  {
+    id: 2,
+    title: "Creativity and UX Design",
+    lists: [
+      "Visual Moodboards",
+      "User Interface Design",
+      "User Experience Design",
+      "Interactive Design",
+      "Design System",
+    ],
+  },
+  {
+    id: 3,
+    title: "Technology and Development",
+    lists: [
+      "Web Develepment",
+      "Front-end Development",
+      "Custom CMS Integrations",
+      "E-commerce Development",
+      "SAAS Implementation",
+    ],
+  },
+  {
+    id: 4,
+    title: "Testing and Launch",
+    lists: [
+      "Usability testing",
+      "Performance testing",
+      "Funcationality testing",
+      "Security testing",
+      "Integration testing",
+    ],
+  },
+  {
+    id: 5,
+    title: "Evaluate and Evolve",
+    lists: [
+      "Review",
+      "Website optimisation",
+      "3rd Party Evaluation",
+      "Server performance",
+      "Improvement",
+    ],
+  },
+];
 
 const techStackListsA = [
   {
@@ -895,7 +895,6 @@ export {
   viewProjects,
   progress,
   clients,
-  // clientsMessage,
   dribbble,
   socialLists,
   sideMenuLists,
@@ -904,7 +903,7 @@ export {
   partnerSideB,
   // awardLists,
   serviceLists,
-  // processLists,
+  processLists,
   techStackListsA,
   techStackListsB,
   teamLists,

@@ -20,12 +20,13 @@ const LandingPage = () => {
     gsap.fromTo(
       "#text1",
       { rotationX: 90, opacity: 0, y: 50 },
-      { rotationX: 0, opacity: 1, y: 0, duration: 1.5, ease: "power3.out" }
+      { rotationX: 0, opacity: 1, y: 0, duration: 2, ease: "power3.out" }
     );
     gsap.from("#introDesc", {
       y: 30,
       opacity: 0,
       duration: 1.5,
+      delay: 1,
     });
 
     gsap.from("#join1Text, #join2Text", {

@@ -20,17 +20,37 @@ const AboutUs = () => {
   //   animation();
   // });
   useGSAP(() => {
-    // gsap.from(".secondDescSpan", {
-    //   // height: 0,
-    //   y: 100,
-    //   opacity: 0,
-    //   duration: 1.5,
-    //   scrollTrigger: {
-    //     trigger: "#secondDesc",
-    //     start: "top 80%",
-    //     scrub: 1.5,
-    //   },
-    // });
+    gsap.fromTo(
+      "#aboutUsTitle",
+      {
+        opacity: 0,
+        y: 50,
+        rotationX: 90,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        rotationX: 0,
+        duration: 2,
+        ease: "power3.out",
+      }
+    );
+    gsap.from("#aboutUsDesc", {
+      y: 30,
+      opacity: 0,
+      duration: 1.5,
+      delay: 1,
+    });
+    gsap.from("#weHaveWorkForText", {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: "#weHaveWorkForText",
+        start: "top bottom",
+        scrub: 1.5,
+      },
+    });
 
     gsap.to(".textShadow1, .textShadow2", {
       xPercent: 100,
@@ -133,13 +153,29 @@ const AboutUs = () => {
         scrub: 1,
       },
     });
+    const honorsAwardsParagraphSplit = new SplitText("#honorsAwardsDesc", {
+      type: "lines",
+      linesClass: "line-wrapper",
+    });
+
+    gsap.from(honorsAwardsParagraphSplit.lines, {
+      y: 100,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: "#honorsAwardsDesc",
+        start: "top bottom",
+        scrub: 1.5,
+      },
+    });
   });
 
   return (
     <div className="flex flex-col items-center gap-8">
       <CircularBrand />
       <div
-        id="workTitle"
+        id="aboutUsTitle"
         className="flex flex-col w-full text-[50px] md:text-[90px] text-center leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
       >
         <span>a</span>
@@ -148,8 +184,8 @@ const AboutUs = () => {
       </div>
 
       <div
-        // id="firstDesc"
-        className="firstDesc flex flex-col text-center uppercase text-xs syne-normal text-(--text-color-2)"
+        id="aboutUsDesc"
+        className="firstDesc flex flex-col text-center uppercase text-xs syne-normal text-(--text-color)"
       >
         <span>Combining the latest trends in design, tech, branding and</span>
         <span>
@@ -233,7 +269,7 @@ const AboutUs = () => {
       </div>
 
       <div className="syne-normal text-(--text-color) text-center text-[44px] mt-20">
-        <p>We've worked for...</p>
+        <p id="weHaveWorkForText">We've worked for...</p>
 
         <div className="w-screen">
           <ThreeDScrollTriggerContainer className="my-10">
@@ -282,10 +318,14 @@ const AboutUs = () => {
             <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div>
           </div>
         </div>
-        <p className="syne-normal mx-auto text-3xl text-(--text-color) w-[55%]">
-          We're India's top award-winning digital agency, carving our own path
-          in the digital jungle, and the journey persists.
-        </p>
+        <div
+          id="honorsAwardsDesc"
+          className="syne-normal mx-auto text-3xl text-(--text-color) w-[80%] flex flex-col"
+        >
+          <span>We're India's top award-winning digital</span>
+          <span>agency, carving our own path in the digital</span>
+          <span>jungle, and the journey persists.</span>
+        </div>
       </div>
 
       <div className="w-full mt-20">

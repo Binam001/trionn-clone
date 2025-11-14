@@ -6,7 +6,12 @@ import {
   ThreeDScrollTriggerContainer,
   ThreeDScrollTriggerRow,
 } from "../components/lightswind/3d-scroll-trigger";
-import { serviceLists, techStackListsA, techStackListsB } from "../constants";
+import {
+  processLists,
+  serviceLists,
+  techStackListsA,
+  techStackListsB,
+} from "../constants";
 import Button from "../components/Button";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -23,6 +28,28 @@ const Services = () => {
         scrub: 1.5,
       },
     });
+
+    const serviceCard = gsap.utils.toArray(".serviceCard");
+    const serviceCardContainer = document.querySelector(
+      ".serviceCardContainer"
+    );
+
+    if (serviceCardContainer) {
+      const containerElement = serviceCardContainer as HTMLElement;
+      const totalScroll = containerElement.scrollWidth - window.innerWidth + 50;
+
+      gsap.to(serviceCardContainer, {
+        x: -totalScroll,
+        duration: serviceCard.length,
+        scrollTrigger: {
+          trigger: ".serviceCardContainer",
+          start: "10% top",
+          end: `+=${totalScroll}`,
+          pin: true,
+          scrub: true,
+        },
+      });
+    }
   });
   return (
     <div className="flex flex-col items-center gap-8">
@@ -161,20 +188,39 @@ const Services = () => {
       </div>
 
       <div className="text-center space-y-4 mt-20">
-        <div className="relative text-[200px] leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+        <div className="relative text-[130px] lg:text-[200px] leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
           <div className="relative">
             <p>our</p>
-            <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-6 opacity-90"></div>
+            <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div>
           </div>
 
           <div className="relative">
             <p>process</p>
-            <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-6 opacity-90"></div>
+            <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div>
           </div>
         </div>
         <p className="syne-normal mx-auto text-3xl text-(--text-color) w-[55%]">
           These pillars support excellence in the digital jungle.
         </p>
+      </div>
+
+      <div className="">
+        <div className="w-screen flex serviceCardContainer">
+          {processLists.map((process) => (
+            <div
+              key={process.id}
+              className="serviceCard border-2 border-(--foreground) rounded-3xl p-14 text-(--text-color) syne-normal m-5 w-[550px] shrink-0"
+            >
+              <div className="text-[50px]">{process.id}.</div>
+              <div className="text-[50px] my-4">{process.title}</div>
+              <div className="mt-40">
+                {process.lists.map((lists) => (
+                  <div className="text-xl">{lists}</div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       <Footer />

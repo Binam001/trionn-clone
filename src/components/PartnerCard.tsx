@@ -11,7 +11,7 @@ const PartnerCard = () => {
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {clients.map((client) => (
-            <div className="embla__slide" key={client.id}>
+            <div className="embla__slide flex-none" key={client.id}>
               <div
                 className={`bg-(--card-bg) border-2 border-(--text-color) hover:border-none w-[350px] h-[540px] lg:w-[500px] lg:h-[580px] rounded-4xl flex flex-col items-center justify-center text-center gap-20  hover:scale-[0.95] duration-300  ${
                   [4, 5].includes(client.id) ? "flex-col-reverse" : ""
@@ -85,7 +85,6 @@ const PartnerCard = () => {
 }
 .embla__slide {
   transform: translate3d(0, 0, 0);
-  flex: 0 0 35%;
   min-width: 0;
   padding-left: var(--slide-spacing);
 }       

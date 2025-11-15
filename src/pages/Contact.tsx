@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Button from "../components/Button";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { SplitText } from "gsap/all";
 import footerLogo from "../assets/images/footer-logo.svg";
 import { footerLinks } from "../constants";
 
@@ -35,21 +36,31 @@ const Contact = () => {
   }, []);
 
   useGSAP(() => {
-    gsap.fromTo(
-      "#contactTitle",
-      {
-        opacity: 0,
-        y: 50,
-        rotationX: 90,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        rotationX: 0,
-        duration: 2,
-        ease: "power3.out",
-      }
-    );
+    const servicesPageTitleParagraphSplit = new SplitText("#contactPageTitle", {
+      type: "lines",
+      linesClass: "line-wrapper",
+    });
+    gsap.from(servicesPageTitleParagraphSplit.lines, {
+      opacity: 0,
+      filter: "blur(100px)",
+      yPercent: 100,
+      duration: 2,
+      ease: "expo.out",
+      stagger: 0.2,
+      delay: 0.6,
+    });
+    const servicesPageDescParagraphSplit = new SplitText("#contactPageDesc", {
+      type: "lines",
+      linesClass: "line-wrapper",
+    });
+    gsap.from(servicesPageDescParagraphSplit.lines, {
+      opacity: 0,
+      yPercent: 100,
+      duration: 2,
+      ease: "expo.out",
+      stagger: 0.2,
+      delay: 1,
+    });
     gsap.to(".textShadow1, .textShadow2", {
       xPercent: 100,
       stagger: 0.2,
@@ -75,7 +86,7 @@ const Contact = () => {
     <div className="flex flex-col items-center gap-8 text-(--text-color)">
       <CircularBrand />
       <div
-        id="contactTitle"
+        id="contactPageTitle"
         className="flex flex-col w-full text-[50px] md:text-[110px] lg:text-[90px] text-center leading-[0.75] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
       >
         <span>let's roar</span>
@@ -84,8 +95,8 @@ const Contact = () => {
       </div>
 
       <div
-        // id="workDesc"
-        className="firstDesc flex flex-col text-center uppercase text-xs syne-normal"
+        id="contactPageDesc"
+        className="flex flex-col text-center uppercase text-lg syne-normal"
       >
         <span>In the wilderness of change, our</span>
 
@@ -146,7 +157,7 @@ const Contact = () => {
                     id="name"
                     type="text"
                     placeholder="Your Name"
-                    className="w-full p-6 bg-(--card-bg) rounded-2xl text-lg focus:bg-(--foreground) focus:text-(--background) focus:outline-none"
+                    className="w-full p-6 bg-(--card-bg) rounded-2xl text-lg focus:bg-white focus:text-black focus:outline-none"
                   />
                 </div>
                 <div className="flex flex-col gap-4">
@@ -155,7 +166,7 @@ const Contact = () => {
                     id="email"
                     type="email"
                     placeholder="Your email address"
-                    className="w-full p-6 bg-(--card-bg) rounded-2xl text-lg focus:bg-(--foreground) focus:text-(--background) focus:outline-none"
+                    className="w-full p-6 bg-(--card-bg) rounded-2xl text-lg focus:bg-white focus:text-black focus:outline-none"
                   />
                 </div>
                 <div className="flex flex-col gap-4">
@@ -164,7 +175,7 @@ const Contact = () => {
                     id="phone"
                     type="text"
                     placeholder="Your phone number"
-                    className="w-full p-6 bg-(--card-bg) rounded-2xl text-lg focus:bg-(--foreground) focus:text-(--background) focus:outline-none"
+                    className="w-full p-6 bg-(--card-bg) rounded-2xl text-lg focus:bg-white focus:text-black focus:outline-none"
                   />
                 </div>
                 <div className="flex flex-col gap-4">
@@ -173,7 +184,7 @@ const Contact = () => {
                     id="company"
                     type="text"
                     placeholder="Ex. Shyam"
-                    className="w-full p-6 bg-(--card-bg) rounded-2xl text-lg focus:bg-(--foreground) focus:text-(--background) focus:outline-none"
+                    className="w-full p-6 bg-(--card-bg) rounded-2xl text-lg focus:bg-white focus:text-black focus:outline-none"
                   />
                 </div>
                 {activeContent == "button2" && (
@@ -235,7 +246,7 @@ const Contact = () => {
                 <textarea
                   id="message"
                   placeholder="Ex. Hello, How can I help you?"
-                  className="w-full h-60 p-6 bg-(--card-bg) rounded-2xl text-lg focus:bg-(--foreground) focus:text-(--background) focus:outline-none"
+                  className="w-full h-60 p-6 bg-(--card-bg) rounded-2xl text-lg focus:bg-white focus:text-black focus:outline-none"
                 />
               </div>
 

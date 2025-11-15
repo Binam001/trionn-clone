@@ -54,10 +54,10 @@ const PartnerCard = () => {
                         <img
                           src={doubleQuoteMark}
                           alt="double-quote-mark"
-                          className="invert dark:invert-0 size-14"
+                          className="invert dark:invert-0 size-6 lg:size-14"
                         />
                       </div>
-                      <p className="syne-normal text-lg px-10">
+                      <p className="syne-normal lg:text-lg px-10">
                         {client.message}
                       </p>
                     </div>

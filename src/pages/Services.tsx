@@ -15,9 +15,37 @@ import {
 import Button from "../components/Button";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { SplitText } from "gsap/all";
+import { useMediaQuery } from "react-responsive";
 
 const Services = () => {
+  const isLargeDevice = useMediaQuery({ minWidth: 770 });
   useGSAP(() => {
+    const servicesPageTitleParagraphSplit = new SplitText("#servicePageTitle", {
+      type: "lines",
+      linesClass: "line-wrapper",
+    });
+    gsap.from(servicesPageTitleParagraphSplit.lines, {
+      opacity: 0,
+      filter: "blur(100px)",
+      yPercent: 100,
+      duration: 2,
+      ease: "expo.out",
+      stagger: 0.2,
+      delay: 0.6,
+    });
+    const servicesPageDescParagraphSplit = new SplitText("#servicePageDesc", {
+      type: "lines",
+      linesClass: "line-wrapper",
+    });
+    gsap.from(servicesPageDescParagraphSplit.lines, {
+      opacity: 0,
+      yPercent: 100,
+      duration: 2,
+      ease: "expo.out",
+      stagger: 0.2,
+      delay: 1,
+    });
     gsap.to(".textShadow1, .textShadow2", {
       xPercent: 100,
       stagger: 0.2,
@@ -34,28 +62,98 @@ const Services = () => {
       ".serviceCardContainer"
     );
 
-    if (serviceCardContainer) {
-      const containerElement = serviceCardContainer as HTMLElement;
-      const totalScroll = containerElement.scrollWidth - window.innerWidth + 50;
+    if (isLargeDevice) {
+      if (serviceCardContainer) {
+        const containerElement = serviceCardContainer as HTMLElement;
+        const totalScroll =
+          containerElement.scrollWidth - window.innerWidth + 50;
 
-      gsap.to(serviceCardContainer, {
-        x: -totalScroll,
-        duration: serviceCard.length,
+        gsap.to(serviceCardContainer, {
+          x: -totalScroll,
+          duration: serviceCard.length,
+          scrollTrigger: {
+            trigger: ".serviceCardContainer",
+            start: "2.5% top",
+            end: `+=${totalScroll}`,
+            pin: true,
+            scrub: true,
+          },
+        });
+      }
+    }
+
+    gsap.from("#ourExpertiseText", {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: "#ourExpertiseText",
+        start: "top bottom",
+        scrub: 1.5,
+      },
+    });
+    gsap.utils.toArray<HTMLElement>(".cardContainer").forEach((card) => {
+      const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: ".serviceCardContainer",
-          start: "10% top",
-          end: `+=${totalScroll}`,
-          pin: true,
-          scrub: true,
+          trigger: card,
+          start: "top 80%",
+          end: "center center",
+          scrub: 1.5,
         },
       });
-    }
+
+      tl.from(card.querySelectorAll(".cardTitle"), {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.3,
+      });
+
+      tl.from(
+        card.querySelectorAll(".cardDesc"),
+        {
+          y: 50,
+          opacity: 0,
+          duration: 1,
+          stagger: 0.3,
+        },
+        "<0.2"
+      );
+      tl.from(
+        card.querySelectorAll(".cardSubDesc"),
+        {
+          y: 50,
+          opacity: 0,
+          duration: 1,
+          stagger: 0.2,
+        },
+        "<0.2"
+      );
+    });
+
+    const servicesPageParagraphSplit = new SplitText(".servicePageText", {
+      type: "lines",
+      linesClass: "line-wrapper",
+    });
+    gsap.from(servicesPageParagraphSplit.lines, {
+      opacity: 0,
+      yPercent: 100,
+      duration: 2,
+      ease: "expo.out",
+      stagger: 0.2,
+      delay: 0.6,
+      scrollTrigger: {
+        trigger: ".servicePageText",
+        start: "top 60%",
+        scrub: 1,
+      },
+    });
   });
   return (
     <div className="flex flex-col items-center gap-8">
       <CircularBrand />
       <div
-        id="workTitle"
+        id="servicePageTitle"
         className="flex flex-col w-full text-[50px] md:text-[110px] lg:text-[90px] text-center leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
       >
         <span>experience</span>
@@ -64,8 +162,8 @@ const Services = () => {
       </div>
 
       <div
-        id="workDesc"
-        className="flex flex-col text-center uppercase text-xs syne-normal text-(--text-color)"
+        id="servicePageDesc"
+        className="flex flex-col text-center uppercase text-lg syne-normal text-(--text-color)"
       >
         <span>Experience the wild array of</span>
         <span>services that make your company</span>
@@ -84,7 +182,7 @@ const Services = () => {
 
       <div
         id="thirdPage2ndDesc"
-        className="flex flex-col text-center syne-normal text-(--text-color-2) text-[50px] mt-40"
+        className="flex flex-col text-center syne-normal text-(--text-color-2) text-xl md:text-[36px] lg:text-[50px] mt-40"
       >
         <span className="thirdPage2ndDescSpan">
           In the wild digital realm, we craft
@@ -97,7 +195,7 @@ const Services = () => {
 
       <div className="relative">
         <img src={lionGroup} alt="lion group" />
-        <div className="flex flex-col justify-center items-center w-full h-full absolute top-0 text-white text-center leading-[0.75] text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+        <div className="flex flex-col justify-center items-center w-full h-full absolute top-0 text-white text-center leading-[0.75] text-[6rem] md:text-[8rem] lg:text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
           <span>boundless</span>
           <span>creative</span>
           <span>realm.</span>
@@ -105,16 +203,16 @@ const Services = () => {
       </div>
 
       <div className="">
-        <div className="syne-normal text-(--text-color) text-[48px] mt-40 leading-14">
-          <p>
+        <div className="syne-normal text-(--text-color) text-2xl lg:text-[48px] mt-40 lg:leading-14">
+          <p className="servicePageText">
             We're here to make tech businesses roar in the digital jungle,
             crafting valuable impact through design, branding, and development
             services.
           </p>
         </div>
         <div className="mt-10 flex justify-end">
-          <div className="text-(--text-color) syne-normal w-1/2 space-y-4 text-xl">
-            <p>
+          <div className="text-(--text-color) syne-normal md:w-1/2 space-y-4 lg:text-xl">
+            <p className="servicePageText">
               Challenges are the soil where our growth blossoms. Armed with
               digital prowess, we fearlessly overcome them. Bring your branding,
               web design, and creative challenges; our lionhearted approach will
@@ -128,18 +226,20 @@ const Services = () => {
         {serviceLists.map((service) => (
           <div
             key={service.id}
-            className="flex bg-(--card-bg) rounded-4xl p-20"
+            className="cardContainer md:flex bg-(--card-bg) rounded-4xl p-10 md:p-14 lg:p-20"
           >
-            <div className="w-1/2 leading-[0.8] text-[80px] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
-              <p className="">{service.title1}</p>
-              <p className="">{service.title2}</p>
+            <div className="md:w-1/2 flex md:flex-col leading-[0.8] text-[60px] lg:text-[80px] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+              <p className="cardTitle">{service.title1}</p>
+              <p className="cardTitle">{service.title2}</p>
             </div>
 
-            <div className="w-1/2 syne-normal flex flex-col gap-8">
-              <div className="text-xl w-[95%]">{service.desc}</div>
+            <div className="md:w-1/2 syne-normal flex flex-col gap-8 mt-5 md:mt-0">
+              <div className="cardDesc text-xl lg:text-xl w-[95%]">
+                {service.desc}
+              </div>
               <div className="grid grid-cols-2">
                 {service.content.map((item) => (
-                  <div className="text-xl">{item}</div>
+                  <div className="cardSubDesc text-lg lg:text-xl">{item}</div>
                 ))}
               </div>
             </div>
@@ -148,7 +248,7 @@ const Services = () => {
       </div>
 
       <div className="syne-normal text-(--text-color) text-center text-[44px] mt-20">
-        <p>Our expertise</p>
+        <p id="ourExpertiseText">Our expertise</p>
 
         <div className="w-screen">
           <ThreeDScrollTriggerContainer className="my-10">
@@ -156,7 +256,7 @@ const Services = () => {
               {techStackListsA.map(({ id, image }) => (
                 <div
                   key={id}
-                  className="size-90 bg-(--card-bg) mx-1 rounded-3xl flex justify-center items-center mb-1"
+                  className="size-60 lg:size-90 bg-(--card-bg) mx-1 rounded-3xl flex justify-center items-center mb-1"
                 >
                   <img
                     src={image}
@@ -170,7 +270,7 @@ const Services = () => {
               {techStackListsB.map(({ id, image }) => (
                 <div
                   key={id}
-                  className="size-90 bg-(--card-bg) mx-1 rounded-3xl flex justify-center items-center"
+                  className="size-60 lg:size-90 bg-(--card-bg) mx-1 rounded-3xl flex justify-center items-center"
                 >
                   <img
                     key={id}
@@ -199,23 +299,23 @@ const Services = () => {
             <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div>
           </div>
         </div>
-        <p className="syne-normal mx-auto text-3xl text-(--text-color) w-[55%]">
+        <p className="servicePageText syne-normal mx-auto text-3xl text-(--text-color) w-[55%]">
           These pillars support excellence in the digital jungle.
         </p>
       </div>
 
       <div className="">
-        <div className="w-screen flex serviceCardContainer">
+        <div className="w-screen md:flex serviceCardContainer cardContainer">
           {processLists.map((process) => (
             <div
               key={process.id}
-              className="serviceCard border-2 border-(--foreground) rounded-3xl p-14 text-(--text-color) syne-normal m-5 w-[550px] shrink-0"
+              className="serviceCard border-2 border-(--foreground) rounded-3xl p-14 text-(--text-color) syne-normal mx-auto my-5 lg:m-5 w-[90%] md:w-[550px] shrink-0"
             >
-              <div className="text-[50px]">{process.id}.</div>
-              <div className="text-[50px] my-4">{process.title}</div>
-              <div className="mt-40">
+              <div className="cardTitle text-[50px]">{process.id}.</div>
+              <div className="cardTitle text-[50px] my-4">{process.title}</div>
+              <div className="mt-20 lg:mt-40">
                 {process.lists.map((lists) => (
-                  <div className="text-xl">{lists}</div>
+                  <div className="cardSubDesc text-2xl">{lists}</div>
                 ))}
               </div>
             </div>

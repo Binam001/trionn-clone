@@ -1,6 +1,7 @@
 import { CircleArrowDown } from "lucide-react";
 import Button from "../components/Button";
 import gsap from "gsap";
+import { SplitText } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import IntroVideo from "../components/IntroVideo";
 import RecentWork from "../components/section/RecentWork";
@@ -17,15 +18,29 @@ import { motion } from "framer-motion";
 
 const LandingPage = () => {
   useGSAP(() => {
-    gsap.fromTo(
-      "#text1",
-      { rotationX: 90, opacity: 0, y: 50 },
-      { rotationX: 0, opacity: 1, y: 0, duration: 2, ease: "power3.out" }
-    );
-    gsap.from("#introDesc", {
-      y: 30,
+    const servicesPageTitleParagraphSplit = new SplitText("#landingPageTitle", {
+      type: "lines",
+      linesClass: "line-wrapper",
+    });
+    gsap.from(servicesPageTitleParagraphSplit.lines, {
       opacity: 0,
-      duration: 1.5,
+      filter: "blur(100px)",
+      yPercent: 100,
+      duration: 2,
+      ease: "expo.out",
+      stagger: 0.2,
+      delay: 0.6,
+    });
+    const servicesPageDescParagraphSplit = new SplitText("#landingPageDesc", {
+      type: "lines",
+      linesClass: "line-wrapper",
+    });
+    gsap.from(servicesPageDescParagraphSplit.lines, {
+      opacity: 0,
+      yPercent: 100,
+      duration: 2,
+      ease: "expo.out",
+      stagger: 0.2,
       delay: 1,
     });
 
@@ -61,15 +76,15 @@ const LandingPage = () => {
   });
   return (
     <motion.div
-      initial={{ y: 100, opacity: 0 }}
+      initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      exit={{ y: -100, opacity: 0 }}
+      // exit={{ y: -100, opacity: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="py-16 md:py-0">
         <CircularBrand />
         <div
-          id="text1"
+          id="landingPageTitle"
           className="text-[50px] md:text-[110px] lg:text-[115px] text-center leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
         >
           <p>roar in the</p>
@@ -77,7 +92,7 @@ const LandingPage = () => {
         </div>
 
         <p
-          id="introDesc"
+          id="landingPageDesc"
           className="text-xs text-(--text-color) uppercase text-center syne-normal mt-5"
         >
           We roar with success, delivering the TRIONN®

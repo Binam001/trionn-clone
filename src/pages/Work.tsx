@@ -2,6 +2,7 @@ import { CircleArrowDown } from "lucide-react";
 import CircularBrand from "../components/CircularBrand";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { SplitText } from "gsap/all";
 import { workLists } from "../constants";
 import Footer from "../components/section/Footer";
 
@@ -13,25 +14,29 @@ const groupedPairs = [
 
 const Work = () => {
   useGSAP(() => {
-    gsap.fromTo(
-      "#workTitle",
-      {
-        opacity: 0,
-        y: 50,
-        rotationX: 90,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        rotationX: 0,
-        duration: 2,
-        ease: "power3.out",
-      }
-    );
-    gsap.from("#workDesc", {
-      y: 30,
+    const servicesPageTitleParagraphSplit = new SplitText("#workPageTitle", {
+      type: "lines",
+      linesClass: "line-wrapper",
+    });
+    gsap.from(servicesPageTitleParagraphSplit.lines, {
       opacity: 0,
-      duration: 1.5,
+      filter: "blur(100px)",
+      yPercent: 100,
+      duration: 2,
+      ease: "expo.out",
+      stagger: 0.2,
+      delay: 0.6,
+    });
+    const servicesPageDescParagraphSplit = new SplitText("#workPageDesc", {
+      type: "lines",
+      linesClass: "line-wrapper",
+    });
+    gsap.from(servicesPageDescParagraphSplit.lines, {
+      opacity: 0,
+      yPercent: 100,
+      duration: 2,
+      ease: "expo.out",
+      stagger: 0.2,
       delay: 1,
     });
 
@@ -68,7 +73,7 @@ const Work = () => {
     <div className="flex flex-col items-center gap-8">
       <CircularBrand />
       <div
-        id="workTitle"
+        id="workPageTitle"
         className="flex flex-col w-full text-[50px] md:text-[110px] lg:text-[90px] text-center leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
       >
         <span>our creative</span>
@@ -77,8 +82,8 @@ const Work = () => {
       </div>
 
       <div
-        id="workDesc"
-        className="flex flex-col text-center uppercase text-xs syne-normal text-(--text-color)"
+        id="workPageDesc"
+        className="flex flex-col text-center uppercase text-lg syne-normal text-(--text-color)"
       >
         <span>Our creative legacy roars with</span>
         <span>pride as we showcase the value we</span>

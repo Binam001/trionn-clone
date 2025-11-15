@@ -16,21 +16,31 @@ import {
 
 const Team = () => {
   useGSAP(() => {
-    gsap.fromTo(
-      "#teamTitle",
-      {
-        opacity: 0,
-        y: 50,
-        rotationX: 90,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        rotationX: 0,
-        duration: 2,
-        ease: "power3.out",
-      }
-    );
+    const servicesPageTitleParagraphSplit = new SplitText("#teamPageTitle", {
+      type: "lines",
+      linesClass: "line-wrapper",
+    });
+    gsap.from(servicesPageTitleParagraphSplit.lines, {
+      opacity: 0,
+      filter: "blur(100px)",
+      yPercent: 100,
+      duration: 2,
+      ease: "expo.out",
+      stagger: 0.2,
+      delay: 0.6,
+    });
+    const servicesPageDescParagraphSplit = new SplitText("#teamPageDesc", {
+      type: "lines",
+      linesClass: "line-wrapper",
+    });
+    gsap.from(servicesPageDescParagraphSplit.lines, {
+      opacity: 0,
+      yPercent: 100,
+      duration: 2,
+      ease: "expo.out",
+      stagger: 0.2,
+      delay: 1,
+    });
     gsap.to(".textShadow1, .textShadow2, .textShadow3", {
       xPercent: 100,
       stagger: 0.2,
@@ -55,6 +65,7 @@ const Team = () => {
       scrollTrigger: {
         trigger: ".secondDesc",
         start: "top bottom",
+        end: "center center",
         scrub: 1.5,
       },
     });
@@ -123,7 +134,7 @@ const Team = () => {
     <div className="flex flex-col items-center gap-8 syne-normal text-(--text-color)">
       <CircularBrand />
       <div
-        id="teamTitle"
+        id="teamPageTitle"
         className="flex flex-col w-full text-[50px] md:text-[110px] lg:text-[90px] text-center leading-[0.75] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
       >
         <span>each and</span>
@@ -132,8 +143,8 @@ const Team = () => {
       </div>
 
       <div
-        // id="workDesc"
-        className="firstDesc flex flex-col text-center uppercase text-xs"
+        id="teamPageDesc"
+        className="flex flex-col text-center uppercase text-lg"
       >
         <span>If you also see yourself as the king or</span>
 
@@ -202,7 +213,7 @@ const Team = () => {
             <div className="textShadow3 bg-(--background) w-full h-full absolute top-0 -mt-6 opacity-90"></div>
           </div>
         </div>
-        <div className="mx-auto text-3xl  w-[60%]">
+        <div className="mx-auto text-3xl w-[60%]">
           We are always looking for the best talent in the digital jungle.
         </div>
       </div>

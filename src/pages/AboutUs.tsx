@@ -20,21 +20,31 @@ const AboutUs = () => {
   //   animation();
   // });
   useGSAP(() => {
-    gsap.fromTo(
-      "#aboutUsTitle",
-      {
-        opacity: 0,
-        y: 50,
-        rotationX: 90,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        rotationX: 0,
-        duration: 2,
-        ease: "power3.out",
-      }
-    );
+    const servicesPageTitleParagraphSplit = new SplitText("#aboutUsPageTitle", {
+      type: "lines",
+      linesClass: "line-wrapper",
+    });
+    gsap.from(servicesPageTitleParagraphSplit.lines, {
+      opacity: 0,
+      filter: "blur(100px)",
+      yPercent: 100,
+      duration: 2,
+      ease: "expo.out",
+      stagger: 0.2,
+      delay: 0.6,
+    });
+    const servicesPageDescParagraphSplit = new SplitText("#aboutUsPageDesc", {
+      type: "lines",
+      linesClass: "line-wrapper",
+    });
+    gsap.from(servicesPageDescParagraphSplit.lines, {
+      opacity: 0,
+      yPercent: 100,
+      duration: 2,
+      ease: "expo.out",
+      stagger: 0.2,
+      delay: 1,
+    });
     gsap.from("#aboutUsDesc", {
       y: 30,
       opacity: 0,
@@ -175,7 +185,7 @@ const AboutUs = () => {
     <div className="flex flex-col items-center gap-8">
       <CircularBrand />
       <div
-        id="aboutUsTitle"
+        id="aboutUsPageTitle"
         className="flex flex-col w-full text-[50px] md:text-[90px] text-center leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
       >
         <span>a</span>
@@ -184,8 +194,8 @@ const AboutUs = () => {
       </div>
 
       <div
-        id="aboutUsDesc"
-        className="firstDesc flex flex-col text-center uppercase text-xs syne-normal text-(--text-color)"
+        id="aboutUsPageDesc"
+        className="firstDesc flex flex-col text-center uppercase text-lg syne-normal text-(--text-color)"
       >
         <span>Combining the latest trends in design, tech, branding and</span>
         <span>

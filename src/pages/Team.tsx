@@ -131,7 +131,7 @@ const Team = () => {
     });
   });
   return (
-    <div className="flex flex-col items-center gap-8 syne-normal text-(--text-color)">
+    <div className="flex flex-col items-center gap-8 mt-10 syne-normal text-(--text-color)">
       <CircularBrand />
       <div
         id="teamPageTitle"
@@ -144,7 +144,7 @@ const Team = () => {
 
       <div
         id="teamPageDesc"
-        className="flex flex-col text-center uppercase text-lg"
+        className="flex flex-col text-center uppercase lg:text-lg"
       >
         <span>If you also see yourself as the king or</span>
 
@@ -160,32 +160,29 @@ const Team = () => {
 
       <div
         // id="fourthPage2ndDesc"
-        className="secondDesc flex flex-col text-center text-(--text-color-2) text-[50px] mt-40"
+        className="secondDesc flex flex-col text-center text-(--text-color-2) text-xl md:text-[36px] lg:text-[50px] mt-40"
       >
-        <span className="fourthPage2ndDescSpan">
-          Our work excels, driven by our
-        </span>
-        <span className="fourthPage2ndDescSpan">
-          wild and creative team, delivering
-        </span>
-        <span className="fourthPage2ndDescSpan">the highest quality.</span>
+        <p className="">
+          Our work excels, driven by our wild and creative team, delivering the
+          highest quality.
+        </p>
       </div>
 
-      <div className="relative">
+      <div className="relative w-screen">
         <img src={lionGroup} alt="lion group" />
-        <div className="imgText flex flex-col justify-center items-center w-full h-full absolute top-0 text-white text-center leading-[0.75] text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+        <div className="imgText flex flex-col justify-center items-center w-full h-full absolute top-0 text-white text-center leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
           <span>born with</span>
           <span>creative</span>
           <span>instincts.</span>
         </div>
       </div>
 
-      <div className="">
-        <div className="thirdDesc text-[48px] mt-40 leading-14 w-1/2">
+      <div className="w-full">
+        <div className="thirdDesc w-ful lg:w-1/2 text-[48px] mt-40 leading-14 ">
           <p>In the heart of our wild team, we find our strength.</p>
         </div>
         <div className="mt-10 flex justify-end">
-          <div className="thirdDescP w-1/2 space-y-4 text-xl">
+          <div className="thirdDescP lg:w-1/2 space-y-4 text-xl">
             <p>
               In our creative jungle, designers, thinkers, strategists unite
               like a lion's roar, crafting vibrant projects resonating with the
@@ -198,19 +195,19 @@ const Team = () => {
       <TeamCard />
 
       <div className="text-center space-y-4 mt-20">
-        <div className="relative text-[200px] leading-[0.75] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+        <div className="relative text-[100px] lg:text-[200px] leading-[0.75] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
           <div className="relative">
             <p>wanna</p>
-            <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-6 opacity-90"></div>
+            <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div>
           </div>
 
           <div className="relative">
             <p>join</p>
-            <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-6 opacity-90"></div>
+            <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div>
           </div>
           <div className="relative">
             <p>trionn?</p>
-            <div className="textShadow3 bg-(--background) w-full h-full absolute top-0 -mt-6 opacity-90"></div>
+            <div className="textShadow3 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div>
           </div>
         </div>
         <div className="mx-auto text-3xl w-[60%]">
@@ -227,23 +224,21 @@ const Team = () => {
         />
       </div>
 
-      <div className="text-left w-[60%] mt-10 space-y-3">
-        <div className="flex flex-col text-[50px] leading-[1.2]">
-          <span>Do you aspire to</span>
-          <span>be like a lion?</span>
-        </div>
-        <div className="flex flex-col text-xl">
-          <span>Like a powerful lion joining our pack, every fresh</span>
-          <span>team member strengthens our innovative and</span>
-          <span>diligent wilderness.</span>
-        </div>
+      <div className="text-left lg:w-[75%] mt-10 space-y-3">
+        <p className="lg:w-[50%] text-5xl md:text-[60px] leading-[1.2]">
+          Do you aspire to be like a lion?
+        </p>
+        <p className="lg:w-[70%] text-xl md:text-3xl">
+          Like a powerful lion joining our pack, every fresh team member
+          strengthens our innovative and diligent wilderness.
+        </p>
       </div>
 
-      <div className="w-[60%] mt-10">
+      <div className="w-full lg:w-[75%] mt-10">
         {teamHireLists.map((hire) => (
           <div
             key={hire.id}
-            className=" text-3xl flex justify-between border-y py-10"
+            className="text-3xl flex flex-col md:flex-row md:justify-between gap-6 md:gap-0 border-y py-10"
           >
             <span>{hire.post}</span>
             <Button title="Apply now!" />
@@ -264,7 +259,7 @@ const Team = () => {
                   <img
                     src={event.image}
                     alt={`eventA + ${event.id}`}
-                    className="w-96 h-80 rounded-3xl object-cover"
+                    className="w-72 h-56 lg:w-96 lg:h-80 rounded-3xl object-cover"
                   />
                 </div>
               ))}
@@ -275,7 +270,7 @@ const Team = () => {
                   <img
                     src={event.image}
                     alt={`eventB + ${event.id}`}
-                    className="w-96 h-80 rounded-3xl object-cover"
+                    className="w-72 h-56 lg:w-96 lg:h-80 rounded-3xl object-cover"
                   />
                 </div>
               ))}

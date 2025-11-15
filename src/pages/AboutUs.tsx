@@ -14,11 +14,8 @@ import {
 } from "../components/lightswind/3d-scroll-trigger";
 import { partnerSideA, partnerSideB } from "../constants";
 import ImageReveal from "../components/lightswind/image-reveal";
-// import { animation } from "../components/animation/index";
+
 const AboutUs = () => {
-  // document.addEventListener("DOMContentLoaded", () => {
-  //   animation();
-  // });
   useGSAP(() => {
     const servicesPageTitleParagraphSplit = new SplitText("#aboutUsPageTitle", {
       type: "lines",
@@ -64,8 +61,6 @@ const AboutUs = () => {
 
     gsap.to(".textShadow1, .textShadow2", {
       xPercent: 100,
-      // width: 0,
-      // opacity: 0,
       stagger: 0.2,
       duration: 1.5,
       scrollTrigger: {
@@ -74,23 +69,6 @@ const AboutUs = () => {
         scrub: 1.5,
       },
     });
-
-    // const paragraphSplit = new SplitText(".secondDesc, .thirdDesc", {
-    //   type: "lines",
-    //   linesClass: "line-wrapper",
-    // });
-
-    // gsap.from(paragraphSplit.lines, {
-    //   y: 100,
-    //   opacity: 0,
-    //   duration: 0.8,
-    //   stagger: 0.2,
-    //   scrollTrigger: {
-    //     trigger: ".secondDesc, .thirdDesc",
-    //     start: "top bottom",
-    //     scrub: 1.5,
-    //   },
-    // });
 
     const secondParagraphSplit = new SplitText(".secondDesc", {
       type: "lines",
@@ -143,6 +121,7 @@ const AboutUs = () => {
       opacity: 0,
       yPercent: 100,
       duration: 1.5,
+      delay: 0.5,
       scrollTrigger: {
         trigger: "#btn",
         start: "top bottom",
@@ -176,17 +155,18 @@ const AboutUs = () => {
       scrollTrigger: {
         trigger: "#honorsAwardsDesc",
         start: "top bottom",
+        end: "center center",
         scrub: 1.5,
       },
     });
   });
 
   return (
-    <div className="flex flex-col items-center gap-8">
+    <div className="flex flex-col items-center gap-8 mt-10">
       <CircularBrand />
       <div
         id="aboutUsPageTitle"
-        className="flex flex-col w-full text-[50px] md:text-[90px] text-center leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
+        className="flex flex-col w-full text-[50px] md:text-[110px] text-center leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
       >
         <span>a</span>
         <span>versatile</span>
@@ -195,13 +175,13 @@ const AboutUs = () => {
 
       <div
         id="aboutUsPageDesc"
-        className="firstDesc flex flex-col text-center uppercase text-lg syne-normal text-(--text-color)"
+        className="flex flex-col text-center uppercase lg:text-lg syne-normal text-(--text-color)"
       >
-        <span>Combining the latest trends in design, tech, branding and</span>
-        <span>
-          many other fields is what we do best. We don't settle to view
-        </span>
-        <span>the world from one perspective.</span>
+        <p>
+          Combining the latest trends in design, tech, branding and many other
+          fields is what we do best. We don't settle to view the world from one
+          perspective.
+        </p>
       </div>
 
       <div className="flex justify-center">
@@ -216,7 +196,7 @@ const AboutUs = () => {
 
       <div
         id="aboutSecondDesc"
-        className="secondDesc flex flex-col text-center syne-normal text-(--text-color) text-3xl lg:text-[50px] mt-0 lg:mt-40 w-full"
+        className="secondDesc flex flex-col text-center syne-normal text-(--text-color) text-xl md:text-[36px] lg:text-[50px] mt-20 lg:mt-40 w-full"
       >
         <span className="secondDescSpan">
           TRIONN® has a roaring 20+ years history
@@ -225,13 +205,13 @@ const AboutUs = () => {
         <span className="secondDescSpan">corporate jungle.</span>
       </div>
 
-      <div className="relative mt-20 w-full">
+      <div className="relative mt-20 w-screen">
         <img
           src={lionGroup}
           alt="lion group"
           className="w-full h-full object-cover"
         />
-        <div className="imgText flex flex-col justify-center items-center w-full h-full absolute top-0 text-white text-center leading-[0.75] text-[120px] lg:text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+        <div className="imgText flex flex-col justify-center items-center w-full h-full absolute top-0 text-white text-center leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
           <span>majestic</span>
           <span>designs</span>
           <span>since</span>
@@ -239,8 +219,8 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className="">
-        <div className="thirdDesc syne-normal text-(--text-color-2) text-4xl lg:text-[48px] mt-40 leading-12 lg:leading-14">
+      <div className="w-full">
+        <div className="thirdDesc w-full syne-normal text-(--text-color-2) text-3xl md:text-4xl lg:text-[48px] mt-40 leading-12 lg:leading-14">
           <p className="">
             Embracing the journey, we cater to every need, collaborating to pave
             the road for our diverse creative services to flourish in the
@@ -249,11 +229,11 @@ const AboutUs = () => {
             branding, development, and evaluation.
           </p>
         </div>
-        <div className="mt-10 flex">
-          <div id="btn" className="w-1/2">
+        <div className="mt-10 flex flex-col-reverse lg:flex lg:flex-row">
+          <div id="btn" className="lg:w-1/2 mt-10 lg:mt-0">
             <Button title="TRIONN® name story" />
           </div>
-          <div className="thirdDescP text-(--text-color) syne-normal w-1/2 space-y-4 text-xl">
+          <div className="thirdDescP text-(--text-color) syne-normal lg:w-1/2 space-y-4 text-xl">
             <p>
               Infused with the lion's determination, we partner intimately with
               clients, exploring their lofty goals and subtle nuances, adeptly
@@ -316,8 +296,8 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className="text-center space-y-4">
-        <div className="relative text-[120px] lg:text-[200px] leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+      <div className="text-center space-y-4 mt-10">
+        <div className="relative text-[80px] md:text-[120px] lg:text-[200px] leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
           <div className="relative">
             <p>honors</p>
             <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div>
@@ -330,7 +310,7 @@ const AboutUs = () => {
         </div>
         <div
           id="honorsAwardsDesc"
-          className="syne-normal mx-auto text-3xl text-(--text-color) w-[80%] flex flex-col"
+          className="syne-normal mx-auto text-xl lg:text-3xl text-(--text-color) w-full lg:w-[80%] flex flex-col"
         >
           <span>We're India's top award-winning digital</span>
           <span>agency, carving our own path in the digital</span>

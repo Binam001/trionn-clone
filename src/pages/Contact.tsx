@@ -83,7 +83,7 @@ const Contact = () => {
     });
   });
   return (
-    <div className="flex flex-col items-center gap-8 text-(--text-color)">
+    <div className="flex flex-col items-center gap-8 mt-10 text-(--text-color)">
       <CircularBrand />
       <div
         id="contactPageTitle"
@@ -110,9 +110,9 @@ const Contact = () => {
         </a>
       </div>
 
-      <div className="w-[70%]">
-        <div className="flex gap-10 text-(--text-color)/60 my-20">
-          <div className="flex gap-10 text-[45px] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+      <div className="w-full lg:px-20">
+        <div className="flex flex-col md:flex-row md:justify-between gap-5 text-(--text-color)/60 my-20">
+          <div className="flex justify-between gap-10 lg:gap-32 text-3xl md:text-[45px] lg:text-[60px] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
             <div className="">
               <button
                 onClick={() => handleButtonClick("button1")}
@@ -142,7 +142,7 @@ const Contact = () => {
               </button>
             </div>
           </div>
-          <div className="text-3xl">
+          <div className="text-xl md:text-4xl">
             <div>{timeInfo.timeString}</div>
           </div>
         </div>
@@ -150,8 +150,8 @@ const Contact = () => {
         <div className="">
           <div>
             <form action="" className="syne-normal">
-              <div className="grid grid-cols-2 gap-8">
-                <div className="flex flex-col gap-4">
+              <div className="lg:grid lg:grid-cols-2 gap-8 space-y-6 lg:space-y-0">
+                <div className="flex flex-col gap-2 lg:gap-4">
                   <label htmlFor="name">Name*</label>
                   <input
                     id="name"
@@ -259,7 +259,7 @@ const Contact = () => {
       </div>
 
       <div className="space-y-4 mt-20 w-full">
-        <div className="relative text-[200px] leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+        <div className="relative text-[100px] lgtext-[200px] leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
           <div className="relative">
             <p className="our">our</p>
             <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-6 opacity-90"></div>
@@ -287,7 +287,7 @@ const Contact = () => {
           >
             <div className="text-(--text-color)/60">{footer.title}</div>
             {/* <div className="space-x-5">{footer.link}</div> */}
-            <div className="flex flex-row gap-5">
+            <div className="flex flex-row flex-wrap gap-5">
               {footer.link.map((link) => (
                 <button>{link}</button>
               ))}

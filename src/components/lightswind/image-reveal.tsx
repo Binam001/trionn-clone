@@ -20,7 +20,7 @@ const visualData: VisualItem[] = [
   {
     key: 1,
     label: (
-      <div className="flex justify-between">
+      <div className="flex items-center flex-col lg:flex-row lg:justify-between">
         <div className="text-3xl">A' Design Awards & competition</div>
         <div className="text-2xl">Silver Medal</div>
       </div>
@@ -30,7 +30,7 @@ const visualData: VisualItem[] = [
   {
     key: 2,
     label: (
-      <div className="flex justify-between">
+      <div className="flex items-center flex-col lg:flex-row lg:justify-between">
         <div className="text-3xl">AWWWARDS</div>
         <div className="text-2xl">2x - Honnerable Mention</div>
       </div>
@@ -40,7 +40,7 @@ const visualData: VisualItem[] = [
   {
     key: 3,
     label: (
-      <div className="flex justify-between">
+      <div className="flex items-center flex-col lg:flex-row lg:justify-between">
         <div className="text-3xl">CSS Design Awards</div>
         <div className="text-2xl">2x - Website of the day</div>
       </div>
@@ -50,7 +50,7 @@ const visualData: VisualItem[] = [
   {
     key: 4,
     label: (
-      <div className="flex justify-between">
+      <div className="flex items-center flex-col lg:flex-row lg:justify-between">
         <div className="text-3xl">CSS Winners</div>
         <div className="text-2xl">2x - Website of the day</div>
       </div>
@@ -60,7 +60,7 @@ const visualData: VisualItem[] = [
   {
     key: 5,
     label: (
-      <div className="flex justify-between">
+      <div className="flex items-center flex-col lg:flex-row lg:justify-between">
         <div className="text-3xl">CSS Reels</div>
         <div className="text-2xl">Featured of the day</div>
       </div>
@@ -70,7 +70,7 @@ const visualData: VisualItem[] = [
   {
     key: 6,
     label: (
-      <div className="flex justify-between">
+      <div className="flex items-center flex-col lg:flex-row lg:justify-between">
         <div className="text-3xl">Web Guru</div>
         <div className="text-2xl">2x - Guru of the day</div>
       </div>
@@ -117,54 +117,36 @@ const ImageReveal: React.FC = () => {
       onMouseLeave={onHoverDeactivate}
     >
       {visualData.map((item) => (
-        // <div
-        //   key={item.key}
-        //   className="p-4 cursor-pointer relative sm:flex items-center justify-between"
-        //   onMouseEnter={() => onHoverActivate(item)}
-        // >
-        //   {!isLargeScreen && (
-        //     <img
-        //       src={item.url}
-        //       className="sm:w-32 sm:h-20 w-full h-52 object-cover rounded-md"
-        //       alt={item.label}
-        //     />
-        //   )}
-        //   <h2
-        //     className={`newFont uppercase md:text-5xl sm:text-2xl text-xl font-semibold sm:py-6 py-2 leading-[100%] relative transition-colors duration-300 ${
-        //       focusedItem?.key === item.key
-        //         ? "mix-blend-difference z-20 text-gray-300"
-        //         : "text-foreground"
-        //     }`}
-        //   >
-        //     {item.label}
-        //   </h2>
-        //   {/* <button
-        //     className={`sm:block hidden p-4 rounded-full transition-all duration-300 ease-out ${
-        //       focusedItem?.key === item.key
-        //         ? "mix-blend-difference z-20 bg-white text-black"
-        //         : ""
-        //     }`}
-        //   >
-        //     <ArrowIcon className="w-8 h-8" />
-        //   </button> */}
-        //   <div
-        //     className={`h-[2px] dark:bg-white bg-black absolute bottom-0 left-0 transition-all duration-300 ease-linear ${
-        //       focusedItem?.key === item.key ? "w-full" : "w-0"
-        //     }`}
-        //   />
-        // </div>
-
-        <div
-          className="hover:scale-[1.1] hover:w-[90%] transition-all duration-1000 w-[70%] mx-auto"
-          onMouseEnter={() => onHoverActivate(item)}
-        >
-          <li
-            key={item.key}
-            className="flex justify-between w-full text-(--text-color)"
-          >
-            <div className="text-3xl w-full">{item.label}</div>
-          </li>
-          <hr className="text-(--text-color) h-1 w-full my-10" />
+        <div>
+          {isLargeScreen ? (
+            <div
+              className="hover:scale-[1.1] hover:w-[90%] transition-all duration-1000 w-[70%] mx-auto"
+              onMouseEnter={() => onHoverActivate(item)}
+            >
+              <div
+                key={item.key}
+                className="flex justify-between w-full text-(--text-color)"
+              >
+                <div className="w-full">{item.label}</div>
+              </div>
+              <hr className="text-(--text-color) text-2xl h-1 w-full my-10" />
+            </div>
+          ) : (
+            <div className="w-[90%] mx-auto">
+              <div
+                key={item.key}
+                className="flex flex-col items-center gap-4 text-(--text-color)"
+              >
+                <img
+                  src={item.url}
+                  alt={item.label}
+                  className="size-20 rounded-xl"
+                />
+                <div className="w-full">{item.label}</div>
+              </div>
+              <hr className="text-(--text-color) text-xl h-1 w-full my-10" />
+            </div>
+          )}
         </div>
       ))}
 

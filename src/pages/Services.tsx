@@ -73,7 +73,7 @@ const Services = () => {
           duration: serviceCard.length,
           scrollTrigger: {
             trigger: ".serviceCardContainer",
-            start: "2.5% top",
+            start: "top top",
             end: `+=${totalScroll}`,
             pin: true,
             scrub: true,
@@ -150,7 +150,7 @@ const Services = () => {
     });
   });
   return (
-    <div className="flex flex-col items-center gap-8">
+    <div className="flex flex-col items-center gap-8 mt-10">
       <CircularBrand />
       <div
         id="servicePageTitle"
@@ -163,7 +163,7 @@ const Services = () => {
 
       <div
         id="servicePageDesc"
-        className="flex flex-col text-center uppercase text-lg syne-normal text-(--text-color)"
+        className="flex flex-col text-center uppercase lg:text-lg syne-normal text-(--text-color)"
       >
         <span>Experience the wild array of</span>
         <span>services that make your company</span>
@@ -193,9 +193,9 @@ const Services = () => {
         <span className="thirdPage2ndDescSpan">friendly innovation.</span>
       </div>
 
-      <div className="relative">
+      <div className="relative w-screen">
         <img src={lionGroup} alt="lion group" />
-        <div className="flex flex-col justify-center items-center w-full h-full absolute top-0 text-white text-center leading-[0.75] text-[6rem] md:text-[8rem] lg:text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+        <div className="flex flex-col justify-center items-center w-full h-full absolute top-0 text-white text-center leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
           <span>boundless</span>
           <span>creative</span>
           <span>realm.</span>
@@ -222,13 +222,13 @@ const Services = () => {
         </div>
       </div>
 
-      <div className="text-(--text-color) mt-32 space-y-6">
+      <div className="text-(--text-color) mt-32 mx-4 lg:mx-0 space-y-6">
         {serviceLists.map((service) => (
           <div
             key={service.id}
             className="cardContainer md:flex bg-(--card-bg) rounded-4xl p-10 md:p-14 lg:p-20"
           >
-            <div className="md:w-1/2 flex md:flex-col leading-[0.8] text-[60px] lg:text-[80px] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+            <div className="md:w-1/2 flex md:flex-col leading-[0.8] text-[50px] lg:text-[80px] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
               <p className="cardTitle">{service.title1}</p>
               <p className="cardTitle">{service.title2}</p>
             </div>
@@ -288,7 +288,7 @@ const Services = () => {
       </div>
 
       <div className="text-center space-y-4 mt-20">
-        <div className="relative text-[130px] lg:text-[200px] leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+        <div className="relative text-[100px] lg:text-[200px] leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
           <div className="relative">
             <p>our</p>
             <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div>
@@ -309,10 +309,14 @@ const Services = () => {
           {processLists.map((process) => (
             <div
               key={process.id}
-              className="serviceCard border-2 border-(--foreground) rounded-3xl p-14 text-(--text-color) syne-normal mx-auto my-5 lg:m-5 w-[90%] md:w-[550px] shrink-0"
+              className="serviceCard border-2 border-(--foreground) rounded-3xl p-8 md:p-14 text-(--text-color) syne-normal mx-auto my-5 lg:m-5 w-[90%] md:w-[550px] shrink-0"
             >
-              <div className="cardTitle text-[50px]">{process.id}.</div>
-              <div className="cardTitle text-[50px] my-4">{process.title}</div>
+              <div className="cardTitle text-[40px] md:text-[50px]">
+                {process.id}.
+              </div>
+              <div className="cardTitle leading-none text-[40px] md:text-[50px] my-4">
+                {process.title}
+              </div>
               <div className="mt-20 lg:mt-40">
                 {process.lists.map((lists) => (
                   <div className="cardSubDesc text-2xl">{lists}</div>

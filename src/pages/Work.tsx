@@ -70,7 +70,7 @@ const Work = () => {
     });
   });
   return (
-    <div className="flex flex-col items-center gap-8">
+    <div className="flex flex-col items-center gap-8 mt-10">
       <CircularBrand />
       <div
         id="workPageTitle"

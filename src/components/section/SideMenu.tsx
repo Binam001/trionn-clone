@@ -9,7 +9,7 @@ interface SideMenuProps {
 const SideMenu = ({ setOpen }: SideMenuProps) => {
   return (
     <div className="text-(--text-color) relative h-screen">
-      <div className="md:flex px-8 lg:px-20 absolute bottom-0 w-full">
+      <div className="md:flex px-8 lg:px-20 absolute bottom-0 w-full mb-5">
         <ul className="w-1/2 text-[80px] lg:text-[100px] leading-[0.8] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
           {sideMenuLists.map((sideMenuItem) => (
             <li
@@ -33,7 +33,7 @@ const SideMenu = ({ setOpen }: SideMenuProps) => {
         </ul>
 
         <div className="w-1/2 text-end flex md:flex-col md:justify-end gap-10">
-          <div className="md:flex flex-col gap-4 text-2xl hidden">
+          <div className="flex flex-col gap-2 md:gap-4 text-2xl mt-6 md:mt-0">
             <a href="">hello@trionn.com</a>
             <a href="" className="">
               +91 98241 82099

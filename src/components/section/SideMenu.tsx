@@ -32,7 +32,7 @@ const SideMenu = ({ setOpen }: SideMenuProps) => {
           ))}
         </ul>
 
-        <div className="w-1/2 md:text-end flex md:flex-col md:justify-end gap-10">
+        <div className="wfull md:w-1/2 md:text-end flex md:flex-col md:justify-end gap-10">
           <div className="flex flex-col gap-2 md:gap-4 text-2xl mt-6 md:mt-0">
             <a href="">hello@trionn.com</a>
             <a href="" className="">

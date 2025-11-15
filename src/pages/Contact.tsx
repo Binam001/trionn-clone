@@ -78,6 +78,7 @@ const Contact = () => {
       scrollTrigger: {
         trigger: ".our, .hideaway",
         start: "top 80%",
+        end: "center center",
         scrub: 1.5,
       },
     });
@@ -262,12 +263,12 @@ const Contact = () => {
         <div className="relative text-[100px] lgtext-[200px] leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
           <div className="relative">
             <p className="our">our</p>
-            <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-6 opacity-90"></div>
+            <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div>
           </div>
 
           <div className="relative">
             <p className="hideaway">hideaway</p>
-            <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-6 opacity-90"></div>
+            <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div>
           </div>
         </div>
         <div className="syne-normal text-(--text-color) flex flex-col space-y-4 text-3xl mt-20">

@@ -11,6 +11,8 @@ const Footer = () => {
       stagger: 0.1,
       scrollTrigger: {
         trigger: "#timeTo",
+        start: "top 80%",
+        end: "center center",
         scrub: 1.5,
       },
     });
@@ -20,6 +22,8 @@ const Footer = () => {
       stagger: 0.1,
       scrollTrigger: {
         trigger: "#roar",
+        start: "top 80%",
+        end: "center center",
         scrub: 1.5,
       },
     });

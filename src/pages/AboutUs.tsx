@@ -221,7 +221,7 @@ const AboutUs = () => {
           alt="lion group"
           className="w-full h-full object-cover"
         />
-        <div className="imgText flex flex-col justify-center items-center w-full h-full absolute top-0 text-(--text-color) text-center leading-[0.75] text-[120px] lg:text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+        <div className="imgText flex flex-col justify-center items-center w-full h-full absolute top-0 text-white text-center leading-[0.75] text-[120px] lg:text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
           <span>majestic</span>
           <span>designs</span>
           <span>since</span>
@@ -282,7 +282,7 @@ const AboutUs = () => {
                   <img
                     src={image}
                     alt={`partnerSideAImg + ${id}`}
-                    className="invert dark:invert-0 size-40"
+                    className="invert dark:invert-0 size-40 object-contain"
                   />
                 </div>
               ))}
@@ -297,7 +297,7 @@ const AboutUs = () => {
                     key={id}
                     src={image}
                     alt={`partnerSideBImg + ${id}`}
-                    className="invert dark:invert-0 size-40"
+                    className="invert dark:invert-0 size-40 object-contain"
                   />
                 </div>
               ))}

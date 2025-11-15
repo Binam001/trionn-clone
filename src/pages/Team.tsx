@@ -16,6 +16,21 @@ import {
 
 const Team = () => {
   useGSAP(() => {
+    gsap.fromTo(
+      "#teamTitle",
+      {
+        opacity: 0,
+        y: 50,
+        rotationX: 90,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        rotationX: 0,
+        duration: 2,
+        ease: "power3.out",
+      }
+    );
     gsap.to(".textShadow1, .textShadow2, .textShadow3", {
       xPercent: 100,
       stagger: 0.2,
@@ -84,12 +99,31 @@ const Team = () => {
         scrub: 1,
       },
     });
+
+    // gsap.from("#lionGroup2", {
+    //   y: 100,
+    //   scrollTrigger: {
+    //     trigger: "#lionGroup2",
+    //     start: "top bottom",
+    //     scrub: 2,
+    //   },
+    // });
+    gsap.from("#ourDigitalJungleText", {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: "#ourDigitalJungleText",
+        start: "top bottom",
+        scrub: 1.5,
+      },
+    });
   });
   return (
     <div className="flex flex-col items-center gap-8 syne-normal text-(--text-color)">
       <CircularBrand />
       <div
-        id="workTitle"
+        id="teamTitle"
         className="flex flex-col w-full text-[50px] md:text-[110px] lg:text-[90px] text-center leading-[0.75] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
       >
         <span>each and</span>
@@ -128,7 +162,7 @@ const Team = () => {
 
       <div className="relative">
         <img src={lionGroup} alt="lion group" />
-        <div className="imgText flex flex-col justify-center items-center w-full h-full absolute top-0  text-center leading-[0.75] text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+        <div className="imgText flex flex-col justify-center items-center w-full h-full absolute top-0 text-white text-center leading-[0.75] text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
           <span>born with</span>
           <span>creative</span>
           <span>instincts.</span>
@@ -173,8 +207,13 @@ const Team = () => {
         </div>
       </div>
 
-      <div className="">
-        <img src={lionGroup2} alt="liongroup" />
+      <div id="lionGroup2Container" className="relative w-screen h-[600px]">
+        <img
+          id="lionGroup2"
+          src={lionGroup2}
+          alt="liongroup2"
+          className="absolute w-full h-full object-cover"
+        />
       </div>
 
       <div className="text-left w-[60%] mt-10 space-y-3">
@@ -202,28 +241,30 @@ const Team = () => {
       </div>
 
       <div className="mt-20">
-        <div className="text-3xl text-center">Our digital jungle!</div>
+        <div id="ourDigitalJungleText" className="text-3xl text-center">
+          Our digital jungle!
+        </div>
 
         <div className="w-screen">
           <ThreeDScrollTriggerContainer className="my-20">
             <ThreeDScrollTriggerRow baseVelocity={3} direction={1}>
               {eventListsA.map((event) => (
-                <div className="mx-3" key={event.id}>
+                <div className="mx-1" key={event.id}>
                   <img
                     src={event.image}
                     alt={`eventA + ${event.id}`}
-                    className="w-80 h-72 rounded-3xl"
+                    className="w-96 h-80 rounded-3xl object-cover"
                   />
                 </div>
               ))}
             </ThreeDScrollTriggerRow>
             <ThreeDScrollTriggerRow baseVelocity={3} direction={-1}>
               {eventListsB.map((event) => (
-                <div className="mx-3" key={event.id}>
+                <div className="mx-1" key={event.id}>
                   <img
                     src={event.image}
                     alt={`eventB + ${event.id}`}
-                    className="w-80 h-72 rounded-3xl"
+                    className="w-96 h-80 rounded-3xl object-cover"
                   />
                 </div>
               ))}

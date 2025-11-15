@@ -97,7 +97,7 @@ const Services = () => {
 
       <div className="relative">
         <img src={lionGroup} alt="lion group" />
-        <div className="flex flex-col justify-center items-center w-full h-full absolute top-0 text-(--text-color) text-center leading-[0.75] text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+        <div className="flex flex-col justify-center items-center w-full h-full absolute top-0 text-white text-center leading-[0.75] text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
           <span>boundless</span>
           <span>creative</span>
           <span>realm.</span>
@@ -161,7 +161,7 @@ const Services = () => {
                   <img
                     src={image}
                     alt={`partnerSideAImg + ${id}`}
-                    className="invert dark:invert-0 size-40"
+                    className="invert dark:invert-0 size-40 object-contain"
                   />
                 </div>
               ))}
@@ -176,7 +176,7 @@ const Services = () => {
                     key={id}
                     src={image}
                     alt={`partnerSideBImg + ${id}`}
-                    className="invert dark:invert-0 size-40"
+                    className="invert dark:invert-0 size-40 object-contain"
                   />
                 </div>
               ))}

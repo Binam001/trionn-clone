@@ -35,10 +35,23 @@ const Contact = () => {
   }, []);
 
   useGSAP(() => {
+    gsap.fromTo(
+      "#contactTitle",
+      {
+        opacity: 0,
+        y: 50,
+        rotationX: 90,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        rotationX: 0,
+        duration: 2,
+        ease: "power3.out",
+      }
+    );
     gsap.to(".textShadow1, .textShadow2", {
       xPercent: 100,
-      // width: 0,
-      // opacity: 0,
       stagger: 0.2,
       duration: 1.5,
       scrollTrigger: {
@@ -62,7 +75,7 @@ const Contact = () => {
     <div className="flex flex-col items-center gap-8 text-(--text-color)">
       <CircularBrand />
       <div
-        id="workTitle"
+        id="contactTitle"
         className="flex flex-col w-full text-[50px] md:text-[110px] lg:text-[90px] text-center leading-[0.75] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
       >
         <span>let's roar</span>

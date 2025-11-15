@@ -61,9 +61,10 @@ const LandingPage = () => {
   });
   return (
     <motion.div
-    // initial={{ opacity: 0 }}
-    // animate={{ opacity: 1 }}
-    // exit={{ opacity: 0, x: 1000 }}
+      initial={{ y: 100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -100, opacity: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="py-16 md:py-0">
         <CircularBrand />
@@ -121,8 +122,6 @@ const LandingPage = () => {
       <SocialLink />
 
       <Footer />
-
-      {/* <div className="h-dvh"></div> */}
     </motion.div>
   );
 };

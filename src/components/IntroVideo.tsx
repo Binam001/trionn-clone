@@ -17,7 +17,7 @@ const IntroVideo = () => {
     });
   });
   return (
-    <div className="mt-18">
+    <div className="mt-20">
       <video
         id="introVideo"
         src={introVideo}

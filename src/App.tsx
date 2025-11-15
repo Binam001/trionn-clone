@@ -10,6 +10,7 @@ import AboutUs from "./pages/AboutUs";
 import Services from "./pages/Services";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
+import ScrollToTop from "./components/ScrollToTop";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -18,6 +19,7 @@ function App() {
   const location = useLocation();
   return (
     <div className="px-3 md:px-10 lg:px-20 bg-(--background) overflow-hidden">
+      <ScrollToTop />
       {isLargeDevice ? (
         <SmokeyCursor
           simulationResolution={64}

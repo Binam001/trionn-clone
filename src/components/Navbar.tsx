@@ -1,13 +1,26 @@
-import logo from "../assets/logo.svg";
+// import logo from "../assets/logo.svg";
+import lightLogo from "../assets/Red.png";
+import darkLogo from "../assets/White.png";
 import soundBar from "../assets/images/sound-bar.svg";
 import animatedSoundBar from "../assets/images/animated-sound-bar.svg";
 import ThemeSwitcher from "./ThemeSwitcher";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import audio from "../assets/audio/relaxing-afternoon-full-version-relaxing-and-easy-piano-music-112850.mp3";
 import SideMenu from "./section/SideMenu";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    const stored = localStorage.getItem("theme");
+    if (stored) return stored;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  });
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", theme === "dark");
+  }, [theme]);
 
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -23,6 +36,29 @@ const Navbar = () => {
 
     setIsPlaying(!isPlaying);
   };
+
+  const curtainVariants = {
+    initial: { y: "-100%" },
+    animate: { y: 0, transition: { duration: 0.5, ease: "easeInOut" as any } },
+    exit: {
+      y: "-100%",
+      transition: { duration: 0.5, ease: "easeInOut" as any, delay: 0.8 },
+    },
+  };
+  const menuVariants = {
+    initial: { y: "-30%", opacity: 0 },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5, ease: "easeOut" as any, delay: 0.8 },
+    },
+    exit: {
+      y: "-30%",
+      opacity: 0,
+      transition: { duration: 0.4, ease: "easeIn" as any },
+    },
+  };
+
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 px-3 md:px-10 lg:px-20 z-60">
@@ -30,15 +66,15 @@ const Navbar = () => {
           <div className="cursor-pointer">
             <a href="/">
               <img
-                className="w-18 md:w-24 invert dark:invert-0"
-                src={logo}
+                className="w-18 md:w-24"
+                src={theme === "light" ? lightLogo : darkLogo}
                 alt="trionn"
               />
             </a>
           </div>
 
           <div className="flex gap-2 text-(--foreground)">
-            <ThemeSwitcher />
+            <ThemeSwitcher theme={theme} setTheme={setTheme} />
             <button
               onClick={toggleAudio}
               className="p-1 bg-(--icon-bg-color) rounded-full cursor-pointer"
@@ -81,12 +117,31 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <div
-        className={`fixed top-0 left-0 h-full w-full bg-(--sideMenu-bg) shadow-lg transition-transform duration-300 
-          ${open ? "translate-y-0" : "translate-y-full"} z-40 duration-700`}
-      >
-        {open && <SideMenu setOpen={setOpen} />}
-      </div>
+      <AnimatePresence>
+        {open && (
+          <div className="fixed top-0 left-0 w-full h-full z-50 pointer-events-none">
+            {/* CURTAIN LAYER */}
+            <motion.div
+              className="absolute top-0 left-0 w-full h-full bg-(--sideMenu-mask-bg)"
+              variants={curtainVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+            />
+
+            {/* SIDEMENU (The real menu) */}
+            <motion.div
+              className="absolute top-0 left-0 w-full h-full bg-(--sideMenu-bg) pointer-events-auto"
+              variants={menuVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+            >
+              <SideMenu setOpen={setOpen} />
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

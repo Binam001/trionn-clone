@@ -21,34 +21,6 @@ const ViewProject = () => {
       },
     });
 
-    //    gsap.fromTo(
-    //   ".oddIndexImage",
-    //   { xPercent: 200, rotateZ: 45 },
-    //   {
-    //     xPercent: 0,
-    //     rotateZ: 0,
-    //     scrollTrigger: {
-    //       trigger: ".oddIndexImage",
-    //       start: "top bottom",
-    //       scrub: 1,
-    //       markers: true,
-    //     },
-    //   }
-    // );
-    // gsap.fromTo(
-    //   ".evenIndexImage",
-    //   { xPercent: -200, rotateZ: -45 },
-    //   {
-    //     xPercent: 0,
-    //     rotateZ: 0,
-    //     scrollTrigger: {
-    //       trigger: ".evenIndexImage",
-    //       start: "top bottom",
-    //       scrub: 1,
-    //     },
-    //   }
-    // );
-
     gsap.utils.toArray<HTMLElement>(".oddIndexImage").forEach((el) => {
       gsap.fromTo(
         el,

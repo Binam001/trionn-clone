@@ -3,10 +3,11 @@
 
 @import "tailwindcss";
 
+@import "tw-animate-css";
+
 @font-face {
   font-family: "daysoftype";
   src: url("./assets/fonts/Dirtyline-36daysoftype-2022.woff") format("woff");
-  /* font-weight: nornal; */
   font-style: regular;
 }
 

@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import footerLogo from "../../assets/images/footer-logo.svg";
 import { CircleArrowDown } from "lucide-react";
+import { MagneticButton } from "../ui/magnetic-button";
 
 const Footer = () => {
   useGSAP(() => {
@@ -70,12 +71,14 @@ const Footer = () => {
         >
           roar
         </div>
-        <button
-          id="talkBtn"
-          className="px-12 py-4 rounded-4xl bg-(--text-color) text-(--background) text-lg self-start lg:self-center cursor-pointer mt-20 lg:mt-0"
-        >
-          Let's talk!
-        </button>
+        <MagneticButton>
+          <button
+            id="talkBtn"
+            className="px-12 py-4 rounded-4xl bg-(--text-color) text-(--background) text-lg self-start lg:self-center cursor-pointer mt-20 lg:mt-0"
+          >
+            Let's talk!
+          </button>
+        </MagneticButton>
       </div>
 
       <hr className="text-(--text-color) h-1 w-full my-10" />

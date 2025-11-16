@@ -47,21 +47,21 @@ const About = () => {
   return (
     <div className="mt-36 space-y-6">
       <div className="text-[90px] lg:text-[200px] text-(--text-color) leading-[0.75] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
-        <h1 className="text4">who</h1>
-        <h1 className="text4">we are</h1>
+        <h1 className="text4">behind</h1>
+        <h1 className="text4">the feast</h1>
       </div>
       <div className="">
         <p className="text5 w-[90%] lg:w-[50%] text-3xl lg:text-[50px] text-(--text-color-2) overflow-hidden">
-          As an award-winning agency within the digital jungle, TRIONN®
-          transcends aesthetics, crafting your vision into a legacy that
-          endures.
+          As a celebrated name in the culinary world, we transcend flavor,
+          turning every dish into a lasting memory.
         </p>
       </div>
       <div className="flex flex-col gap-8 md:justify-self-end w-[80%] lg:w-[50%]">
         <p className="text5 text-xl text-(--text-color-2) overflow-hidden syne-normal">
-          We roar with creativity, staying updated with the latest tech to make
-          your brand a formidable force in the digital wilderness and deliver
-          exceptional website and app experiences.
+          We serve creativity with the same passion as our signature dishes,
+          staying fresh with every new trend and flavor. Just as great food
+          leaves a lasting impression, our dedication ensures your dining
+          experience becomes unforgettable and truly remarkable.
         </p>
         <div id="btn2">
           <Button title="About Us" />

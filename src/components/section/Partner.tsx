@@ -4,12 +4,12 @@ import gsap from "gsap";
 
 const Partner = () => {
   useGSAP(() => {
-    gsap.from("#partner", {
+    gsap.from("#customer", {
       xPercent: -25,
       opacity: 0,
       stagger: 0.1,
       scrollTrigger: {
-        trigger: "#partner",
+        trigger: "#customer",
         start: "top 80%",
         end: "center 30%",
         scrub: 1.5,
@@ -43,10 +43,10 @@ const Partner = () => {
   return (
     <div className="mt-20 lg:mt-80 text-(--text-color)">
       <div
-        id="partner"
+        id="customer"
         className="text-[70px] md:text-[80px] lg:text-[200px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
       >
-        partner
+        customer
       </div>
       <div className="flex flex-col lg:flex-row lg:justify-between">
         <div
@@ -59,7 +59,7 @@ const Partner = () => {
           id="text"
           className="w-[70%] lg:w-[30%] text-(--text-color-2) text-2xl lg:text-3xl syne-normal"
         >
-          Take heed, as the lion's roar in our client reviews resounds.
+          Listen closely—the cheer of happy guests resounds in every review.
         </p>
       </div>
 

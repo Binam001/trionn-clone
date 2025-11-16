@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import introVideo from "../assets/videos/intro-video.mp4";
+// import introVideo from "../assets/videos/intro-video.mp4";
 
 const IntroVideo = () => {
   useGSAP(() => {
@@ -20,7 +20,8 @@ const IntroVideo = () => {
     <div className="mt-10">
       <video
         id="introVideo"
-        src={introVideo}
+        src="/videos/introVideo.mp4"
+        // src={introVideo}
         muted
         playsInline
         loop

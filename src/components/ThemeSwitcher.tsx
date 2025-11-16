@@ -10,6 +10,7 @@ const ThemeSwitcher = ({ theme, setTheme }: Props) => {
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
     localStorage.setItem("theme", newTheme);
+    window.dispatchEvent(new Event("theme-change"));
     setTheme(newTheme);
   };
 

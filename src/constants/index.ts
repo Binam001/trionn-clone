@@ -1,6 +1,12 @@
+import lightLogo from "/redLogo.png";
+import darkLogo from "/whiteLogo.png";
 import project1Img from "../assets/images/loftloom-main-landscape.webp";
 import project2Img from "../assets/images/imusic-main-landscape.webp";
-import project3Img from "../assets/images/technis-main-landscape.webp";
+// import project3Img from "../assets/images/technis-main-landscape.webp";
+import comboImg1 from "/images/comboPacks/family-combo.png";
+import comboImg2 from "/images/comboPacks/friends-combo.png";
+import comboImg3 from "/images/comboPacks/solo-combo.png";
+import comboImg4 from "/images/comboPacks/light-solo-combo.png";
 import project3Img1 from "../assets/images/technis-main.webp";
 import project4Img from "../assets/images/8octa-main.webp";
 import project5Img from "../assets/images/merit-global-main.webp";
@@ -25,12 +31,12 @@ import client2 from "../assets/images/doug-petrie.webp";
 import client3 from "../assets/images/zoltan-csonka.webp";
 import client4 from "../assets/images/albert-mizuno.webp";
 import client5 from "../assets/images/stephen-dash.webp";
-import dribbble1 from "../assets/images/dribbble1.webp";
-import dribbble2 from "../assets/images/dribbble2.webp";
-import dribbble3 from "../assets/images/dribbble3.webp";
-import dribbble4 from "../assets/images/dribbble4.webp";
-import dribbble5 from "../assets/images/dribbble5.webp";
-import dribbble6 from "../assets/images/dribbble6.webp";
+// import dribbble1 from "../assets/images/dribbble1.webp";
+// import dribbble2 from "../assets/images/dribbble2.webp";
+// import dribbble3 from "../assets/images/dribbble3.webp";
+// import dribbble4 from "../assets/images/dribbble4.webp";
+// import dribbble5 from "../assets/images/dribbble5.webp";
+// import dribbble6 from "../assets/images/dribbble6.webp";
 import socialImage1 from "../assets/images/basketBall.svg";
 import socialImage2 from "../assets/images/linkedin.svg";
 import socialImage3 from "../assets/images/instagram.svg";
@@ -104,24 +110,30 @@ import eventListBImg5 from "../assets/images/event/12.webp";
 import eventListBImg6 from "../assets/images/event/13.webp";
 import eventListBImg7 from "../assets/images/event/14.webp";
 
-const viewProjects = [
+const comboLists = [
   {
     id: 1,
-    title: "loftloom",
-    tag: "UI Design, UX, Wireframe",
-    image: project1Img,
+    title: "family combo",
+    price: "1000",
+    image: comboImg1,
   },
   {
     id: 2,
-    title: "imusic",
-    tag: "Research, UX, UI Design",
-    image: project2Img,
+    title: "friends combo",
+    price: "750",
+    image: comboImg2,
   },
   {
     id: 3,
-    title: "technis",
-    tag: "UX, UI Design, Development",
-    image: project3Img,
+    title: "solo combo",
+    price: "300",
+    image: comboImg3,
+  },
+  {
+    id: 4,
+    title: "light solo combo",
+    price: "175",
+    image: comboImg4,
   },
 ];
 
@@ -188,30 +200,30 @@ const clients = [
   },
 ];
 
-const dribbble = [
+const dishLists = [
   {
     id: 1,
-    image: dribbble1,
+    image: "/images/dish1.png",
   },
   {
     id: 2,
-    image: dribbble2,
+    image: "/images/dish2.png",
   },
   {
     id: 3,
-    image: dribbble3,
+    image: "/images/dish3.png",
   },
   {
     id: 4,
-    image: dribbble4,
+    image: "/images/dish4.png",
   },
   {
     id: 5,
-    image: dribbble5,
+    image: "/images/dish5.png",
   },
   {
     id: 6,
-    image: dribbble6,
+    image: "/images/dish6.png",
   },
 ];
 
@@ -892,10 +904,12 @@ const footerLinks = [
 ];
 
 export {
-  viewProjects,
+  lightLogo,
+  darkLogo,
+  comboLists,
   progress,
   clients,
-  dribbble,
+  dishLists,
   socialLists,
   sideMenuLists,
   workLists,

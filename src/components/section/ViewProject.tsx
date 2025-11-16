@@ -1,4 +1,4 @@
-import { viewProjects } from "../../constants";
+import { comboLists } from "../../constants";
 import Button from "../Button";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -56,37 +56,37 @@ const ViewProject = () => {
   });
   return (
     <div className="mt-20">
-      {viewProjects.map((project) => (
+      {comboLists.map((combo) => (
         <div
-          key={project.id}
-          className={`flex gap-4 lg:gap-20 py-4 lg:py-16 ${
-            project.id % 2 !== 0
+          key={combo.id}
+          className={`flex gap-4 lg:gap-20 py-4 lg:py-6 ${
+            combo.id % 2 !== 0
               ? "flex-col-reverse text-center lg:text-start lg:flex-row"
               : "flex-col-reverse text-center lg:text-end lg:flex-row-reverse"
           }`}
         >
           <div
             id="content"
-            className="w-full lg:w-[40%] flex flex-col pt-10 gap-20 justify-center"
+            className="w-full lg:w-[40%] flex flex-col gap-10 justify-center"
           >
             <div className="text-(--text-color) space-y-3">
               <h1 className="text-[50px] md:text-[40px] lg:text-[70px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
-                {project.title}
+                {combo.title}
               </h1>
-              <p className="text-xl syne-normal">{project.tag}</p>
+              <p className="text-4xl syne-normal">Rs. {combo.price}</p>
             </div>
             <div className="hidden lg:block">
-              <Button href="#" title="View project" />
+              <Button href="#" title="View combo" />
             </div>
           </div>
 
           <div className="w-full lg:w-[60%] relative">
             <a href="#" target="_blank" rel="noopener noreferrer">
               <img
-                src={project.image}
-                alt={project.title}
-                className={`rounded-4xl lg:absolute lg:-top-18 ${
-                  project.id % 2 !== 0 ? "oddIndexImage" : "evenIndexImage"
+                src={combo.image}
+                alt={combo.title}
+                className={`rounded-4xl ${
+                  combo.id % 2 !== 0 ? "oddIndexImage" : "evenIndexImage"
                 }`}
               />
             </a>

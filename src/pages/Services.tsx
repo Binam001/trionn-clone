@@ -1,6 +1,6 @@
 import { CircleArrowDown } from "lucide-react";
 import CircularBrand from "../components/CircularBrand";
-import lionGroup from "../assets/images/lionGroup.webp";
+// import lionGroup from "../assets/images/lionGroup.webp";
 import Footer from "../components/section/Footer";
 import {
   ThreeDScrollTriggerContainer,
@@ -17,6 +17,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { useMediaQuery } from "react-responsive";
+import { ImageHover } from "../components/image-reveal";
 
 const Services = () => {
   const isLargeDevice = useMediaQuery({ minWidth: 770 });
@@ -148,7 +149,20 @@ const Services = () => {
         scrub: 1,
       },
     });
+    gsap.from(".imgText span", {
+      y: 100,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ".imgText",
+        start: "top bottom",
+        end: "30% center",
+        scrub: 1.5,
+      },
+    });
   });
+
   return (
     <div className="flex flex-col items-center gap-8 mt-10">
       <CircularBrand />
@@ -193,13 +207,43 @@ const Services = () => {
         <span className="thirdPage2ndDescSpan">friendly innovation.</span>
       </div>
 
-      <div className="relative w-screen">
-        <img src={lionGroup} alt="lion group" />
-        <div className="flex flex-col justify-center items-center w-full h-full absolute top-0 text-white text-center leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
-          <span>boundless</span>
-          <span>creative</span>
-          <span>realm.</span>
-        </div>
+      <div className="relative w-screen lionImgSection">
+        {/* <img
+          src={lionGroup}
+          alt="lion"
+          className="w-full h-full object-cover"
+        />
+        <div className="bg-black/50 absolute top-0 w-full h-full z-10 pointer-events-none" /> */}
+        <ImageHover />
+        {/* <div className="imgText group flex flex-col justify-center items-center w-full h-full absolute top-0 z-20 pointer-events-none text-white text-center leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+          <span
+            className="hover:text-transparent
+            text-stroke-black
+        hover:text-clip
+        text-stroke-2 text-stroke-black
+        duration-500 pointer-events-auto"
+          >
+            boundless
+          </span>
+          <span
+            className="hover:text-transparent
+            text-stroke-black
+        hover:text-clip
+        text-stroke-2 text-stroke-black
+        duration-500 pointer-events-auto"
+          >
+            creative
+          </span>
+          <span
+            className="hover:text-transparent
+            text-stroke-black
+        hover:text-clip
+        text-stroke-2 text-stroke-black
+        duration-500 pointer-events-auto"
+          >
+            realm.
+          </span>
+        </div> */}
       </div>
 
       <div className="">

@@ -18,7 +18,12 @@ function App() {
   const isLargeDevice = useMediaQuery({ minWidth: 1024 });
   const location = useLocation();
   return (
-    <div className="px-3 md:px-10 lg:px-20 bg-(--background) overflow-hidden">
+    <div
+      id="background"
+      className="px-3 md:px-10 lg:px-20 overflow-hidden bg-fixed"
+    >
+      {/* <div className="px-3 md:px-10 lg:px-20 overflow-hidden bg-[url('./assets/bg-svg-cropped.svg')] bg-fixed bg-(--background)"> */}
+      {/* <div className="px-3 md:px-10 lg:px-20 overflow-hidden bg-(--background)"> */}
       <ScrollToTop />
       {isLargeDevice ? (
         <SmokeyCursor

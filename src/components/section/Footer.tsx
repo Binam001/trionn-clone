@@ -60,16 +60,16 @@ const Footer = () => {
     <div className="mt-40 text-(--text-color)">
       <div
         id="timeTo"
-        className="text-[70px] md:text-[120px] lg:text-[200px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
+        className="text-[40px] md:text-[70px] lg:text-[120px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
       >
-        time to
+        let your
       </div>
       <div className="flex flex-col lg:flex-row lg:justify-between">
         <div
           id="roar"
-          className="text-[70px] md:text-[120px] lg:text-[200px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
+          className="text-[40px] md:text-[70px] lg:text-[120px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
         >
-          roar
+          hunger roar
         </div>
         <MagneticButton>
           <button

@@ -1,21 +1,40 @@
-import dribble from "../../assets/images/dribbble.webp";
-import { dribbble } from "../../constants";
+import { darkLogo, dishLists, lightLogo } from "../../constants";
 import Button from "../Button";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import { useMediaQuery } from "react-responsive";
+import { useEffect, useState } from "react";
 
 const Dribbble = () => {
   const isTablet = useMediaQuery({ maxWidth: 770 });
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light")
+  );
+  useEffect(() => {
+    const updateTheme = () => {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+        setTheme(savedTheme);
+      }
+    };
+    window.addEventListener("theme-change", updateTheme);
+    window.addEventListener("storage", updateTheme);
+
+    return () => window.removeEventListener("storage", updateTheme);
+  }, []);
+
   useGSAP(() => {
     const paragraphSplit = new SplitText("#dribbleText", {
       type: "lines",
       linesClass: "line-wrapper",
     });
 
-    const oddRZ = isTablet ? 0 : -45;
-    const evenRZ = isTablet ? 0 : 45;
+    // const oddRZ = isTablet ? 0 : -45;
+    // const evenRZ = isTablet ? 0 : 45;
     const oddXp = isTablet ? -300 : -120;
     const evenXp = isTablet ? 150 : 120;
     const start = isTablet ? "top center" : "top 80%";
@@ -23,24 +42,26 @@ const Dribbble = () => {
     gsap.utils.toArray<HTMLElement>(".oddDribbbleCard").forEach((el) => {
       gsap.to(el, {
         xPercent: oddXp,
-        rotateZ: oddRZ,
-        opacity: 0,
+        rotate: 180,
+        // opacity: 0,
+        stagger: 0.2,
         scrollTrigger: {
           trigger: el,
           start,
-          scrub: 1.3,
+          scrub: 1.5,
         },
       });
     });
     gsap.utils.toArray<HTMLElement>(".evenDribbbleCard").forEach((el) => {
       gsap.to(el, {
         xPercent: evenXp,
-        rotateZ: evenRZ,
-        opacity: 0,
+        rotate: 180,
+        // opacity: 0,
+        stagger: 0.2,
         scrollTrigger: {
           trigger: el,
           start,
-          scrub: 1.3,
+          scrub: 1.5,
         },
       });
     });
@@ -73,7 +94,11 @@ const Dribbble = () => {
   return (
     <div className="relative py-[180px] lg:py-[300px] flex flex-col justify-center items-center gap-14">
       <div>
-        <img src={dribble} alt="dribble" className="w-52 h-16" />
+        <img
+          src={theme === "dark" ? darkLogo : lightLogo}
+          alt="dribble"
+          className="w-52 h-20"
+        />
       </div>
       <p
         id="dribbleText"
@@ -86,8 +111,8 @@ const Dribbble = () => {
         <Button title="View Dribbble" />
       </div>
 
-      <div className="absolute grid grid-cols-2 gap-4 pointer-events-none">
-        {dribbble.map(({ id, image }) => (
+      <div className="absolute grid grid-cols-2 pointer-events-none">
+        {dishLists.map(({ id, image }) => (
           <div
             key={id}
             className={`${
@@ -97,7 +122,7 @@ const Dribbble = () => {
             <img
               src={image}
               alt={`dribbble + ${id}`}
-              className="w-[400px] h-[240px] lg:w-[600px] lg:h-[420px] rounded-4xl -mt-40 max-w-none"
+              className="size-[200px] lg:size-[300px] object-contain"
             />
           </div>
         ))}

@@ -87,17 +87,17 @@ const LandingPage = () => {
           id="landingPageTitle"
           className="text-[50px] md:text-[110px] lg:text-[115px] text-center leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
         >
-          <p>roar in the</p>
-          <p>digital wilderness.</p>
+          <p>roar of</p>
+          <p>flavors unleashed</p>
         </div>
 
         <p
           id="landingPageDesc"
-          className="text-xs text-(--text-color) uppercase text-center syne-normal mt-5"
+          className="text-xs text-(--text-color) w-1/2 mx-auto uppercase text-center syne-normal mt-5"
         >
-          We roar with success, delivering the TRIONN®
-          <br /> through versatile design, branding and the latest
-          <br /> tech development to companies.
+          We roar with flavor, serving unforgettable dining experiences through
+          creative menu design, exceptional hospitality, and innovative culinary
+          techniques that delight every guest.
         </p>
       </div>
 
@@ -127,11 +127,11 @@ const LandingPage = () => {
 
       <div
         id="join"
-        className="flex flex-col items-center text-[80px] lg:text-[200px] leading-[0.8] text-(--foreground) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
+        className="mt-20 lg:mt-40 flex flex-col items-center text-[80px] lg:text-[200px] leading-[0.8] text-(--foreground) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
       >
-        <span id="join1Text">join our</span>
-        <span id="join2Text">jungle</span>
-        <span id="join3Text">trek</span>
+        <span id="join1Text">dine</span>
+        <span id="join2Text">with</span>
+        <span id="join3Text">style</span>
       </div>
 
       <SocialLink />

@@ -1,6 +1,3 @@
-// import logo from "../assets/logo.svg";
-import lightLogo from "../assets/Red.png";
-import darkLogo from "../assets/White.png";
 import soundBar from "../assets/images/sound-bar.svg";
 import animatedSoundBar from "../assets/images/animated-sound-bar.svg";
 import ThemeSwitcher from "./ThemeSwitcher";
@@ -8,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import audio from "../assets/audio/relaxing-afternoon-full-version-relaxing-and-easy-piano-music-112850.mp3";
 import SideMenu from "./section/SideMenu";
 import { AnimatePresence, motion } from "framer-motion";
+import { darkLogo, lightLogo } from "../constants";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -68,7 +66,7 @@ const Navbar = () => {
               <img
                 className="w-18 md:w-24"
                 src={theme === "light" ? lightLogo : darkLogo}
-                alt="trionn"
+                alt="shyam's logo"
               />
             </a>
           </div>

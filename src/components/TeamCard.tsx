@@ -3,7 +3,7 @@ import { teamLists } from "../constants";
 import linkedin from "../assets/images/linkedin.svg";
 
 const TeamCard = () => {
-  const [emblaRef] = useEmblaCarousel({ loop: true });
+  const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true });
 
   return (
     <section className="embla -mx-28 mt-20">

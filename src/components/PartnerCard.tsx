@@ -4,7 +4,7 @@ import { clients } from "../constants";
 import { Play } from "lucide-react";
 
 const PartnerCard = () => {
-  const [emblaRef] = useEmblaCarousel({ loop: true });
+  const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true });
 
   return (
     <section className="embla -mx-28 mt-20">

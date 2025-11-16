@@ -129,6 +129,32 @@ const Team = () => {
         scrub: 1.5,
       },
     });
+
+    gsap.from("#beLikeALion", {
+      yPercent: 50,
+      opacity: 0,
+      duration: 1.5,
+      scrollTrigger: {
+        trigger: "#beLikeALion",
+        start: "top bottom",
+        end: "center center",
+        scrub: 1.5,
+      },
+    });
+    gsap.utils.toArray<HTMLElement>(".applyForPost").forEach((el) => {
+      gsap.from(el, {
+        yPercent: 50,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.5,
+        scrollTrigger: {
+          trigger: el,
+          start: "top bottom",
+          end: "center center",
+          scrub: 1,
+        },
+      });
+    });
   });
   return (
     <div className="flex flex-col items-center gap-8 mt-10 syne-normal text-(--text-color)">
@@ -224,7 +250,7 @@ const Team = () => {
         />
       </div>
 
-      <div className="text-left lg:w-[75%] mt-10 space-y-3">
+      <div id="beLikeALion" className="text-left lg:w-[75%] mt-10 space-y-3">
         <p className="lg:w-[50%] text-5xl md:text-[60px] leading-[1.2]">
           Do you aspire to be like a lion?
         </p>
@@ -238,7 +264,7 @@ const Team = () => {
         {teamHireLists.map((hire) => (
           <div
             key={hire.id}
-            className="text-3xl flex flex-col md:flex-row md:justify-between gap-6 md:gap-0 border-y py-10"
+            className="applyForPost text-3xl flex flex-col md:flex-row md:justify-between gap-6 md:gap-0 border-y py-10"
           >
             <span>{hire.post}</span>
             <Button title="Apply now!" />

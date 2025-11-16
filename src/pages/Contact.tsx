@@ -82,6 +82,31 @@ const Contact = () => {
         scrub: 1.5,
       },
     });
+    gsap.from("#location", {
+      yPercent: 50,
+      opacity: 0,
+      duration: 1.5,
+      scrollTrigger: {
+        trigger: "#location",
+        start: "top bottom",
+        end: "center center",
+        scrub: 1.5,
+      },
+    });
+    gsap.utils.toArray<HTMLElement>(".footerLink").forEach((el) => {
+      gsap.from(el, {
+        yPercent: 50,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.5,
+        scrollTrigger: {
+          trigger: el,
+          start: "top bottom",
+          end: "center center",
+          scrub: 1,
+        },
+      });
+    });
   });
   return (
     <div className="flex flex-col items-center gap-8 mt-10 text-(--text-color)">
@@ -271,7 +296,10 @@ const Contact = () => {
             <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div>
           </div>
         </div>
-        <div className="syne-normal text-(--text-color) flex flex-col space-y-4 text-3xl mt-20">
+        <div
+          id="location"
+          className="syne-normal text-(--text-color) flex flex-col space-y-4 text-3xl mt-20"
+        >
           <span className="text-(--text-color)/60">Location</span>
           <span>TRIONN®</span>
           <span className="mt-5">216 - 217 4Plus Complex</span>
@@ -284,7 +312,7 @@ const Contact = () => {
         {footerLinks.map((footer) => (
           <div
             key={footer.id}
-            className="border-y py-10 text-3xl syne-normal space-y-4"
+            className="footerLink border-y py-10 text-3xl syne-normal space-y-4"
           >
             <div className="text-(--text-color)/60">{footer.title}</div>
             {/* <div className="space-x-5">{footer.link}</div> */}

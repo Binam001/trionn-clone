@@ -12,9 +12,11 @@ const RecentWork = () => {
     gsap.from(".text2", {
       xPercent: -25,
       opacity: 0,
-      stagger: 0.1,
+      stagger: 0.2,
       scrollTrigger: {
         trigger: ".text2",
+        start: "top 80%",
+        end: "center 30%",
         scrub: 1.5,
       },
     });
@@ -48,7 +50,7 @@ const RecentWork = () => {
     <div className="mt-20">
       <div className="text-[70px] md:text-[80px] lg:text-[200px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
         <h1 className="text2 text-(--text-color)">recent</h1>
-        <h1 className="text2 text-(--text-color-2)">work</h1>
+        <h1 className="text2 text-(--text-color)">work</h1>
       </div>
 
       <div className="flex justify-between items-center">

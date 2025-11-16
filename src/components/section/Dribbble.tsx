@@ -36,9 +36,10 @@ const Dribbble = () => {
       gsap.to(el, {
         xPercent: evenXp,
         rotateZ: evenRZ,
+        opacity: 0,
         scrollTrigger: {
           trigger: el,
-          start: "top 90%",
+          start,
           scrub: 1.3,
         },
       });
@@ -85,7 +86,7 @@ const Dribbble = () => {
         <Button title="View Dribbble" />
       </div>
 
-      <div className="absolute grid grid-cols-2 gap-4">
+      <div className="absolute grid grid-cols-2 gap-4 pointer-events-none">
         {dribbble.map(({ id, image }) => (
           <div
             key={id}

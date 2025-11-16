@@ -52,25 +52,25 @@ html {
   scrollbar-width: none; /* Firefox */
 }
 :root {
-  --foreground: RGB(0, 0, 0);
-  --background: RGB(238, 243, 243);
-  --text-color: RGB(62, 64, 67);
-  -text-color-2: RGB(0, 0, 0);
-  --icon-bg-color: RGB(216, 221, 221);
-  --card-bg: RGB(225, 234, 234);
-  --sideMenu-bg: RGB(238, 243, 243);
-  --sideMenu-mask-bg: RGB(255, 255, 255);
+  --foreground: rgb(0, 0, 0);
+  --background: rgb(238, 243, 243);
+  --text-color: rgb(62, 64, 67);
+  -text-color-2: rgb(0, 0, 0);
+  --icon-bg-color: rgb(216, 221, 221);
+  --card-bg: rgb(217, 221, 221);
+  --sideMenu-bg: rgb(238, 243, 243);
+  --sideMenu-mask-bg: rgb(255, 255, 255);
   /* --button-text-color: rgb(63, 65, 68); */
 }
 .dark {
-  --foreground: RGB(224, 238, 238);
-  --background: RGB(18, 19, 21);
-  --text-color: RGB(224, 238, 238);
-  --text-color-2: RGB(197, 252, 252);
-  --icon-bg-color: RGB(39, 34, 34);
-  --card-bg: RGB(23, 25, 28);
-  --sideMenu-bg: RGB(18, 19, 21);
-  --sideMenu-mask-bg: RGB(40, 40, 40);
+  --foreground: rgb(224, 238, 238);
+  --background: rgb(18, 19, 21);
+  --text-color: rgb(224, 238, 238);
+  --text-color-2: rgb(197, 252, 252);
+  --icon-bg-color: rgb(39, 34, 34);
+  --card-bg: rgb(23, 25, 28);
+  --sideMenu-bg: rgb(18, 19, 21);
+  --sideMenu-mask-bg: rgb(40, 40, 40);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));

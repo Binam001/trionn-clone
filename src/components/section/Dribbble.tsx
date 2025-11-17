@@ -28,8 +28,23 @@ const Dribbble = () => {
   }, []);
 
   useGSAP(() => {
-    const paragraphSplit = new SplitText("#dribbleText", {
-      type: "lines",
+    document.fonts.ready.then(() => {
+      const paragraphSplit = new SplitText("#dribbleText", {
+        type: "lines",
+      });
+      gsap.from(paragraphSplit.lines, {
+        opacity: 0,
+        yPercent: 100,
+        duration: 2,
+        ease: "expo.out",
+        stagger: 0.06,
+        delay: 0.6,
+        scrollTrigger: {
+          trigger: "#dribbleText",
+          start: "top 60%",
+          scrub: 1,
+        },
+      });
     });
 
     // const oddRZ = isTablet ? 0 : -45;
@@ -66,19 +81,6 @@ const Dribbble = () => {
       });
     });
 
-    gsap.from(paragraphSplit.lines, {
-      opacity: 0,
-      yPercent: 100,
-      duration: 2,
-      ease: "expo.out",
-      stagger: 0.06,
-      delay: 0.6,
-      scrollTrigger: {
-        trigger: "#dribbleText",
-        start: "top 60%",
-        scrub: 1,
-      },
-    });
     gsap.from(".dribbbleBtn", {
       opacity: 0,
       yPercent: 100,

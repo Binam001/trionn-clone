@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 const IntroVideo = () => {
   useGSAP(() => {
     gsap.from("#introVideo", {
-      yPercent: -45,
+      yPercent: -60,
       scale: 0.15,
       borderRadius: "500px",
       scrollTrigger: {
@@ -17,7 +17,7 @@ const IntroVideo = () => {
     });
   });
   return (
-    <div className="mt-10">
+    <div className="mt-20">
       <video
         id="introVideo"
         src="/videos/introVideo.mp4"

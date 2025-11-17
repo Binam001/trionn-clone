@@ -3,11 +3,27 @@ import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import Button from "../Button";
 
-const RecentWork = () => {
+const OurCombo = () => {
   useGSAP(() => {
-    const paragraphSplit = new SplitText("#text3", {
-      type: "lines",
+    document.fonts.ready.then(() => {
+      const paragraphSplit = new SplitText("#text3", {
+        type: "lines",
+      });
+      gsap.from(paragraphSplit.lines, {
+        opacity: 0,
+        yPercent: 100,
+        duration: 2,
+        ease: "expo.out",
+        stagger: 0.06,
+        delay: 0.6,
+        scrollTrigger: {
+          trigger: "#text3",
+          start: "top bottom",
+          scrub: 1,
+        },
+      });
     });
+
     gsap.from(".text2", {
       xPercent: -25,
       opacity: 0,
@@ -17,19 +33,6 @@ const RecentWork = () => {
         start: "top 90%",
         end: "center 40%",
         scrub: 1.5,
-      },
-    });
-    gsap.from(paragraphSplit.lines, {
-      opacity: 0,
-      yPercent: 100,
-      duration: 2,
-      ease: "expo.out",
-      stagger: 0.06,
-      delay: 0.6,
-      scrollTrigger: {
-        trigger: "#text3",
-        start: "top bottom",
-        scrub: 1,
       },
     });
 
@@ -61,11 +64,11 @@ const RecentWork = () => {
           visit.
         </p>
         <div id="btn1" className="hidden md:block">
-          <Button title="Explore work" />
+          <Button title="Explore Packs" />
         </div>
       </div>
     </div>
   );
 };
 
-export default RecentWork;
+export default OurCombo;

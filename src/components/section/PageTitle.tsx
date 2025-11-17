@@ -15,34 +15,30 @@ const PageTitle = ({
   desc: string;
 }) => {
   useGSAP(() => {
-    const servicesPageTitleParagraphSplit = new SplitText("#pageTitle", {
-      type: "lines",
-    });
-    gsap.from(servicesPageTitleParagraphSplit.lines, {
-      opacity: 0,
-      filter: "blur(100px)",
-      yPercent: 100,
-      duration: 2,
-      ease: "expo.out",
-      stagger: 0.2,
-      delay: 0.6,
-    });
-    const servicesPageDescParagraphSplit = new SplitText("#pageDesc", {
-      type: "lines",
-    });
-    gsap.from(servicesPageDescParagraphSplit.lines, {
-      opacity: 0,
-      yPercent: 100,
-      duration: 2,
-      ease: "expo.out",
-      stagger: 0.2,
-      delay: 1,
-    });
-    gsap.from("#aboutUsDesc", {
-      y: 30,
-      opacity: 0,
-      duration: 1.5,
-      delay: 1,
+    document.fonts.ready.then(() => {
+      const pageTitleParagraphSplit = new SplitText("#pageTitle", {
+        type: "lines",
+      });
+      gsap.from(pageTitleParagraphSplit.lines, {
+        opacity: 0,
+        filter: "blur(100px)",
+        yPercent: 100,
+        duration: 2,
+        ease: "expo.out",
+        stagger: 0.2,
+        delay: 0.6,
+      });
+      const pageDescParagraphSplit = new SplitText("#pageDesc", {
+        type: "lines",
+      });
+      gsap.from(pageDescParagraphSplit.lines, {
+        opacity: 0,
+        yPercent: 100,
+        duration: 2,
+        ease: "expo.out",
+        stagger: 0.2,
+        delay: 1,
+      });
     });
   });
   return (

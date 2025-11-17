@@ -5,10 +5,26 @@ import Button from "../Button";
 
 const About = () => {
   useGSAP(() => {
-    const paragraphSplit = new SplitText(".text5", {
-      type: "lines",
-      autoSplit: true,
+    document.fonts.ready.then(() => {
+      const paragraphSplit = new SplitText(".text5", {
+        type: "lines",
+        autoSplit: true,
+      });
+      gsap.from(paragraphSplit.lines, {
+        opacity: 0,
+        yPercent: 100,
+        duration: 2,
+        ease: "expo.out",
+        stagger: 0.06,
+        delay: 0.6,
+        scrollTrigger: {
+          trigger: ".text5",
+          start: "top 60%",
+          scrub: 1,
+        },
+      });
     });
+
     gsap.from(".text4", {
       xPercent: -25,
       opacity: 0,
@@ -16,19 +32,6 @@ const About = () => {
       scrollTrigger: {
         trigger: ".text4",
         scrub: 1.5,
-      },
-    });
-    gsap.from(paragraphSplit.lines, {
-      opacity: 0,
-      yPercent: 100,
-      duration: 2,
-      ease: "expo.out",
-      stagger: 0.06,
-      delay: 0.6,
-      scrollTrigger: {
-        trigger: ".text5",
-        start: "top 60%",
-        scrub: 1,
       },
     });
 
@@ -45,17 +48,17 @@ const About = () => {
     });
   });
   return (
-    <div className="mt-36 space-y-6">
+    <div className="mt-36 space-y-8">
       <div className="text-[90px] lg:text-[200px] text-(--text-color) leading-[0.75] font-[Britannic] uppercase">
         <h1 className="text4">behind</h1>
         <h1 className="text4">the feast</h1>
       </div>
-      <p className="text5 w-[90%] lg:w-[60%] text-3xl lg:text-[33px] font-[Poppins] text-(--text-color-2)">
+      <p className="text5 w-[90%] lg:w-[60%] text-3xl lg:text-[33px] font-[Poppins] text-(--text-color) mt-10">
         As a celebrated name in the culinary world and we transcend flavor,
         turning every dish into a lasting memory.
       </p>
       <div className="flex flex-col gap-8 md:justify-self-end w-[80%] lg:w-[50%]">
-        <p className="text5 text-xl text-(--text-color-2) overflow-hidden font-[Poppins]">
+        <p className="text5 text-xl text-(--text-color) overflow-hidden font-[Poppins]">
           We serve creativity with the same passion as our signature dishes,
           staying fresh with every new trend and flavor. Just as great food
           leaves a lasting impression, our dedication ensures your dining

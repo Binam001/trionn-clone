@@ -38,22 +38,15 @@ html {
   --card-bg: rgb(217, 221, 221);
   --sideMenu-bg: rgb(238, 243, 243);
   --sideMenu-mask-bg: rgb(255, 255, 255);
-  /* --button-text-color: rgb(63, 65, 68); */
-  /* --bg-image: url("./assets/shyamBg.png"); */
-  /* background-image: linear-gradient(
-    rgb(235, 235, 235),
-    rgba(255, 255, 255, 0.819)
-  ); */
   #background {
-    background-image: linear-gradient(
-        rgba(255, 255, 255, 0.85),
-        rgba(238, 238, 238, 0.85)
-      ),
-      url("/bg-svg-cropped.svg");
-    /* url("/src/assets/shyamBg.png"); */
+    background-image: url("/bg-svg-cropped.svg");
     background-size: 100vw;
     background-repeat: no-repeat;
     background-attachment: fixed;
+  }
+
+  .fixedgradient {
+    background-color: rgba(175, 175, 175, 0.5);
   }
 }
 .dark {
@@ -69,16 +62,26 @@ html {
   --sideMenu-mask-bg: rgb(40, 40, 40);
   #background {
     background-image: url("/bg-svg-cropped.svg");
+    background-color: #000000;
     background-size: 100vw;
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
   .fixedgradient {
-    background: #050505;
+    /* background: #050505;
     background: radial-gradient(
       circle,
       rgba(5, 5, 5, 0.8) 0%,
       rgba(0, 0, 0, 1) 100%
+    ); */
+
+    background: #000000;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.9) 15%,
+      rgba(255, 255, 255, 0.2) 45%,
+      rgba(255, 255, 255, 0.2) 55%,
+      rgba(0, 0, 0, 0.9) 85%
     );
   }
 }

@@ -17,6 +17,7 @@ import { partnerSideA, partnerSideB } from "../constants";
 import ImageReveal from "../components/lightswind/image-reveal";
 import { ImageHover } from "../components/image-reveal";
 import PageTitle from "../components/section/PageTitle";
+import { useEffect } from "react";
 
 const AboutUs = () => {
   useGSAP(() => {
@@ -31,49 +32,16 @@ const AboutUs = () => {
       },
     });
 
-    gsap.to(".textShadow1, .textShadow2", {
-      xPercent: 100,
-      stagger: 0.2,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: ".textShadow1, .textShadow2",
-        start: "top bottom",
-        scrub: 1.5,
-      },
-    });
-
-    const secondParagraphSplit = new SplitText(".secondDesc", {
-      type: "lines",
-    });
-
-    gsap.from(secondParagraphSplit.lines, {
-      y: 100,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: ".secondDesc",
-        start: "top bottom",
-        end: "top center",
-        scrub: 1.5,
-      },
-    });
-    const thirdParagraphSplit = new SplitText(".thirdDesc", {
-      type: "lines",
-    });
-
-    gsap.from(thirdParagraphSplit.lines, {
-      y: 100,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: ".thirdDesc",
-        start: "top bottom",
-        end: "center 30%",
-        scrub: 1.5,
-      },
-    });
+    // gsap.to(".textShadow1, .textShadow2", {
+    //   xPercent: 100,
+    //   stagger: 0.2,
+    //   duration: 1.5,
+    //   scrollTrigger: {
+    //     trigger: ".textShadow1, .textShadow2",
+    //     start: "top bottom",
+    //     scrub: 1.5,
+    //   },
+    // });
 
     gsap.from("#btn", {
       opacity: 0,
@@ -100,22 +68,6 @@ const AboutUs = () => {
         scrub: 1,
       },
     });
-    const honorsAwardsParagraphSplit = new SplitText("#honorsAwardsDesc", {
-      type: "lines",
-    });
-
-    gsap.from(honorsAwardsParagraphSplit.lines, {
-      y: 100,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: "#honorsAwardsDesc",
-        start: "top bottom",
-        end: "center center",
-        scrub: 1.5,
-      },
-    });
 
     gsap.from(".candy1", {
       x: 300,
@@ -135,7 +87,61 @@ const AboutUs = () => {
       duration: 1,
       delay: 1,
     });
+
+    document.fonts.ready.then(() => {
+      const secondParagraphSplit = new SplitText(".secondDesc", {
+        type: "lines",
+      });
+
+      gsap.from(secondParagraphSplit.lines, {
+        y: 100,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".secondDesc",
+          start: "top bottom",
+          end: "top center",
+          scrub: 1.5,
+        },
+      });
+
+      const thirdParagraphSplit = new SplitText(".thirdDesc", {
+        type: "lines",
+      });
+
+      gsap.from(thirdParagraphSplit.lines, {
+        y: 100,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".thirdDesc",
+          start: "top bottom",
+          end: "center 30%",
+          scrub: 1.5,
+        },
+      });
+    });
+
+    const honorsAwardsParagraphSplit = new SplitText("#honorsAwardsDesc", {
+      type: "lines",
+    });
+    gsap.from(honorsAwardsParagraphSplit.lines, {
+      y: 100,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: "#honorsAwardsDesc",
+        start: "top bottom",
+        end: "center center",
+        scrub: 1.5,
+      },
+    });
   });
+
+  useEffect(() => {}, []);
 
   return (
     <motion.div
@@ -207,37 +213,37 @@ const AboutUs = () => {
         <ImageHover text1="majestic" text2="flavors" text3="await" />
       </div>
 
-      <div className="w-screen dark:bg-[linear-gradient(to_right,rgba(0,0,0,0.7)_20%,rgba(0,0,0,0.7)_80%),url('/images/redPatternBg.png')] bg-cover bg-center">
-        <div className="w-full px-3 md:px-10 lg:px-20 my-20 lg:my-40 z-50">
-          <div className="thirdDesc font-[Poppins] text-(--text-color-2) text-3xl md:text-4xl lg:text-[48px] leading-12 lg:leading-14">
-            <p className="">
-              Guided by passion, we honor each dining journey, shaping dishes
-              that thrive in the rich landscape of flavor. We stand as fearless
-              curators of cuisine, mastering every step — from sourcing to
-              cooking, plating, and the joy of every bite.
-            </p>
+      {/* <div className="w-screen dark:bg-[linear-gradient(to_right,rgba(0,0,0,0.7)_20%,rgba(0,0,0,0.7)_80%),url('/images/redPatternBg.png')] bg-cover bg-center"> */}
+      <div className="w-full px-3 md:px-10 lg:px-20 my-20 lg:my-40 z-50">
+        <div className="thirdDesc font-[Poppins] text-(--text-color-2) text-3xl md:text-4xl lg:text-[48px] leading-12 lg:leading-14">
+          <p className="">
+            Guided by passion, we honor each dining journey, shaping dishes that
+            thrive in the rich landscape of flavor. We stand as fearless
+            curators of cuisine, mastering every step — from sourcing to
+            cooking, plating, and the joy of every bite.
+          </p>
+        </div>
+        <div className="mt-10 flex flex-col-reverse lg:flex lg:flex-row">
+          <div id="btn" className="lg:w-1/2 mt-10 lg:mt-0">
+            <Button title="Shyam's name story" />
           </div>
-          <div className="mt-10 flex flex-col-reverse lg:flex lg:flex-row">
-            <div id="btn" className="lg:w-1/2 mt-10 lg:mt-0">
-              <Button title="Shyam's name story" />
-            </div>
-            <div className="thirdDescP text-(--text-color) font-[Poppins] lg:w-1/2 space-y-4 text-xl">
-              <p>
-                Driven by unwavering culinary passion, we work closely with our
-                guests, understanding their tastes and desires, skillfully
-                transforming ideas into dishes that capture their vision with
-                perfect balance and flavor.
-              </p>
-              <p>
-                We meticulously craft exquisite dishes, signature flavors,
-                seasonal menus, and immersive dining experiences—curating
-                everything with precision, passion, and a bold creative spark
-                that brings every plate to life.
-              </p>
-            </div>
+          <div className="thirdDescP text-(--text-color) font-[Poppins] lg:w-1/2 space-y-4 text-xl">
+            <p>
+              Driven by unwavering culinary passion, we work closely with our
+              guests, understanding their tastes and desires, skillfully
+              transforming ideas into dishes that capture their vision with
+              perfect balance and flavor.
+            </p>
+            <p>
+              We meticulously craft exquisite dishes, signature flavors,
+              seasonal menus, and immersive dining experiences—curating
+              everything with precision, passion, and a bold creative spark that
+              brings every plate to life.
+            </p>
           </div>
         </div>
       </div>
+      {/* </div> */}
 
       <div className="w-full">
         <Progress />
@@ -285,25 +291,26 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className="text-center space-y-4 mt-10">
-        <div className="relative text-[80px] md:text-[120px] lg:text-[200px] leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+      <div className="text-center space-y-8 my-20">
+        <div className="relative text-[80px] md:text-[120px] lg:text-[200px] leading-[0.75] text-(--text-color) font-[Britannic] uppercase">
           <div className="relative">
             <p>honors</p>
-            <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div>
+            {/* <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
           </div>
 
           <div className="relative">
             <p>& awards</p>
-            <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div>
+            {/* <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
           </div>
         </div>
         <div
           id="honorsAwardsDesc"
           className="font-[Poppins] mx-auto text-xl lg:text-3xl text-(--text-color) w-full lg:w-[80%] flex flex-col"
         >
-          <span>We're India's top award-winning digital</span>
-          <span>agency, carving our own path in the digital</span>
-          <span>jungle, and the journey persists.</span>
+          <p>
+            We're India's top award-winning digital agency, carving our own path
+            in the digital jungle, and the journey persists.
+          </p>
         </div>
       </div>
 

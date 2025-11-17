@@ -5,151 +5,8 @@ import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { workLists } from "../constants";
 import Footer from "../components/section/Footer";
-// import { FaStar, FaBolt, FaHeart } from 'react-icons/fa';
-import SlidingCards from "../components/lightswind/sliding-cards";
-
-const cardItems = [
-  {
-    id: 1,
-    bgClass: "",
-    icon: (
-      <img
-        src="/images/menu/menu-cover.jpg"
-        className="w-full h-full object-contain"
-      />
-    ),
-  },
-  {
-    id: 2,
-    bgClass: "",
-    icon: (
-      <img
-        src="/images/menu/menu1.jpg"
-        className="w-full h-full object-contain"
-      />
-    ),
-  },
-  {
-    id: 3,
-    bgClass: "",
-    icon: (
-      <img
-        src="/images/menu/menu3.jpg"
-        className="w-full h-full object-contain"
-      />
-    ),
-  },
-  {
-    id: 4,
-    bgClass: "",
-    icon: (
-      <img
-        src="/images/menu/menu4.jpg"
-        className="w-full h-full object-contain"
-      />
-    ),
-  },
-  {
-    id: 5,
-    bgClass: "",
-    icon: (
-      <img
-        src="/images/menu/menu5.jpg"
-        className="w-full h-full object-contain"
-      />
-    ),
-  },
-  {
-    id: 6,
-    bgClass: "",
-    icon: (
-      <img
-        src="/images/menu/menu6.jpg"
-        className="w-full h-full object-contain"
-      />
-    ),
-  },
-  {
-    id: 7,
-    bgClass: "",
-    icon: (
-      <img
-        src="/images/menu/menu7.jpg"
-        className="w-full h-full object-contain"
-      />
-    ),
-  },
-  {
-    id: 8,
-    bgClass: "",
-    icon: (
-      <img
-        src="/images/menu/menu8.jpg"
-        className="w-full h-full object-contain"
-      />
-    ),
-  },
-  {
-    id: 9,
-    bgClass: "",
-    icon: (
-      <img
-        src="/images/menu/menu9.jpg"
-        className="w-full h-full object-contain"
-      />
-    ),
-  },
-  {
-    id: 10,
-    bgClass: "",
-    icon: (
-      <img
-        src="/images/menu/menu10.jpg"
-        className="w-full h-full object-contain"
-      />
-    ),
-  },
-  {
-    id: 11,
-    bgClass: "",
-    icon: (
-      <img
-        src="/images/menu/menu11.jpg"
-        className="w-full h-full object-contain"
-      />
-    ),
-  },
-  {
-    id: 12,
-    bgClass: "",
-    icon: (
-      <img
-        src="/images/menu/menu12.jpg"
-        className="w-full h-full object-contain"
-      />
-    ),
-  },
-  {
-    id: 13,
-    bgClass: "",
-    icon: (
-      <img
-        src="/images/menu/menu13.jpg"
-        className="w-full h-full object-contain"
-      />
-    ),
-  },
-  {
-    id: 14,
-    bgClass: "",
-    icon: (
-      <img
-        src="/images/menu/menu-back-cover.jpg"
-        className="w-full h-full object-contain"
-      />
-    ),
-  },
-];
+import MenuSlider from "../components/MenuSlider";
+import PageTitle from "../components/section/PageTitle";
 
 const groupedPairs = [
   [11, 12],
@@ -215,25 +72,15 @@ const Work = () => {
   return (
     <div className="flex flex-col items-center gap-8 mt-10">
       <CircularBrand />
-      <div
-        id="workPageTitle"
-        className="flex flex-col w-full text-[50px] md:text-[110px] lg:text-[90px] text-center leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
-      >
-        <span>our creative</span>
-        <span>roar defines our</span>
-        <span>legacy.</span>
-      </div>
 
-      <div
-        id="workPageDesc"
-        className="flex flex-col text-center uppercase text-lg font-[Poppins] text-(--text-color)"
-      >
-        <span>Our creative legacy roars with</span>
-        <span>pride as we showcase the value we</span>
-        <span>bring to our clients.</span>
-      </div>
+      <PageTitle
+        text1="our creative"
+        text2="roar defines our"
+        text3="legacy."
+        desc="Our creative legacy roars with pride as we showcase the value we bring to our clients."
+      />
 
-      <div className="flex justify-center">
+      <div className="flex justify-center mb-20">
         <a href="#workImageSection">
           <CircleArrowDown
             size={30}
@@ -243,14 +90,9 @@ const Work = () => {
         </a>
       </div>
 
-      <div className="w-full">
-        <SlidingCards
-          cards={cardItems}
-          cardSize="w-full h-full"
-          className="mx-auto"
-        />
-        ;
-      </div>
+      {/* <div className="my-20"> */}
+      <MenuSlider />
+      {/* </div> */}
 
       <div id="workImageSection" className="mt-32">
         {workLists.map((workItem, idx) => {

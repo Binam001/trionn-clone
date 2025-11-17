@@ -1,10 +1,8 @@
 import { CircleArrowDown } from "lucide-react";
 import Button from "../components/Button";
 import gsap from "gsap";
-import { SplitText } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import IntroVideo from "../components/IntroVideo";
-import RecentWork from "../components/section/RecentWork";
 import ViewProject from "../components/section/ViewProject";
 import About from "../components/section/About";
 import Progress from "../components/section/Progress";
@@ -16,33 +14,10 @@ import Footer from "../components/section/Footer";
 import CircularBrand from "../components/CircularBrand";
 import { motion } from "framer-motion";
 import PageTitle from "../components/section/PageTitle";
+import OurCombo from "../components/section/OurCombo";
 
 const LandingPage = () => {
   useGSAP(() => {
-    const servicesPageTitleParagraphSplit = new SplitText("#landingPageTitle", {
-      type: "lines",
-    });
-    gsap.from(servicesPageTitleParagraphSplit.lines, {
-      opacity: 0,
-      filter: "blur(100px)",
-      yPercent: 100,
-      duration: 2,
-      ease: "expo.out",
-      stagger: 0.2,
-      delay: 0.6,
-    });
-    const servicesPageDescParagraphSplit = new SplitText("#landingPageDesc", {
-      type: "lines",
-    });
-    gsap.from(servicesPageDescParagraphSplit.lines, {
-      opacity: 0,
-      yPercent: 100,
-      duration: 2,
-      ease: "expo.out",
-      stagger: 0.2,
-      delay: 1,
-    });
-
     gsap.from("#join1Text, #join2Text", {
       xPercent: 50,
       opacity: 0,
@@ -108,7 +83,7 @@ const LandingPage = () => {
       </div>
 
       <IntroVideo />
-      <RecentWork />
+      <OurCombo />
       <ViewProject />
       <About />
       <Progress />

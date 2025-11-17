@@ -23,7 +23,7 @@ const SocialLink = () => {
         >
           <div id="social" className="">
             <div className="flex justify-between items-center my-5">
-              <p className="text-(--text-color) text-4xl syne-normal">
+              <p className="text-(--text-color) text-4xl font-[Poppins]">
                 {social.name}
               </p>
               <img src={social.image} alt={social.name} className="size-12" />

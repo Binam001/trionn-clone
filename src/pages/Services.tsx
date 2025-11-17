@@ -24,7 +24,6 @@ const Services = () => {
   useGSAP(() => {
     const servicesPageTitleParagraphSplit = new SplitText("#servicePageTitle", {
       type: "lines",
-      linesClass: "line-wrapper",
     });
     gsap.from(servicesPageTitleParagraphSplit.lines, {
       opacity: 0,
@@ -37,7 +36,6 @@ const Services = () => {
     });
     const servicesPageDescParagraphSplit = new SplitText("#servicePageDesc", {
       type: "lines",
-      linesClass: "line-wrapper",
     });
     gsap.from(servicesPageDescParagraphSplit.lines, {
       opacity: 0,
@@ -134,7 +132,6 @@ const Services = () => {
 
     const servicesPageParagraphSplit = new SplitText(".servicePageText", {
       type: "lines",
-      linesClass: "line-wrapper",
     });
     gsap.from(servicesPageParagraphSplit.lines, {
       opacity: 0,
@@ -177,7 +174,7 @@ const Services = () => {
 
       <div
         id="servicePageDesc"
-        className="flex flex-col text-center uppercase lg:text-lg syne-normal text-(--text-color)"
+        className="flex flex-col text-center uppercase lg:text-lg font-[Poppins] text-(--text-color)"
       >
         <span>Experience the wild array of</span>
         <span>services that make your company</span>
@@ -196,7 +193,7 @@ const Services = () => {
 
       <div
         id="thirdPage2ndDesc"
-        className="flex flex-col text-center syne-normal text-(--text-color-2) text-xl md:text-[36px] lg:text-[50px] mt-40"
+        className="flex flex-col text-center font-[Poppins] text-(--text-color-2) text-xl md:text-[36px] lg:text-[50px] mt-40"
       >
         <span className="thirdPage2ndDescSpan">
           In the wild digital realm, we craft
@@ -214,7 +211,7 @@ const Services = () => {
           className="w-full h-full object-cover"
         />
         <div className="bg-black/50 absolute top-0 w-full h-full z-10 pointer-events-none" /> */}
-        <ImageHover />
+        <ImageHover text1="boundless" text2="creativity" text3="realm." />
         {/* <div className="imgText group flex flex-col justify-center items-center w-full h-full absolute top-0 z-20 pointer-events-none text-white text-center leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
           <span
             className="hover:text-transparent
@@ -247,7 +244,7 @@ const Services = () => {
       </div>
 
       <div className="">
-        <div className="syne-normal text-(--text-color) text-2xl lg:text-[48px] mt-40 lg:leading-14">
+        <div className="font-[Poppins] text-(--text-color) text-2xl lg:text-[48px] mt-40 lg:leading-14">
           <p className="servicePageText">
             We're here to make tech businesses roar in the digital jungle,
             crafting valuable impact through design, branding, and development
@@ -255,7 +252,7 @@ const Services = () => {
           </p>
         </div>
         <div className="mt-10 flex justify-end">
-          <div className="text-(--text-color) syne-normal md:w-1/2 space-y-4 lg:text-xl">
+          <div className="text-(--text-color) font-[Poppins] md:w-1/2 space-y-4 lg:text-xl">
             <p className="servicePageText">
               Challenges are the soil where our growth blossoms. Armed with
               digital prowess, we fearlessly overcome them. Bring your branding,
@@ -277,7 +274,7 @@ const Services = () => {
               <p className="cardTitle">{service.title2}</p>
             </div>
 
-            <div className="md:w-1/2 syne-normal flex flex-col gap-8 mt-5 md:mt-0">
+            <div className="md:w-1/2 font-[Poppins] flex flex-col gap-8 mt-5 md:mt-0">
               <div className="cardDesc text-xl lg:text-xl w-[95%]">
                 {service.desc}
               </div>
@@ -291,7 +288,7 @@ const Services = () => {
         ))}
       </div>
 
-      <div className="syne-normal text-(--text-color) text-center text-[44px] mt-20">
+      <div className="font-[Poppins] text-(--text-color) text-center text-[44px] mt-20">
         <p id="ourExpertiseText">Our expertise</p>
 
         <div className="w-screen">
@@ -343,7 +340,7 @@ const Services = () => {
             <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div>
           </div>
         </div>
-        <p className="servicePageText syne-normal mx-auto text-3xl text-(--text-color) w-[55%]">
+        <p className="servicePageText font-[Poppins] mx-auto text-3xl text-(--text-color) w-[55%]">
           These pillars support excellence in the digital jungle.
         </p>
       </div>
@@ -353,7 +350,7 @@ const Services = () => {
           {processLists.map((process) => (
             <div
               key={process.id}
-              className="serviceCard border-2 border-(--foreground) rounded-3xl p-8 md:p-14 text-(--text-color) syne-normal mx-auto my-5 lg:m-5 w-[90%] md:w-[550px] shrink-0"
+              className="serviceCard border-2 border-(--foreground) rounded-3xl p-8 md:p-14 text-(--text-color) font-[Poppins] mx-auto my-5 lg:m-5 w-[90%] md:w-[550px] shrink-0"
             >
               <div className="cardTitle text-[40px] md:text-[50px]">
                 {process.id}.

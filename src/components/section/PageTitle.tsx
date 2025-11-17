@@ -1,0 +1,70 @@
+import CircularBrand from "../CircularBrand";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { SplitText } from "gsap/all";
+
+const PageTitle = ({
+  text1,
+  text2,
+  text3,
+  desc,
+}: {
+  text1: string;
+  text2: string;
+  text3: string;
+  desc: string;
+}) => {
+  useGSAP(() => {
+    const servicesPageTitleParagraphSplit = new SplitText("#pageTitle", {
+      type: "lines",
+    });
+    gsap.from(servicesPageTitleParagraphSplit.lines, {
+      opacity: 0,
+      filter: "blur(100px)",
+      yPercent: 100,
+      duration: 2,
+      ease: "expo.out",
+      stagger: 0.2,
+      delay: 0.6,
+    });
+    const servicesPageDescParagraphSplit = new SplitText("#pageDesc", {
+      type: "lines",
+    });
+    gsap.from(servicesPageDescParagraphSplit.lines, {
+      opacity: 0,
+      yPercent: 100,
+      duration: 2,
+      ease: "expo.out",
+      stagger: 0.2,
+      delay: 1,
+    });
+    gsap.from("#aboutUsDesc", {
+      y: 30,
+      opacity: 0,
+      duration: 1.5,
+      delay: 1,
+    });
+  });
+  return (
+    <div className="flex flex-col items-center gap-8 w-full">
+      <CircularBrand />
+      <div
+        id="pageTitle"
+        className="flex flex-col w-full text-[50px] md:text-[100px] text-center leading-[0.75] text-(--text-color) uppercase font-[Britannic]"
+      >
+        <span>{text1}</span>
+        <span>{text2}</span>
+        <span>{text3}</span>
+      </div>
+
+      <div
+        id="pageDesc"
+        className="relative flex flex-col text-center w-[90%] md:w-[70%] lg:w-[55%] uppercase lg:text-lg font-[Poppins] text-(--text-color)"
+      >
+        <p>{desc}</p>
+      </div>
+    </div>
+  );
+};
+
+export default PageTitle;

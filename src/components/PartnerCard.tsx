@@ -29,7 +29,7 @@ const PartnerCard = () => {
                     />
                   </div>
 
-                  <div className="syne-normal">
+                  <div className="font-[Poppins]">
                     <h1 className="text-2xl">{client.name}</h1>
                     <p>{client.position}</p>
                   </div>
@@ -57,7 +57,7 @@ const PartnerCard = () => {
                           className="invert dark:invert-0 size-6 lg:size-14"
                         />
                       </div>
-                      <p className="syne-normal lg:text-lg px-10">
+                      <p className="font-[Poppins] lg:text-lg px-10">
                         {client.message}
                       </p>
                     </div>

@@ -30,13 +30,12 @@ const Dribbble = () => {
   useGSAP(() => {
     const paragraphSplit = new SplitText("#dribbleText", {
       type: "lines",
-      linesClass: "line-wrapper",
     });
 
     // const oddRZ = isTablet ? 0 : -45;
     // const evenRZ = isTablet ? 0 : 45;
-    const oddXp = isTablet ? -300 : -120;
-    const evenXp = isTablet ? 150 : 120;
+    const oddXp = isTablet ? -70 : -120;
+    const evenXp = isTablet ? 70 : 120;
     const start = isTablet ? "top center" : "top 80%";
 
     gsap.utils.toArray<HTMLElement>(".oddDribbbleCard").forEach((el) => {
@@ -48,6 +47,7 @@ const Dribbble = () => {
         scrollTrigger: {
           trigger: el,
           start,
+          end: "center center",
           scrub: 1.5,
         },
       });
@@ -102,7 +102,7 @@ const Dribbble = () => {
       </div>
       <p
         id="dribbleText"
-        className="text-(--text-color-2) text-3xl syne-normal w-[60%] lg:w-[40%] text-center"
+        className="text-(--text-color-2) text-3xl font-[Poppins] w-[60%] lg:w-[40%] text-center"
       >
         Like a lion's roar echoing through the jungle, a hint of our creative
         minds emerges.

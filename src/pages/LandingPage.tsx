@@ -15,12 +15,12 @@ import SocialLink from "../components/section/SocialLink";
 import Footer from "../components/section/Footer";
 import CircularBrand from "../components/CircularBrand";
 import { motion } from "framer-motion";
+import PageTitle from "../components/section/PageTitle";
 
 const LandingPage = () => {
   useGSAP(() => {
     const servicesPageTitleParagraphSplit = new SplitText("#landingPageTitle", {
       type: "lines",
-      linesClass: "line-wrapper",
     });
     gsap.from(servicesPageTitleParagraphSplit.lines, {
       opacity: 0,
@@ -33,7 +33,6 @@ const LandingPage = () => {
     });
     const servicesPageDescParagraphSplit = new SplitText("#landingPageDesc", {
       type: "lines",
-      linesClass: "line-wrapper",
     });
     gsap.from(servicesPageDescParagraphSplit.lines, {
       opacity: 0,
@@ -83,22 +82,14 @@ const LandingPage = () => {
     >
       <div className="py-16 md:py-0">
         <CircularBrand />
-        <div
-          id="landingPageTitle"
-          className="text-[50px] md:text-[110px] lg:text-[115px] text-center leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
-        >
-          <p>roar of</p>
-          <p>flavors unleashed</p>
-        </div>
-
-        <p
-          id="landingPageDesc"
-          className="text-xs text-(--text-color) w-1/2 mx-auto uppercase text-center syne-normal mt-5"
-        >
-          We roar with flavor, serving unforgettable dining experiences through
+        <PageTitle
+          text1="roar of"
+          text2="flavors unleashed"
+          text3=""
+          desc="We roar with flavor, serving unforgettable dining experiences through
           creative menu design, exceptional hospitality, and innovative culinary
-          techniques that delight every guest.
-        </p>
+          techniques that delight every guest."
+        />
       </div>
 
       <div className="flex justify-center">
@@ -127,7 +118,7 @@ const LandingPage = () => {
 
       <div
         id="join"
-        className="mt-20 lg:mt-40 flex flex-col items-center text-[80px] lg:text-[200px] leading-[0.8] text-(--foreground) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
+        className="mt-20 lg:mt-40 flex flex-col items-center text-[80px] lg:text-[200px] leading-[0.8] text-(--foreground) font-[Britannic] uppercase"
       >
         <span id="join1Text">dine</span>
         <span id="join2Text">with</span>

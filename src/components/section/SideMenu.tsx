@@ -10,7 +10,7 @@ const SideMenu = ({ setOpen }: SideMenuProps) => {
   return (
     <div className="text-(--text-color) relative h-screen">
       <div className="md:flex px-8 lg:px-20 absolute bottom-0 w-full mb-5">
-        <ul className="w-1/2 text-[80px] lg:text-[100px] leading-[0.8] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+        <ul className="w-1/2 text-[80px] lg:text-[100px] leading-[0.8] font-[Britannic] uppercase">
           {sideMenuLists.map((sideMenuItem) => (
             <li
               key={sideMenuItem.id}
@@ -32,7 +32,7 @@ const SideMenu = ({ setOpen }: SideMenuProps) => {
           ))}
         </ul>
 
-        <div className="wfull md:w-1/2 md:text-end flex md:flex-col md:justify-end gap-10">
+        <div className="wfull md:w-1/2 md:text-end font-[Poppins] flex md:flex-col md:justify-end gap-10">
           <div className="flex flex-col gap-2 md:gap-4 text-2xl mt-6 md:mt-0">
             <a href="">hello@trionn.com</a>
             <a href="" className="">

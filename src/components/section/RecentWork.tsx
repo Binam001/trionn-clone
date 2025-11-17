@@ -7,7 +7,6 @@ const RecentWork = () => {
   useGSAP(() => {
     const paragraphSplit = new SplitText("#text3", {
       type: "lines",
-      linesClass: "line-wrapper",
     });
     gsap.from(".text2", {
       xPercent: -25,
@@ -48,7 +47,7 @@ const RecentWork = () => {
   });
   return (
     <div className="mt-20 lg:mt-40">
-      <div className="text-[70px] md:text-[80px] lg:text-[200px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+      <div className="text-[70px] md:text-[80px] lg:text-[200px] leading-[0.9] font-[Britannic] uppercase">
         <h1 className="text2 text-(--text-color)">our</h1>
         <h1 className="text2 text-(--text-color)">combo</h1>
       </div>
@@ -56,7 +55,7 @@ const RecentWork = () => {
       <div className="flex justify-between items-center">
         <p
           id="text3"
-          className="w-[90%] md:w-[40%] lg:w-[35%] text-2xl lg:text-3xl text-(--text-color-2) overflow-hidden syne-normal"
+          className="w-[90%] md:w-[40%] lg:w-[50%] text-2xl lg:text-3xl text-(--text-color-2) overflow-hidden font-[Poppins]"
         >
           In the world of taste adventures, our meals are beloved by all who
           visit.

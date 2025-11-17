@@ -40,7 +40,7 @@ const CircularBrand = () => {
     <img
       src={leoLogo}
       alt="leo logo"
-      className="circular-brand size-20 lg:size-32 fixed right-10 bottom-10 invert dark:invert-0 z-10"
+      className="circular-brand size-20 lg:size-32 fixed right-10 bottom-10 invert dark:invert-0 z-50"
     />
   );
 };

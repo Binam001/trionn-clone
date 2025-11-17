@@ -18,7 +18,6 @@ const Team = () => {
   useGSAP(() => {
     const servicesPageTitleParagraphSplit = new SplitText("#teamPageTitle", {
       type: "lines",
-      linesClass: "line-wrapper",
     });
     gsap.from(servicesPageTitleParagraphSplit.lines, {
       opacity: 0,
@@ -31,7 +30,6 @@ const Team = () => {
     });
     const servicesPageDescParagraphSplit = new SplitText("#teamPageDesc", {
       type: "lines",
-      linesClass: "line-wrapper",
     });
     gsap.from(servicesPageDescParagraphSplit.lines, {
       opacity: 0,
@@ -54,7 +52,6 @@ const Team = () => {
 
     const secondParagraphSplit = new SplitText(".secondDesc", {
       type: "lines",
-      linesClass: "line-wrapper",
     });
 
     gsap.from(secondParagraphSplit.lines, {
@@ -82,7 +79,6 @@ const Team = () => {
     });
     const thirdParagraphSplit = new SplitText(".thirdDesc", {
       type: "lines",
-      linesClass: "line-wrapper",
     });
 
     gsap.from(thirdParagraphSplit.lines, {
@@ -157,7 +153,7 @@ const Team = () => {
     });
   });
   return (
-    <div className="flex flex-col items-center gap-8 mt-10 syne-normal text-(--text-color)">
+    <div className="flex flex-col items-center gap-8 mt-10 font-[Poppins] text-(--text-color)">
       <CircularBrand />
       <div
         id="teamPageTitle"

@@ -90,7 +90,7 @@ const Navbar = () => {
             {!open ? (
               <button
                 onClick={() => setOpen(true)}
-                className="flex items-center gap-4 text-sm font-[daysoftype] uppercase**[font-feature-settings:'ss01']** cursor-pointer"
+                className="flex items-center gap-4 text-sm cursor-pointer uppercase"
               >
                 menu
                 <div className="bg-(--icon-bg-color) size-11 rounded-full justify-center flex items-center mx-auto">
@@ -103,7 +103,7 @@ const Navbar = () => {
             ) : (
               <button
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-4 text-sm font-[daysoftype] uppercase**[font-feature-settings:'ss01']** cursor-pointer"
+                className="flex items-center gap-4 text-sm cursor-pointer uppercase"
               >
                 close
                 <div className="bg-(--icon-bg-color) size-11 rounded-full flex flex-col justify-center items-center mx-auto relative">

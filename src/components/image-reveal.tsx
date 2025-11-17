@@ -1,5 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
-import lionGroup from "../assets/images/lionGroup.webp";
+// import lionGroup from "../assets/images/lionGroup.webp";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 // Responsive values based on viewport size
 const getResponsiveValues = () => {
@@ -26,7 +28,15 @@ const getResponsiveValues = () => {
   };
 };
 
-export const ImageHover = () => {
+export const ImageHover = ({
+  text1,
+  text2,
+  text3,
+}: {
+  text1: string;
+  text2: string;
+  text3: string;
+}) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(
     null
@@ -147,7 +157,7 @@ export const ImageHover = () => {
                                 rgba(0,0,0,0.45) ${
                                   radius - values.SOFT_EDGE / 2
                                 }px,
-                                rgba(0,0,0,0.75) ${radius + 50}px,
+                                rgba(0,0,0,0.75) ${radius + 100}px,
                                 black 100%)`,
           maskImage: `radial-gradient(circle ${radius}px at ${lerpedPos.x}px ${
             lerpedPos.y
@@ -162,67 +172,37 @@ export const ImageHover = () => {
                                 rgba(0,0,0,0.45) ${
                                   radius - values.SOFT_EDGE / 2
                                 }px,
-                                rgba(0,0,0,0.75) ${radius + 50}px,
+                                rgba(0,0,0,0.75) ${radius + 100}px,
                                 black 100%)`,
-          transition: "WebkitMaskImage 0.3s, maskImage 0.3s, opacity 0.3s",
+          transition: "WebkitMaskImage 0s, maskImage 0s, opacity 0s",
           opacity: 1,
         }
       : {
           WebkitMaskImage: "none",
           maskImage: "none",
           opacity: 1,
-          transition: "WebkitMaskImage 0.3s, maskImage 0.3s, opacity 0.3s",
+          transition: "WebkitMaskImage 0s, maskImage 0s, opacity 0s",
         };
 
-  // const maskTextStyle =
-  //   lerpedPos && radius > 0
-  //     ? {
-  //         WebkitMaskImage: `radial-gradient(circle ${radius}px at ${
-  //           lerpedPos.x
-  //         }px ${lerpedPos.y}px,
-  //                               transparent 0 ${
-  //                                 radius - values.SOFT_EDGE - 20
-  //                               }px,
-  //                               rgba(0,0,0,0.10) ${radius - values.SOFT_EDGE}px,
-  //                               rgba(0,0,0,0.25) ${
-  //                                 radius - values.SOFT_EDGE / 1.5
-  //                               }px,
-  //                               rgba(0,0,0,0.45) ${
-  //                                 radius - values.SOFT_EDGE / 2
-  //                               }px,
-  //                               rgba(0,0,0,0.75) ${radius + 50}px,
-  //                               black 100%)`,
-  //         maskImage: `radial-gradient(circle ${radius}px at ${lerpedPos.x}px ${
-  //           lerpedPos.y
-  //         }px,
-  //                               transparent 0 ${
-  //                                 radius - values.SOFT_EDGE - 20
-  //                               }px,
-  //                               rgba(0,0,0,0) ${radius - values.SOFT_EDGE}px,
-  //                               rgba(0,0,0,0) ${
-  //                                 radius - values.SOFT_EDGE / 1.5
-  //                               }px,
-  //                               rgba(0,0,0,0) ${
-  //                                 radius - values.SOFT_EDGE / 2
-  //                               }px,
-  //                               rgba(0,0,0,0) ${radius + 50}px,
-  //                               black 100%)`,
-  //         transition: "WebkitMaskImage 0.3s, maskImage 0.3s, opacity 0.3s",
-  //         opacity: 1,
-  //       }
-  //     : {
-  //         WebkitMaskImage: "none",
-  //         maskImage: "none",
-  //         opacity: 1,
-  //         transition: "WebkitMaskImage 0.3s, maskImage 0.3s, opacity 0.3s",
-  //       };
-
-  // Fade overlay out when not hovered
   const overlayOpacity =
     hovered && lerpedPos && radius > 0 ? "opacity-90" : "opacity-100";
 
+  useGSAP(() => {
+    gsap.from("#imgText span", {
+      y: 100,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: "#imgText",
+        start: "top bottom",
+        end: "30% center",
+        scrub: 1.5,
+      },
+    });
+  });
   return (
-    <div className="bg-black h-screen w-screen flex justify-center items-center">
+    <div className="bg-black h-screen w-screen flex justify-center items-center customCursor">
       <div
         ref={containerRef}
         className="container relative w-full h-full shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden"
@@ -234,39 +214,28 @@ export const ImageHover = () => {
         onTouchEnd={handleTouchEnd}
       >
         <img
-          src={lionGroup}
-          // src="https://images.unsplash.com/photo-1638551145269-f7925c37e672?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="/images/sweets/sweets1.png"
           alt="lion group"
-          className="absolute w-full h-full object-cover rounded-xl overflow-hidden"
+          className="absolute w-screen h-full object-cover overflow-hidden"
         />
 
-        <div className="">
-          <div
-            className="leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']** text-white text-center  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+        <div
+          className="leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[Britannic] uppercase text-white text-center  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
     flex flex-col justify-center items-center text-outline-effect"
-          >
-            <span>boundless</span>
-            <span>creative</span>
-            <span>realm.</span>
-          </div>
-          {/* <div
-            className="leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']** text-white text-center absolute 
-    flex flex-col justify-center items-center z-10 pointer-events-none"
-            style={maskTextStyle}
-          >
-            <span>boundless</span>
-            <span>creative</span>
-            <span>realm.</span>
-          </div> */}
+        >
+          <span>{text1}</span>
+          <span>{text2}</span>
+          <span>{text3}</span>
         </div>
 
         <div
-          className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']** text-white text-center flex flex-col justify-center items-center bg-black/80 backdrop-blur-[6px] rounded-xl transition-all duration-300 pointer-events-none z-10 ${overlayOpacity}`}
+          id="imgText"
+          className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-screen h-full leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[Britannic] uppercase text-white text-center flex flex-col justify-center items-center bg-black/80 backdrop-blur-[6px] transition-all duration-300 pointer-events-none z-10 ${overlayOpacity}`}
           style={maskStyle}
         >
-          <span>boundless</span>
-          <span>creative</span>
-          <span>realm.</span>
+          <span>{text1}</span>
+          <span>{text2}</span>
+          <span>{text3}</span>
         </div>
         {/* Glow: extra radial gradient for soft border */}
         {lerpedPos && radius > 0 && (

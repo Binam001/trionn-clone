@@ -20,31 +20,36 @@ function App() {
   return (
     <div
       id="background"
-      className="px-3 md:px-10 lg:px-20 overflow-hidden bg-fixed"
+      className="w-screen bg-fixed relative overflow-x-hidden"
     >
-      {/* <div className="px-3 md:px-10 lg:px-20 overflow-hidden bg-[url('./assets/bg-svg-cropped.svg')] bg-fixed bg-(--background)"> */}
-      {/* <div className="px-3 md:px-10 lg:px-20 overflow-hidden bg-(--background)"> */}
-      <ScrollToTop />
-      {isLargeDevice ? (
-        <SmokeyCursor
-          simulationResolution={64}
-          dyeResolution={512}
-          densityDissipation={5}
-          velocityDissipation={3}
-          enableShading={false}
-          backgroundColor={{ r: 0.5, g: 0.5, b: 0.5 }}
-        />
-      ) : null}
-      <Navbar />
-      <div className="pt-36">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/Work" element={<Work />} />
-          <Route path="/AboutUs" element={<AboutUs />} />
-          <Route path="/Services" element={<Services />} />
-          <Route path="/Team" element={<Team />} />
-          <Route path="/Contact" element={<Contact />} />
-        </Routes>
+      <div className="fixed inset-0 z-20 fixedgradient"></div>
+
+      <div
+        id="bgGradient"
+        className="w-screen  relative px-3 md:px-10 lg:px-20 z-50"
+      >
+        <ScrollToTop />
+        {isLargeDevice ? (
+          <SmokeyCursor
+            simulationResolution={64}
+            dyeResolution={512}
+            densityDissipation={5}
+            velocityDissipation={3}
+            enableShading={false}
+            backgroundColor={{ r: 0.5, g: 0.5, b: 0.5 }}
+          />
+        ) : null}
+        <Navbar />
+        <div className="pt-36">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/Work" element={<Work />} />
+            <Route path="/AboutUs" element={<AboutUs />} />
+            <Route path="/Services" element={<Services />} />
+            <Route path="/Team" element={<Team />} />
+            <Route path="/Contact" element={<Contact />} />
+          </Routes>
+        </div>
       </div>
     </div>
   );

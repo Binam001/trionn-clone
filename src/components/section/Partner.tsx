@@ -44,20 +44,20 @@ const Partner = () => {
     <div className="mt-20 lg:mt-80 text-(--text-color)">
       <div
         id="customer"
-        className="text-[70px] md:text-[80px] lg:text-[200px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
+        className="text-[70px] md:text-[80px] lg:text-[200px] leading-[0.9] font-[Britannic] uppercase"
       >
         customer
       </div>
       <div className="flex flex-col lg:flex-row lg:justify-between">
         <div
           id="love"
-          className="text-[70px] md:text-[80px] lg:text-[200px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
+          className="text-[70px] md:text-[80px] lg:text-[200px] leading-[0.9] font-[Britannic] uppercase"
         >
           love
         </div>
         <p
           id="text"
-          className="w-[70%] lg:w-[30%] text-(--text-color-2) text-2xl lg:text-3xl syne-normal"
+          className="w-[70%] lg:w-[30%] text-(--text-color-2) text-2xl lg:text-3xl font-[Poppins]"
         >
           Listen closely—the cheer of happy guests resounds in every review.
         </p>

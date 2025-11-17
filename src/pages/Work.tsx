@@ -5,55 +5,162 @@ import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { workLists } from "../constants";
 import Footer from "../components/section/Footer";
-// import { useState, useEffect, useRef } from "react";
-// import { motion, useMotionValue, useSpring } from "framer-motion";
+// import { FaStar, FaBolt, FaHeart } from 'react-icons/fa';
+import SlidingCards from "../components/lightswind/sliding-cards";
+
+const cardItems = [
+  {
+    id: 1,
+    bgClass: "",
+    icon: (
+      <img
+        src="/images/menu/menu-cover.jpg"
+        className="w-full h-full object-contain"
+      />
+    ),
+  },
+  {
+    id: 2,
+    bgClass: "",
+    icon: (
+      <img
+        src="/images/menu/menu1.jpg"
+        className="w-full h-full object-contain"
+      />
+    ),
+  },
+  {
+    id: 3,
+    bgClass: "",
+    icon: (
+      <img
+        src="/images/menu/menu3.jpg"
+        className="w-full h-full object-contain"
+      />
+    ),
+  },
+  {
+    id: 4,
+    bgClass: "",
+    icon: (
+      <img
+        src="/images/menu/menu4.jpg"
+        className="w-full h-full object-contain"
+      />
+    ),
+  },
+  {
+    id: 5,
+    bgClass: "",
+    icon: (
+      <img
+        src="/images/menu/menu5.jpg"
+        className="w-full h-full object-contain"
+      />
+    ),
+  },
+  {
+    id: 6,
+    bgClass: "",
+    icon: (
+      <img
+        src="/images/menu/menu6.jpg"
+        className="w-full h-full object-contain"
+      />
+    ),
+  },
+  {
+    id: 7,
+    bgClass: "",
+    icon: (
+      <img
+        src="/images/menu/menu7.jpg"
+        className="w-full h-full object-contain"
+      />
+    ),
+  },
+  {
+    id: 8,
+    bgClass: "",
+    icon: (
+      <img
+        src="/images/menu/menu8.jpg"
+        className="w-full h-full object-contain"
+      />
+    ),
+  },
+  {
+    id: 9,
+    bgClass: "",
+    icon: (
+      <img
+        src="/images/menu/menu9.jpg"
+        className="w-full h-full object-contain"
+      />
+    ),
+  },
+  {
+    id: 10,
+    bgClass: "",
+    icon: (
+      <img
+        src="/images/menu/menu10.jpg"
+        className="w-full h-full object-contain"
+      />
+    ),
+  },
+  {
+    id: 11,
+    bgClass: "",
+    icon: (
+      <img
+        src="/images/menu/menu11.jpg"
+        className="w-full h-full object-contain"
+      />
+    ),
+  },
+  {
+    id: 12,
+    bgClass: "",
+    icon: (
+      <img
+        src="/images/menu/menu12.jpg"
+        className="w-full h-full object-contain"
+      />
+    ),
+  },
+  {
+    id: 13,
+    bgClass: "",
+    icon: (
+      <img
+        src="/images/menu/menu13.jpg"
+        className="w-full h-full object-contain"
+      />
+    ),
+  },
+  {
+    id: 14,
+    bgClass: "",
+    icon: (
+      <img
+        src="/images/menu/menu-back-cover.jpg"
+        className="w-full h-full object-contain"
+      />
+    ),
+  },
+];
 
 const groupedPairs = [
   [11, 12],
   [16, 17],
   [19, 20],
 ];
-// const SPRING_CONFIG = { damping: 100, stiffness: 400 };
 
 const Work = () => {
-  //   const [isHovered, setIsHovered] = useState(false);
-  //   const ref = useRef<HTMLDivElement>(null);
-
-  //   const x = useMotionValue(0);
-  //   const y = useMotionValue(0);
-
-  //   const springX = useSpring(x, SPRING_CONFIG);
-  //   const springY = useSpring(y, SPRING_CONFIG);
-  //   useEffect(() => {
-  //     const calculateDistance = (e: MouseEvent) => {
-  //       if (ref.current) {
-  //         const rect = ref.current.getBoundingClientRect();
-  //         const centerX = rect.left + rect.width / 2;
-  //         const centerY = rect.top + rect.height / 2;
-  //         const distanceX = e.clientX - centerX;
-  //         const distanceY = e.clientY - centerY;
-
-  //         if (isHovered) {
-  //           x.set(distanceX * 0.01);
-  //           y.set(distanceY * 0.01);
-  //         } else {
-  //           x.set(0);
-  //           y.set(0);
-  //         }
-  //       }
-  //     };
-
-  //     document.addEventListener("mousemove", calculateDistance);
-
-  //     return () => {
-  //       document.removeEventListener("mousemove", calculateDistance);
-  //     };
-  //   }, [ref, isHovered]);
-
   useGSAP(() => {
     const servicesPageTitleParagraphSplit = new SplitText("#workPageTitle", {
       type: "lines",
-      linesClass: "line-wrapper",
     });
     gsap.from(servicesPageTitleParagraphSplit.lines, {
       opacity: 0,
@@ -66,7 +173,6 @@ const Work = () => {
     });
     const servicesPageDescParagraphSplit = new SplitText("#workPageDesc", {
       type: "lines",
-      linesClass: "line-wrapper",
     });
     gsap.from(servicesPageDescParagraphSplit.lines, {
       opacity: 0,
@@ -120,7 +226,7 @@ const Work = () => {
 
       <div
         id="workPageDesc"
-        className="flex flex-col text-center uppercase text-lg syne-normal text-(--text-color)"
+        className="flex flex-col text-center uppercase text-lg font-[Poppins] text-(--text-color)"
       >
         <span>Our creative legacy roars with</span>
         <span>pride as we showcase the value we</span>
@@ -135,6 +241,15 @@ const Work = () => {
             className="text-(--text-color)/50 mt-8"
           />
         </a>
+      </div>
+
+      <div className="w-full">
+        <SlidingCards
+          cards={cardItems}
+          cardSize="w-full h-full"
+          className="mx-auto"
+        />
+        ;
       </div>
 
       <div id="workImageSection" className="mt-32">
@@ -182,7 +297,7 @@ const Work = () => {
                             ></div>
                           </p>
                         </div>
-                        <p className="text-xl syne-normal">{item.tag}</p>
+                        <p className="text-xl font-[Poppins]">{item.tag}</p>
                       </div>
                     </div>
                   ))}
@@ -229,7 +344,7 @@ const Work = () => {
                     ></div>
                   </p>
                 </div>
-                <p className="text-xl syne-normal">{workItem.tag}</p>
+                <p className="text-xl font-[Poppins]">{workItem.tag}</p>
               </div>
             </div>
           );

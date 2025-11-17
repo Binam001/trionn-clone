@@ -38,7 +38,6 @@ const Contact = () => {
   useGSAP(() => {
     const servicesPageTitleParagraphSplit = new SplitText("#contactPageTitle", {
       type: "lines",
-      linesClass: "line-wrapper",
     });
     gsap.from(servicesPageTitleParagraphSplit.lines, {
       opacity: 0,
@@ -51,7 +50,6 @@ const Contact = () => {
     });
     const servicesPageDescParagraphSplit = new SplitText("#contactPageDesc", {
       type: "lines",
-      linesClass: "line-wrapper",
     });
     gsap.from(servicesPageDescParagraphSplit.lines, {
       opacity: 0,
@@ -122,7 +120,7 @@ const Contact = () => {
 
       <div
         id="contactPageDesc"
-        className="flex flex-col text-center uppercase text-lg syne-normal"
+        className="flex flex-col text-center uppercase text-lg font-[Poppins]"
       >
         <span>In the wilderness of change, our</span>
 
@@ -175,7 +173,7 @@ const Contact = () => {
 
         <div className="">
           <div>
-            <form action="" className="syne-normal">
+            <form action="" className="font-[Poppins]">
               <div className="lg:grid lg:grid-cols-2 gap-8 space-y-6 lg:space-y-0">
                 <div className="flex flex-col gap-2 lg:gap-4">
                   <label htmlFor="name">Name*</label>
@@ -298,7 +296,7 @@ const Contact = () => {
         </div>
         <div
           id="location"
-          className="syne-normal text-(--text-color) flex flex-col space-y-4 text-3xl mt-20"
+          className="font-[Poppins] text-(--text-color) flex flex-col space-y-4 text-3xl mt-20"
         >
           <span className="text-(--text-color)/60">Location</span>
           <span>TRIONN®</span>
@@ -312,7 +310,7 @@ const Contact = () => {
         {footerLinks.map((footer) => (
           <div
             key={footer.id}
-            className="footerLink border-y py-10 text-3xl syne-normal space-y-4"
+            className="footerLink border-y py-10 text-3xl font-[Poppins] space-y-4"
           >
             <div className="text-(--text-color)/60">{footer.title}</div>
             {/* <div className="space-x-5">{footer.link}</div> */}

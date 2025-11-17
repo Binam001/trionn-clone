@@ -21,7 +21,7 @@ const TeamCard = () => {
                     />
                   </div>
 
-                  <div className="syne-normal text-(--text-color) space-y-2">
+                  <div className="font-[Poppins] text-(--text-color) space-y-2">
                     <h1 className="text-2xl">{team.name}</h1>
                     <p>{team.position}</p>
                     {team.id === 1 && (

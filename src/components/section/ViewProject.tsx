@@ -70,13 +70,13 @@ const ViewProject = () => {
             className="w-full lg:w-[40%] flex flex-col gap-10 justify-center"
           >
             <div className="text-(--text-color) space-y-3">
-              <h1 className="text-[50px] md:text-[40px] lg:text-[70px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+              <h1 className="text-[50px] md:text-[40px] lg:text-[70px] leading-[0.9] font-[Britannic] uppercase">
                 {combo.title}
               </h1>
-              <p className="text-4xl syne-normal">Rs. {combo.price}</p>
+              <p className="text-4xl font-[Poppins]">Rs. {combo.price}</p>
             </div>
             <div className="hidden lg:block">
-              <Button href="#" title="View combo" />
+              <Button href="#" title="View Combo" />
             </div>
           </div>
 
@@ -94,7 +94,7 @@ const ViewProject = () => {
         </div>
       ))}
       <div className="flex justify-center mt-12 lg:hidden">
-        <Button title="View all work" />
+        <Button title="View all Combo" />
       </div>
     </div>
   );

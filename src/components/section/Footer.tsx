@@ -57,17 +57,17 @@ const Footer = () => {
     });
   });
   return (
-    <div className="mt-40 text-(--text-color)">
+    <div className="mt-40 text-(--text-color) font-[Poppins]">
       <div
         id="timeTo"
-        className="text-[40px] md:text-[70px] lg:text-[120px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
+        className="text-[40px] md:text-[70px] lg:text-[120px] leading-[0.9] font-[Britannic] uppercase"
       >
         let your
       </div>
       <div className="flex flex-col lg:flex-row lg:justify-between">
         <div
           id="roar"
-          className="text-[40px] md:text-[70px] lg:text-[120px] leading-[0.9] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
+          className="text-[40px] md:text-[70px] lg:text-[120px] leading-[0.9] font-[Britannic] uppercase"
         >
           hunger roar
         </div>

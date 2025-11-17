@@ -3,7 +3,8 @@ import CircularBrand from "../components/CircularBrand";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
-import lionGroup from "../assets/images/lionGroup.webp";
+
+import { motion } from "framer-motion";
 import Button from "../components/Button";
 import Progress from "../components/section/Progress";
 import Partner from "../components/section/Partner";
@@ -14,40 +15,11 @@ import {
 } from "../components/lightswind/3d-scroll-trigger";
 import { partnerSideA, partnerSideB } from "../constants";
 import ImageReveal from "../components/lightswind/image-reveal";
+import { ImageHover } from "../components/image-reveal";
+import PageTitle from "../components/section/PageTitle";
 
 const AboutUs = () => {
   useGSAP(() => {
-    const servicesPageTitleParagraphSplit = new SplitText("#aboutUsPageTitle", {
-      type: "lines",
-      linesClass: "line-wrapper",
-    });
-    gsap.from(servicesPageTitleParagraphSplit.lines, {
-      opacity: 0,
-      filter: "blur(100px)",
-      yPercent: 100,
-      duration: 2,
-      ease: "expo.out",
-      stagger: 0.2,
-      delay: 0.6,
-    });
-    const servicesPageDescParagraphSplit = new SplitText("#aboutUsPageDesc", {
-      type: "lines",
-      linesClass: "line-wrapper",
-    });
-    gsap.from(servicesPageDescParagraphSplit.lines, {
-      opacity: 0,
-      yPercent: 100,
-      duration: 2,
-      ease: "expo.out",
-      stagger: 0.2,
-      delay: 1,
-    });
-    gsap.from("#aboutUsDesc", {
-      y: 30,
-      opacity: 0,
-      duration: 1.5,
-      delay: 1,
-    });
     gsap.from("#weHaveWorkForText", {
       y: 50,
       opacity: 0,
@@ -72,7 +44,6 @@ const AboutUs = () => {
 
     const secondParagraphSplit = new SplitText(".secondDesc", {
       type: "lines",
-      linesClass: "line-wrapper",
     });
 
     gsap.from(secondParagraphSplit.lines, {
@@ -89,7 +60,6 @@ const AboutUs = () => {
     });
     const thirdParagraphSplit = new SplitText(".thirdDesc", {
       type: "lines",
-      linesClass: "line-wrapper",
     });
 
     gsap.from(thirdParagraphSplit.lines, {
@@ -105,18 +75,6 @@ const AboutUs = () => {
       },
     });
 
-    gsap.from(".imgText span", {
-      y: 100,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: ".imgText",
-        start: "top bottom",
-        end: "30% center",
-        scrub: 1.5,
-      },
-    });
     gsap.from("#btn", {
       opacity: 0,
       yPercent: 100,
@@ -144,7 +102,6 @@ const AboutUs = () => {
     });
     const honorsAwardsParagraphSplit = new SplitText("#honorsAwardsDesc", {
       type: "lines",
-      linesClass: "line-wrapper",
     });
 
     gsap.from(honorsAwardsParagraphSplit.lines, {
@@ -159,31 +116,73 @@ const AboutUs = () => {
         scrub: 1.5,
       },
     });
+
+    gsap.from(".candy1", {
+      x: 300,
+      rotate: 180,
+      duration: 1,
+      delay: 1,
+    });
+    gsap.from(".candy3", {
+      x: -300,
+      rotate: 180,
+      duration: 1,
+      delay: 1,
+    });
+    gsap.from("#yellowHat", {
+      xPercent: 300,
+      rotate: 180,
+      duration: 1,
+      delay: 1,
+    });
   });
 
   return (
-    <div className="flex flex-col items-center gap-8 mt-10">
+    <motion.div
+      // initial={{ y: -100, opacity: 0 }}
+      // animate={{ y: 0, opacity: 1 }}
+      // exit={{ y: -100, opacity: 0 }}
+      // transition={{ duration: 0.5, ease: "easeOut" }}
+      className="flex flex-col items-center relative"
+    >
+      {/* <div className="absolute right-0 top-0 z-20">
+        <img
+          // id="lolipop"
+          src="/images/candy/candy1.png"
+          alt="candy1"
+          className="candy1 size-52"
+        />
+      </div>
+      <div className="absolute left-0 -top-5 z-20">
+        <img
+          // id="lolipop"
+          src="/images/candy/candy3.png"
+          alt="candy3"
+          className="candy3 size-52"
+        />
+      </div> */}
+
       <CircularBrand />
-      <div
-        id="aboutUsPageTitle"
-        className="flex flex-col w-full text-[50px] md:text-[110px] text-center leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
-      >
-        <span>a</span>
-        <span>versatile</span>
-        <span>design agency.</span>
-      </div>
+
+      <PageTitle
+        text1="a"
+        text2="flavor-driven"
+        text3="dining destination."
+        desc="Blending the freshest culinary trends, cooking techniques, and flavor
+          craft is what we do best. We never settle for a single
+          perspective—every dish is created from a world of inspiration."
+      />
 
       <div
-        id="aboutUsPageDesc"
-        className="flex flex-col text-center uppercase lg:text-lg syne-normal text-(--text-color)"
+        id="yellowHat"
+        className="absolute right-8 md:right-44 -top-4 lg:-top-16"
       >
-        <p>
-          Combining the latest trends in design, tech, branding and many other
-          fields is what we do best. We don't settle to view the world from one
-          perspective.
-        </p>
+        <img
+          src="/images/costume/yellowHat.png"
+          alt="Yellow Hat"
+          className="size-20 lg:size-52 rotate-30"
+        />
       </div>
-
       <div className="flex justify-center">
         <a href="#aboutSecondDesc">
           <CircleArrowDown
@@ -196,56 +195,46 @@ const AboutUs = () => {
 
       <div
         id="aboutSecondDesc"
-        className="secondDesc flex flex-col text-center syne-normal text-(--text-color) text-xl md:text-[36px] lg:text-[50px] mt-20 lg:mt-40 w-full"
+        className="secondDesc flex flex-col text-center font-[Poppins] text-(--text-color) text-xl md:text-[32px] lg:text-[45px] mt-20 lg:mt-40 w-full"
       >
-        <span className="secondDescSpan">
-          TRIONN® has a roaring 20+ years history
-        </span>
-        <span className="secondDescSpan">of empowering companies in the</span>
-        <span className="secondDescSpan">corporate jungle.</span>
+        <p>
+          Our kitchen carries a powerful legacy of delighting guests and
+          crafting unforgettable dining experiences in the culinary wilderness.
+        </p>
       </div>
 
       <div className="relative mt-20 w-screen">
-        <img
-          src={lionGroup}
-          alt="lion group"
-          className="w-full h-full object-cover"
-        />
-        <div className="imgText flex flex-col justify-center items-center w-full h-full absolute top-0 text-white text-center leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
-          <span>majestic</span>
-          <span>designs</span>
-          <span>since</span>
-          <span>2000</span>
-        </div>
+        <ImageHover text1="majestic" text2="flavors" text3="await" />
       </div>
 
-      <div className="w-full">
-        <div className="thirdDesc w-full syne-normal text-(--text-color-2) text-3xl md:text-4xl lg:text-[48px] mt-40 leading-12 lg:leading-14">
-          <p className="">
-            Embracing the journey, we cater to every need, collaborating to pave
-            the road for our diverse creative services to flourish in the
-            business jungle. We are the roaring digital agency, boldly
-            navigating the entire digital spectrum, from user research to
-            branding, development, and evaluation.
-          </p>
-        </div>
-        <div className="mt-10 flex flex-col-reverse lg:flex lg:flex-row">
-          <div id="btn" className="lg:w-1/2 mt-10 lg:mt-0">
-            <Button title="TRIONN® name story" />
+      <div className="w-screen dark:bg-[linear-gradient(to_right,rgba(0,0,0,0.7)_20%,rgba(0,0,0,0.7)_80%),url('/images/redPatternBg.png')] bg-cover bg-center">
+        <div className="w-full px-3 md:px-10 lg:px-20 my-20 lg:my-40 z-50">
+          <div className="thirdDesc font-[Poppins] text-(--text-color-2) text-3xl md:text-4xl lg:text-[48px] leading-12 lg:leading-14">
+            <p className="">
+              Guided by passion, we honor each dining journey, shaping dishes
+              that thrive in the rich landscape of flavor. We stand as fearless
+              curators of cuisine, mastering every step — from sourcing to
+              cooking, plating, and the joy of every bite.
+            </p>
           </div>
-          <div className="thirdDescP text-(--text-color) syne-normal lg:w-1/2 space-y-4 text-xl">
-            <p>
-              Infused with the lion's determination, we partner intimately with
-              clients, exploring their lofty goals and subtle nuances, adeptly
-              shifting from the theoretical to the pragmatic, bringing their
-              vision to fruition.
-            </p>
-            <p>
-              We meticulously craft Web Interfaces, Brands, IOS and Android
-              application designs, and bespoke Web solutions, Content
-              management, and e-commerce development, bringing their vision to
-              life with a roar of creativity.
-            </p>
+          <div className="mt-10 flex flex-col-reverse lg:flex lg:flex-row">
+            <div id="btn" className="lg:w-1/2 mt-10 lg:mt-0">
+              <Button title="Shyam's name story" />
+            </div>
+            <div className="thirdDescP text-(--text-color) font-[Poppins] lg:w-1/2 space-y-4 text-xl">
+              <p>
+                Driven by unwavering culinary passion, we work closely with our
+                guests, understanding their tastes and desires, skillfully
+                transforming ideas into dishes that capture their vision with
+                perfect balance and flavor.
+              </p>
+              <p>
+                We meticulously craft exquisite dishes, signature flavors,
+                seasonal menus, and immersive dining experiences—curating
+                everything with precision, passion, and a bold creative spark
+                that brings every plate to life.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -258,7 +247,7 @@ const AboutUs = () => {
         <Partner />
       </div>
 
-      <div className="syne-normal text-(--text-color) text-center text-[44px] mt-20">
+      <div className="font-[Poppins] text-(--text-color) text-center text-[44px] mt-20">
         <p id="weHaveWorkForText">We've worked for...</p>
 
         <div className="w-screen">
@@ -310,7 +299,7 @@ const AboutUs = () => {
         </div>
         <div
           id="honorsAwardsDesc"
-          className="syne-normal mx-auto text-xl lg:text-3xl text-(--text-color) w-full lg:w-[80%] flex flex-col"
+          className="font-[Poppins] mx-auto text-xl lg:text-3xl text-(--text-color) w-full lg:w-[80%] flex flex-col"
         >
           <span>We're India's top award-winning digital</span>
           <span>agency, carving our own path in the digital</span>
@@ -324,7 +313,7 @@ const AboutUs = () => {
       </div>
 
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

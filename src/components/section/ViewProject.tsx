@@ -11,12 +11,13 @@ const ViewProject = () => {
     const end = isTablet ? "center 90%" : "center center";
     gsap.from("#content", {
       y: 150,
+      opacity: 0,
       duration: 1.5,
-      delay: 0.5,
-      stagger: 1,
+      delay: 0.2,
       scrollTrigger: {
         trigger: "#content",
         start: "top 80%",
+        end: "center center",
         scrub: 1.2,
       },
     });
@@ -55,7 +56,7 @@ const ViewProject = () => {
     });
   });
   return (
-    <div className="mt-20">
+    <div className="mt-10 md:mt-20">
       {comboLists.map((combo) => (
         <div
           key={combo.id}
@@ -70,10 +71,12 @@ const ViewProject = () => {
             className="w-full lg:w-[40%] flex flex-col gap-10 justify-center"
           >
             <div className="text-(--text-color) space-y-3">
-              <h1 className="text-[50px] md:text-[40px] lg:text-[70px] leading-[0.9] font-[Britannic] uppercase">
+              <h1 className="text-3xl md:text-4xl lg:text-7xl leading-[0.9] font-[Britannic] uppercase">
                 {combo.title}
               </h1>
-              <p className="text-4xl font-[Poppins]">Rs. {combo.price}</p>
+              <p className="text-xl md:text-2xl lg:text-3xl font-[Poppins] text-(--text-color-2)">
+                Rs. {combo.price}
+              </p>
             </div>
             <div className="hidden lg:block">
               <Button href="#" title="View Combo" />

@@ -1,31 +1,31 @@
 import lightLogo from "/redLogo.png";
 import darkLogo from "/whiteLogo.png";
-import project1Img from "../assets/images/loftloom-main-landscape.webp";
-import project2Img from "../assets/images/imusic-main-landscape.webp";
+// import project1Img from "../assets/images/loftloom-main-landscape.webp";
+// import project2Img from "../assets/images/imusic-main-landscape.webp";
 // import project3Img from "../assets/images/technis-main-landscape.webp";
 import comboImg1 from "/images/comboPacks/family-combo.png";
 import comboImg2 from "/images/comboPacks/friends-combo.png";
 import comboImg3 from "/images/comboPacks/solo-combo.png";
 import comboImg4 from "/images/comboPacks/light-solo-combo.png";
-import project3Img1 from "../assets/images/technis-main.webp";
-import project4Img from "../assets/images/8octa-main.webp";
-import project5Img from "../assets/images/merit-global-main.webp";
-import project6Img from "../assets/images/reyden-main.webp";
-import project7Img from "../assets/images/crowdmouth-main.webp";
-import project8Img from "../assets/images/stuffosome-main.webp";
-import project9Img from "../assets/images/shore-main.webp";
-import project10Img from "../assets/images/keypro-main.webp";
-import project11Img from "../assets/images/essence-realty-main.webp";
-import project12Img from "../assets/images/metagram-main.webp";
-import project13Img from "../assets/images/better-penny-main.webp";
-import project14Img from "../assets/images/forever-dolls-main.webp";
-import project15Img from "../assets/images/aeomax-main.webp";
-import project16Img from "../assets/images/fast-resume-main.webp";
-import project17Img from "../assets/images/financr-main.webp";
-import project18Img from "../assets/images/monotex-main.webp";
-import project19Img from "../assets/images/homebid-main.webp";
-import project20Img from "../assets/images/ogre-main.webp";
-import project21Img from "../assets/images/flow-row-main.webp";
+// import project3Img1 from "../assets/images/technis-main.webp";
+// import project4Img from "../assets/images/8octa-main.webp";
+// import project5Img from "../assets/images/merit-global-main.webp";
+// import project6Img from "../assets/images/reyden-main.webp";
+// import project7Img from "../assets/images/crowdmouth-main.webp";
+// import project8Img from "../assets/images/stuffosome-main.webp";
+// import project9Img from "../assets/images/shore-main.webp";
+// import project10Img from "../assets/images/keypro-main.webp";
+// import project11Img from "../assets/images/essence-realty-main.webp";
+// import project12Img from "../assets/images/metagram-main.webp";
+// import project13Img from "../assets/images/better-penny-main.webp";
+// import project14Img from "../assets/images/forever-dolls-main.webp";
+// import project15Img from "../assets/images/aeomax-main.webp";
+// import project16Img from "../assets/images/fast-resume-main.webp";
+// import project17Img from "../assets/images/financr-main.webp";
+// import project18Img from "../assets/images/monotex-main.webp";
+// import project19Img from "../assets/images/homebid-main.webp";
+// import project20Img from "../assets/images/ogre-main.webp";
+// import project21Img from "../assets/images/flow-row-main.webp";
 import client1 from "../assets/images/malte-kramer.webp";
 import client2 from "../assets/images/doug-petrie.webp";
 import client3 from "../assets/images/zoltan-csonka.webp";
@@ -37,11 +37,9 @@ import client5 from "../assets/images/stephen-dash.webp";
 // import dribbble4 from "../assets/images/dribbble4.webp";
 // import dribbble5 from "../assets/images/dribbble5.webp";
 // import dribbble6 from "../assets/images/dribbble6.webp";
-import socialImage1 from "../assets/images/basketBall.svg";
-import socialImage2 from "../assets/images/linkedin.svg";
-import socialImage3 from "../assets/images/instagram.svg";
-import socialImage4 from "../assets/images/behance.svg";
-import socialImage5 from "../assets/images/facebook.svg";
+// import socialImage3 from "../assets/images/linkedin.svg";
+// import socialImage2 from "../assets/images/instagram.svg";
+// import socialImage1 from "../assets/images/facebook.svg";
 import partnerSideAImg1 from "../assets/images/aboutUs/luxurypresence.svg";
 import partnerSideAImg2 from "../assets/images/aboutUs/fast-resume.svg";
 import partnerSideAImg3 from "../assets/images/aboutUs/technis.svg";
@@ -141,22 +139,22 @@ const progress = [
   {
     id: 1,
     title: "awards & recognition",
-    count: 50,
+    count: 20,
   },
   {
     id: 2,
-    title: "projects completed",
-    count: 900,
+    title: "guests served",
+    count: 999,
   },
   {
     id: 3,
-    title: "creative minds",
+    title: "signature dishes",
     count: 20,
   },
   {
     id: 4,
-    title: "years of experience",
-    count: 20,
+    title: "years of service",
+    count: 10,
   },
 ];
 
@@ -203,73 +201,72 @@ const clients = [
 const dishLists = [
   {
     id: 1,
-    image: "/images/dish1.png",
+    image: "/images/dish/dish1.png",
   },
   {
     id: 2,
-    image: "/images/dish2.png",
+    image: "/images/dish/dish2.png",
   },
   {
     id: 3,
-    image: "/images/dish3.png",
+    image: "/images/dish/dish3.png",
   },
   {
     id: 4,
-    image: "/images/dish4.png",
+    image: "/images/dish/dish4.png",
   },
   {
     id: 5,
-    image: "/images/dish5.png",
+    image: "/images/dish/dish5.png",
   },
   {
     id: 6,
-    image: "/images/dish6.png",
+    image: "/images/dish/dish6.png",
   },
 ];
+
+// const menuLists = [
+//   {
+//     id: 1,
+//     name: ,
+//     price: ,
+//     image: ,
+//   }
+// ]
 
 const socialLists = [
   {
     id: 1,
-    name: "Dribble",
-    image: socialImage1,
+    name: "Facebook",
+    image: "/images/socialLinks/facebook.svg",
   },
   {
     id: 2,
-    name: "LinkedIn",
-    image: socialImage2,
+    name: "Instagram",
+    image: "/images/socialLinks/instagram.svg",
   },
   {
     id: 3,
-    name: "Instagram",
-    image: socialImage3,
-  },
-  {
-    id: 4,
-    name: "Behance",
-    image: socialImage4,
-  },
-  {
-    id: 5,
-    name: "Facebook",
-    image: socialImage5,
+    name: "Whatsapp",
+    image: "/images/socialLinks/whatsapp.png",
   },
 ];
 
 const sideMenuLists = [
   {
     id: 1,
-    name: "work",
-    to: "/work",
+    name: "home",
+    to: "/",
   },
   {
     id: 2,
-    name: "about",
-    to: "/aboutus",
+    name: "menu",
+    to: "/menu",
   },
   {
     id: 3,
-    name: "services",
-    to: "/services",
+    name: "about",
+    to: "/aboutus",
   },
   {
     id: 4,
@@ -283,155 +280,155 @@ const sideMenuLists = [
   },
 ];
 
-const workLists = [
-  {
-    id: 1,
-    title: "loftloom",
-    tag: "UI Design, UX, Wireframe",
-    image: project1Img,
-    className: "w-full",
-  },
-  {
-    id: 2,
-    title: "8octa",
-    tag: "Research, Branding",
-    image: project4Img,
-    className: "w-full md:w-1/2 lg:w-[35%]",
-  },
-  {
-    id: 3,
-    title: "imusic",
-    tag: "Research, UX, UI Design",
-    image: project2Img,
-    className: "w-full lg:w-[70%]",
-  },
-  {
-    id: 4,
-    title: "technis",
-    tag: "UX, UI Design, Development",
-    image: project3Img1,
-    className: "w-full h-[80%]",
-  },
-  {
-    id: 5,
-    title: "merit global",
-    tag: "UX, UI Design, Development",
-    image: project5Img,
-    className: "w-full lg:w-[70%]",
-  },
-  {
-    id: 6,
-    title: "reyden",
-    tag: "UX, UI Design, Development",
-    image: project6Img,
-    className: "w-full md:w-[55%] lg:w-[35%]",
-  },
-  {
-    id: 7,
-    title: "crowdmouth",
-    tag: "UI Design, UX, Wireframe",
-    image: project7Img,
-    className: "w-full w-[80%] lg:ml-20",
-  },
-  {
-    id: 8,
-    title: "stuffosome",
-    tag: "Research, Branding",
-    image: project8Img,
-    className: "",
-  },
-  {
-    id: 9,
-    title: "shore",
-    tag: "UI Design, UX, Wireframe",
-    image: project9Img,
-    className: "w-full w-[80%]",
-  },
-  {
-    id: 10,
-    title: "keypro",
-    tag: "UI Design, UX, Wireframe",
-    image: project10Img,
-    className: "w-full w-[75%]",
-  },
-  {
-    id: 11,
-    title: "essence reality",
-    tag: "Research, UX, UI Design",
-    image: project11Img,
-    className: "w-full md:w-[55%] lg:w-[80%] h-3/4",
-  },
-  {
-    id: 12,
-    title: "metagram",
-    tag: "UI Design, UX, Wireframe",
-    image: project12Img,
-    className: "w-[100%] h-1/2",
-  },
-  {
-    id: 13,
-    title: "better penny",
-    tag: "UI Design, UX, Wireframe",
-    image: project13Img,
-    className: "",
-  },
-  {
-    id: 14,
-    title: "forever dolls",
-    tag: "UX Research, UI Design",
-    image: project14Img,
-    className: "w-full lg:w-[70%] lg:ml-20",
-  },
-  {
-    id: 15,
-    title: "aeomax",
-    tag: "UX, UI Design, Wireframe",
-    image: project15Img,
-    className: "w-full lg:w-[75%]",
-  },
-  {
-    id: 16,
-    title: "fast resume",
-    tag: "UX, UI Design, Wireframe",
-    image: project16Img,
-    className: "w-[100%]",
-  },
-  {
-    id: 17,
-    title: "financr",
-    tag: "UX, UI Design, Wireframe",
-    image: project17Img,
-    className: "w-full md:w-[55%] lg:w-[80%] lg:ml-10 h-1/2",
-  },
-  {
-    id: 18,
-    title: "monotex",
-    tag: "UX, UI Design, Wireframe",
-    image: project18Img,
-    className: "",
-  },
-  {
-    id: 19,
-    title: "homebid",
-    tag: "UX, UI Design, Wireframe",
-    image: project19Img,
-    className: "w-[100%]",
-  },
-  {
-    id: 20,
-    title: "ogre",
-    tag: "UX, UI Design, Wireframe",
-    image: project20Img,
-    className: "w-full md:w-[55%] lg:w-[80%] lg:ml-10",
-  },
-  {
-    id: 21,
-    title: "flow row",
-    tag: "UX, UI Design, Wireframe",
-    image: project21Img,
-    className: "w-full lg:w-[80%]",
-  },
-];
+// const workLists = [
+//   {
+//     id: 1,
+//     title: "loftloom",
+//     tag: "UI Design, UX, Wireframe",
+//     image: project1Img,
+//     className: "w-full",
+//   },
+//   {
+//     id: 2,
+//     title: "8octa",
+//     tag: "Research, Branding",
+//     image: project4Img,
+//     className: "w-full md:w-1/2 lg:w-[35%]",
+//   },
+//   {
+//     id: 3,
+//     title: "imusic",
+//     tag: "Research, UX, UI Design",
+//     image: project2Img,
+//     className: "w-full lg:w-[70%]",
+//   },
+//   {
+//     id: 4,
+//     title: "technis",
+//     tag: "UX, UI Design, Development",
+//     image: project3Img1,
+//     className: "w-full h-[80%]",
+//   },
+//   {
+//     id: 5,
+//     title: "merit global",
+//     tag: "UX, UI Design, Development",
+//     image: project5Img,
+//     className: "w-full lg:w-[70%]",
+//   },
+//   {
+//     id: 6,
+//     title: "reyden",
+//     tag: "UX, UI Design, Development",
+//     image: project6Img,
+//     className: "w-full md:w-[55%] lg:w-[35%]",
+//   },
+//   {
+//     id: 7,
+//     title: "crowdmouth",
+//     tag: "UI Design, UX, Wireframe",
+//     image: project7Img,
+//     className: "w-full w-[80%] lg:ml-20",
+//   },
+//   {
+//     id: 8,
+//     title: "stuffosome",
+//     tag: "Research, Branding",
+//     image: project8Img,
+//     className: "",
+//   },
+//   {
+//     id: 9,
+//     title: "shore",
+//     tag: "UI Design, UX, Wireframe",
+//     image: project9Img,
+//     className: "w-full w-[80%]",
+//   },
+//   {
+//     id: 10,
+//     title: "keypro",
+//     tag: "UI Design, UX, Wireframe",
+//     image: project10Img,
+//     className: "w-full w-[75%]",
+//   },
+//   {
+//     id: 11,
+//     title: "essence reality",
+//     tag: "Research, UX, UI Design",
+//     image: project11Img,
+//     className: "w-full md:w-[55%] lg:w-[80%] h-3/4",
+//   },
+//   {
+//     id: 12,
+//     title: "metagram",
+//     tag: "UI Design, UX, Wireframe",
+//     image: project12Img,
+//     className: "w-[100%] h-1/2",
+//   },
+//   {
+//     id: 13,
+//     title: "better penny",
+//     tag: "UI Design, UX, Wireframe",
+//     image: project13Img,
+//     className: "",
+//   },
+//   {
+//     id: 14,
+//     title: "forever dolls",
+//     tag: "UX Research, UI Design",
+//     image: project14Img,
+//     className: "w-full lg:w-[70%] lg:ml-20",
+//   },
+//   {
+//     id: 15,
+//     title: "aeomax",
+//     tag: "UX, UI Design, Wireframe",
+//     image: project15Img,
+//     className: "w-full lg:w-[75%]",
+//   },
+//   {
+//     id: 16,
+//     title: "fast resume",
+//     tag: "UX, UI Design, Wireframe",
+//     image: project16Img,
+//     className: "w-[100%]",
+//   },
+//   {
+//     id: 17,
+//     title: "financr",
+//     tag: "UX, UI Design, Wireframe",
+//     image: project17Img,
+//     className: "w-full md:w-[55%] lg:w-[80%] lg:ml-10 h-1/2",
+//   },
+//   {
+//     id: 18,
+//     title: "monotex",
+//     tag: "UX, UI Design, Wireframe",
+//     image: project18Img,
+//     className: "",
+//   },
+//   {
+//     id: 19,
+//     title: "homebid",
+//     tag: "UX, UI Design, Wireframe",
+//     image: project19Img,
+//     className: "w-[100%]",
+//   },
+//   {
+//     id: 20,
+//     title: "ogre",
+//     tag: "UX, UI Design, Wireframe",
+//     image: project20Img,
+//     className: "w-full md:w-[55%] lg:w-[80%] lg:ml-10",
+//   },
+//   {
+//     id: 21,
+//     title: "flow row",
+//     tag: "UX, UI Design, Wireframe",
+//     image: project21Img,
+//     className: "w-full lg:w-[80%]",
+//   },
+// ];
 
 const partnerSideA = [
   {
@@ -912,7 +909,7 @@ export {
   dishLists,
   socialLists,
   sideMenuLists,
-  workLists,
+  // workLists,
   partnerSideA,
   partnerSideB,
   // awardLists,

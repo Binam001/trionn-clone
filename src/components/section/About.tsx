@@ -31,6 +31,8 @@ const About = () => {
       stagger: 0.1,
       scrollTrigger: {
         trigger: ".text4",
+        start: "top bottom",
+        end: "center center",
         scrub: 1.5,
       },
     });
@@ -49,16 +51,16 @@ const About = () => {
   });
   return (
     <div className="mt-36 space-y-8">
-      <div className="text-[90px] lg:text-[200px] text-(--text-color) leading-[0.75] font-[Britannic] uppercase">
+      <div className="text-5xl lg:text-8xl text-(--text-color) leading-[0.75] font-[Britannic] uppercase">
         <h1 className="text4">behind</h1>
         <h1 className="text4">the feast</h1>
       </div>
-      <p className="text5 w-[90%] lg:w-[60%] text-3xl lg:text-[33px] font-[Poppins] text-(--text-color) mt-10">
+      <p className="text5 w-full lg:w-[60%] text-xl lg:text-4xl font-[Poppins] text-(--text-color) mt-10">
         As a celebrated name in the culinary world and we transcend flavor,
         turning every dish into a lasting memory.
       </p>
-      <div className="flex flex-col gap-8 md:justify-self-end w-[80%] lg:w-[50%]">
-        <p className="text5 text-xl text-(--text-color) overflow-hidden font-[Poppins]">
+      <div className="flex flex-col gap-8 lg:justify-self-end w-[80%] lg:w-[50%]">
+        <p className="text5 text-xl text-(--text-color) overflow-hidden font-[Poppins] hidden md:block">
           We serve creativity with the same passion as our signature dishes,
           staying fresh with every new trend and flavor. Just as great food
           leaves a lasting impression, our dedication ensures your dining

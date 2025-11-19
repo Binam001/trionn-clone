@@ -1,18 +1,20 @@
-import { CircleArrowDown } from "lucide-react";
+// import { CircleArrowDown } from "lucide-react";
 import CircularBrand from "../components/CircularBrand";
 import { useEffect, useState } from "react";
 import Button from "../components/Button";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { SplitText } from "gsap/all";
-import footerLogo from "../assets/images/footer-logo.svg";
-import { footerLinks } from "../constants";
+// import footerLogo from "../assets/images/footer-logo.svg";
+// import { footerLinks } from "../constants";
+import PageTitle from "../components/section/PageTitle";
+import Footer from "../components/section/Footer";
+import SocialLink from "../components/section/SocialLink";
 
 const Contact = () => {
-  const [activeContent, setActiveContent] = useState("button1");
-  const handleButtonClick = (contentKey: any) => {
-    setActiveContent(contentKey);
-  };
+  // const [activeContent, setActiveContent] = useState("button1");
+  // const handleButtonClick = (contentKey: any) => {
+  //   setActiveContent(contentKey);
+  // };
 
   function getCurrentLocalTimeInfo() {
     const now = new Date();
@@ -36,39 +38,16 @@ const Contact = () => {
   }, []);
 
   useGSAP(() => {
-    const servicesPageTitleParagraphSplit = new SplitText("#contactPageTitle", {
-      type: "lines",
-    });
-    gsap.from(servicesPageTitleParagraphSplit.lines, {
-      opacity: 0,
-      filter: "blur(100px)",
-      yPercent: 100,
-      duration: 2,
-      ease: "expo.out",
-      stagger: 0.2,
-      delay: 0.6,
-    });
-    const servicesPageDescParagraphSplit = new SplitText("#contactPageDesc", {
-      type: "lines",
-    });
-    gsap.from(servicesPageDescParagraphSplit.lines, {
-      opacity: 0,
-      yPercent: 100,
-      duration: 2,
-      ease: "expo.out",
-      stagger: 0.2,
-      delay: 1,
-    });
-    gsap.to(".textShadow1, .textShadow2", {
-      xPercent: 100,
-      stagger: 0.2,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: ".textShadow1, .textShadow2",
-        start: "top bottom",
-        scrub: 1.5,
-      },
-    });
+    // gsap.to(".textShadow1, .textShadow2", {
+    //   xPercent: 100,
+    //   stagger: 0.2,
+    //   duration: 1.5,
+    //   scrollTrigger: {
+    //     trigger: ".textShadow1, .textShadow2",
+    //     start: "top bottom",
+    //     scrub: 1.5,
+    //   },
+    // });
     gsap.from(".our, .hideaway", {
       xPercent: 25,
       opacity: 0,
@@ -109,41 +88,24 @@ const Contact = () => {
   return (
     <div className="flex flex-col items-center gap-8 mt-10 text-(--text-color)">
       <CircularBrand />
-      <div
-        id="contactPageTitle"
-        className="flex flex-col w-full text-[50px] md:text-[110px] lg:text-[90px] text-center leading-[0.75] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**"
-      >
-        <span>let's roar</span>
-        <span>into the wild</span>
-        <span>together.</span>
-      </div>
+      <PageTitle
+        text1="step into "
+        text2="the wilderness"
+        text3="of flavor."
+        desc="In a world full of changing tastes, we invite you to explore bold flavors with us—where every conversation leads to new culinary horizons."
+      />
 
-      <div
-        id="contactPageDesc"
-        className="flex flex-col text-center uppercase text-lg font-[Poppins]"
-      >
-        <span>In the wilderness of change, our</span>
-
-        <span>world's view will roar into a new</span>
-        <span>tomorrow and beyond.</span>
-      </div>
-
-      <div className="flex justify-center">
-        <a href="#fourthPage2ndDesc">
-          <CircleArrowDown size={30} strokeWidth={1} className="/50 mt-8" />
-        </a>
-      </div>
-
-      <div className="w-full lg:px-20">
-        <div className="flex flex-col md:flex-row md:justify-between gap-5 text-(--text-color)/60 my-20">
-          <div className="flex justify-between gap-10 lg:gap-32 text-3xl md:text-[45px] lg:text-[60px] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+      <div className="w-full lg:px-20 md:mt-40">
+        <div className="flex justify-between gap-5 my-5 lg:my-20">
+          {/* <div className="flex flex-col md:flex-row md:justify-between gap-5 text-(--text-color)/60 my-20"> */}
+          {/* <div className="flex justify-between gap-10 lg:gap-32 text-3xl md:text-[45px] lg:text-[60px] font-[Britannic]">
             <div className="">
               <button
                 onClick={() => handleButtonClick("button1")}
                 className={`
             ${
               activeContent === "button1"
-                ? "text-(--text-color) border-b-4"
+                ? "text-(--text-color) border-b-4 uppercase"
                 : ""
             }
           `}
@@ -165,6 +127,11 @@ const Contact = () => {
                 get a quote!
               </button>
             </div>
+          </div> */}
+          <div className="">
+            <button className="font-[Britannic] text-2xl md:text-6xl uppercase border-b-4">
+              say hello
+            </button>
           </div>
           <div className="text-xl md:text-4xl">
             <div>{timeInfo.timeString}</div>
@@ -181,7 +148,7 @@ const Contact = () => {
                     id="name"
                     type="text"
                     placeholder="Your Name"
-                    className="w-full p-6 bg-(--card-bg) rounded-2xl text-lg focus:bg-white focus:text-black focus:outline-none"
+                    className="w-full p-3 md:p-6 backdrop-blur-xs rounded-2xl md:text-lg focus:bg-white focus:text-black focus:outline-none border"
                   />
                 </div>
                 <div className="flex flex-col gap-4">
@@ -190,7 +157,7 @@ const Contact = () => {
                     id="email"
                     type="email"
                     placeholder="Your email address"
-                    className="w-full p-6 bg-(--card-bg) rounded-2xl text-lg focus:bg-white focus:text-black focus:outline-none"
+                    className="w-full p-3 md:p-6 backdrop-blur-xs rounded-2xl md:text-lg focus:bg-white focus:text-black focus:outline-none border"
                   />
                 </div>
                 <div className="flex flex-col gap-4">
@@ -199,26 +166,26 @@ const Contact = () => {
                     id="phone"
                     type="text"
                     placeholder="Your phone number"
-                    className="w-full p-6 bg-(--card-bg) rounded-2xl text-lg focus:bg-white focus:text-black focus:outline-none"
+                    className="w-full p-3 md:p-6 backdrop-blur-xs rounded-2xl md:text-lg focus:bg-white focus:text-black focus:outline-none border"
                   />
                 </div>
-                <div className="flex flex-col gap-4">
+                {/* <div className="flex flex-col gap-4">
                   <label htmlFor="company">Company/Organisation</label>
                   <input
                     id="company"
                     type="text"
                     placeholder="Ex. Shyam"
-                    className="w-full p-6 bg-(--card-bg) rounded-2xl text-lg focus:bg-white focus:text-black focus:outline-none"
+                    className="w-full p-3 md:p-6 backdrop-blur-xs rounded-2xl md:text-lg focus:bg-white focus:text-black focus:outline-none border"
                   />
-                </div>
-                {activeContent == "button2" && (
+                </div> */}
+                {/* {activeContent == "button2" && (
                   <>
                     <div className="flex flex-col gap-4">
                       <label htmlFor="projectType">Project type*</label>
                       <select
                         name="projectType"
                         id="projectType"
-                        className="text-(--text-color) bg-(--card-bg) p-6"
+                        className="text-(--text-color) bg-(--card-bg) p-3 md:p-6"
                       >
                         <option value="">Project type</option>
                         <option value="">Design</option>
@@ -235,7 +202,7 @@ const Contact = () => {
                       <select
                         name="projectBudget"
                         id="projectBudget"
-                        className="text-(--text-color) bg-(--card-bg) p-6"
+                        className="text-(--text-color) bg-(--card-bg) p-3 md:p-6"
                       >
                         <option value="">Select budget</option>
                         <option value="">Less than $1000 USD</option>
@@ -250,7 +217,7 @@ const Contact = () => {
                       <select
                         name="medium"
                         id="medium"
-                        className="text-(--text-color) bg-(--card-bg) p-6"
+                        className="text-(--text-color) bg-(--card-bg) p-3 md:p-6"
                       >
                         <option value="">Select</option>
                         <option value="">Awwards</option>
@@ -262,15 +229,15 @@ const Contact = () => {
                       </select>
                     </div>
                   </>
-                )}
+                )} */}
               </div>
 
               <div className="flex flex-col gap-4 mt-8">
-                <label htmlFor="message">Tell us about your project*</label>
+                <label htmlFor="message">Message*</label>
                 <textarea
                   id="message"
                   placeholder="Ex. Hello, How can I help you?"
-                  className="w-full h-60 p-6 bg-(--card-bg) rounded-2xl text-lg focus:bg-white focus:text-black focus:outline-none"
+                  className="w-full h-40 md:h-60 p-3 md:p-6 backdrop-blur-xs rounded-2xl md:text-lg focus:bg-white focus:text-black focus:outline-none border"
                 />
               </div>
 
@@ -283,37 +250,42 @@ const Contact = () => {
       </div>
 
       <div className="space-y-4 mt-20 w-full">
-        <div className="relative text-[100px] lgtext-[200px] leading-[0.75] text-(--text-color) font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+        <div className="relative text-3xl md:text-5xl lg:text-8xl leading-[0.75] text-(--text-color) font-[Britannic] uppercase">
           <div className="relative">
             <p className="our">our</p>
-            <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div>
+            {/* <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
           </div>
 
           <div className="relative">
             <p className="hideaway">hideaway</p>
-            <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div>
+            {/* <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
           </div>
         </div>
         <div
           id="location"
-          className="font-[Poppins] text-(--text-color) flex flex-col space-y-4 text-3xl mt-20"
+          className="font-[Poppins] text-(--text-color) flex flex-col space-y-4 md:text-3xl mt-20"
         >
-          <span className="text-(--text-color)/60">Location</span>
-          <span>TRIONN®</span>
+          <span className="text-(--text-color) md:text-4xl border-b w-max">
+            Location
+          </span>
+          {/* <span>SHYAM'S</span> */}
           <span className="mt-5">216 - 217 4Plus Complex</span>
           <span>Astron chowk, Rajkot 01</span>
-          <span>Gujarat, India.</span>
+          <span>Kathmandu, Nepal.</span>
         </div>
       </div>
 
-      <div className="w-full mt-16">
+      <SocialLink />
+
+      <Footer />
+
+      {/* <div className="w-full mt-16">
         {footerLinks.map((footer) => (
           <div
             key={footer.id}
             className="footerLink border-y py-10 text-3xl font-[Poppins] space-y-4"
           >
             <div className="text-(--text-color)/60">{footer.title}</div>
-            {/* <div className="space-x-5">{footer.link}</div> */}
             <div className="flex flex-row flex-wrap gap-5">
               {footer.link.map((link) => (
                 <button>{link}</button>
@@ -321,20 +293,20 @@ const Contact = () => {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
 
-      <div className="text-(--text-color)/70 text-xl my-10 flex justify-between w-full">
+      {/* <div className="text-(--text-color)/70 text-xl my-10 flex justify-between w-full">
         <p>
           © 2025 TRIONN<sup>®</sup>
         </p>
         <a href="#text1">
           <CircleArrowDown size={32} strokeWidth={1} className="rotate-180" />
         </a>
-      </div>
+      </div> */}
 
-      <div className="">
+      {/* <div className="">
         <img src={footerLogo} alt="footer logo" />
-      </div>
+      </div> */}
     </div>
   );
 };

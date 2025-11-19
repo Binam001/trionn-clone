@@ -1,16 +1,26 @@
 import { Link } from "react-router-dom";
-import { sideMenuLists, socialLists } from "../../constants";
+import { sideMenuLists } from "../../constants";
 import type { Dispatch, SetStateAction } from "react";
+import { useGSAP } from "@gsap/react";
+// import gsap from "gsap";
 
 interface SideMenuProps {
   setOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 const SideMenu = ({ setOpen }: SideMenuProps) => {
+  useGSAP(() => {
+    // gsap.from("#navBarDish", {
+    //   transformOrigin: "100% 50%",
+    //   rotate: 180,
+    //   duration: 1,
+    //   delay: 1,
+    // });
+  });
   return (
-    <div className="text-(--text-color) relative h-screen">
-      <div className="md:flex px-8 lg:px-20 absolute bottom-0 w-full mb-5">
-        <ul className="w-1/2 text-[80px] lg:text-[100px] leading-[0.8] font-[Britannic] uppercase">
+    <div className="text-(--text-color) relative h-screen flex items-center">
+      <div className="md:flex px-8 lg:px-20 absolute w-full mb-5">
+        <ul className="w-1/2 text-6xl lg:text-8xl leading-[0.8] font-[Britannic] uppercase">
           {sideMenuLists.map((sideMenuItem) => (
             <li
               key={sideMenuItem.id}
@@ -32,26 +42,15 @@ const SideMenu = ({ setOpen }: SideMenuProps) => {
           ))}
         </ul>
 
-        <div className="wfull md:w-1/2 md:text-end font-[Poppins] flex md:flex-col md:justify-end gap-10">
-          <div className="flex flex-col gap-2 md:gap-4 text-2xl mt-6 md:mt-0">
-            <a href="">hello@trionn.com</a>
-            <a href="" className="">
-              +91 98241 82099
-            </a>
-          </div>
-          <div className="hidden lg:flex justify-end gap-2 mb-4">
-            {socialLists.map((social) => (
-              <div key={social.id} className="">
-                <a href="#">
-                  <img
-                    src={social.image}
-                    alt={social.name}
-                    className="size-10"
-                  />
-                </a>
-              </div>
-            ))}
-          </div>
+        <div className="w-1/2 flex justify-end absolute right-0">
+          <img
+            id="navBarDish"
+            src="/images/dish/circularDish.png"
+            // src="/images/dish/dish7.png"
+            alt="navbar dish"
+            className="size-dvh animate-[spin_30s_linear_infinite] -mr-40"
+            // className="h-dvh"
+          />
         </div>
       </div>
     </div>

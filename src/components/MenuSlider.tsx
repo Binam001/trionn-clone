@@ -1,6 +1,6 @@
 import HTMLFlipBook from "react-pageflip";
 
-function MenuSlider() {
+const MenuSlider = () => {
   const menuPages = [
     {
       id: 1,
@@ -62,7 +62,6 @@ function MenuSlider() {
       width={400}
       height={600}
       maxShadowOpacity={0.5}
-      drawShadow={true}
       showCover={true}
       size="fixed"
     >
@@ -74,11 +73,11 @@ function MenuSlider() {
 
       {menuPages.map((menu) => (
         <div className="page" key={menu.id}>
-          <img src={menu.image} alt="menu pages" />
+          <img src={menu.image} alt={`menu page ${menu.id}`} />
         </div>
       ))}
     </HTMLFlipBook>
   );
-}
+};
 
 export default MenuSlider;

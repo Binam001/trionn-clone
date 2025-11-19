@@ -46,7 +46,7 @@ const PageTitle = ({
       <CircularBrand />
       <div
         id="pageTitle"
-        className="flex flex-col w-full text-[50px] md:text-[100px] text-center leading-[0.75] text-(--text-color) uppercase font-[Britannic]"
+        className="flex flex-col w-full text-3xl md:text-5xl lg:text-8xl text-center leading-[0.75] text-(--text-color) uppercase font-[Britannic]"
       >
         <span>{text1}</span>
         <span>{text2}</span>
@@ -55,7 +55,7 @@ const PageTitle = ({
 
       <div
         id="pageDesc"
-        className="relative flex flex-col text-center w-[90%] md:w-[70%] lg:w-[55%] uppercase lg:text-lg font-[Poppins] text-(--text-color)"
+        className="relative flex flex-col text-center w-full md:w-[70%] lg:w-[55%] text-xs md:text-sm lg:text-lg font-[Poppins] text-(--text-color)"
       >
         <p>{desc}</p>
       </div>

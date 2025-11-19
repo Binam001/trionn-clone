@@ -1,4 +1,4 @@
-import { CircleArrowDown } from "lucide-react";
+// import { CircleArrowDown } from "lucide-react";
 import Button from "../components/Button";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -11,12 +11,16 @@ import ScrollMarquee from "../components/section/ScrollMarquee";
 import Dribbble from "../components/section/Dribbble";
 import SocialLink from "../components/section/SocialLink";
 import Footer from "../components/section/Footer";
-import CircularBrand from "../components/CircularBrand";
 import { motion } from "framer-motion";
 import PageTitle from "../components/section/PageTitle";
 import OurCombo from "../components/section/OurCombo";
+import { useState } from "react";
+import MenuSlider from "../components/MenuSlider";
+import CircularBrand from "../components/CircularBrand";
 
 const LandingPage = () => {
+  const [openMenu, setOpenMenu] = useState(false);
+
   useGSAP(() => {
     gsap.from("#join1Text, #join2Text", {
       xPercent: 50,
@@ -24,6 +28,8 @@ const LandingPage = () => {
       stagger: 0.2,
       scrollTrigger: {
         trigger: "#join1Text, #join2Text",
+        start: "top bottom",
+        end: "center center",
         scrub: 1.5,
       },
     });
@@ -32,21 +38,23 @@ const LandingPage = () => {
       opacity: 0,
       scrollTrigger: {
         trigger: "#join3Text",
+        start: "top bottom",
+        end: "center center",
         scrub: 1.5,
       },
     });
 
-    gsap.from(".circular-brand", {
-      xPercent: 200,
-      opacity: 0,
-      duration: 2,
-      scrollTrigger: {
-        trigger: ".circular-brand",
-        start: "top 10%",
-        end: "bottom center",
-        scrub: 1,
-      },
-    });
+    // gsap.from(".circular-brand", {
+    //   xPercent: 200,
+    //   opacity: 0,
+    //   duration: 2,
+    //   scrollTrigger: {
+    //     trigger: ".circular-brand",
+    //     start: "top 10%",
+    //     end: "bottom center",
+    //     scrub: 1,
+    //   },
+    // });
   });
   return (
     <motion.div
@@ -55,31 +63,42 @@ const LandingPage = () => {
       // exit={{ y: -100, opacity: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <div className="py-16 md:py-0">
-        <CircularBrand />
+      <div className="py-16 md:pt-0 md:pb-20 relative h-screen flex flex-col gap-20 md:gap-0 md:justify-between xl:justify-evenly">
         <PageTitle
-          text1="roar of"
-          text2="flavors unleashed"
-          text3=""
-          desc="We roar with flavor, serving unforgettable dining experiences through
-          creative menu design, exceptional hospitality, and innovative culinary
-          techniques that delight every guest."
+          text1="a"
+          text2="kingdom of"
+          text3="untamed taste"
+          desc="We unleash bold flavors, crafting unforgettable dining moments through imaginative dishes, heartfelt hospitality, and culinary mastery that excites every palate."
         />
-      </div>
+        <CircularBrand />
+        {openMenu && (
+          <div className="fixed inset-0 z-100">
+            <div
+              className="absolute inset-0 backdrop-blur-lg bg-black/20"
+              onClick={() => setOpenMenu(false)}
+            ></div>
 
-      <div className="flex justify-center">
-        <a href="#introVideo">
-          <CircleArrowDown
-            size={30}
-            strokeWidth={1}
-            className="text-(--text-color)/50 mt-5"
-          />
-        </a>
-      </div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div className="relative w-full">
+                {/* <button
+                  onClick={() => setOpenMenu(false)}
+                  className="absolute -top-5 -right-5 bg-white text-black rounded-full p-2 shadow-lg hover:scale-110 transition"
+                >
+                  ✕
+                </button> */}
 
-      <div className="flex justify-between mt-10">
-        <Button title="Explore work" />
-        <Button title="Get in touch" />
+                <div className="relative w-[900px] h-[600px]">
+                  <MenuSlider />
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+        <div className="flex justify-between md:mb-20 lg:mb-10 xl:mb-0">
+          <Button onClick={() => setOpenMenu(true)} title="View Menu" />
+
+          <Button title="Get in touch" />
+        </div>
       </div>
 
       <IntroVideo />
@@ -93,7 +112,7 @@ const LandingPage = () => {
 
       <div
         id="join"
-        className="mt-20 lg:mt-40 flex flex-col items-center text-[80px] lg:text-[200px] leading-[0.8] text-(--foreground) font-[Britannic] uppercase"
+        className="mt-20 lg:mt-40 flex flex-col items-center text-6xl md:text-7xl lg:text-9xl leading-[0.8] text-(--foreground) font-[Britannic] uppercase"
       >
         <span id="join1Text">dine</span>
         <span id="join2Text">with</span>

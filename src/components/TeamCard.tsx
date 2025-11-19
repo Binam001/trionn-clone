@@ -17,7 +17,7 @@ const TeamCard = () => {
                     <img
                       src={team.image}
                       alt={team.name}
-                      className="rounded-4xl w-[380px] h-[450px] lg:w-[480px] lg:h-[520px]"
+                      className="rounded-4xl w-[380px] h-[450px] lg:w-[450px] lg:h-[520px]"
                     />
                   </div>
 

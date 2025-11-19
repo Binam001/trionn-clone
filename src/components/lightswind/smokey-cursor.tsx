@@ -53,7 +53,7 @@ function pointerPrototype(): Pointer {
     deltaY: 0,
     down: false,
     moved: false,
-    color: { r: 0, g: 0, b: 0 },
+    color: { r: 0.5, g: 0.5, b: 0.5 },
   };
 }
 
@@ -65,12 +65,12 @@ export default function SmokeyCursor({
   velocityDissipation = 2,
   pressure = 0.1,
   pressureIterations = 20,
-  curl = 3,
+  curl = 1,
   splatRadius = 0.2,
   splatForce = 6000,
   enableShading = true,
-  colorUpdateSpeed = 10,
-  backgroundColor = { r: 0.5, g: 0, b: 0 },
+  colorUpdateSpeed = 0,
+  backgroundColor = { r: 0.5, g: 0.5, b: 0.5 },
   transparent = true,
 }: // className = "",
 // disabled = false,
@@ -1282,11 +1282,16 @@ SmokeyCursorProps) {
 
     function clickSplat(pointer: Pointer) {
       const color = generateColor();
-      color.r *= 10;
-      color.g *= 10;
-      color.b *= 10;
-      const dx = 10 * (Math.random() - 0.5);
-      const dy = 30 * (Math.random() - 0.5);
+      // color.r *= 10;
+      // color.g *= 10;
+      // color.b *= 10;
+      // const dx = 10 * (Math.random() - 0.5);
+      // const dy = 30 * (Math.random() - 0.5);
+      color.r *= 5;
+      color.g *= 5;
+      color.b *= 5;
+      const dx = 10 * 0.5;
+      const dy = 30 * 0.5;
       splat(pointer.texcoordX, pointer.texcoordY, dx, dy, color);
     }
 
@@ -1395,7 +1400,10 @@ SmokeyCursorProps) {
     }
 
     function generateColor(): ColorRGB {
-      const c = HSVtoRGB(Math.random(), 1.0, 1.0);
+      const c = HSVtoRGB(0.0, 0.05, 0.5);
+      // const c = HSVtoRGB(0.5, 0.5, 0.5);
+      // const c = HSVtoRGB(1.0, 1.0, 1.0);
+      // const c = HSVtoRGB(Math.random(), 1.0, 1.0);
       c.r *= 0.15;
       c.g *= 0.15;
       c.b *= 0.15;

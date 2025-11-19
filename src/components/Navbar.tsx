@@ -59,12 +59,14 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 px-3 md:px-10 lg:px-20 z-60">
+      <nav className="fixed w-full top-0 left-0 px-10 md:px-20 z-60">
         <div className="flex justify-between items-center mt-5 lg:mt-[22px]">
-          <div className="cursor-pointer">
-            <a href="/">
+          <div className="cursor-pointer relative">
+            <a href="/" className="">
               <img
-                className="w-18 md:w-24"
+                className={`w-18 md:w-24 ${
+                  theme === "light" ? "logo-outline-dark" : "logo-outline-light"
+                }`}
                 src={theme === "light" ? lightLogo : darkLogo}
                 alt="shyam's logo"
               />
@@ -86,7 +88,7 @@ const Navbar = () => {
             <audio ref={audioRef} src={audio} />
           </div>
 
-          <div className="flex items-center gap-4 text-(--foreground)">
+          <div className="text-(--foreground)">
             {!open ? (
               <button
                 onClick={() => setOpen(true)}

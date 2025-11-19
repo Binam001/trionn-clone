@@ -41,23 +41,23 @@ const Partner = () => {
     });
   });
   return (
-    <div className="mt-20 lg:mt-80 text-(--text-color)">
+    <div className="mt-20 lg:mt-40 text-(--text-color)">
       <div
         id="customer"
-        className="text-[70px] md:text-[80px] lg:text-[200px] leading-[0.9] font-[Britannic] uppercase"
+        className="text-5xl lg:text-8xl leading-[0.9] font-[Britannic] uppercase"
       >
         customer
       </div>
       <div className="flex flex-col lg:flex-row lg:justify-between">
         <div
           id="love"
-          className="text-[70px] md:text-[80px] lg:text-[200px] leading-[0.9] font-[Britannic] uppercase"
+          className="text-5xl lg:text-8xl leading-[0.9] font-[Britannic] uppercase"
         >
           love
         </div>
         <p
           id="text"
-          className="w-[70%] lg:w-[30%] text-(--text-color-2) text-2xl lg:text-3xl font-[Poppins]"
+          className="w-full lg:w-[30%] text-(--text-color) md:text-xl font-[Poppins]"
         >
           Listen closely—the cheer of happy guests resounds in every review.
         </p>

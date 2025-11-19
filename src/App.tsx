@@ -5,7 +5,7 @@ import LandingPage from "./pages/LandingPage";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import { Route, Routes, useLocation } from "react-router-dom";
-import Work from "./pages/Work";
+import Menu from "./pages/Menu";
 import AboutUs from "./pages/AboutUs";
 import Services from "./pages/Services";
 import Team from "./pages/Team";
@@ -22,11 +22,12 @@ function App() {
       id="background"
       className="w-screen bg-fixed relative overflow-x-hidden"
     >
-      <div className="fixed inset-0 z-20 fixedgradient"></div>
+      <div className="fixed inset-0 z-20 fixedgradient pointer-events-none"></div>
 
       <div
         id="bgGradient"
-        className="w-screen  relative px-3 md:px-10 lg:px-20 z-50"
+        className="w-full relative px-10 md:px-20 z-30"
+        // className="w-screen relative px-3 md:px-10 lg:px-20 z-50"
       >
         <ScrollToTop />
         {isLargeDevice ? (
@@ -37,13 +38,14 @@ function App() {
             velocityDissipation={3}
             enableShading={false}
             backgroundColor={{ r: 0.5, g: 0.5, b: 0.5 }}
+            // autoColors={false}
           />
         ) : null}
         <Navbar />
-        <div className="pt-36">
+        <div className="pt-20">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/Work" element={<Work />} />
+            <Route path="/Menu" element={<Menu />} />
             <Route path="/AboutUs" element={<AboutUs />} />
             <Route path="/Services" element={<Services />} />
             <Route path="/Team" element={<Team />} />

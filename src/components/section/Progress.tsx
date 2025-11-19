@@ -42,29 +42,21 @@ const Progress = () => {
     });
   });
   return (
-    <div className="mt-20 grid lg:grid-cols-2 gap-4">
+    <div className="mt-20 grid lg:grid-cols-2 gap-10">
       {progress.map((item) => (
         <div
-          className={`${
-            item.id === 1
-              ? "bg-[#c93303] text-(--foreground) lg:bg-(--card-bg) hover:bg-[#c93303]"
-              : item.id === 2
-              ? "bg-[#c8d2d2] text-(--background) lg:text-(--foreground) lg:bg-(--card-bg) hover:bg-[#c8d2d2] hover:text-(--background)"
-              : item.id === 3
-              ? "bg-[#a1c9b8] text-(--background) lg:text-(--foreground) lg:bg-(--card-bg) hover:bg-[#a1c9b8] hover:text-(--background)"
-              : "bg-[#decf3e] text-(--background) lg:text-(--foreground) lg:bg-(--card-bg) hover:bg-[#decf3e] hover:text-(--background)"
-          }
-           p-6 rounded-4xl
-          transition-colors duration-500 ease-in-out cursor-pointer
+          className={`space-y-10
+           p-6 rounded-4xl text-(--foreground) hover:text-(--red) border-2 border-(--foreground)/70 hover:border-(--red)
+          transition-colors duration-500 ease-in-out cursor-pointer backdrop-blur-sm
           ${item.id % 2 === 0 ? "lg:relative lg:top-1/2 evenCard" : "oddCard"}
           `}
           key={item.id}
         >
-          <div className="flex dm-mono-regular">
-            <div className="text-[100px] lg:text-[120px]">{item.count}</div>
-            <span className="text-[60px]">+</span>
+          <div className="flex font-[Poppins]">
+            <div className="text-6xl lg:text-8xl">{item.count}</div>
+            <span className="text-5xl">+</span>
           </div>
-          <div className="text-[30px] lg:text-[40px] w-[45%] text-right justify-self-end font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
+          <div className="text-xl md:text-2xl lg:text-4xl w-[50%] text-right justify-self-end font-[Poppins] uppercase">
             {item.title}
           </div>
         </div>

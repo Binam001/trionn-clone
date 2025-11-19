@@ -15,18 +15,22 @@ const SocialLink = () => {
     });
   });
   return (
-    <div className="my-10">
+    <div className="my-20 w-full">
       {socialLists.map((social) => (
         <div
           key={social.id}
-          className="px-5 lg:px-56 hover:scale-[1.2] duration-500 transition-transform"
+          className="px-5 lg:px-56 group hover:scale-[1.2] duration-500 transition-transform"
         >
           <div id="social" className="">
-            <div className="flex justify-between items-center my-5">
-              <p className="text-(--text-color) text-4xl font-[Poppins]">
+            <div className="flex justify-between items-center my-3 md:my-5">
+              <p className="text-(--text-color) text-xl md:text-3xl lg:text-4xl font-[Poppins]">
                 {social.name}
               </p>
-              <img src={social.image} alt={social.name} className="size-12" />
+              <img
+                src={social.image}
+                alt={social.name}
+                className="size-8 md:size-12 group-hover:rotate-360 duration-1000"
+              />
             </div>
             <div>
               <hr className="text-(--text-color) h-1 w-full" />

@@ -43,29 +43,31 @@ const OurCombo = () => {
       scrollTrigger: {
         trigger: "#btn1",
         start: "top bottom",
-        end: "bottom center",
+        end: "center center",
         scrub: 1,
       },
     });
   });
   return (
-    <div className="mt-20 lg:mt-40">
-      <div className="text-[70px] md:text-[80px] lg:text-[200px] leading-[0.9] font-[Britannic] uppercase">
-        <h1 className="text2 text-(--text-color)">our</h1>
-        <h1 className="text2 text-(--text-color)">combo</h1>
+    <div className="mt-20 lg:my-40">
+      <div className="flex justify-between">
+        <div className="text-[70px] md:text-[80px] lg:text-8xl leading-[0.9] font-[Britannic] uppercase">
+          <h1 className="text2 text-(--text-color)">our</h1>
+          <h1 className="text2 text-(--text-color)">combo</h1>
+        </div>
+        <div id="btn1" className="hidden md:block">
+          <Button title="Explore Packs" />
+        </div>
       </div>
 
       <div className="flex justify-between items-center">
         <p
           id="text3"
-          className="w-[90%] md:w-[40%] lg:w-[50%] text-2xl lg:text-3xl text-(--text-color-2) overflow-hidden font-[Poppins]"
+          className="w-full md:w-1/2 lg:text-xl text-(--text-color) overflow-hidden font-[Poppins]"
         >
           In the world of taste adventures, our meals are beloved by all who
           visit.
         </p>
-        <div id="btn1" className="hidden md:block">
-          <Button title="Explore Packs" />
-        </div>
       </div>
     </div>
   );

@@ -202,10 +202,10 @@ export const ImageHover = ({
     });
   });
   return (
-    <div className="bg-black h-screen w-screen flex justify-center items-center customCursor">
+    <div className="h-screen w-screen text-(--text-color) flex justify-center items-center customCursor">
       <div
         ref={containerRef}
-        className="container relative w-full h-full shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden"
+        className="relative w-screen h-full shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden"
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -216,26 +216,50 @@ export const ImageHover = ({
         <img
           src="/images/sweets/sweets1.png"
           alt="lion group"
-          className="absolute w-screen h-full object-cover overflow-hidden"
+          className="absolute w-screen h-full object-cover"
         />
 
-        <div
-          className="leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[Britannic] uppercase text-white text-center  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+        <div className="">
+          <div
+            className="leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[Britannic] uppercase text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
     flex flex-col justify-center items-center text-outline-effect"
-        >
-          <span>{text1}</span>
-          <span>{text2}</span>
-          <span>{text3}</span>
+          >
+            <span>{text1}</span>
+            <span>{text2}</span>
+            <span>{text3}</span>
+          </div>
+          <div className="absolute bottom-10 flex justify-between w-full px-10 text-xs md:text-xl lg:text-2xl">
+            <div className="flex flex-col">
+              <span className="">Email</span>
+              <a href="#">hello@shyam.com</a>
+            </div>
+            <div className="flex flex-col">
+              <span className="">Call</span>
+              <a href="#">+977 98241 82099</a>
+            </div>
+          </div>
         </div>
 
         <div
           id="imgText"
-          className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-screen h-full leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[Britannic] uppercase text-white text-center flex flex-col justify-center items-center bg-black/80 backdrop-blur-[6px] transition-all duration-300 pointer-events-none z-10 ${overlayOpacity}`}
+          className={`w-screen h-full bg-black/80 backdrop-blur-[6px] transition-all duration-300 pointer-events-none z-10 text-white ${overlayOpacity}`}
           style={maskStyle}
         >
-          <span>{text1}</span>
-          <span>{text2}</span>
-          <span>{text3}</span>
+          <div className="leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[Britannic] uppercase text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center items-center">
+            <span>{text1}</span>
+            <span>{text2}</span>
+            <span>{text3}</span>
+          </div>
+          <div className="absolute bottom-10 flex justify-between w-full px-10 text-xs md:text-xl lg:text-2xl">
+            <div className="flex flex-col">
+              <span className="">Email</span>
+              <a href="#">hello@shyam.com</a>
+            </div>
+            <div className="flex flex-col">
+              <span className="">Call</span>
+              <a href="#">+977 98241 82099</a>
+            </div>
+          </div>
         </div>
         {/* Glow: extra radial gradient for soft border */}
         {lerpedPos && radius > 0 && (

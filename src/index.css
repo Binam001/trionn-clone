@@ -23,11 +23,21 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .customCursor {
-  cursor: url("/images/sweets/spoon.png"), auto;
+  cursor: url("/flame4.gif") 16 16, auto;
+  /* cursor: url("/images/sweets/spoon.png"), auto; */
   /* cursor: url("/images/candy/lolipop.png"), auto; */
+}
+.logo-outline-light {
+  filter: drop-shadow(1px 0 0 rgb(203, 203, 203))
+    drop-shadow(0 1px 0 rgb(203, 203, 203));
+}
+.logo-outline-dark {
+  filter: drop-shadow(1px 0 0 rgb(50, 50, 50))
+    drop-shadow(0 0.5px 0 rgb(50, 50, 50));
 }
 :root {
   --foreground: rgb(0, 0, 0);
@@ -36,8 +46,11 @@ html {
   -text-color-2: rgb(0, 0, 0);
   --icon-bg-color: rgb(216, 221, 221);
   --card-bg: rgb(217, 221, 221);
+  --card-bg-2: rgb(217, 221, 221);
   --sideMenu-bg: rgb(238, 243, 243);
   --sideMenu-mask-bg: rgb(255, 255, 255);
+  --red: rgb(255, 35, 35);
+
   #background {
     background-image: url("/bg-svg-cropped.svg");
     background-size: 100vw;
@@ -46,7 +59,13 @@ html {
   }
 
   .fixedgradient {
-    background-color: rgba(175, 175, 175, 0.5);
+    background: #000000;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 230, 230, 0.9) 20%,
+      rgb(255, 255, 255, 0.6) 50%,
+      rgba(255, 230, 230, 0.9) 80%
+    );
   }
 }
 .dark {
@@ -55,32 +74,26 @@ html {
   --text-color: rgb(224, 238, 238);
   --text-color-2: rgb(197, 252, 252);
   --icon-bg-color: rgb(39, 34, 34);
-  /* --card-bg: rgb(213, 50, 9); */
-  /* --card-bg: rgb(158, 1, 8); */
-  --card-bg: rgb(37, 37, 38);
+  --card-bg: rgba(107, 105, 105, 0.4);
+  --card-bg-2: rgb(20, 20, 20);
   --sideMenu-bg: rgb(18, 19, 21);
   --sideMenu-mask-bg: rgb(40, 40, 40);
+  --red: rgb(255, 35, 35);
+
   #background {
     background-image: url("/bg-svg-cropped.svg");
+
     background-color: #000000;
     background-size: 100vw;
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
   .fixedgradient {
-    /* background: #050505;
-    background: radial-gradient(
-      circle,
-      rgba(5, 5, 5, 0.8) 0%,
-      rgba(0, 0, 0, 1) 100%
-    ); */
-
     background: #000000;
     background: linear-gradient(
       90deg,
       rgba(0, 0, 0, 0.9) 15%,
-      rgba(255, 255, 255, 0.2) 45%,
-      rgba(255, 255, 255, 0.2) 55%,
+      rgb(0, 0, 0, 0.6) 50%,
       rgba(0, 0, 0, 0.9) 85%
     );
   }

@@ -15,7 +15,10 @@ const ThemeSwitcher = ({ theme, setTheme }: Props) => {
   };
 
   return (
-    <button onClick={toggleTheme} className="rounded-full cursor-pointer">
+    <button
+      onClick={toggleTheme}
+      className="rounded-full bg-(--icon-bg-color) cursor-pointer"
+    >
       {theme === "light" ? (
         <img src={moon} alt="moon" className="size-8 invert dark:invert-0" />
       ) : (

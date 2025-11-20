@@ -9,6 +9,7 @@ import gsap from "gsap";
 import PageTitle from "../components/section/PageTitle";
 import Footer from "../components/section/Footer";
 import SocialLink from "../components/section/SocialLink";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Contact = () => {
   // const [activeContent, setActiveContent] = useState("button1");
@@ -86,20 +87,33 @@ const Contact = () => {
     });
   });
   return (
-    <div className="flex flex-col items-center gap-8 mt-10 text-(--text-color)">
-      <CircularBrand />
-      <PageTitle
-        text1="step into "
-        text2="the wilderness"
-        text3=""
-        highlighter="flavour."
-        desc="In a world full of changing tastes, we invite you to explore bold flavors with us—where every conversation leads to new culinary horizons."
+    <AnimatePresence mode="wait">
+      <motion.div
+        className="fixed top-0 left-0 w-full h-screen bg-(--yellow) z-999"
+        initial={{ y: "-100%" }}
+        animate={{
+          y: ["-100%", "0%", "0%", "-100%"],
+          transition: {
+            duration: 1,
+            times: [0, 0.4, 0.6, 1],
+            ease: [0.76, 0, 0.24, 1],
+          },
+        }}
       />
+      <motion.div className="flex flex-col items-center gap-8 mt-10 text-(--text-color)">
+        <CircularBrand />
+        <PageTitle
+          text1="step into "
+          text2="the wilderness"
+          text3=""
+          highlighter="flavour."
+          desc="In a world full of changing tastes, we invite you to explore bold flavors with us—where every conversation leads to new culinary horizons."
+        />
 
-      <div className="w-full lg:px-20 md:mt-40">
-        <div className="flex justify-between gap-5 text-(--title-color) my-5 lg:my-20">
-          {/* <div className="flex flex-col md:flex-row md:justify-between gap-5 text-(--text-color)/60 my-20"> */}
-          {/* <div className="flex justify-between gap-10 lg:gap-32 text-3xl md:text-[45px] lg:text-[60px] font-[Britannic]">
+        <div className="w-full lg:px-20 md:mt-40">
+          <div className="flex justify-between gap-5 text-(--title-color) my-5 lg:my-20">
+            {/* <div className="flex flex-col md:flex-row md:justify-between gap-5 text-(--text-color)/60 my-20"> */}
+            {/* <div className="flex justify-between gap-10 lg:gap-32 text-3xl md:text-[45px] lg:text-[60px] font-[Britannic]">
             <div className="">
               <button
                 onClick={() => handleButtonClick("button1")}
@@ -129,57 +143,57 @@ const Contact = () => {
               </button>
             </div>
           </div> */}
-          <div className="">
-            <button className="font-[Britannic] text-2xl md:text-6xl uppercase border-b-4">
-              say hello
-            </button>
+            <div className="">
+              <button className="font-[Britannic] text-2xl md:text-6xl uppercase border-b-4">
+                say hello
+              </button>
+            </div>
+            <div className="text-xl md:text-4xl">
+              <div>{timeInfo.timeString}</div>
+            </div>
           </div>
-          <div className="text-xl md:text-4xl">
-            <div>{timeInfo.timeString}</div>
-          </div>
-        </div>
 
-        <div className="">
-          <div>
-            <form action="" className="font-[Poppins]">
-              <div className="lg:grid lg:grid-cols-2 gap-8 space-y-6 lg:space-y-0">
-                <div className="flex flex-col gap-2 lg:gap-4">
-                  <label htmlFor="name">Name*</label>
-                  <input
-                    id="name"
-                    type="text"
-                    placeholder="Your Name"
-                    className="w-full p-3 md:p-6 backdrop-blur-xs rounded-2xl md:text-lg focus:bg-white focus:text-black focus:outline-none border"
-                  />
-                </div>
-                <div className="flex flex-col gap-4">
-                  <label htmlFor="email">Email*</label>
-                  <input
-                    id="email"
-                    type="email"
-                    placeholder="Your email address"
-                    className="w-full p-3 md:p-6 backdrop-blur-xs rounded-2xl md:text-lg focus:bg-white focus:text-black focus:outline-none border"
-                  />
-                </div>
-                <div className="flex flex-col gap-4">
-                  <label htmlFor="phone">Phone</label>
-                  <input
-                    id="phone"
-                    type="text"
-                    placeholder="Your phone number"
-                    className="w-full p-3 md:p-6 backdrop-blur-xs rounded-2xl md:text-lg focus:bg-white focus:text-black focus:outline-none border"
-                  />
-                </div>
-                <div className="flex flex-col gap-4">
-                  <label htmlFor="address">Address</label>
-                  <input
-                    id="address"
-                    type="text"
-                    placeholder="Your Address"
-                    className="w-full p-3 md:p-6 backdrop-blur-xs rounded-2xl md:text-lg focus:bg-white focus:text-black focus:outline-none border"
-                  />
-                </div>
-                {/* {activeContent == "button2" && (
+          <div className="">
+            <div>
+              <form action="" className="font-[Poppins]">
+                <div className="lg:grid lg:grid-cols-2 gap-8 space-y-6 lg:space-y-0">
+                  <div className="flex flex-col gap-2 lg:gap-4">
+                    <label htmlFor="name">Name*</label>
+                    <input
+                      id="name"
+                      type="text"
+                      placeholder="Your Name"
+                      className="w-full p-3 md:p-6 backdrop-blur-xs rounded-2xl md:text-lg focus:bg-white focus:text-black focus:outline-none border"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-4">
+                    <label htmlFor="email">Email*</label>
+                    <input
+                      id="email"
+                      type="email"
+                      placeholder="Your email address"
+                      className="w-full p-3 md:p-6 backdrop-blur-xs rounded-2xl md:text-lg focus:bg-white focus:text-black focus:outline-none border"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-4">
+                    <label htmlFor="phone">Phone</label>
+                    <input
+                      id="phone"
+                      type="text"
+                      placeholder="Your phone number"
+                      className="w-full p-3 md:p-6 backdrop-blur-xs rounded-2xl md:text-lg focus:bg-white focus:text-black focus:outline-none border"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-4">
+                    <label htmlFor="address">Address</label>
+                    <input
+                      id="address"
+                      type="text"
+                      placeholder="Your Address"
+                      className="w-full p-3 md:p-6 backdrop-blur-xs rounded-2xl md:text-lg focus:bg-white focus:text-black focus:outline-none border"
+                    />
+                  </div>
+                  {/* {activeContent == "button2" && (
                   <>
                     <div className="flex flex-col gap-4">
                       <label htmlFor="projectType">Project type*</label>
@@ -231,56 +245,56 @@ const Contact = () => {
                     </div>
                   </>
                 )} */}
-              </div>
+                </div>
 
-              <div className="flex flex-col gap-4 mt-8">
-                <label htmlFor="message">Message*</label>
-                <textarea
-                  id="message"
-                  placeholder="Ex. Hello, How can I help you?"
-                  className="w-full h-40 md:h-60 p-3 md:p-6 backdrop-blur-xs rounded-2xl md:text-lg focus:bg-white focus:text-black focus:outline-none border"
-                />
-              </div>
+                <div className="flex flex-col gap-4 mt-8">
+                  <label htmlFor="message">Message*</label>
+                  <textarea
+                    id="message"
+                    placeholder="Ex. Hello, How can I help you?"
+                    className="w-full h-40 md:h-60 p-3 md:p-6 backdrop-blur-xs rounded-2xl md:text-lg focus:bg-white focus:text-black focus:outline-none border"
+                  />
+                </div>
 
-              <div className="mt-10">
-                <Button title="Submit" />
-              </div>
-            </form>
+                <div className="mt-10">
+                  <Button title="Submit" />
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="space-y-4 mt-20 w-full">
-        <div className="relative text-3xl md:text-5xl lg:text-8xl leading-[0.75] text-(--title-color) font-[Britannic] uppercase">
-          <div className="relative">
-            <p className="our">our</p>
-            {/* <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
-          </div>
+        <div className="space-y-4 mt-20 w-full">
+          <div className="relative text-3xl md:text-5xl lg:text-8xl leading-[0.75] text-(--title-color) font-[Britannic] uppercase">
+            <div className="relative">
+              <p className="our">our</p>
+              {/* <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
+            </div>
 
-          <div className="relative">
-            <p className="hideaway">hideaway</p>
-            {/* <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
+            <div className="relative">
+              <p className="hideaway">hideaway</p>
+              {/* <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
+            </div>
           </div>
-        </div>
-        <div
-          id="location"
-          className="font-[Poppins] text-(--text-color) flex flex-col space-y-4 md:text-3xl mt-20"
-        >
-          <span className="text-(--text-color) md:text-4xl border-b w-max">
-            Location
-          </span>
-          {/* <span>SHYAM'S</span> */}
-          {/* <span className="mt-5">216 - 217 4Plus Complex</span>
+          <div
+            id="location"
+            className="font-[Poppins] text-(--text-color) flex flex-col space-y-4 md:text-3xl mt-20"
+          >
+            <span className="text-(--text-color) md:text-4xl border-b w-max">
+              Location
+            </span>
+            {/* <span>SHYAM'S</span> */}
+            {/* <span className="mt-5">216 - 217 4Plus Complex</span>
           <span>Astron chowk, Rajkot 01</span> */}
-          <span>Kohalpur, Nepal.</span>
+            <span>Kohalpur, Nepal.</span>
+          </div>
         </div>
-      </div>
 
-      <SocialLink />
+        <SocialLink />
 
-      <Footer />
+        <Footer />
 
-      {/* <div className="w-full mt-16">
+        {/* <div className="w-full mt-16">
         {footerLinks.map((footer) => (
           <div
             key={footer.id}
@@ -296,7 +310,7 @@ const Contact = () => {
         ))}
       </div> */}
 
-      {/* <div className="text-(--text-color)/70 text-xl my-10 flex justify-between w-full">
+        {/* <div className="text-(--text-color)/70 text-xl my-10 flex justify-between w-full">
         <p>
           © 2025 TRIONN<sup>®</sup>
         </p>
@@ -305,10 +319,11 @@ const Contact = () => {
         </a>
       </div> */}
 
-      {/* <div className="">
+        {/* <div className="">
         <img src={footerLogo} alt="footer logo" />
       </div> */}
-    </div>
+      </motion.div>
+    </AnimatePresence>
   );
 };
 

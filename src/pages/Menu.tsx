@@ -7,6 +7,7 @@ import Footer from "../components/section/Footer";
 import MenuSlider from "../components/MenuSlider";
 import Component from "../components/ThumbnailCarousel";
 import { useMediaQuery } from "react-responsive";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Menu = () => {
   const isMobile = useMediaQuery({ maxWidth: "430px" });
@@ -67,42 +68,63 @@ const Menu = () => {
   });
   return (
     <>
-      <div className="fixed top-0 left-0 w-screen pointer-events-none ">
-        <img
-          src="/images/sweets/sweets2.png"
-          alt="sweets 2"
-          className="w-full hidden md:block"
+      <AnimatePresence mode="wait">
+        <motion.div
+          className="fixed top-0 left-0 w-full h-screen bg-(--yellow) z-999"
+          initial={{ y: "-100%" }}
+          animate={{
+            y: ["-100%", "0%", "0%", "-100%"],
+            transition: {
+              duration: 1,
+              times: [0, 0.4, 0.6, 1],
+              ease: [0.76, 0, 0.24, 1],
+            },
+          }}
         />
-        <div className="absolute inset-0 w-full h-full z-1 bg-black/50" />
-      </div>
-      <CircularBrand />
-      {!isMobile && (
-        <>
-          <div className="flex flex-col items-center relative -mt-15">
-            <div className="w-1/2 flex absolute left-0">
-              <div className="w-1/3 h-screen" />
-              <div className="flex flex-col justify-center gap-10 w-2/3 text-white font-[Britannic] text-center h-screen -mt-10">
-                <div className="flex flex-col text-[50px] md:text-6xl uppercase px-4">
-                  <p>Welcome to the wild side of taste</p>
-                </div>
-              </div>
-            </div>
-            <div className="w-1/2 flex absolute right-0">
-              <div className="flex flex-col justify-center gap-10 w-2/3 text-white font-[Britannic] text-center h-screen -mt-10">
-                <div className="flex flex-col text-[50px] md:text-6xl uppercase px-4">
-                  <p>Thank you for exploring our world of taste</p>
-                </div>
-              </div>
-              <div className="w-1/3 h-screen" />
-            </div>
-            <MenuSlider />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            delay: 1.1,
+            duration: 0.1,
+          }}
+        >
+          <div className="fixed top-0 left-0 w-screen pointer-events-none ">
+            <img
+              src="/images/sweets/sweets2.png"
+              alt="sweets 2"
+              className="w-full hidden md:block"
+            />
+            <div className="absolute inset-0 w-full h-full z-1 bg-black/50" />
           </div>
-        </>
-      )}
+          <CircularBrand />
+          {!isMobile && (
+            <>
+              <div className="flex flex-col items-center relative -mt-15">
+                <div className="w-1/2 flex absolute left-0">
+                  <div className="w-1/3 h-screen" />
+                  <div className="flex flex-col justify-center gap-10 w-2/3 text-white font-[Britannic] text-center h-screen -mt-10">
+                    <div className="flex flex-col text-[50px] md:text-6xl uppercase px-4">
+                      <p>Welcome to the wild side of taste</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="w-1/2 flex absolute right-0">
+                  <div className="flex flex-col justify-center gap-10 w-2/3 text-white font-[Britannic] text-center h-screen -mt-10">
+                    <div className="flex flex-col text-[50px] md:text-6xl uppercase px-4">
+                      <p>Thank you for exploring our world of taste</p>
+                    </div>
+                  </div>
+                  <div className="w-1/3 h-screen" />
+                </div>
+                <MenuSlider />
+              </div>
+            </>
+          )}
 
-      {isMobile && (
-        <div className="">
-          {/* <div className="w-full h-full">
+          {isMobile && (
+            <div className="">
+              {/* <div className="w-full h-full">
             <img
               src="/images/sweets/sweets2.png"
               alt="sweets 2"
@@ -111,18 +133,20 @@ const Menu = () => {
             <div className="absolute inset-0 w-full h-full z-1 bg-black/50" />
           </div> */}
 
-          <div className="text-(--title-color) text-3xl uppercase font-[Britannic] text-center mt-10">
-            <p>Welcome to the wild side of taste</p>
-          </div>
-          <Component />
-          <div className="text-(--title-color) text-3xl uppercase font-[Britannic] text-center mt-10">
-            <p>Thank you for exploring our world of taste</p>
-          </div>
-        </div>
-      )}
+              <div className="text-(--title-color) text-3xl uppercase font-[Britannic] text-center mt-10">
+                <p>Welcome to the wild side of taste</p>
+              </div>
+              <Component />
+              <div className="text-(--title-color) text-3xl uppercase font-[Britannic] text-center mt-10">
+                <p>Thank you for exploring our world of taste</p>
+              </div>
+            </div>
+          )}
 
-      <Footer />
-      {/* </div> */}
+          <Footer />
+          {/* </div> */}
+        </motion.div>
+      </AnimatePresence>
     </>
   );
 };

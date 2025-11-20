@@ -12,6 +12,7 @@ import {
 } from "../components/lightswind/3d-scroll-trigger";
 import PageTitle from "../components/section/PageTitle";
 import { Typewriter } from "../components/ui/typewriter";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Team = () => {
   useGSAP(() => {
@@ -189,29 +190,42 @@ const Team = () => {
     });
   });
   return (
-    <div className="flex flex-col items-center gap-8 mt-10 font-[Poppins] text-(--text-color)">
-      <CircularBrand />
-      <PageTitle
-        text1="the masters"
-        text2="behind"
-        highlighter="the magic"
-        desc="Our passionate chefs, skilled staff, and creative minds work together to craft unforgettable dining experiences, turning every meal into a story of flavor and excellence."
+    <AnimatePresence mode="wait">
+      <motion.div
+        className="fixed top-0 left-0 w-full h-screen bg-(--yellow) z-999"
+        initial={{ y: "-100%" }}
+        animate={{
+          y: ["-100%", "0%", "0%", "-100%"],
+          transition: {
+            duration: 1,
+            times: [0, 0.4, 0.6, 1],
+            ease: [0.76, 0, 0.24, 1],
+          },
+        }}
       />
+      <motion.div className="flex flex-col items-center gap-8 mt-10 font-[Poppins] text-(--text-color)">
+        <CircularBrand />
+        <PageTitle
+          text1="the masters"
+          text2="behind"
+          highlighter="the magic"
+          desc="Our passionate chefs, skilled staff, and creative minds work together to craft unforgettable dining experiences, turning every meal into a story of flavor and excellence."
+        />
 
-      {/* <div className="flex justify-center">
+        {/* <div className="flex justify-center">
         <a href="#fourthPage2ndDesc">
           <CircleArrowDown size={30} strokeWidth={1} className="/50 mt-8" />
         </a>
       </div> */}
 
-      <div
-        // id="fourthPage2ndDesc"
-        className="secondDesc flex flex-col text-center text-(--title-color) text-xl md:text-3xl lg:text-6xl lg:w-[60%] mt-40 font-[Britannic] uppercase"
-      >
-        <p className="">Our leadership</p>
-      </div>
+        <div
+          // id="fourthPage2ndDesc"
+          className="secondDesc flex flex-col text-center text-(--title-color) text-xl md:text-3xl lg:text-6xl lg:w-[60%] mt-40 font-[Britannic] uppercase"
+        >
+          <p className="">Our leadership</p>
+        </div>
 
-      {/* <div className="relative w-screen mt-20">
+        {/* <div className="relative w-screen mt-20">
         <img src={lionGroup} alt="lion group" />
         <div className="imgText flex flex-col justify-center items-center w-full h-full absolute top-0 text-white text-center leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[daysoftype] uppercase**[font-feature-settings:'ss01']**">
           <span>born with</span>
@@ -220,7 +234,7 @@ const Team = () => {
         </div>
       </div> */}
 
-      {/* <div className="w-full">
+        {/* <div className="w-full">
         <div className="thirdDesc w-ful lg:w-1/2 text-[48px] mt-40 leading-14 ">
           <p>In the heart of our wild team, we find our strength.</p>
         </div>
@@ -235,76 +249,76 @@ const Team = () => {
         </div>
       </div> */}
 
-      <div className="w-full mt-10 flex justify-center">
-        {/* <div className="w-1/2 bg-(--card-bg-2) px-5 py-10 rounded-2xl"> */}
-        <div className="md:w-[60%] lg:w-1/3 bg-black border px-5 py-10 rounded-2xl overflow-hidden space-y-8">
-          <div className="w-full flex justify-center gap-8">
-            <img
-              src="/images/team/albert-mizuno.webp"
-              alt="Albert Mizuno"
-              className="size-40 object-cover rounded-full"
-            />
-          </div>
-          <div className="space-y-2 text-center">
-            <div className="text-2xl">
-              <Typewriter text={["Albert Mizuno"]} hideCursorOnType />
-            </div>
-            <div className="text-(--text-color)/50">
-              <Typewriter
-                text={["Founder"]}
-                initialDelay={2000}
-                hideCursorOnType
+        <div className="w-full mt-10 flex justify-center">
+          {/* <div className="w-1/2 bg-(--card-bg-2) px-5 py-10 rounded-2xl"> */}
+          <div className="md:w-[60%] lg:w-1/3 bg-black border px-5 py-10 rounded-2xl overflow-hidden space-y-8">
+            <div className="w-full flex justify-center gap-8">
+              <img
+                src="/images/team/albert-mizuno.webp"
+                alt="Albert Mizuno"
+                className="size-40 object-cover rounded-full"
               />
             </div>
-            <div className="mt-5">
-              <p>
-                <span className="text-2xl">“</span>
-                Great food isn't cooked — it's crafted with heart.
-                <span className="text-2xl">”</span>
-              </p>
+            <div className="space-y-2 text-center">
+              <div className="text-2xl">
+                <Typewriter text={["Albert Mizuno"]} hideCursorOnType />
+              </div>
+              <div className="text-(--text-color)/50">
+                <Typewriter
+                  text={["Founder"]}
+                  initialDelay={2000}
+                  hideCursorOnType
+                />
+              </div>
+              <div className="mt-5">
+                <p>
+                  <span className="text-2xl">“</span>
+                  Great food isn't cooked — it's crafted with heart.
+                  <span className="text-2xl">”</span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <TeamCard />
+        <TeamCard />
 
-      <div className="text-center space-y-4 mt-20 w-full">
-        <div className="relative text-3xl md:text-5xl lg:text-8xl leading-[0.75] font-[Britannic] text-(--title-color) uppercase">
-          <div className="relative joinKitchenCrew">
-            <p>join</p>
-            {/* <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
+        <div className="text-center space-y-4 mt-20 w-full">
+          <div className="relative text-3xl md:text-5xl lg:text-8xl leading-[0.75] font-[Britannic] text-(--title-color) uppercase">
+            <div className="relative joinKitchenCrew">
+              <p>join</p>
+              {/* <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
+            </div>
+
+            <div className="relative joinKitchenCrew">
+              <p>kitchen</p>
+              {/* <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
+            </div>
+            <div className="relative joinKitchenCrew">
+              <p>crew</p>
+              {/* <div className="textShadow3 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
+            </div>
           </div>
-
-          <div className="relative joinKitchenCrew">
-            <p>kitchen</p>
-            {/* <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
-          </div>
-          <div className="relative joinKitchenCrew">
-            <p>crew</p>
-            {/* <div className="textShadow3 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
+          <div className="joinKitchenCrewDesc mx-auto md:text-xl w-full lg:w-1/2">
+            Our pride is expanding—we welcome those hungry to create
+            unforgettable flavors.
           </div>
         </div>
-        <div className="joinKitchenCrewDesc mx-auto md:text-xl w-full lg:w-1/2">
-          Our pride is expanding—we welcome those hungry to create unforgettable
-          flavors.
+
+        <div
+          id="lionGroup2Container"
+          className="relative w-screen h-[400px] lg:h-[600px]"
+        >
+          <div className="absolute inset-0 w-full h-full z-10 bg-black/50" />
+          <img
+            id="teamGroup"
+            src="/images/team/group.png"
+            alt="teamGroup"
+            className="absolute w-full h-full object-cover"
+          />
         </div>
-      </div>
 
-      <div
-        id="lionGroup2Container"
-        className="relative w-screen h-[400px] lg:h-[600px]"
-      >
-        <div className="absolute inset-0 w-full h-full z-10 bg-black/50" />
-        <img
-          id="teamGroup"
-          src="/images/team/group.png"
-          alt="teamGroup"
-          className="absolute w-full h-full object-cover"
-        />
-      </div>
-
-      {/* <div id="beLikeALion" className="text-left lg:w-[75%] mt-10 space-y-3">
+        {/* <div id="beLikeALion" className="text-left lg:w-[75%] mt-10 space-y-3">
         <p className="lg:w-[50%] text-5xl md:text-[60px] leading-[1.2]">
           Do you aspire to be like a lion?
         </p>
@@ -314,7 +328,7 @@ const Team = () => {
         </p>
       </div> */}
 
-      {/* <div className="w-full lg:w-[75%] mt-10">
+        {/* <div className="w-full lg:w-[75%] mt-10">
         {teamHireLists.map((hire) => (
           <div
             key={hire.id}
@@ -326,44 +340,45 @@ const Team = () => {
         ))}
       </div> */}
 
-      <div className="mt-20">
-        <div
-          id="ourDigitalJungleText"
-          className="text-center text-xl md:text-3xl lg:text-6xl text-(--title-color) font-[Britannic]"
-        >
-          Our Gallery
+        <div className="mt-20">
+          <div
+            id="ourDigitalJungleText"
+            className="text-center text-xl md:text-3xl lg:text-6xl text-(--title-color) font-[Britannic]"
+          >
+            Our Gallery
+          </div>
+
+          <div className="w-screen">
+            <ThreeDScrollTriggerContainer className="my-20">
+              <ThreeDScrollTriggerRow baseVelocity={3} direction={1}>
+                {eventListsA.map((event) => (
+                  <div className="mx-1" key={event.id}>
+                    <img
+                      src={event.image}
+                      alt={`eventA + ${event.id}`}
+                      className="w-72 h-56 lg:w-96 lg:h-80 rounded-3xl object-cover"
+                    />
+                  </div>
+                ))}
+              </ThreeDScrollTriggerRow>
+              <ThreeDScrollTriggerRow baseVelocity={3} direction={-1}>
+                {eventListsB.map((event) => (
+                  <div className="mx-1" key={event.id}>
+                    <img
+                      src={event.image}
+                      alt={`eventB + ${event.id}`}
+                      className="w-72 h-56 lg:w-96 lg:h-80 rounded-3xl object-cover"
+                    />
+                  </div>
+                ))}
+              </ThreeDScrollTriggerRow>
+            </ThreeDScrollTriggerContainer>
+          </div>
         </div>
 
-        <div className="w-screen">
-          <ThreeDScrollTriggerContainer className="my-20">
-            <ThreeDScrollTriggerRow baseVelocity={3} direction={1}>
-              {eventListsA.map((event) => (
-                <div className="mx-1" key={event.id}>
-                  <img
-                    src={event.image}
-                    alt={`eventA + ${event.id}`}
-                    className="w-72 h-56 lg:w-96 lg:h-80 rounded-3xl object-cover"
-                  />
-                </div>
-              ))}
-            </ThreeDScrollTriggerRow>
-            <ThreeDScrollTriggerRow baseVelocity={3} direction={-1}>
-              {eventListsB.map((event) => (
-                <div className="mx-1" key={event.id}>
-                  <img
-                    src={event.image}
-                    alt={`eventB + ${event.id}`}
-                    className="w-72 h-56 lg:w-96 lg:h-80 rounded-3xl object-cover"
-                  />
-                </div>
-              ))}
-            </ThreeDScrollTriggerRow>
-          </ThreeDScrollTriggerContainer>
-        </div>
-      </div>
-
-      <Footer />
-    </div>
+        <Footer />
+      </motion.div>
+    </AnimatePresence>
   );
 };
 

@@ -11,7 +11,7 @@ import ScrollMarquee from "../components/section/ScrollMarquee";
 import Dribbble from "../components/section/Dribbble";
 import SocialLink from "../components/section/SocialLink";
 import Footer from "../components/section/Footer";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import PageTitle from "../components/section/PageTitle";
 import OurCombo from "../components/section/OurCombo";
 import { useState } from "react";
@@ -57,77 +57,94 @@ const LandingPage = () => {
     // });
   });
   return (
-    <motion.div
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      // exit={{ y: -100, opacity: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-    >
-      <div className="py-16 md:pt-0 md:pb-20 relative h-screen flex flex-col gap-20 md:gap-0 md:justify-between xl:justify-evenly">
-        <PageTitle
-          text1="a"
-          text2="kingdom of"
-          text3="untamed"
-          highlighter="taste"
-          desc="We unleash bold flavors, crafting unforgettable dining moments through imaginative dishes, heartfelt hospitality, and culinary mastery that excites every palate."
-        />
-        <div className="circular-brand">
-          <CircularBrand />
-        </div>
-        {openMenu && (
-          <div className="fixed inset-0 z-100">
-            <div
-              className="absolute inset-0 backdrop-blur-lg bg-black/20"
-              onClick={() => setOpenMenu(false)}
-            ></div>
+    <AnimatePresence mode="wait">
+      <motion.div
+        className="fixed top-0 left-0 w-full h-screen bg-(--yellow) z-999"
+        initial={{ y: "-100%" }}
+        animate={{
+          y: ["-100%", "0%", "0%", "-100%"],
+          transition: {
+            duration: 1,
+            times: [0, 0.4, 0.6, 1],
+            // ease: "easeInOut",
+            ease: [0.76, 0, 0.24, 1],
+          },
+        }}
+      />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          delay: 1.1,
+          duration: 0.1,
+        }}
+      >
+        <div className="py-16 md:pt-0 md:pb-20 relative h-screen flex flex-col gap-20 md:gap-0 md:justify-between xl:justify-evenly">
+          <PageTitle
+            text1="a"
+            text2="kingdom of"
+            text3="untamed"
+            highlighter="taste"
+            desc="We unleash bold flavors, crafting unforgettable dining moments through imaginative dishes, heartfelt hospitality, and culinary mastery that excites every palate."
+          />
+          <div className="circular-brand">
+            <CircularBrand />
+          </div>
+          {openMenu && (
+            <div className="fixed inset-0 z-100">
+              <div
+                className="absolute inset-0 backdrop-blur-lg bg-black/20"
+                onClick={() => setOpenMenu(false)}
+              ></div>
 
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-              <div className="relative w-full">
-                {/* <button
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <div className="relative w-full">
+                  {/* <button
                   onClick={() => setOpenMenu(false)}
                   className="absolute -top-5 -right-5 bg-white text-black rounded-full p-2 shadow-lg hover:scale-110 transition"
                 >
                   ✕
                 </button> */}
 
-                <div className="relative w-[900px] h-[600px]">
-                  <MenuSlider />
+                  <div className="relative w-[900px] h-[600px]">
+                    <MenuSlider />
+                  </div>
                 </div>
               </div>
             </div>
+          )}
+          <div className="flex justify-between md:mb-20 lg:mb-10 xl:mb-0">
+            <Button onClick={() => setOpenMenu(true)} title="View Menu" />
+
+            <Button title="Get in touch" />
           </div>
-        )}
-        <div className="flex justify-between md:mb-20 lg:mb-10 xl:mb-0">
-          <Button onClick={() => setOpenMenu(true)} title="View Menu" />
-
-          <Button title="Get in touch" />
         </div>
-      </div>
 
-      <IntroVideo />
-      <OurCombo />
-      <ViewProject />
-      <About />
-      <Progress />
-      <Partner />
-      <ScrollMarquee />
-      <Dribbble />
+        <IntroVideo />
+        <OurCombo />
+        <ViewProject />
+        <About />
+        <Progress />
+        <Partner />
+        <ScrollMarquee />
+        <Dribbble />
 
-      <div
-        id="join"
-        className="mt-20 lg:mt-40 flex flex-col items-center text-6xl md:text-7xl lg:text-9xl leading-[0.8] text-(--title-color) font-[Britannic] uppercase"
-      >
-        <span id="join1Text">dine</span>
-        <span id="join2Text">with</span>
-        <span id="join3Text" className="text-(--text-yellow)">
-          style
-        </span>
-      </div>
+        <div
+          id="join"
+          className="mt-20 lg:mt-40 flex flex-col items-center text-6xl md:text-7xl lg:text-9xl leading-[0.8] text-(--title-color) font-[Britannic] uppercase"
+        >
+          <span id="join1Text">dine</span>
+          <span id="join2Text">with</span>
+          <span id="join3Text" className="text-(--text-yellow)">
+            style
+          </span>
+        </div>
 
-      <SocialLink />
+        <SocialLink />
 
-      <Footer />
-    </motion.div>
+        <Footer />
+      </motion.div>
+    </AnimatePresence>
   );
 };
 

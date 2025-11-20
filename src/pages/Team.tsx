@@ -251,7 +251,7 @@ const Team = () => {
 
         <div className="w-full mt-10 flex justify-center">
           {/* <div className="w-1/2 bg-(--card-bg-2) px-5 py-10 rounded-2xl"> */}
-          <div className="md:w-[60%] lg:w-1/3 bg-black border px-5 py-10 rounded-2xl overflow-hidden space-y-8">
+          <div className="md:w-[60%] lg:w-1/3 bg-white border px-5 py-10 rounded-2xl overflow-hidden space-y-8">
             <div className="w-full flex justify-center gap-8">
               <img
                 src="/images/team/albert-mizuno.webp"
@@ -306,7 +306,7 @@ const Team = () => {
         </div>
 
         <div
-          id="lionGroup2Container"
+          id="teamGroupContainer"
           className="relative w-screen h-[400px] lg:h-[600px]"
         >
           <div className="absolute inset-0 w-full h-full z-10 bg-black/50" />

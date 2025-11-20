@@ -19,10 +19,12 @@ import MenuSlider from "../components/MenuSlider";
 import CircularBrand from "../components/CircularBrand";
 import { useMediaQuery } from "react-responsive";
 import Component from "../components/ThumbnailCarousel";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: "430px" });
+  const navigate = useNavigate();
 
   useGSAP(() => {
     gsap.from("#join1Text, #join2Text", {
@@ -47,17 +49,17 @@ const LandingPage = () => {
       },
     });
 
-    // gsap.from(".circular-brand", {
-    //   xPercent: 200,
-    //   opacity: 0,
-    //   duration: 2,
-    //   scrollTrigger: {
-    //     trigger: ".circular-brand",
-    //     start: "top 10%",
-    //     end: "bottom center",
-    //     scrub: 1,
-    //   },
-    // });
+    gsap.from(".circular-brand", {
+      xPercent: 200,
+      opacity: 0,
+      duration: 2,
+      scrollTrigger: {
+        trigger: ".circular-brand",
+        start: "top 10%",
+        end: "bottom center",
+        scrub: 1,
+      },
+    });
   });
   return (
     <AnimatePresence mode="wait">
@@ -110,7 +112,7 @@ const LandingPage = () => {
                 </button> */}
 
                   {!isMobile ? (
-                    <div className="relative w-[900px] h-[600px]">
+                    <div className="relative w-[900px] h-[550px]">
                       {" "}
                       <MenuSlider />
                     </div>
@@ -124,7 +126,7 @@ const LandingPage = () => {
           <div className="flex justify-between md:mb-20 lg:mb-15 xl:mb-0">
             <Button onClick={() => setOpenMenu(true)} title="View Menu" />
 
-            <Button title="Get in touch" />
+            <Button onClick={() => navigate("/contact")} title="Get in touch" />
           </div>
         </div>
 

@@ -100,7 +100,7 @@ const Menu = () => {
           {!isMobile && (
             <>
               <CircularBrand />
-              <div className="flex flex-col items-center relative -mt-15">
+              <div className="flex flex-col items-center relative">
                 <div className="w-1/2 flex absolute left-0">
                   <div className="w-1/3 h-screen" />
                   <div className="flex flex-col justify-center gap-10 w-2/3 text-white font-[Britannic] text-center h-screen -mt-10">

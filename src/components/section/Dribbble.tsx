@@ -103,10 +103,10 @@ const Dribbble = () => {
       </div>
       <p
         id="dribbleText"
-        className="text-(--text-color) md:text-3xl font-[Poppins] w-[80%] lg:w-[40%] text-center"
+        className="text-(--text-color) md:text-3xl font-[Poppins] w-[80%] lg:w-[40%] text-center mt-10"
       >
-        Like a lion's roar echoing through the jungle, a hint of our creative
-        minds emerges.
+        Where every dish is crafted with passion, bringing comfort, flavor, and
+        warmth to your table.
       </p>
 
       <div className="absolute grid grid-cols-2 pointer-events-none">

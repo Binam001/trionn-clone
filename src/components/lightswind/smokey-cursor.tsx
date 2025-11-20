@@ -70,7 +70,7 @@ export default function SmokeyCursor({
   splatForce = 6000,
   enableShading = true,
   colorUpdateSpeed = 0,
-  backgroundColor = { r: 0.0, g: 0.0, b: 0.0 },
+  backgroundColor,
   transparent = true,
 }: // className = "",
 // disabled = false,
@@ -1292,7 +1292,11 @@ SmokeyCursorProps) {
       color.b *= 5;
       const dx = 10 * 0.5;
       const dy = 30 * 0.5;
-      splat(pointer.texcoordX, pointer.texcoordY, dx, dy, color);
+      splat(pointer.texcoordX, pointer.texcoordY, dx, dy, {
+        r: 255,
+        g: 100,
+        b: 70,
+      });
     }
 
     function splat(
@@ -1400,17 +1404,12 @@ SmokeyCursorProps) {
     }
 
     function generateColor(): ColorRGB {
-      const c = HSVtoRGB(0.0, 0.0, 0.0);
-      // const c = HSVtoRGB(0.0, 0.05, 0.5);
-      // const c = HSVtoRGB(0.5, 0.5, 0.5);
-      // const c = HSVtoRGB(1.0, 1.0, 1.0);
-      // const c = HSVtoRGB(Math.random(), 1.0, 1.0);
+      const c = HSVtoRGB(4, 0, 41);
       c.r = 0.25;
       c.g = 0.25;
       c.b = 0.25;
       return c;
     }
-
     function HSVtoRGB(h: number, s: number, v: number): ColorRGB {
       let r = 0,
         g = 0,

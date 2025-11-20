@@ -256,7 +256,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <div className="mt-10">
+                <div className="mt-10 w-max">
                   <Button title="Submit" />
                 </div>
               </form>

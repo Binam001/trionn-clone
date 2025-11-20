@@ -193,8 +193,8 @@ const Team = () => {
       <CircularBrand />
       <PageTitle
         text1="the masters"
-        text2="behind the magic"
-        text3=""
+        text2="behind"
+        highlighter="the magic"
         desc="Our passionate chefs, skilled staff, and creative minds work together to craft unforgettable dining experiences, turning every meal into a story of flavor and excellence."
       />
 
@@ -206,7 +206,7 @@ const Team = () => {
 
       <div
         // id="fourthPage2ndDesc"
-        className="secondDesc flex flex-col text-center text-(--text-color) text-xl md:text-3xl lg:text-6xl lg:w-[60%] mt-40 font-[Britannic] uppercase"
+        className="secondDesc flex flex-col text-center text-(--title-color) text-xl md:text-3xl lg:text-6xl lg:w-[60%] mt-40 font-[Britannic] uppercase"
       >
         <p className="">Our leadership</p>
       </div>
@@ -270,7 +270,7 @@ const Team = () => {
       <TeamCard />
 
       <div className="text-center space-y-4 mt-20 w-full">
-        <div className="relative text-3xl md:text-5xl lg:text-8xl leading-[0.75] font-[Britannic] uppercase">
+        <div className="relative text-3xl md:text-5xl lg:text-8xl leading-[0.75] font-[Britannic] text-(--title-color) uppercase">
           <div className="relative joinKitchenCrew">
             <p>join</p>
             {/* <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
@@ -327,7 +327,10 @@ const Team = () => {
       </div> */}
 
       <div className="mt-20">
-        <div id="ourDigitalJungleText" className="text-3xl text-center">
+        <div
+          id="ourDigitalJungleText"
+          className="text-center text-xl md:text-3xl lg:text-6xl text-(--title-color) font-[Britannic]"
+        >
           Our Gallery
         </div>
 

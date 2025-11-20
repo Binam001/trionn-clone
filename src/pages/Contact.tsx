@@ -91,12 +91,13 @@ const Contact = () => {
       <PageTitle
         text1="step into "
         text2="the wilderness"
-        text3="of flavor."
+        text3=""
+        highlighter="flavour."
         desc="In a world full of changing tastes, we invite you to explore bold flavors with us—where every conversation leads to new culinary horizons."
       />
 
       <div className="w-full lg:px-20 md:mt-40">
-        <div className="flex justify-between gap-5 my-5 lg:my-20">
+        <div className="flex justify-between gap-5 text-(--title-color) my-5 lg:my-20">
           {/* <div className="flex flex-col md:flex-row md:justify-between gap-5 text-(--text-color)/60 my-20"> */}
           {/* <div className="flex justify-between gap-10 lg:gap-32 text-3xl md:text-[45px] lg:text-[60px] font-[Britannic]">
             <div className="">
@@ -169,15 +170,15 @@ const Contact = () => {
                     className="w-full p-3 md:p-6 backdrop-blur-xs rounded-2xl md:text-lg focus:bg-white focus:text-black focus:outline-none border"
                   />
                 </div>
-                {/* <div className="flex flex-col gap-4">
-                  <label htmlFor="company">Company/Organisation</label>
+                <div className="flex flex-col gap-4">
+                  <label htmlFor="address">Address</label>
                   <input
-                    id="company"
+                    id="address"
                     type="text"
-                    placeholder="Ex. Shyam"
+                    placeholder="Your Address"
                     className="w-full p-3 md:p-6 backdrop-blur-xs rounded-2xl md:text-lg focus:bg-white focus:text-black focus:outline-none border"
                   />
-                </div> */}
+                </div>
                 {/* {activeContent == "button2" && (
                   <>
                     <div className="flex flex-col gap-4">
@@ -241,7 +242,7 @@ const Contact = () => {
                 />
               </div>
 
-              <div className="mt-10 flex justify-end">
+              <div className="mt-10">
                 <Button title="Submit" />
               </div>
             </form>
@@ -250,7 +251,7 @@ const Contact = () => {
       </div>
 
       <div className="space-y-4 mt-20 w-full">
-        <div className="relative text-3xl md:text-5xl lg:text-8xl leading-[0.75] text-(--text-color) font-[Britannic] uppercase">
+        <div className="relative text-3xl md:text-5xl lg:text-8xl leading-[0.75] text-(--title-color) font-[Britannic] uppercase">
           <div className="relative">
             <p className="our">our</p>
             {/* <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
@@ -269,9 +270,9 @@ const Contact = () => {
             Location
           </span>
           {/* <span>SHYAM'S</span> */}
-          <span className="mt-5">216 - 217 4Plus Complex</span>
-          <span>Astron chowk, Rajkot 01</span>
-          <span>Kathmandu, Nepal.</span>
+          {/* <span className="mt-5">216 - 217 4Plus Complex</span>
+          <span>Astron chowk, Rajkot 01</span> */}
+          <span>Kohalpur, Nepal.</span>
         </div>
       </div>
 

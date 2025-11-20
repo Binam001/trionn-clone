@@ -67,10 +67,13 @@ const LandingPage = () => {
         <PageTitle
           text1="a"
           text2="kingdom of"
-          text3="untamed taste"
+          text3="untamed"
+          highlighter="taste"
           desc="We unleash bold flavors, crafting unforgettable dining moments through imaginative dishes, heartfelt hospitality, and culinary mastery that excites every palate."
         />
-        <CircularBrand />
+        <div className="circular-brand">
+          <CircularBrand />
+        </div>
         {openMenu && (
           <div className="fixed inset-0 z-100">
             <div
@@ -112,11 +115,13 @@ const LandingPage = () => {
 
       <div
         id="join"
-        className="mt-20 lg:mt-40 flex flex-col items-center text-6xl md:text-7xl lg:text-9xl leading-[0.8] text-(--foreground) font-[Britannic] uppercase"
+        className="mt-20 lg:mt-40 flex flex-col items-center text-6xl md:text-7xl lg:text-9xl leading-[0.8] text-(--title-color) font-[Britannic] uppercase"
       >
         <span id="join1Text">dine</span>
         <span id="join2Text">with</span>
-        <span id="join3Text">style</span>
+        <span id="join3Text" className="text-(--text-yellow)">
+          style
+        </span>
       </div>
 
       <SocialLink />

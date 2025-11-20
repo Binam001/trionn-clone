@@ -40,7 +40,7 @@ const Navbar = () => {
     animate: { y: 0, transition: { duration: 0.5, ease: "easeInOut" as any } },
     exit: {
       y: "-100%",
-      transition: { duration: 0.5, ease: "easeInOut" as any, delay: 0.8 },
+      transition: { duration: 0.3, ease: "easeInOut" as any, delay: 0.8 },
     },
   };
   const menuVariants = {
@@ -59,9 +59,10 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed w-full top-0 left-0 px-10 md:px-20 z-60">
+      <nav className="fixed bg-transparent w-full top-0 left-0 px-10 md:px-20 z-60">
         <div className="flex justify-between items-center mt-5 lg:mt-[22px]">
           <div className="cursor-pointer relative">
+            {/* <div className="absolute w-32 h-20 bg-(--foreground)/10 rounded-full -z-10" /> */}
             <a href="/" className="">
               <img
                 className={`w-18 md:w-24 ${
@@ -88,13 +89,13 @@ const Navbar = () => {
             <audio ref={audioRef} src={audio} />
           </div>
 
-          <div className="text-(--foreground)">
+          <div className="text-(--foreground) ">
             {!open ? (
               <button
                 onClick={() => setOpen(true)}
-                className="flex items-center gap-4 text-sm cursor-pointer uppercase"
+                className="flex items-center gap-4 cursor-pointer uppercase"
               >
-                menu
+                <span className="text-[#FFCB04] dark:text-white">menu</span>
                 <div className="bg-(--icon-bg-color) size-11 rounded-full justify-center flex items-center mx-auto">
                   <div className="w-fit items-end flex gap-1 justify-center flex-col">
                     <div className="w-6 h-0.5 bg-(--text-color) transition-all duration-300" />
@@ -105,12 +106,12 @@ const Navbar = () => {
             ) : (
               <button
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-4 text-sm cursor-pointer uppercase"
+                className="flex items-center gap-4 cursor-pointer uppercase"
               >
                 close
-                <div className="bg-(--icon-bg-color) size-11 rounded-full flex flex-col justify-center items-center mx-auto relative">
-                  <div className="absolute w-6 h-0.5 bg-(--text-color) rotate-45 transition-all duration-300" />
-                  <div className="absolute w-6 h-0.5 bg-(--text-color) -rotate-45 transition-all duration-300" />
+                <div className="bg-(--foreground) size-11 rounded-full flex flex-col justify-center items-center mx-auto relative">
+                  <div className="absolute w-6 h-0.5 bg-(--title-color) dark:bg-black rotate-45 transition-all duration-300" />
+                  <div className="absolute w-6 h-0.5 bg-(--title-color) dark:bg-black -rotate-45 transition-all duration-300" />
                 </div>
               </button>
             )}
@@ -122,7 +123,7 @@ const Navbar = () => {
           <div className="fixed top-0 left-0 w-full h-full z-50 pointer-events-none">
             {/* CURTAIN LAYER */}
             <motion.div
-              className="absolute top-0 left-0 w-full h-full bg-(--sideMenu-mask-bg)"
+              className="absolute top-0 left-0 w-full h-full bg-(--yellow)"
               variants={curtainVariants}
               initial="initial"
               animate="animate"
@@ -131,7 +132,7 @@ const Navbar = () => {
 
             {/* SIDEMENU (The real menu) */}
             <motion.div
-              className="absolute top-0 left-0 w-full h-full bg-(--sideMenu-bg) pointer-events-auto"
+              className="absolute top-0 left-0 w-full h-full bg-red-600 pointer-events-auto"
               variants={menuVariants}
               initial="initial"
               animate="animate"

@@ -53,7 +53,7 @@ function pointerPrototype(): Pointer {
     deltaY: 0,
     down: false,
     moved: false,
-    color: { r: 0.5, g: 0.5, b: 0.5 },
+    color: { r: 0.0, g: 0.0, b: 0.0 },
   };
 }
 
@@ -70,7 +70,7 @@ export default function SmokeyCursor({
   splatForce = 6000,
   enableShading = true,
   colorUpdateSpeed = 0,
-  backgroundColor = { r: 0.5, g: 0.5, b: 0.5 },
+  backgroundColor = { r: 0.0, g: 0.0, b: 0.0 },
   transparent = true,
 }: // className = "",
 // disabled = false,
@@ -1400,13 +1400,14 @@ SmokeyCursorProps) {
     }
 
     function generateColor(): ColorRGB {
-      const c = HSVtoRGB(0.0, 0.05, 0.5);
+      const c = HSVtoRGB(0.0, 0.0, 0.0);
+      // const c = HSVtoRGB(0.0, 0.05, 0.5);
       // const c = HSVtoRGB(0.5, 0.5, 0.5);
       // const c = HSVtoRGB(1.0, 1.0, 1.0);
       // const c = HSVtoRGB(Math.random(), 1.0, 1.0);
-      c.r *= 0.15;
-      c.g *= 0.15;
-      c.b *= 0.15;
+      c.r = 0.25;
+      c.g = 0.25;
+      c.b = 0.25;
       return c;
     }
 

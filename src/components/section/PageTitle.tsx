@@ -7,11 +7,13 @@ const PageTitle = ({
   text1,
   text2,
   text3,
+  highlighter,
   desc,
 }: {
   text1: string;
   text2: string;
-  text3: string;
+  text3?: string;
+  highlighter?: string;
   desc: string;
 }) => {
   useGSAP(() => {
@@ -46,11 +48,13 @@ const PageTitle = ({
       <CircularBrand />
       <div
         id="pageTitle"
-        className="flex flex-col w-full text-3xl md:text-5xl lg:text-8xl text-center leading-[0.75] text-(--text-color) uppercase font-[Britannic]"
+        className="flex flex-col w-full text-3xl md:text-5xl lg:text-8xl text-center leading-[0.75] text-(--title-color) uppercase font-[Britannic]"
       >
         <span>{text1}</span>
         <span>{text2}</span>
-        <span>{text3}</span>
+        <span>
+          {text3} <span className="text-(--text-yellow)">{highlighter}</span>
+        </span>
       </div>
 
       <div

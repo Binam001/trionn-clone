@@ -18,7 +18,7 @@ const SideMenu = ({ setOpen }: SideMenuProps) => {
     // });
   });
   return (
-    <div className="text-(--text-color) relative h-screen flex items-center">
+    <div className="text-white relative h-screen flex items-center z-60">
       <div className="md:flex px-8 lg:px-20 absolute w-full mb-5">
         <ul className="w-1/2 text-6xl lg:text-8xl leading-[0.8] font-[Britannic] uppercase">
           {sideMenuLists.map((sideMenuItem) => (
@@ -28,7 +28,7 @@ const SideMenu = ({ setOpen }: SideMenuProps) => {
             >
               {sideMenuItem.to ? (
                 <Link to={sideMenuItem.to} onClick={() => setOpen(false)}>
-                  <span className="block group-hover:ml-16 transition-all duration-500">
+                  <span className="block group-hover:ml-16 transition-all duration-500 hover:text-(--yellow)">
                     {sideMenuItem.name}
                   </span>
                 </Link>
@@ -37,7 +37,7 @@ const SideMenu = ({ setOpen }: SideMenuProps) => {
                   {sideMenuItem.name}
                 </span>
               )}
-              <div className="absolute left-0 top-[40%] -translate-y-[40%] hidden group-hover:block size-8 bg-(--text-color) rounded-full"></div>
+              <div className="absolute left-0 top-[40%] -translate-y-[40%] hidden group-hover:block size-8 bg-(--yellow) rounded-full"></div>
             </li>
           ))}
         </ul>

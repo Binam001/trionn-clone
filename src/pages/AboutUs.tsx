@@ -52,17 +52,17 @@ const AboutUs = () => {
         scrub: 1,
       },
     });
-    gsap.from("#ourAchievements", {
-      yPercent: 200,
-      opacity: 0,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: "#ourAchievements",
-        start: "top bottom",
-        end: "center center",
-        scrub: 1,
-      },
-    });
+    // gsap.from("#ourAchievements", {
+    //   yPercent: 200,
+    //   opacity: 0,
+    //   duration: 1.5,
+    //   scrollTrigger: {
+    //     trigger: "#ourAchievements",
+    //     start: "top bottom",
+    //     end: "center center",
+    //     scrub: 1,
+    //   },
+    // });
     gsap.from(".thirdDescP p", {
       opacity: 0,
       yPercent: 100,
@@ -201,7 +201,8 @@ const AboutUs = () => {
       <PageTitle
         text1="a"
         text2="flavor-driven"
-        text3="dining destination."
+        text3="dining"
+        highlighter="destination."
         desc="Blending the freshest culinary trends, cooking techniques, and flavor
           craft is what we do best. We never settle for a single
           perspective—every dish is created from a world of inspiration."
@@ -243,8 +244,8 @@ const AboutUs = () => {
       </div> */}
 
       {/* <div className="w-screen dark:bg-[linear-gradient(to_right,rgba(0,0,0,0.7)_20%,rgba(0,0,0,0.7)_80%),url('/images/redPatternBg.png')] bg-cover bg-center"> */}
-      <div className="w-full px-3 md:px-10 lg:px-20 my-20 lg:my-40">
-        <div className="thirdDesc font-[Britannic] text-(--text-color) text-xl md:text-3xl lg:text-6xl lg:leading-12 uppercase text-center">
+      <div className="w-full px-3 md:px-10 lg:px-20 mt-20 lg:mt-40">
+        <div className="thirdDesc font-[Britannic] text-(--title-color) text-xl md:text-3xl lg:text-6xl lg:leading-12 uppercase text-center">
           <p className="">
             {/* Guided by passion, we honor each dining journey, shaping dishes that
             thrive in the rich landscape of flavor. We stand as fearless
@@ -281,9 +282,9 @@ const AboutUs = () => {
       </div>
       {/* </div> */}
 
-      <div className="relative text-xl md:text-3xl lg:text-6xl leading-[0.75] text-(--text-color) font-[Britannic] uppercase">
+      {/* <div className="relative text-xl md:text-3xl lg:text-6xl leading-[0.75] text-(--title-color) font-[Britannic] uppercase">
         <p id="ourAchievements">Our Achievements</p>
-      </div>
+      </div> */}
       <div className="w-full">
         <Progress />
       </div>
@@ -331,7 +332,7 @@ const AboutUs = () => {
       </div> */}
 
       <div className="text-center space-y-8 my-20 w-full">
-        <div className="relative text-4xl md:text-5xl lg:text-8xl leading-[0.75] text-(--text-color) font-[Britannic] uppercase">
+        <div className="relative text-4xl md:text-5xl lg:text-8xl leading-[0.75] text-(--title-color) font-[Britannic] uppercase">
           <div className="relative">
             <p id="honors">honors</p>
             {/* <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}

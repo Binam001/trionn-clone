@@ -2,7 +2,7 @@ const CircularBrand = () => {
   return (
     // <div className="w-full h-full bg-amber-700 relative">
     //   <div className="absolute bg-black/50" />
-    <div className="circular-brand fixed right-10 bottom-10 size-20 lg:size-32 border border-[#4caf50] rounded-full p-1 lg:p-2 z-100 cursor-pointer">
+    <div className="circular-brand fixed right-10 bottom-10 size-20 lg:size-32 border border-[#4caf50] rounded-full p-1 lg:p-2 z-50 cursor-pointer mix-blend-screen">
       <svg
         className="w-full h-full animate-[spin_6s_linear_infinite]"
         viewBox="0 0 100 100"

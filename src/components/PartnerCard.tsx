@@ -42,7 +42,7 @@ const PartnerCard = () => {
                         href={client.videoLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-red-600 text-(--background) rounded-4xl px-8 py-4 flex items-center gap-2"
+                        className="bg-red-600 text-white rounded-4xl px-8 py-4 flex items-center gap-2"
                       >
                         Watch Video
                         <Play size={20} fill="white" />

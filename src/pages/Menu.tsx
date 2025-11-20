@@ -5,8 +5,12 @@ import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import Footer from "../components/section/Footer";
 import MenuSlider from "../components/MenuSlider";
+import Component from "../components/ThumbnailCarousel";
+import { useMediaQuery } from "react-responsive";
 
 const Menu = () => {
+  const isMobile = useMediaQuery({ maxWidth: "430px" });
+
   useGSAP(() => {
     const servicesPageTitleParagraphSplit = new SplitText("#workPageTitle", {
       type: "lines",
@@ -62,36 +66,64 @@ const Menu = () => {
     });
   });
   return (
-    <div className="flex flex-col items-center relative -mt-15">
-      <div className="fixed top-0 w-screen pointer-events-none">
+    <>
+      <div className="fixed top-0 left-0 w-screen pointer-events-none ">
         <img
           src="/images/sweets/sweets2.png"
           alt="sweets 2"
-          className="w-full"
+          className="w-full hidden md:block"
         />
         <div className="absolute inset-0 w-full h-full z-1 bg-black/50" />
       </div>
       <CircularBrand />
-      <div className="w-1/2 flex absolute left-0">
-        <div className="w-1/3 h-screen" />
-        <div className="flex flex-col justify-center gap-10 w-2/3 text-white font-[Britannic] text-center h-screen -mt-10">
-          <div className="flex flex-col text-[50px] md:text-6xl uppercase px-4">
+      {!isMobile && (
+        <>
+          <div className="flex flex-col items-center relative -mt-15">
+            <div className="w-1/2 flex absolute left-0">
+              <div className="w-1/3 h-screen" />
+              <div className="flex flex-col justify-center gap-10 w-2/3 text-white font-[Britannic] text-center h-screen -mt-10">
+                <div className="flex flex-col text-[50px] md:text-6xl uppercase px-4">
+                  <p>Welcome to the wild side of taste</p>
+                </div>
+              </div>
+            </div>
+            <div className="w-1/2 flex absolute right-0">
+              <div className="flex flex-col justify-center gap-10 w-2/3 text-white font-[Britannic] text-center h-screen -mt-10">
+                <div className="flex flex-col text-[50px] md:text-6xl uppercase px-4">
+                  <p>Thank you for exploring our world of taste</p>
+                </div>
+              </div>
+              <div className="w-1/3 h-screen" />
+            </div>
+            <MenuSlider />
+          </div>
+        </>
+      )}
+
+      {isMobile && (
+        <div className="">
+          {/* <div className="w-full h-full">
+            <img
+              src="/images/sweets/sweets2.png"
+              alt="sweets 2"
+              className="w-full absolute inset-0 hidden md:block"
+            />
+            <div className="absolute inset-0 w-full h-full z-1 bg-black/50" />
+          </div> */}
+
+          <div className="text-(--title-color) text-3xl uppercase font-[Britannic] text-center mt-10">
             <p>Welcome to the wild side of taste</p>
           </div>
-        </div>
-      </div>
-      <div className="w-1/2 flex absolute right-0">
-        <div className="flex flex-col justify-center gap-10 w-2/3 text-white font-[Britannic] text-center h-screen -mt-10">
-          <div className="flex flex-col text-[50px] md:text-6xl uppercase px-4">
+          <Component />
+          <div className="text-(--title-color) text-3xl uppercase font-[Britannic] text-center mt-10">
             <p>Thank you for exploring our world of taste</p>
           </div>
         </div>
-        <div className="w-1/3 h-screen" />
-      </div>
-      <MenuSlider />
+      )}
 
       <Footer />
-    </div>
+      {/* </div> */}
+    </>
   );
 };
 

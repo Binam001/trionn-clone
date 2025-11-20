@@ -51,9 +51,9 @@ const OurCombo = () => {
   return (
     <div className="mt-20 lg:my-40">
       <div className="flex justify-between">
-        <div className="text-[70px] md:text-[80px] lg:text-8xl leading-[0.9] font-[Britannic] uppercase">
-          <h1 className="text2 text-(--text-color)">our</h1>
-          <h1 className="text2 text-(--text-color)">combo</h1>
+        <div className="text-[70px] md:text-[80px] lg:text-8xl leading-[0.9] font-[Britannic] text-(--title-color) uppercase">
+          <h1 className="text2">our</h1>
+          <h1 className="text2">combo</h1>
         </div>
         <div id="btn1" className="hidden md:block">
           <Button title="Explore Packs" />

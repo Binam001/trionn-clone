@@ -37,7 +37,7 @@ function App() {
             densityDissipation={5}
             velocityDissipation={3}
             enableShading={false}
-            backgroundColor={{ r: 0.5, g: 0.5, b: 0.5 }}
+            // backgroundColor={{ r: 0.5, g: 0.5, b: 0.5 }}
             // autoColors={false}
           />
         ) : null}

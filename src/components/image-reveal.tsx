@@ -201,8 +201,31 @@ export const ImageHover = ({
       },
     });
   });
+
+  // const CustomCursorSection = () => {
+  const cursorRef = useRef<HTMLImageElement>(null);
+  const [isHovering, setIsHovering] = useState(false);
+
+  // We use a ref for position to avoid triggering re-renders on every mouse move (Performance optimization)
+  const onMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (cursorRef.current) {
+      // Subtracting half the width/height centers the cursor on the mouse tip
+      // Adjust these offsets based on your GIF size
+      const offsetX = 15;
+      const offsetY = 15;
+
+      cursorRef.current.style.left = `${e.clientX - offsetX}px`;
+      cursorRef.current.style.top = `${e.clientY - offsetY}px`;
+    }
+  };
+
   return (
-    <div className="h-screen w-screen text-(--text-color) flex justify-center items-center customCursor">
+    <div
+      className="h-screen w-screen text-(--text-color) flex justify-center items-center cursor-none"
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+      onMouseMove={onMouseMove}
+    >
       <div
         ref={containerRef}
         className="relative w-screen h-full shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden"
@@ -213,6 +236,24 @@ export const ImageHover = ({
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
+        {isHovering && (
+          <img
+            ref={cursorRef}
+            // Placeholder GIF: A pixel art fire. Replace this src with your own GIF.
+            src="/flame4.gif"
+            // src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExanU0Z3Q5Zm15bGR4czh6Z2g3Z2RqOGZ2ZmxuYXhjZ3A2amx2ZG9reSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/WRxuFqJ2e8X4s/giphy.gif"
+            alt="Custom Cursor"
+            className="fixed pointer-events-none z-50 w-16 h-16 object-contain transition-opacity duration-150 ease-out"
+            style={{
+              // Initial position off-screen to prevent flickering before first move
+              left: "-100px",
+              top: "-100px",
+              // Removes the default drag behavior of images
+              userSelect: "none",
+            }}
+          />
+        )}
+
         <img
           src="/images/sweets/sweets1.png"
           alt="lion group"

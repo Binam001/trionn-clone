@@ -6,7 +6,7 @@ import { useMediaQuery } from "react-responsive";
 const IntroVideo = () => {
   const isMedium = useMediaQuery({ maxWidth: 770 });
 
-  const yPercent = isMedium ? -100 : -70;
+  const yPercent = isMedium ? -120 : -70;
 
   useGSAP(() => {
     gsap.from("#introVideo", {

@@ -49,12 +49,12 @@ const LoadingScreen = () => {
           className="fixed inset-0 flex flex-col justify-between bg-(--title-color) z-50 p-20 space-y-15"
         >
           <div className="flex flex-col items-ceter gap-4">
-            <div className="flex flex-col md:flex-row text-white text-5xl font-[Britannic] pt-0 mt-0">
+            <div className="flex flex-col md:flex-row text-white text-3xl md:text-5xl font-[Britannic] pt-0 mt-0">
               <span className="text-(--yellow)">Hello,</span>
               <span>Welcome to</span>
             </div>
             <div className="">
-              <img src="/whiteLogo.png" alt="logo" className="w-36" />
+              <img src="/whiteLogo.png" alt="logo" className="w-32 md:w-36" />
             </div>
           </div>
 

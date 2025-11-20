@@ -12,7 +12,7 @@ type MagneticButtonType = {
 };
 
 function MagneticButton({ children, distance = 0.2 }: MagneticButtonType) {
-  const isTablet = useMediaQuery({ maxWidth: "770px" });
+  // const isTablet = useMediaQuery({ maxWidth: "770px" });
   const [isHovered, setIsHovered] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -50,19 +50,19 @@ function MagneticButton({ children, distance = 0.2 }: MagneticButtonType) {
 
   return (
     <>
-      {!isTablet && (
-        <motion.div
-          ref={ref}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          style={{
-            x: springX,
-            y: springY,
-          }}
-        >
-          {children}
-        </motion.div>
-      )}
+      {/* {!isTablet && ( */}
+      <motion.div
+        ref={ref}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        style={{
+          x: springX,
+          y: springY,
+        }}
+      >
+        {children}
+      </motion.div>
+      {/* )} */}
     </>
   );
 }

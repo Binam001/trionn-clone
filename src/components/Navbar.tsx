@@ -2,7 +2,7 @@ import soundBar from "../assets/images/sound-bar.svg";
 import animatedSoundBar from "../assets/images/animated-sound-bar.svg";
 // import ThemeSwitcher from "./ThemeSwitcher";
 import { useEffect, useRef, useState } from "react";
-import audio from "../assets/audio/relaxing-afternoon-full-version-relaxing-and-easy-piano-music-112850.mp3";
+import audio from "/audio/audio.mp3";
 import SideMenu from "./section/SideMenu";
 import { AnimatePresence, motion } from "framer-motion";
 import { lightLogo } from "../constants";

@@ -163,38 +163,49 @@ const clients = [
     id: 1,
     image: client1,
     name: "Malte Kramer",
-    position: "Founder & CEO of Luxury Presence",
-    videoLink: "https://www.youtube.com/",
+    rating: 4.2,
+    // position: "Founder & CEO of Luxury Presence",
+    // videoLink: "https://www.youtube.com/",
+    message:
+      "Shyam's has become our family's favorite place. Incredible food, welcoming staff, and an experience that always leaves us smiling.",
   },
   {
     id: 2,
     image: client2,
     name: "Doug Petrie",
-    position: "Founder & CEO of Fast Resume",
-    videoLink: "https://www.youtube.com/",
+    rating: 4.7,
+    // position: "Founder & CEO of Fast Resume",
+    // videoLink: "https://www.youtube.com/",
+    message:
+      "From starters to desserts, everything was top-notch. The chefs here are real flavor masters. Can't wait to come back.",
   },
   {
     id: 3,
     image: client3,
     name: "Zoltan Csonka",
-    position: "Founder & CEO of Ventigence",
-    videoLink: "https://www.youtube.com/",
+    rating: 4.5,
+    // position: "Founder & CEO of Ventigence",
+    // videoLink: "https://www.youtube.com/",
+    message:
+      "I loved the cozy atmosphere and the attention to detail in every dish. Shyam's truly knows how to make dining special.",
   },
   {
     id: 4,
     image: client4,
     name: "Albert Mizuno",
-    position: "Founder of The Mizuno",
+    rating: 4.5,
+    // position: "Founder of The Mizuno",
     message:
-      "We had a fantastic experience partnering with Trionn for our website. The communication and collaboration were excellent, resulting in a top-notch design and functionality. We highly recommend Trionn to businesses in the service sector or anyone in need of a web design & development solution.",
+      "Shyam's is amazing! Every dish bursts with flavor, and the staff makes you feel right at home. My favorite spot in the city.",
   },
   {
     id: 5,
     image: client5,
     name: "Stephen Dash",
-    position: "Founder & CEO of Credible",
+    rating: 3.5,
+    // position: "Founder & CEO of Credible",
     message:
-      "The Trionn team is extremely reliable, professional and talented. It has been a great pleasure collaborating with them over many months.",
+      "A culinary adventure in every bite. The flavors are bold, creative, and perfectly balanced. Highly recommend Shyam's for any foodie.",
   },
 ];
 

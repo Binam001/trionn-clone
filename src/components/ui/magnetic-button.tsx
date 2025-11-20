@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
 const SPRING_CONFIG = { damping: 40, stiffness: 120 };
 
@@ -11,6 +12,7 @@ type MagneticButtonType = {
 };
 
 function MagneticButton({ children, distance = 0.2 }: MagneticButtonType) {
+  const isTablet = useMediaQuery({ maxWidth: "770px" });
   const [isHovered, setIsHovered] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -47,17 +49,21 @@ function MagneticButton({ children, distance = 0.2 }: MagneticButtonType) {
   }, [ref, isHovered]);
 
   return (
-    <motion.div
-      ref={ref}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      style={{
-        x: springX,
-        y: springY,
-      }}
-    >
-      {children}
-    </motion.div>
+    <>
+      {!isTablet && (
+        <motion.div
+          ref={ref}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          style={{
+            x: springX,
+            y: springY,
+          }}
+        >
+          {children}
+        </motion.div>
+      )}
+    </>
   );
 }
 

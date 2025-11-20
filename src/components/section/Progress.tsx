@@ -62,7 +62,7 @@ const Progress = () => {
           <div
             className={`space-y-10
            p-6 rounded-4xl text-(--foreground) hover:text-(--red) border-2 border-(--foreground)/70 hover:border-(--red)
-          transition-colors duration-500 ease-in-out cursor-pointer backdrop-blur-sm
+          transition-colors duration-500 ease-in-out cursor-pointer hover:bg-(--yellow)
           ${item.id % 2 === 0 ? "lg:relative lg:top-1/2 evenCard" : "oddCard"}
           `}
             key={item.id}

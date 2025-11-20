@@ -1,7 +1,8 @@
 import useEmblaCarousel from "embla-carousel-react";
-import doubleQuoteMark from "../assets/images/double-quote-mark.svg";
+// import doubleQuoteMark from "../assets/images/double-quote-mark.svg";
 import { clients } from "../constants";
-import { Play } from "lucide-react";
+import { Star } from "lucide-react";
+// import { Play } from "lucide-react";
 
 const PartnerCard = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true });
@@ -13,9 +14,8 @@ const PartnerCard = () => {
           {clients.map((client) => (
             <div className="embla__slide flex-none" key={client.id}>
               <div
-                className={`backdrop-blur-sm border-2 border-(--text-color) w-[350px] h-[540px] lg:w-[500px] lg:h-[580px] rounded-4xl flex flex-col items-center justify-center text-center gap-20  hover:scale-[0.95] duration-300  ${
-                  [4, 5].includes(client.id) ? "flex-col-reverse" : ""
-                }
+                className={`backdrop-blur-sm border-2 border-(--text-color) w-[350px] h-[540px] lg:w-[500px] lg:h-[580px] rounded-4xl flex flex-col items-center justify-center text-center gap-20  hover:scale-[0.95] duration-300  
+                
                 `}
               >
                 <div className="flex flex-col items-center gap-4">
@@ -23,20 +23,25 @@ const PartnerCard = () => {
                     <img
                       src={client.image}
                       alt={client.name}
-                      className={`rounded-full ${
-                        [4, 5].includes(client.id) ? "size-18" : "size-32"
-                      }`}
+                      className={`rounded-full size-32`}
                     />
                   </div>
 
                   <div className="font-[Poppins]">
                     <h1 className="text-2xl">{client.name}</h1>
-                    <p>{client.position}</p>
+                    <div className="flex items-center justify-center mt-5 gap-4">
+                      <Star color="yellow" fill="yellow" size="28" />{" "}
+                      <div className="">
+                        <span className="text-4xl">{client.rating}</span>
+                        <span className="translate-y-1">/5</span>
+                      </div>
+                    </div>
+                    {/* <p>{client.position}</p> */}
                   </div>
                 </div>
 
                 <div className="">
-                  {client.videoLink ? (
+                  {/* {client.videoLink ? (
                     <div className="">
                       <a
                         href={client.videoLink}
@@ -48,20 +53,20 @@ const PartnerCard = () => {
                         <Play size={20} fill="white" />
                       </a>
                     </div>
-                  ) : (
-                    <div className="">
-                      <div className="flex justify-center">
-                        <img
-                          src={doubleQuoteMark}
-                          alt="double-quote-mark"
-                          className="invert dark:invert-0 size-6 lg:size-14"
-                        />
-                      </div>
-                      <p className="font-[Poppins] lg:text-lg px-10">
-                        {client.message}
-                      </p>
-                    </div>
-                  )}
+                  ) : ( */}
+                  <div className="">
+                    {/* <div className="flex justify-center">
+                      <img
+                        src={doubleQuoteMark}
+                        alt="double-quote-mark"
+                        className="invert dark:invert-0 size-6 lg:size-14"
+                      />
+                    </div> */}
+                    <p className="font-[Poppins] lg:text-lg px-10">
+                      {client.message}
+                    </p>
+                  </div>
+                  {/* )} */}
                 </div>
               </div>
             </div>

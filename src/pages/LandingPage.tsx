@@ -79,7 +79,7 @@ const LandingPage = () => {
           duration: 0.1,
         }}
       >
-        <div className="py-16 md:pt-0 md:pb-20 relative h-screen flex flex-col gap-20 md:gap-0 md:justify-between xl:justify-evenly">
+        <div className="py-16 md:pt-0 md:pb-20 relative h-full lg:h-screen flex flex-col gap-20 md:gap-0 md:justify-between xl:justify-evenly">
           <PageTitle
             text1="a"
             text2="kingdom of"
@@ -113,7 +113,7 @@ const LandingPage = () => {
               </div>
             </div>
           )}
-          <div className="flex justify-between md:mb-20 lg:mb-10 xl:mb-0">
+          <div className="flex justify-between md:mb-20 lg:mb-15 xl:mb-0">
             <Button onClick={() => setOpenMenu(true)} title="View Menu" />
 
             <Button title="Get in touch" />

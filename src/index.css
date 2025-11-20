@@ -58,7 +58,7 @@ html {
   #background {
     background-image: url("/bg-svg-cropped.svg");
     background-size: 100vw;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     background-attachment: fixed;
   }
 
@@ -96,7 +96,7 @@ html {
 
     background-color: #000000;
     background-size: 100vw;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     background-attachment: fixed;
   }
   .fixedgradient {

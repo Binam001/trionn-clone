@@ -4,9 +4,9 @@ import { useMediaQuery } from "react-responsive";
 // import introVideo from "../assets/videos/intro-video.mp4";
 
 const IntroVideo = () => {
-  const isTablet = useMediaQuery({ maxWidth: 770 });
+  const isMedium = useMediaQuery({ maxWidth: 770 });
 
-  const yPercent = isTablet ? -100 : -70;
+  const yPercent = isMedium ? -100 : -70;
 
   useGSAP(() => {
     gsap.from("#introVideo", {

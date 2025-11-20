@@ -1,39 +1,60 @@
 import soundBar from "../assets/images/sound-bar.svg";
 import animatedSoundBar from "../assets/images/animated-sound-bar.svg";
-import ThemeSwitcher from "./ThemeSwitcher";
+// import ThemeSwitcher from "./ThemeSwitcher";
 import { useEffect, useRef, useState } from "react";
 import audio from "../assets/audio/relaxing-afternoon-full-version-relaxing-and-easy-piano-music-112850.mp3";
 import SideMenu from "./section/SideMenu";
 import { AnimatePresence, motion } from "framer-motion";
-import { darkLogo, lightLogo } from "../constants";
+import { lightLogo } from "../constants";
+import { useAudio } from "../context/AudioContext";
+// import { darkLogo, lightLogo } from "../constants";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const [theme, setTheme] = useState(() => {
-    const stored = localStorage.getItem("theme");
-    if (stored) return stored;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-  });
+  // const [theme, setTheme] = useState(() => {
+  //   const stored = localStorage.getItem("theme");
+  //   if (stored) return stored;
+  //   return window.matchMedia("(prefers-color-scheme: dark)").matches
+  //     ? "dark"
+  //     : "light";
+  // });
+  // useEffect(() => {
+  //   document.documentElement.classList.toggle("dark", theme === "dark");
+  // }, [theme]);
+
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const { isAudioOn, setIsAudioOn } = useAudio();
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", theme === "dark");
-  }, [theme]);
-
-  const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef<HTMLAudioElement>(null);
-
-  const toggleAudio = () => {
     if (!audioRef.current) return;
 
-    if (isPlaying) {
-      audioRef.current.pause();
+    if (isAudioOn) {
+      audioRef.current.volume = 0.4;
+      audioRef.current.play().catch(() => {});
     } else {
-      audioRef.current.play();
+      audioRef.current.pause();
     }
+  }, [isAudioOn]);
 
-    setIsPlaying(!isPlaying);
+  const controlNavbar = () => {
+    if (typeof window !== "undefined") {
+      if (window.scrollY > lastScrollY && window.scrollY > 80) {
+        // scrolling down
+        setIsVisible(false);
+      } else {
+        // scrolling up
+        setIsVisible(true);
+      }
+      setLastScrollY(window.scrollY);
+    }
   };
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+    return () => window.removeEventListener("scroll", controlNavbar);
+  }, [lastScrollY]);
 
   const curtainVariants = {
     initial: { y: "-100%" },
@@ -59,34 +80,36 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed bg-transparent w-full top-0 left-0 px-10 md:px-20 z-60">
-        <div className="flex justify-between items-center mt-5 lg:mt-[22px]">
+      <nav
+        className={`fixed bg-(--yellow)/80 backdrop-blur-3xl w-full top-0 left-0 py-3 px-10 md:px-20 z-60 transition-transform duration-500 ease-in-out ${
+          isVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
+        <div className="flex justify-between items-center">
           <div className="cursor-pointer relative">
-            {/* <div className="absolute w-32 h-20 bg-(--foreground)/10 rounded-full -z-10" /> */}
             <a href="/" className="">
               <img
-                className={`w-18 md:w-24 ${
-                  theme === "light" ? "logo-outline-dark" : "logo-outline-light"
-                }`}
-                src={theme === "light" ? lightLogo : darkLogo}
+                className={`w-18 md:w-24`}
+                // src={theme === "light" ? lightLogo : darkLogo}
+                src={lightLogo}
                 alt="shyam's logo"
               />
             </a>
           </div>
 
           <div className="flex gap-2 text-(--foreground)">
-            <ThemeSwitcher theme={theme} setTheme={setTheme} />
+            {/* <ThemeSwitcher theme={theme} setTheme={setTheme} /> */}
             <button
-              onClick={toggleAudio}
-              className="p-1 bg-(--icon-bg-color) rounded-full cursor-pointer"
+              onClick={() => setIsAudioOn(!isAudioOn)}
+              className="p-1 bg-(--title-color) rounded-full cursor-pointer"
             >
               <img
-                src={!isPlaying ? soundBar : animatedSoundBar}
+                src={!isAudioOn ? soundBar : animatedSoundBar}
                 alt="sound-bar"
-                className="size-6 dark:invert-0 invert"
+                className="size-6"
               />
             </button>
-            <audio ref={audioRef} src={audio} />
+            <audio ref={audioRef} src={audio} loop />
           </div>
 
           <div className="text-(--foreground) ">
@@ -95,23 +118,24 @@ const Navbar = () => {
                 onClick={() => setOpen(true)}
                 className="flex items-center gap-4 cursor-pointer uppercase"
               >
-                <span className="text-[#FFCB04] dark:text-white">menu</span>
-                <div className="bg-(--icon-bg-color) size-11 rounded-full justify-center flex items-center mx-auto">
+                <span className="text-(--title-color) font-bold">menu</span>
+                <div className="">
+                  {/* <div className="bg-(--icon-bg-color) size-11 rounded-full justify-center flex items-center mx-auto"> */}
                   <div className="w-fit items-end flex gap-1 justify-center flex-col">
-                    <div className="w-6 h-0.5 bg-(--text-color) transition-all duration-300" />
-                    <div className="w-4 h-0.5 bg-(--text-color) transition-all duration-300" />
+                    <div className="w-6 h-0.5 bg-(--title-color) transition-all duration-300" />
+                    <div className="w-4 h-0.5 bg-(--title-color) transition-all duration-300" />
                   </div>
                 </div>
               </button>
             ) : (
               <button
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-4 cursor-pointer uppercase"
+                className="flex items-center gap-4 cursor-pointer uppercase text-white font-bold"
               >
                 close
-                <div className="bg-(--foreground) size-11 rounded-full flex flex-col justify-center items-center mx-auto relative">
-                  <div className="absolute w-6 h-0.5 bg-(--title-color) dark:bg-black rotate-45 transition-all duration-300" />
-                  <div className="absolute w-6 h-0.5 bg-(--title-color) dark:bg-black -rotate-45 transition-all duration-300" />
+                <div className="bg-(--background) size-11 rounded-full flex flex-col justify-center items-center mx-auto relative">
+                  <div className="absolute w-6 h-0.5 bg-(--title-color) rotate-45 transition-all duration-300" />
+                  <div className="absolute w-6 h-0.5 bg-(--title-color) -rotate-45 transition-all duration-300" />
                 </div>
               </button>
             )}

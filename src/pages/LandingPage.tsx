@@ -17,9 +17,12 @@ import OurCombo from "../components/section/OurCombo";
 import { useState } from "react";
 import MenuSlider from "../components/MenuSlider";
 import CircularBrand from "../components/CircularBrand";
+import { useMediaQuery } from "react-responsive";
+import Component from "../components/ThumbnailCarousel";
 
 const LandingPage = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const isMobile = useMediaQuery({ maxWidth: "430px" });
 
   useGSAP(() => {
     gsap.from("#join1Text, #join2Text", {
@@ -106,9 +109,14 @@ const LandingPage = () => {
                   ✕
                 </button> */}
 
-                  <div className="relative w-[900px] h-[600px]">
-                    <MenuSlider />
-                  </div>
+                  {!isMobile ? (
+                    <div className="relative w-[900px] h-[600px]">
+                      {" "}
+                      <MenuSlider />
+                    </div>
+                  ) : (
+                    <Component />
+                  )}
                 </div>
               </div>
             </div>

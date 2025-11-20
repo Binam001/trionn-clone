@@ -24,6 +24,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  scrollbar-width: none;
 }
 
 .customCursor {
@@ -31,14 +32,15 @@ html {
   /* cursor: url("/images/sweets/spoon.png"), auto; */
   /* cursor: url("/images/candy/lolipop.png"), auto; */
 }
-.logo-outline-light {
+/* .logo-outline-light {
   filter: drop-shadow(1px 0 0 rgb(255, 203, 4))
     drop-shadow(0 1px 0 rgb(255, 203, 4));
 }
 .logo-outline-dark {
   filter: drop-shadow(1px 0 0 rgb(255, 203, 4))
     drop-shadow(0 0.5px 0 rgb(255, 203, 4));
-}
+} */
+
 :root {
   --foreground: rgb(0, 0, 0);
   --background: rgb(238, 243, 243);
@@ -75,7 +77,7 @@ html {
     background-color: #ffffffed;
   }
 }
-.dark {
+/* .dark {
   --foreground: rgb(224, 238, 238);
   --background: rgb(18, 19, 21);
   --background-2: rgb(18, 19, 21);
@@ -96,7 +98,6 @@ html {
 
     background-color: #000000;
     background-size: 100vw;
-    /* background-repeat: no-repeat; */
     background-attachment: fixed;
   }
   .fixedgradient {
@@ -108,7 +109,7 @@ html {
       rgba(0, 0, 0, 0.9) 85%
     );
   }
-}
+} */
 
 @layer utilities {
   .text-outline-effect {
@@ -116,4 +117,4 @@ html {
     color: transparent;
   }
 }
-@custom-variant dark (&:where(.dark, .dark *));
+/* @custom-variant dark (&:where(.dark, .dark *)); */

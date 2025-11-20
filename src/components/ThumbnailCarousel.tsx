@@ -126,7 +126,7 @@ export default function Component() {
   }, [index, x, isDragging]);
 
   return (
-    <div className="w-full max-w-3xl mx-auto p-4 lg:p-10">
+    <div className="w-full mx-auto lg:p-10">
       <div className="flex flex-col gap-3">
         {/* Main Carousel */}
         <div

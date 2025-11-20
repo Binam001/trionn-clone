@@ -97,9 +97,9 @@ const Menu = () => {
             />
             <div className="absolute inset-0 w-full h-full z-1 bg-black/50" />
           </div>
-          <CircularBrand />
           {!isMobile && (
             <>
+              <CircularBrand />
               <div className="flex flex-col items-center relative -mt-15">
                 <div className="w-1/2 flex absolute left-0">
                   <div className="w-1/3 h-screen" />

@@ -106,7 +106,7 @@ const LandingPage = () => {
                 <div className="relative w-full">
                   <button
                     onClick={() => setOpenMenu(false)}
-                    className="absolute -top-5 right-[18%] lg:right-1/12"
+                    className="absolute -top-5 right-[18%] lg:right-1/12 hidden lg:block"
                   >
                     <CircleX fill="white" color="red" />
                   </button>

@@ -1,30 +1,12 @@
-import { darkLogo, dishLists, lightLogo } from "../../constants";
+import { dishLists } from "../../constants";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import { useMediaQuery } from "react-responsive";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 const Dish = () => {
   const isTablet = useMediaQuery({ maxWidth: 770 });
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") ||
-      (window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light")
-  );
-  useEffect(() => {
-    const updateTheme = () => {
-      const savedTheme = localStorage.getItem("theme");
-      if (savedTheme) {
-        setTheme(savedTheme);
-      }
-    };
-    window.addEventListener("theme-change", updateTheme);
-    window.addEventListener("storage", updateTheme);
-
-    return () => window.removeEventListener("storage", updateTheme);
-  }, []);
 
   useGSAP(() => {
     document.fonts.ready.then(() => {
@@ -93,12 +75,12 @@ const Dish = () => {
     // });
   });
   return (
-    <div className="relative h-screen md:mt-20 lg:mt-40 flex flex-col justify-center items-center">
+    <div className="relative h-screen mt-16 lg:mt-32 flex flex-col justify-center items-center">
       <div>
         <img
-          src={theme === "dark" ? darkLogo : lightLogo}
+          src="/redLogo.png"
           alt="shyam's logo"
-          className="w-40 h-14 md:w-52 md:h-20"
+          className="w-36 h-12 md:w-52 md:h-20"
         />
       </div>
       <p

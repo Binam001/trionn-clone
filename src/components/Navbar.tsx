@@ -83,7 +83,7 @@ const Navbar = () => {
       <nav
         className={`fixed ${
           open ? "bg-transparent" : "bg-white/80 backdrop-blur-3xl"
-        } w-full top-0 left-0 py-3 px-10 md:px-20 z-60 transition-transform duration-500 ease-in-out mix-blend-colo ${
+        } w-full top-0 left-0 py-3 px-4 md:px-20 z-60 transition-transform duration-500 ease-in-out mix-blend-colo ${
           isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >

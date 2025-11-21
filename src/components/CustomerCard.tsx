@@ -8,13 +8,13 @@ const CustomerCard = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true });
 
   return (
-    <section className="embla -mx-28 mt-20 cursor-grab">
+    <section className="embla -mx-28 mt-8 md:mt-16 cursor-grab">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {clients.map((client) => (
             <div className="embla__slide flex-none" key={client.id}>
               <div
-                className={`backdrop-blur-sm border-2 border-(--text-color) w-[350px] h-[540px] lg:w-[500px] lg:h-[580px] rounded-4xl flex flex-col items-center justify-center text-center gap-20  hover:scale-[0.95] duration-300  
+                className={`backdrop-blur-sm border-2 border-(--text-color) w-[300px] h-[450px] md:w-[350px] md:h-[540px] lg:w-[500px] lg:h-[580px] rounded-4xl flex flex-col items-center justify-center text-center gap-8  hover:scale-[0.95] duration-300  
                 
                 `}
               >
@@ -23,16 +23,18 @@ const CustomerCard = () => {
                     <img
                       src={client.image}
                       alt={client.name}
-                      className={`rounded-full size-32`}
+                      className={`rounded-full size-20 md:size-32`}
                     />
                   </div>
 
                   <div className="font-[Poppins]">
-                    <h1 className="text-2xl">{client.name}</h1>
+                    <h1 className="text-xl md:text-2xl">{client.name}</h1>
                     <div className="flex items-center justify-center mt-5 gap-4">
-                      <Star color="yellow" fill="yellow" size="28" />{" "}
+                      <Star color="#FFCB04" fill="#FFCB04" size="28" />{" "}
                       <div className="">
-                        <span className="text-4xl">{client.rating}</span>
+                        <span className="text-2xl md:text-4xl">
+                          {client.rating}
+                        </span>
                         <span className="translate-y-1">/5</span>
                       </div>
                     </div>
@@ -62,7 +64,7 @@ const CustomerCard = () => {
                         className="invert dark:invert-0 size-6 lg:size-14"
                       />
                     </div> */}
-                    <p className="font-[Poppins] lg:text-lg px-10">
+                    <p className="font-[Poppins] text-sm md:text-lg px-8">
                       {client.message}
                     </p>
                   </div>

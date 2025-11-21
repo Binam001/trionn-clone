@@ -54,13 +54,13 @@ const Progress = () => {
   });
   return (
     <>
-      <div className="relative my-20 md:my-40 text-xl md:text-3xl lg:text-6xl text-center leading-[0.75] text-(--title-color) font-[Britannic] uppercase">
+      <div className="relative mt-16 mb-8 md:mt-32 md:mb-16 text-xl md:text-3xl lg:text-6xl text-center leading-[0.75] text-(--title-color) font-[Britannic] uppercase">
         <p id="ourAchievements">Our Achievements</p>
       </div>
-      <div className="grid lg:grid-cols-2 gap-10">
+      <div className="grid lg:grid-cols-2 gap-4 lg:gap-8">
         {progress.map((item) => (
           <div
-            className={`space-y-10
+            className={`space-y-8
            p-6 rounded-4xl text-(--foreground) hover:text-(--red) border-2 border-(--foreground)/70 hover:border-(--red)
           transition-colors duration-500 ease-in-out cursor-pointer hover:bg-(--yellow)
           ${item.id % 2 === 0 ? "lg:relative lg:top-1/2 evenCard" : "oddCard"}

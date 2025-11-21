@@ -51,7 +51,7 @@ const About = () => {
     });
   });
   return (
-    <div className="mt-36 space-y-8">
+    <div className="mt-18 md:mt-36 space-y-8">
       <div className="text-5xl lg:text-8xl text-(--title-color) leading-[0.75] font-[Britannic] uppercase">
         <h1 className="text4">behind</h1>
         <h1 className="text4">the feast</h1>

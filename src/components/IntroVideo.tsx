@@ -1,14 +1,16 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useMediaQuery } from "react-responsive";
-// import introVideo from "../assets/videos/intro-video.mp4";
 
 const IntroVideo = () => {
   const isMedium = useMediaQuery({ maxWidth: 770 });
+  const isMobile = useMediaQuery({ maxWidth: 430 });
 
   const yPercent = isMedium ? -50 : -70;
 
   useGSAP(() => {
+    if (isMobile) return;
+
     gsap.from("#introVideo", {
       yPercent,
       scale: 0.15,
@@ -26,7 +28,6 @@ const IntroVideo = () => {
       <video
         id="introVideo"
         src="/videos/introVideo.mp4"
-        // src={introVideo}
         muted
         playsInline
         loop

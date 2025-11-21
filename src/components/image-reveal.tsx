@@ -220,7 +220,7 @@ export const ImageHover = ({
 
   return (
     <div
-      className="h-screen w-screen text-(--text-color) flex justify-center items-center cursor-none"
+      className="h-[400px] md:h-screen w-screen text-(--text-color) flex justify-center items-center cursor-none"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
       onMouseMove={onMouseMove}
@@ -267,7 +267,7 @@ export const ImageHover = ({
             <span>{text3}</span>
           </div>
           <div className="absolute bottom-10 flex justify-between w-full px-10 text-sm md:text-xl">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2 md:gap-4">
               <span className="">
                 Email:
                 <a href="#" className="ml-2">
@@ -297,7 +297,7 @@ export const ImageHover = ({
             <span>{text3}</span>
           </div>
           <div className="absolute bottom-10 flex justify-between w-full px-10 text-sm md:text-xl">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2 md:gap-4">
               <span className="">
                 Email:
                 <a href="#" className="ml-2">
@@ -311,8 +311,6 @@ export const ImageHover = ({
                 </a>
               </span>
             </div>
-            {/* <div className="flex flex-col">
-            </div> */}
           </div>
         </div>
         {/* Glow: extra radial gradient for soft border */}

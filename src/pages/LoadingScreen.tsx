@@ -32,7 +32,7 @@ const LoadingScreen = () => {
 
   // if (!showPopup) return null;
   const paragraph =
-    "Welcome to Shyam's sweets, where every dish tells a story and every flavor is a celebration. Step in, savor the experience, and let your taste buds embark on a journey of unforgettable delights.";
+    "Welcome to Shyam's Sweets, where every dish tells a story and every flavor is a celebration. Step in, savor the experience, and let your taste buds embark on a journey of unforgettable delights.";
   return (
     <AnimatePresence mode="wait">
       {showPopup && (

@@ -24,7 +24,8 @@ import { CircleX } from "lucide-react";
 
 const LandingPage = () => {
   const [openMenu, setOpenMenu] = useState(false);
-  const isMobile = useMediaQuery({ maxWidth: "770px" });
+  const isTablet = useMediaQuery({ maxWidth: "770px" });
+
   const navigate = useNavigate();
 
   useGSAP(() => {
@@ -85,7 +86,7 @@ const LandingPage = () => {
           duration: 0.1,
         }}
       >
-        <div className="py-16 md:pt-0 md:pb-20 relative h-full lg:h-screen flex flex-col gap-20 md:gap-0 md:justify-between xl:justify-evenly">
+        <div className="py-16 md:pt-0 md:pb-20 relative h-full lg:h-screen flex flex-col md:gap-0 md:justify-between xl:justify-evenly">
           <PageTitle
             text1="bringing smiles"
             text2="with every"
@@ -111,7 +112,7 @@ const LandingPage = () => {
                     <CircleX fill="white" color="red" />
                   </button>
 
-                  {!isMobile ? (
+                  {!isTablet ? (
                     <div className="relative w-[900px] h-[550px]">
                       <MenuSlider />
                     </div>
@@ -132,7 +133,7 @@ const LandingPage = () => {
               </div>
             </div>
           )}
-          <div className="flex justify-between md:mb-20 lg:mb-15 xl:mb-0">
+          <div className="hidden md:flex justify-between md:mb-20 lg:mb-15 xl:mb-0">
             <Button onClick={() => setOpenMenu(true)} title="View Menu" />
 
             <Button onClick={() => navigate("/contact")} title="Get in touch" />
@@ -140,6 +141,22 @@ const LandingPage = () => {
         </div>
 
         <IntroVideo />
+        <div className="md:hidden flex flex-col gap-4 mt-8">
+          <button
+            onClick={() => setOpenMenu(true)}
+            className="px-4 py-2 text-(--title-color) bg-(--yellow) rounded-full"
+          >
+            View Menu
+          </button>
+
+          <button
+            onClick={() => navigate("/contact")}
+            className="px-4 py-2 border-2 border-(--yellow) rounded-full text-(--yellow)"
+          >
+            Get in touch
+          </button>
+        </div>
+
         <OurCombo />
         <ComboCard />
         <About />
@@ -150,7 +167,7 @@ const LandingPage = () => {
 
         <div
           id="join"
-          className="mt-20 lg:mt-40 flex flex-col items-center text-6xl md:text-7xl lg:text-9xl leading-[0.8] text-(--title-color) font-[Britannic] uppercase"
+          className="mt-8 lg:mt-32 flex flex-col items-center text-6xl md:text-7xl lg:text-9xl leading-[0.8] text-(--title-color) font-[Britannic] uppercase"
         >
           <span id="join1Text">dine</span>
           <span id="join2Text">with</span>

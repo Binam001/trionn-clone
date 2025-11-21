@@ -42,7 +42,7 @@ function App() {
 
       <div
         id="bgGradient"
-        className="w-full relative px-10 md:px-20 z-30"
+        className="w-full relative px-4 md:px-20 z-30"
         // className="w-screen relative px-3 md:px-10 lg:px-20 z-50"
       >
         <ScrollToTop />

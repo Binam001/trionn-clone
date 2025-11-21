@@ -58,8 +58,8 @@ const Footer = () => {
   //   });
   // });
   return (
-    <div className="mt-20 text-(--text-color) font-[Poppins] flex flex-col items-center">
-      <div className="relative mt-20 w-screen">
+    <div className="mt-8 md:mt-16 text-(--text-color) font-[Poppins] flex flex-col items-center">
+      <div className="relative w-screen h-ful">
         <ImageHover text1="majestic" text2="flavors" text3="await" />
       </div>
 

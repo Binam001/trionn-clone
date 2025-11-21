@@ -42,7 +42,7 @@ const SideMenu = ({ setOpen }: SideMenuProps) => {
           ))}
         </ul>
 
-        <div className="w-1/2 flex justify-end absolute right-0">
+        <div className="w-1/2 hidden md:flex justify-end absolute right-0">
           <img
             id="navBarDish"
             src="/images/dish/circularDish.png"
@@ -53,7 +53,7 @@ const SideMenu = ({ setOpen }: SideMenuProps) => {
           />
         </div>
       </div>
-      <div className="h-full px-20 pb-5 hidden md:flex">
+      <div className="h-full px-10 md:px-20 pb-5 flex">
         <p className="self-baseline-last text-(--yellow) text-lg font-semibold">
           Bringing smiles with every bite.
         </p>

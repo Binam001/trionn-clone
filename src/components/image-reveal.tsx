@@ -188,13 +188,13 @@ export const ImageHover = ({
     hovered && lerpedPos && radius > 0 ? "opacity-90" : "opacity-100";
 
   useGSAP(() => {
-    gsap.from("#imgText span", {
+    gsap.from(".imgText span", {
       y: 100,
       opacity: 0,
       duration: 0.8,
       stagger: 0.2,
       scrollTrigger: {
-        trigger: "#imgText",
+        trigger: ".imgText",
         start: "top bottom",
         end: "30% center",
         scrub: 1.5,
@@ -202,7 +202,6 @@ export const ImageHover = ({
     });
   });
 
-  // const CustomCursorSection = () => {
   const cursorRef = useRef<HTMLImageElement>(null);
   const [isHovering, setIsHovering] = useState(false);
 
@@ -260,7 +259,7 @@ export const ImageHover = ({
 
         <div className="">
           <div
-            className="leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[Britannic] uppercase text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+            className="imgText leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[Britannic] uppercase text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
     flex flex-col justify-center items-center text-outline-effect"
           >
             <span>{text1}</span>
@@ -290,8 +289,8 @@ export const ImageHover = ({
           style={maskStyle}
         >
           <div
-            id="imgText"
-            className="leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[Britannic] uppercase text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center items-center"
+            // id="imgText"
+            className="imgText leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[Britannic] uppercase text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center items-center"
           >
             <span>{text1}</span>
             <span>{text2}</span>

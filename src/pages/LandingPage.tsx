@@ -86,7 +86,7 @@ const LandingPage = () => {
       >
         <div className="py-16 md:pt-0 md:pb-20 relative h-full lg:h-screen flex flex-col gap-20 md:gap-0 md:justify-between xl:justify-evenly">
           <PageTitle
-            text1="btinging smiles"
+            text1="bringing smiles"
             text2="with every"
             highlighter="bite"
             desc="We unleash bold flavors, crafting unforgettable dining moments through imaginative dishes, heartfelt hospitality, and culinary mastery that excites every palate."

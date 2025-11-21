@@ -46,14 +46,14 @@ const LoadingScreen = () => {
               ease: [0.22, 1, 0.36, 1],
             },
           }}
-          className="fixed inset-0 flex flex-col justify-between bg-(--title-color) z-50 p-20 space-y-15"
+          className="fixed inset-0 flex flex-col text-center md:text-left justify-between bg-(--title-color) z-50 p-20 space-y-15"
         >
-          <div className="flex flex-col items-ceter gap-4 text-white text-3xl md:text-5xl font-[Britannic]">
+          <div className="flex flex-col gap-4 text-white text-3xl md:text-5xl font-[Britannic]">
             <div className="flex flex-col md:flex-row pt-0 mt-0">
               <span className="text-(--yellow)">Hello,</span>
               <span>Welcome to</span>
             </div>
-            <div className="flex flex-row gap-3">
+            <div className="flex flex-row justify-center md:justify-start gap-3">
               <img
                 src="/whiteLogo.png"
                 alt="logo"
@@ -71,7 +71,7 @@ const LoadingScreen = () => {
                     Would you like to experience the website with sound?
                   </p>
                 </div>
-                <div className="flex gap-5">
+                <div className="flex justify-center md:justify-start gap-5">
                   <button
                     onClick={() => handleChoice(true)}
                     className="text-(--yellow) cursor-pointer border-b-2 border-(--title-color) hover:border-(--yellow)"

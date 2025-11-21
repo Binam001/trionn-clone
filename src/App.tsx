@@ -28,7 +28,7 @@ function App() {
   }, []);
 
   if (!fontLoaded) {
-    return <div>loading...</div>;
+    return <div></div>;
   }
 
   return (

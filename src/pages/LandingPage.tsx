@@ -20,6 +20,7 @@ import CircularBrand from "../components/CircularBrand";
 import { useMediaQuery } from "react-responsive";
 import Component from "../components/ThumbnailCarousel";
 import { useNavigate } from "react-router-dom";
+import { CircleX } from "lucide-react";
 
 const LandingPage = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -97,18 +98,18 @@ const LandingPage = () => {
           {openMenu && (
             <div className="fixed inset-0 z-100">
               <div
-                className="absolute inset-0 backdrop-blur-lg bg-black/20"
+                className="absolute inset-0 backdrop-blur-lg bg-black/80"
                 onClick={() => setOpenMenu(false)}
               ></div>
 
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 <div className="relative w-full">
-                  {/* <button
-                  onClick={() => setOpenMenu(false)}
-                  className="absolute -top-5 -right-5 bg-white text-black rounded-full p-2 shadow-lg hover:scale-110 transition"
-                >
-                  ✕
-                </button> */}
+                  <button
+                    onClick={() => setOpenMenu(false)}
+                    className="absolute -top-5 -right-5 rounded-full shadow-lg hover:scale-110 transition"
+                  >
+                    <CircleX fill="white" color="red" />
+                  </button>
 
                   {!isMobile ? (
                     <div className="relative w-[900px] h-[550px]">

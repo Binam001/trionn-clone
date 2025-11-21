@@ -119,9 +119,12 @@ const LandingPage = () => {
                     <>
                       <Component />
                       <div className="mt-2 flex justify-center">
-                        <span className="text-white/80 text-2xl">
+                        <button
+                          onClick={() => setOpenMenu(false)}
+                          className="text-white/80 text-2xl"
+                        >
                           Tap to close
-                        </span>
+                        </button>
                       </div>
                     </>
                   )}

@@ -19,7 +19,8 @@ const About = () => {
         delay: 0.6,
         scrollTrigger: {
           trigger: ".text5",
-          start: "top 60%",
+          start: "top bottom",
+          end: "center center",
           scrub: 1,
         },
       });

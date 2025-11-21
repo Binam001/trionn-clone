@@ -11,7 +11,7 @@ import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import ScrollToTop from "./components/ScrollToTop";
 import LoadingScreen from "./pages/LoadingScreen";
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -19,23 +19,18 @@ function App() {
   const isLargeDevice = useMediaQuery({ minWidth: 1024 });
   const location = useLocation();
 
-  // const [showLoading, setShowLoading] = useState<boolean>(false);
+  const [fontLoaded, setFontLoaded] = useState(false);
 
-  // useEffect(() => {
-  //   const saved = localStorage.getItem("soundPreference");
-  //   if (saved) {
-  //     setShowLoading(true);
-  //   }
-  // }, []);
-  // const handleSoundSelect = (enabled: boolean) => {
-  //   localStorage.setItem("soundPreference", enabled ? "enabled" : "disabled");
-  //   setShowLoading(false);
+  useEffect(() => {
+    document.fonts.ready.then(() => {
+      setFontLoaded(true);
+    });
+  }, []);
 
-  //   if (enabled) {
-  //     // Optional: play intro sound here
-  //     console.log("Sound enabled");
-  //   }
-  // };
+  if (!fontLoaded) {
+    return <div>loading...</div>;
+  }
+
   return (
     <div
       id="background"

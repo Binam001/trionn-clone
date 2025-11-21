@@ -116,7 +116,14 @@ const LandingPage = () => {
                       <MenuSlider />
                     </div>
                   ) : (
-                    <Component />
+                    <>
+                      <Component />
+                      <div className="mt-2 flex justify-center">
+                        <span className="text-white/80 text-2xl">
+                          Tap to close
+                        </span>
+                      </div>
+                    </>
                   )}
                 </div>
               </div>

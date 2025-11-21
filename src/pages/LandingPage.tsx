@@ -24,7 +24,7 @@ import { CircleX } from "lucide-react";
 
 const LandingPage = () => {
   const [openMenu, setOpenMenu] = useState(false);
-  const isMobile = useMediaQuery({ maxWidth: "430px" });
+  const isMobile = useMediaQuery({ maxWidth: "770px" });
   const navigate = useNavigate();
 
   useGSAP(() => {
@@ -106,14 +106,13 @@ const LandingPage = () => {
                 <div className="relative w-full">
                   <button
                     onClick={() => setOpenMenu(false)}
-                    className="absolute -top-5 -right-5 rounded-full shadow-lg hover:scale-110 transition"
+                    className="absolute -top-5 right-1/12"
                   >
                     <CircleX fill="white" color="red" />
                   </button>
 
                   {!isMobile ? (
                     <div className="relative w-[900px] h-[550px]">
-                      {" "}
                       <MenuSlider />
                     </div>
                   ) : (

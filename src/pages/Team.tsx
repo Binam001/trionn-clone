@@ -220,7 +220,7 @@ const Team = () => {
 
         <div
           // id="fourthPage2ndDesc"
-          className="secondDesc flex flex-col text-center text-(--title-color) text-xl md:text-3xl lg:text-6xl lg:w-[60%] mt-40 font-[Britannic] uppercase"
+          className="secondDesc flex flex-col text-center text-(--title-color) text-xl md:text-3xl lg:text-6xl lg:w-[60%] mt-8 md:mt-32 font-[Britannic] uppercase"
         >
           <p className="">Our leadership</p>
         </div>
@@ -283,8 +283,8 @@ const Team = () => {
 
         <TeamCard />
 
-        <div className="text-center space-y-4 mt-20 w-full">
-          <div className="relative text-3xl md:text-5xl lg:text-8xl leading-[0.75] font-[Britannic] text-(--title-color) uppercase">
+        <div className="text-center space-y-4 mt-16 w-full">
+          <div className="relative text-4xl md:text-5xl lg:text-8xl leading-[0.75] font-[Britannic] text-(--title-color) uppercase">
             <div className="relative joinKitchenCrew">
               <p>join</p>
               {/* <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
@@ -340,7 +340,7 @@ const Team = () => {
         ))}
       </div> */}
 
-        <div className="mt-20">
+        <div className="mt-16">
           <div
             id="ourDigitalJungleText"
             className="text-center text-xl md:text-3xl lg:text-6xl text-(--title-color) font-[Britannic]"
@@ -349,7 +349,7 @@ const Team = () => {
           </div>
 
           <div className="w-screen">
-            <ThreeDScrollTriggerContainer className="my-20">
+            <ThreeDScrollTriggerContainer className="my-8 md:my-16">
               <ThreeDScrollTriggerRow baseVelocity={3} direction={1}>
                 {eventListsA.map((event) => (
                   <div className="mx-1" key={event.id}>

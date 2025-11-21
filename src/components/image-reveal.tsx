@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 // import lionGroup from "../assets/images/lionGroup.webp";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useMediaQuery } from "react-responsive";
 
 // Responsive values based on viewport size
 const getResponsiveValues = () => {
@@ -37,6 +38,8 @@ export const ImageHover = ({
   text2: string;
   text3: string;
 }) => {
+  const isMobile = useMediaQuery({ maxWidth: 430 });
+
   const containerRef = useRef<HTMLDivElement>(null);
   const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(
     null
@@ -188,6 +191,8 @@ export const ImageHover = ({
     hovered && lerpedPos && radius > 0 ? "opacity-90" : "opacity-100";
 
   useGSAP(() => {
+    if (isMobile) return;
+
     gsap.from(".imgText span", {
       y: 100,
       opacity: 0,

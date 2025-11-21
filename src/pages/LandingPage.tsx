@@ -151,7 +151,7 @@ const LandingPage = () => {
 
           <button
             onClick={() => navigate("/contact")}
-            className="px-4 py-2 border-2 border-(--yellow) rounded-full text-(--yellow)"
+            className="px-4 py-2 border-2 border-(--title-color) rounded-full text-(--title-color)"
           >
             Get in touch
           </button>

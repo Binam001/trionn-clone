@@ -15,7 +15,7 @@ const SocialLink = () => {
     });
   });
   return (
-    <div className="my-20 w-full">
+    <div className="my-8 md:my-16 w-full">
       {socialLists.map((social) => (
         <div
           key={social.id}

@@ -100,7 +100,7 @@ const Contact = () => {
           },
         }}
       />
-      <motion.div className="flex flex-col items-center gap-8 mt-10 text-(--text-color)">
+      <motion.div className="flex flex-col items-center gap-8 mt-8 text-(--text-color)">
         <CircularBrand />
         <PageTitle
           text1="step into "
@@ -264,8 +264,8 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="space-y-4 mt-20 w-full">
-          <div className="relative text-3xl md:text-5xl lg:text-8xl leading-[0.75] text-(--title-color) font-[Britannic] uppercase">
+        <div className="space-y-4 mt-8 md:mt-16 w-full">
+          <div className="relative text-4xl md:text-5xl lg:text-8xl leading-[0.75] text-(--title-color) font-[Britannic] uppercase">
             <div className="relative">
               <p className="our">our</p>
               {/* <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
@@ -278,7 +278,7 @@ const Contact = () => {
           </div>
           <div
             id="location"
-            className="font-[Poppins] text-(--text-color) flex flex-col space-y-4 md:text-3xl mt-20"
+            className="font-[Poppins] text-(--text-color) flex flex-col space-y-4 md:text-3xl mt-8 md:mt-16"
           >
             <span className="text-(--text-color) md:text-4xl border-b w-max">
               Location

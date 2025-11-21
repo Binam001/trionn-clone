@@ -1,12 +1,12 @@
 import useEmblaCarousel from "embla-carousel-react";
 import { teamLists } from "../constants";
-import linkedin from "/images/linkedin.svg";
+// import linkedin from "/images/linkedin.svg";
 
 const TeamCard = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true });
 
   return (
-    <section className="embla -mx-28 mt-20 cursor-grab">
+    <section className="embla -mx-28 mt-16 cursor-grab">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {teamLists.map((team) => (
@@ -17,16 +17,16 @@ const TeamCard = () => {
                     <img
                       src={team.image}
                       alt={team.name}
-                      className="rounded-4xl w-[380px] h-[450px] lg:w-[420px] lg:h-[500px]"
+                      className="rounded-4xl w-[300px] h-[380px] lg:w-[420px] lg:h-[500px]"
                     />
                   </div>
 
                   <div className="font-[Poppins] text-(--text-color) space-y-2">
                     <h1 className="text-2xl">{team.name}</h1>
                     <p>{team.position}</p>
-                    {team.id === 1 && (
+                    {/* {team.id === 1 && (
                       <img src={linkedin} alt="linkedin" className="size-10" />
-                    )}
+                    )} */}
                   </div>
                 </div>
               </div>

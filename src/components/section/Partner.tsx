@@ -44,14 +44,14 @@ const Partner = () => {
     <div className="mt-20 lg:mt-40 text-(--text-color)">
       <div
         id="customer"
-        className="text-5xl lg:text-8xl leading-[0.9] font-[Britannic] text-(--title-color) uppercase"
+        className="text-4xl md:text-5xl lg:text-8xl leading-[0.9] font-[Britannic] text-(--title-color) uppercase"
       >
         customer
       </div>
       <div className="flex flex-col lg:flex-row lg:justify-between">
         <div
           id="love"
-          className="text-5xl lg:text-8xl leading-[0.9] font-[Britannic] text-(--title-color) uppercase"
+          className="text-4xl md:text-5xl lg:text-8xl leading-[0.9] font-[Britannic] text-(--title-color) uppercase"
         >
           love
         </div>

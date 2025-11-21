@@ -32,7 +32,7 @@ const LoadingScreen = () => {
 
   // if (!showPopup) return null;
   const paragraph =
-    "Welcome to Shyam’s, where every dish tells a story and every flavor is a celebration. Step in, savor the experience, and let your taste buds embark on a journey of unforgettable delights.";
+    "Welcome to Shyam's sweets, where every dish tells a story and every flavor is a celebration. Step in, savor the experience, and let your taste buds embark on a journey of unforgettable delights.";
   return (
     <AnimatePresence mode="wait">
       {showPopup && (
@@ -48,13 +48,18 @@ const LoadingScreen = () => {
           }}
           className="fixed inset-0 flex flex-col justify-between bg-(--title-color) z-50 p-20 space-y-15"
         >
-          <div className="flex flex-col items-ceter gap-4">
-            <div className="flex flex-col md:flex-row text-white text-3xl md:text-5xl font-[Britannic] pt-0 mt-0">
+          <div className="flex flex-col items-ceter gap-4 text-white text-3xl md:text-5xl font-[Britannic]">
+            <div className="flex flex-col md:flex-row pt-0 mt-0">
               <span className="text-(--yellow)">Hello,</span>
               <span>Welcome to</span>
             </div>
-            <div className="">
-              <img src="/whiteLogo.png" alt="logo" className="w-32 md:w-36" />
+            <div className="flex flex-row gap-3">
+              <img
+                src="/whiteLogo.png"
+                alt="logo"
+                className="w-28 md:w-36 translate-y-1 md:translate-y-3"
+              />
+              <span>Sweets</span>
             </div>
           </div>
 

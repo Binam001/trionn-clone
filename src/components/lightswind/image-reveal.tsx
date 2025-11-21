@@ -127,7 +127,9 @@ const ImageReveal: React.FC = () => {
                 key={item.key}
                 className="flex justify-between w-full text-(--text-color)"
               >
-                <div className="w-full">{item.label}</div>
+                <div className="w-full hover:text-(--title-color)">
+                  {item.label}
+                </div>
               </div>
               <hr className="text-(--text-color) text-2xl h-1 w-full my-10" />
             </div>

@@ -54,7 +54,9 @@ const SideMenu = ({ setOpen }: SideMenuProps) => {
         </div>
       </div>
       <div className="h-full px-20 pb-5 hidden md:flex">
-        <p className="self-baseline-last">Bringing smiles with every bite</p>
+        <p className="self-baseline-last text-(--yellow) text-lg font-semibold">
+          Bringing smiles with every bite.
+        </p>
       </div>
     </div>
   );

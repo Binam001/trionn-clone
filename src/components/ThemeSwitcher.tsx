@@ -1,5 +1,5 @@
-import sun from "../assets/images/sun.svg";
-import moon from "../assets/images/moon.svg";
+import sun from "/images/sun.svg";
+import moon from "/images/moon.svg";
 
 interface Props {
   theme: string;

@@ -18,7 +18,7 @@ const SideMenu = ({ setOpen }: SideMenuProps) => {
     // });
   });
   return (
-    <div className="text-white relative h-screen flex items-center z-100!">
+    <div className="text-white relative h-screen flex items-center z-999">
       <div className="md:flex px-8 lg:px-20 absolute w-full mb-5">
         <ul className="w-1/2 text-6xl lg:text-8xl leading-[0.8] font-[Britannic] uppercase">
           {sideMenuLists.map((sideMenuItem) => (

@@ -16,6 +16,7 @@ import Footer from "../components/section/Footer";
 // import ImageReveal from "../components/lightswind/image-reveal";
 // import { ImageHover } from "../components/image-reveal";
 import PageTitle from "../components/section/PageTitle";
+import ImageReveal from "../components/lightswind/image-reveal";
 
 const AboutUs = () => {
   useGSAP(() => {
@@ -89,12 +90,12 @@ const AboutUs = () => {
       duration: 1,
       delay: 1,
     });
-    // gsap.from("#yellowHat", {
-    //   yPercent: -200,
-    //   rotate: 180,
-    //   duration: 1,
-    //   delay: 1,
-    // });
+    gsap.from("#yellowHat", {
+      yPercent: -200,
+      rotate: 180,
+      duration: 1,
+      delay: 1,
+    });
     gsap.from("#honors", {
       xPercent: -25,
       opacity: 0,
@@ -213,26 +214,24 @@ const AboutUs = () => {
 
         <CircularBrand />
 
-        <PageTitle
-          text1="a"
-          text2="flavor-driven"
-          text3="dining"
-          highlighter="destination."
-          desc="Blending the freshest culinary trends, cooking techniques, and flavor
-          craft is what we do best. We never settle for a single
-          perspective—every dish is created from a world of inspiration."
-        />
+        <div className=" mt-20">
+          <PageTitle
+            text1="a"
+            text2="flavor-driven"
+            text3="dining"
+            highlighter="destination."
+            desc="Blending the freshest culinary trends, cooking techniques, and flavor
+          craft is what we do best."
+          />
+        </div>
 
-        {/* <div
-          id="yellowHat"
-          className="absolute -top-10 lg:-top-15 hidden md:block"
-        >
+        <div id="yellowHat" className="absolute top-5">
           <img
             src="/images/costume/yellowHat.png"
             alt="Yellow Hat"
             className="size-16 lg:size-28 rotate-30 ml-10"
           />
-        </div> */}
+        </div>
         {/* <div className="flex justify-center">
         <a href="#aboutSecondDesc">
           <CircleArrowDown
@@ -348,12 +347,14 @@ const AboutUs = () => {
         <div className="text-center space-y-8 my-20 w-full">
           <div className="relative text-4xl md:text-5xl lg:text-8xl leading-[0.75] text-(--title-color) font-[Britannic] uppercase">
             <div className="relative">
-              <p id="honors">honors</p>
+              <p id="honors">awards</p>
               {/* <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
             </div>
 
             <div className="relative">
-              <p id="awards">& awards</p>
+              <p id="awards">
+                & <span className="text-(--yellow)">certificates</span>
+              </p>
               {/* <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
             </div>
           </div>
@@ -368,6 +369,8 @@ const AboutUs = () => {
             </p>
           </div>
         </div>
+
+        <ImageReveal />
 
         <Footer />
       </motion.div>

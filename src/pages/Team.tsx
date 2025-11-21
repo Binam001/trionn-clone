@@ -163,17 +163,17 @@ const Team = () => {
       },
     });
 
-    gsap.from("#beLikeALion", {
-      yPercent: 50,
-      opacity: 0,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: "#beLikeALion",
-        start: "top bottom",
-        end: "center center",
-        scrub: 1.5,
-      },
-    });
+    // gsap.from("#beLikeALion", {
+    //   yPercent: 50,
+    //   opacity: 0,
+    //   duration: 1.5,
+    //   scrollTrigger: {
+    //     trigger: "#beLikeALion",
+    //     start: "top bottom",
+    //     end: "center center",
+    //     scrub: 1.5,
+    //   },
+    // });
     gsap.utils.toArray<HTMLElement>(".applyForPost").forEach((el) => {
       gsap.from(el, {
         yPercent: 50,

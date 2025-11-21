@@ -3,12 +3,12 @@
 import React, { useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
-import award1 from "../../assets/images/aboutUs/adesignaward.webp";
-import award2 from "../../assets/images/aboutUs/awwwards.webp";
-import award3 from "../../assets/images/aboutUs/cssda.webp";
-import award4 from "../../assets/images/aboutUs/csswinner.webp";
-import award5 from "../../assets/images/aboutUs/cssreel.webp";
-import award6 from "../../assets/images/aboutUs/cssguru.webp";
+import award1 from "/images/award/award1.png";
+import award2 from "/images/award/award2.png";
+import award3 from "/images/award/award3.png";
+import award4 from "/images/award/award4.png";
+import award5 from "/images/award/award5.png";
+import award6 from "/images/award/award6.png";
 
 interface VisualItem {
   key: number;
@@ -21,8 +21,8 @@ const visualData: VisualItem[] = [
     key: 1,
     label: (
       <div className="flex items-center flex-col lg:flex-row lg:justify-between">
-        <div className="text-3xl">A' Design Awards & competition</div>
-        <div className="text-2xl">Silver Medal</div>
+        <div className="text-3xl">Michelin Guide</div>
+        <div className="text-2xl">One Star Selection</div>
       </div>
     ),
     url: award1,
@@ -31,8 +31,8 @@ const visualData: VisualItem[] = [
     key: 2,
     label: (
       <div className="flex items-center flex-col lg:flex-row lg:justify-between">
-        <div className="text-3xl">AWWWARDS</div>
-        <div className="text-2xl">2x - Honnerable Mention</div>
+        <div className="text-3xl">James Beard Foundation</div>
+        <div className="text-2xl">Best New Restaurant Nominee</div>
       </div>
     ),
     url: award2,
@@ -41,8 +41,8 @@ const visualData: VisualItem[] = [
     key: 3,
     label: (
       <div className="flex items-center flex-col lg:flex-row lg:justify-between">
-        <div className="text-3xl">CSS Design Awards</div>
-        <div className="text-2xl">2x - Website of the day</div>
+        <div className="text-3xl">Wine Spectator</div>
+        <div className="text-2xl">Award of Excellence (3x)</div>
       </div>
     ),
     url: award3,
@@ -51,8 +51,8 @@ const visualData: VisualItem[] = [
     key: 4,
     label: (
       <div className="flex items-center flex-col lg:flex-row lg:justify-between">
-        <div className="text-3xl">CSS Winners</div>
-        <div className="text-2xl">2x - Website of the day</div>
+        <div className="text-3xl">The World's 50 Best</div>
+        <div className="text-2xl">51-100 Extended List</div>
       </div>
     ),
     url: award4,
@@ -61,8 +61,8 @@ const visualData: VisualItem[] = [
     key: 5,
     label: (
       <div className="flex items-center flex-col lg:flex-row lg:justify-between">
-        <div className="text-3xl">CSS Reels</div>
-        <div className="text-2xl">Featured of the day</div>
+        <div className="text-3xl">Forbes Travel Guide</div>
+        <div className="text-2xl">Four Star Rating</div>
       </div>
     ),
     url: award5,
@@ -71,8 +71,8 @@ const visualData: VisualItem[] = [
     key: 6,
     label: (
       <div className="flex items-center flex-col lg:flex-row lg:justify-between">
-        <div className="text-3xl">Web Guru</div>
-        <div className="text-2xl">2x - Guru of the day</div>
+        <div className="text-3xl">AAA Diamond Rating</div>
+        <div className="text-2xl">Five Diamond Restaurant</div>
       </div>
     ),
     url: award6,

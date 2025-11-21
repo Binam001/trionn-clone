@@ -71,7 +71,7 @@ const Progress = () => {
               <div className="text-6xl lg:text-8xl">{item.count}</div>
               <span className="text-5xl">+</span>
             </div>
-            <div className="text-xl md:text-2xl lg:text-4xl w-[50%] text-right justify-self-end font-[Poppins] uppercase">
+            <div className="text-xl md:text-2xl lg:text-4xl w-[45%] text-right justify-self-end font-[Poppins] uppercase">
               {item.title}
             </div>
           </div>

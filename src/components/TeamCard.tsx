@@ -1,6 +1,6 @@
 import useEmblaCarousel from "embla-carousel-react";
 import { teamLists } from "../constants";
-import linkedin from "../assets/images/linkedin.svg";
+import linkedin from "/images/linkedin.svg";
 
 const TeamCard = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true });

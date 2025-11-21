@@ -52,7 +52,7 @@ const PageTitle = ({
       >
         <span>{text1}</span>
         <span>{text2}</span>
-        <span>
+        <span className="">
           {text3} <span className="text-(--text-yellow)">{highlighter}</span>
         </span>
       </div>

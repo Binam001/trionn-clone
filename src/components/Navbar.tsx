@@ -1,11 +1,11 @@
-import soundBar from "../assets/images/sound-bar.svg";
-import animatedSoundBar from "../assets/images/animated-sound-bar.svg";
+import soundBar from "/images/sound-bar.svg";
+import animatedSoundBar from "/images/animated-sound-bar.svg";
 // import ThemeSwitcher from "./ThemeSwitcher";
 import { useEffect, useRef, useState } from "react";
 import audio from "/audio/audio.mp3";
 import SideMenu from "./section/SideMenu";
 import { AnimatePresence, motion } from "framer-motion";
-import { lightLogo } from "../constants";
+import { darkLogo, lightLogo } from "../constants";
 import { useAudio } from "../context/AudioContext";
 // import { darkLogo, lightLogo } from "../constants";
 
@@ -81,7 +81,9 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed bg-white backdrop-blur-3xl w-full top-0 left-0 py-3 px-10 md:px-20 z-60 transition-transform duration-500 ease-in-out mix-blend-colo ${
+        className={`fixed ${
+          open ? "bg-transparent" : "bg-white/80 backdrop-blur-3xl"
+        } w-full top-0 left-0 py-3 px-10 md:px-20 z-60 transition-transform duration-500 ease-in-out mix-blend-colo ${
           isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
@@ -91,7 +93,7 @@ const Navbar = () => {
               <img
                 className={`w-18 md:w-24`}
                 // src={theme === "light" ? lightLogo : darkLogo}
-                src={lightLogo}
+                src={`${open ? darkLogo : lightLogo}`}
                 alt="shyam's logo"
               />
             </a>
@@ -101,12 +103,13 @@ const Navbar = () => {
             {/* <ThemeSwitcher theme={theme} setTheme={setTheme} /> */}
             <button
               onClick={() => setIsAudioOn(!isAudioOn)}
-              className="p-1 bg-(--title-color) rounded-full cursor-pointer"
+              className={`p-1 rounded-full cursor-pointer
+                ${open ? "bg-(--background)" : "bg-(--yellow)"}`}
             >
               <img
                 src={!isAudioOn ? soundBar : animatedSoundBar}
                 alt="sound-bar"
-                className="size-6"
+                className={`size-6 ${open ? "invert" : "invert-0"}`}
               />
             </button>
             <audio ref={audioRef} src={audio} loop />
@@ -130,7 +133,7 @@ const Navbar = () => {
             ) : (
               <button
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-4 cursor-pointer uppercase text-(--title-color) font-bold"
+                className="flex items-center gap-4 cursor-pointer uppercase text-(--background) font-bold"
               >
                 close
                 <div className="bg-(--background) size-11 rounded-full flex flex-col justify-center items-center mx-auto relative">

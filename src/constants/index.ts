@@ -4,39 +4,37 @@ import comboImg1 from "/images/comboPacks/family-combo.png";
 import comboImg2 from "/images/comboPacks/friends-combo.png";
 import comboImg3 from "/images/comboPacks/solo-combo.png";
 import comboImg4 from "/images/comboPacks/light-solo-combo.png";
-import client1 from "../assets/images/malte-kramer.webp";
-import client2 from "../assets/images/doug-petrie.webp";
-import client3 from "../assets/images/zoltan-csonka.webp";
-import client4 from "../assets/images/albert-mizuno.webp";
-import client5 from "../assets/images/stephen-dash.webp";
-import teamImg1 from "../assets/images/team/sunny_rathod.webp";
-import teamImg2 from "../assets/images/team/prabhatsinh_maka.webp";
-import teamImg3 from "../assets/images/team/gaurav_joshi.webp";
-import teamImg4 from "../assets/images/team/viral_maru.webp";
-import teamImg5 from "../assets/images/team/bhagirathsinh_jadeja.webp";
-import teamImg6 from "../assets/images/team/rushi_vasani.webp";
-import teamImg7 from "../assets/images/team/ayaz_kadri.webp";
-import teamImg8 from "../assets/images/team/umang_vaghamshi.webp";
-import teamImg9 from "../assets/images/team/nilesh_gujarati.webp";
-import teamImg10 from "../assets/images/team/vaishnavi_kacha.webp";
-import teamImg11 from "../assets/images/team/dhaval_bhadukiya.webp";
-import teamImg12 from "../assets/images/team/dhruv_solanki.webp";
-import teamImg13 from "../assets/images/team/rahul_solanki.webp";
-import teamImg14 from "../assets/images/team/sandip_rathod.webp";
-import eventListAImg1 from "../assets/images/event/1.webp";
-import eventListAImg2 from "../assets/images/event/2.webp";
-import eventListAImg3 from "../assets/images/event/3.webp";
-import eventListAImg4 from "../assets/images/event/4.webp";
-import eventListAImg5 from "../assets/images/event/5.webp";
-import eventListAImg6 from "../assets/images/event/6.webp";
-import eventListAImg7 from "../assets/images/event/7.webp";
-import eventListBImg1 from "../assets/images/event/8.webp";
-import eventListBImg2 from "../assets/images/event/9.webp";
-import eventListBImg3 from "../assets/images/event/10.webp";
-import eventListBImg4 from "../assets/images/event/11.webp";
-import eventListBImg5 from "../assets/images/event/12.webp";
-import eventListBImg6 from "../assets/images/event/13.webp";
-import eventListBImg7 from "../assets/images/event/14.webp";
+import client1 from "/images/customer/malte-kramer.webp";
+import client2 from "/images/customer/doug-petrie.webp";
+import client3 from "/images/customer/zoltan-csonka.webp";
+import client4 from "/images/customer/albert-mizuno.webp";
+import client5 from "/images/customer/stephen-dash.webp";
+import teamImg1 from "/images/team/sunny_rathod.webp";
+import teamImg2 from "/images/team/prabhatsinh_maka.webp";
+import teamImg3 from "/images/team/gaurav_joshi.webp";
+import teamImg4 from "/images/team/viral_maru.webp";
+import teamImg5 from "/images/team/bhagirathsinh_jadeja.webp";
+import teamImg6 from "/images/team/rushi_vasani.webp";
+import teamImg7 from "/images/team/ayaz_kadri.webp";
+import teamImg8 from "/images/team/umang_vaghamshi.webp";
+import teamImg9 from "/images/team/nilesh_gujarati.webp";
+import teamImg10 from "/images/team/vaishnavi_kacha.webp";
+import teamImg11 from "/images/team/dhaval_bhadukiya.webp";
+import teamImg12 from "/images/team/dhruv_solanki.webp";
+import teamImg13 from "/images/team/rahul_solanki.webp";
+import teamImg14 from "/images/team/sandip_rathod.webp";
+import eventListAImg1 from "/images/event/1.jpg";
+import eventListAImg2 from "/images/event/2.jpg";
+import eventListAImg3 from "/images/event/3.jpg";
+import eventListAImg4 from "/images/event/4.webp";
+import eventListAImg5 from "/images/event/5.webp";
+import eventListAImg6 from "/images/event/6.jpg";
+import eventListBImg6 from "/images/event/7.avif";
+import eventListBImg1 from "/images/event/8.jpg";
+import eventListBImg2 from "/images/event/9.webp";
+import eventListBImg3 from "/images/event/10.avif";
+import eventListBImg4 from "/images/event/11.webp";
+import eventListBImg5 from "/images/event/12.jpg";
 
 const comboLists = [
   {
@@ -68,23 +66,23 @@ const comboLists = [
 const progress = [
   {
     id: 1,
-    title: "awards & recognition",
-    count: 20,
-  },
-  {
-    id: 2,
     title: "guests served",
     count: 999,
   },
   {
-    id: 3,
+    id: 2,
     title: "signature dishes",
     count: 20,
   },
   {
-    id: 4,
+    id: 3,
     title: "years of service",
     count: 10,
+  },
+  {
+    id: 4,
+    title: "top reviews",
+    count: 20,
   },
 ];
 
@@ -780,10 +778,6 @@ const eventListsA = [
     id: 6,
     image: eventListAImg6,
   },
-  {
-    id: 7,
-    image: eventListAImg7,
-  },
 ];
 const eventListsB = [
   {
@@ -809,10 +803,6 @@ const eventListsB = [
   {
     id: 6,
     image: eventListBImg6,
-  },
-  {
-    id: 7,
-    image: eventListBImg7,
   },
 ];
 

@@ -254,7 +254,7 @@ export const ImageHover = ({
 
         <img
           src="/images/sweets/sweets1.png"
-          alt="lion group"
+          alt="sweet image"
           className="absolute w-screen h-full object-cover"
         />
 

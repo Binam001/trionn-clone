@@ -7,7 +7,6 @@ import { ScrollTrigger, SplitText } from "gsap/all";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Menu from "./pages/Menu";
 import AboutUs from "./pages/AboutUs";
-import Services from "./pages/Services";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import ScrollToTop from "./components/ScrollToTop";
@@ -69,7 +68,6 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/Menu" element={<Menu />} />
             <Route path="/AboutUs" element={<AboutUs />} />
-            <Route path="/Services" element={<Services />} />
             <Route path="/Team" element={<Team />} />
             <Route path="/Contact" element={<Contact />} />
           </Routes>

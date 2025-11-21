@@ -81,7 +81,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed bg-(--yellow)/80 backdrop-blur-3xl w-full top-0 left-0 py-3 px-10 md:px-20 z-60 transition-transform duration-500 ease-in-out mix-blend-colo ${
+        className={`fixed bg-white backdrop-blur-3xl w-full top-0 left-0 py-3 px-10 md:px-20 z-60 transition-transform duration-500 ease-in-out mix-blend-colo ${
           isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
@@ -130,7 +130,7 @@ const Navbar = () => {
             ) : (
               <button
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-4 cursor-pointer uppercase text-white font-bold"
+                className="flex items-center gap-4 cursor-pointer uppercase text-(--title-color) font-bold"
               >
                 close
                 <div className="bg-(--background) size-11 rounded-full flex flex-col justify-center items-center mx-auto relative">

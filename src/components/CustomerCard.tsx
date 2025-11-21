@@ -4,11 +4,11 @@ import { clients } from "../constants";
 import { Star } from "lucide-react";
 // import { Play } from "lucide-react";
 
-const PartnerCard = () => {
+const CustomerCard = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true });
 
   return (
-    <section className="embla -mx-28 mt-20">
+    <section className="embla -mx-28 mt-20 cursor-grab">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {clients.map((client) => (
@@ -98,4 +98,4 @@ const PartnerCard = () => {
   );
 };
 
-export default PartnerCard;
+export default CustomerCard;

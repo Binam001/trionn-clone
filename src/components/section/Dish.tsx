@@ -5,7 +5,7 @@ import { SplitText } from "gsap/all";
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
 
-const Dribbble = () => {
+const Dish = () => {
   const isTablet = useMediaQuery({ maxWidth: 770 });
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ||
@@ -28,7 +28,7 @@ const Dribbble = () => {
 
   useGSAP(() => {
     document.fonts.ready.then(() => {
-      const paragraphSplit = new SplitText("#dribbleText", {
+      const paragraphSplit = new SplitText("#dishSectionDesc", {
         type: "lines",
       });
       gsap.from(paragraphSplit.lines, {
@@ -39,7 +39,7 @@ const Dribbble = () => {
         stagger: 0.06,
         delay: 0.6,
         scrollTrigger: {
-          trigger: "#dribbleText",
+          trigger: "#dishSectionDesc",
           start: "top 60%",
           scrub: 1,
         },
@@ -97,12 +97,12 @@ const Dribbble = () => {
       <div>
         <img
           src={theme === "dark" ? darkLogo : lightLogo}
-          alt="dribble"
+          alt="shyam's logo"
           className="w-40 h-14 md:w-52 md:h-20"
         />
       </div>
       <p
-        id="dribbleText"
+        id="dishSectionDesc"
         className="text-(--text-color) md:text-3xl font-[Poppins] w-[80%] lg:w-[40%] text-center mt-10"
       >
         Where every dish is crafted with passion, bringing comfort, flavor, and
@@ -125,4 +125,4 @@ const Dribbble = () => {
   );
 };
 
-export default Dribbble;
+export default Dish;

@@ -239,15 +239,13 @@ export const ImageHover = ({
         {isHovering && (
           <img
             ref={cursorRef}
-            // Placeholder GIF: A pixel art fire. Replace this src with your own GIF.
             src="/flame4.gif"
-            // src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExanU0Z3Q5Zm15bGR4czh6Z2g3Z2RqOGZ2ZmxuYXhjZ3A2amx2ZG9reSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/WRxuFqJ2e8X4s/giphy.gif"
             alt="Custom Cursor"
             className="fixed pointer-events-none z-50 w-16 h-16 object-contain transition-opacity duration-150 ease-out"
             style={{
               // Initial position off-screen to prevent flickering before first move
-              left: "-100px",
-              top: "-100px",
+              left: "-10px",
+              top: "-10px",
               // Removes the default drag behavior of images
               userSelect: "none",
             }}
@@ -269,37 +267,53 @@ export const ImageHover = ({
             <span>{text2}</span>
             <span>{text3}</span>
           </div>
-          <div className="absolute bottom-10 flex justify-between w-full px-10 text-xs md:text-xl lg:text-2xl">
-            <div className="flex flex-col">
-              <span className="">Email</span>
-              <a href="#">hello@shyam.com</a>
-            </div>
-            <div className="flex flex-col">
-              <span className="">Call</span>
-              <a href="#">+977 98241 82099</a>
+          <div className="absolute bottom-10 flex justify-between w-full px-10 text-sm md:text-xl">
+            <div className="flex flex-col gap-4">
+              <span className="">
+                Email:
+                <a href="#" className="ml-2">
+                  hello@shyam.com
+                </a>
+              </span>
+              <span className="">
+                Call:
+                <a href="#" className="ml-2">
+                  +977 98241 82099
+                </a>
+              </span>
             </div>
           </div>
         </div>
 
         <div
-          id="imgText"
           className={`w-screen h-full bg-black/80 backdrop-blur-[6px] transition-all duration-300 pointer-events-none z-10 text-white ${overlayOpacity}`}
           style={maskStyle}
         >
-          <div className="leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[Britannic] uppercase text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center items-center">
+          <div
+            id="imgText"
+            className="leading-[0.75] text-[5rem] md:text-[8rem] lg:text-[12rem] font-[Britannic] uppercase text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center items-center"
+          >
             <span>{text1}</span>
             <span>{text2}</span>
             <span>{text3}</span>
           </div>
-          <div className="absolute bottom-10 flex justify-between w-full px-10 text-xs md:text-xl lg:text-2xl">
-            <div className="flex flex-col">
-              <span className="">Email</span>
-              <a href="#">hello@shyam.com</a>
+          <div className="absolute bottom-10 flex justify-between w-full px-10 text-sm md:text-xl">
+            <div className="flex flex-col gap-4">
+              <span className="">
+                Email:
+                <a href="#" className="ml-2">
+                  hello@shyam.com
+                </a>
+              </span>
+              <span className="">
+                Call:
+                <a href="#" className="ml-2">
+                  +977 98241 82099
+                </a>
+              </span>
             </div>
-            <div className="flex flex-col">
-              <span className="">Call</span>
-              <a href="#">+977 98241 82099</a>
-            </div>
+            {/* <div className="flex flex-col">
+            </div> */}
           </div>
         </div>
         {/* Glow: extra radial gradient for soft border */}

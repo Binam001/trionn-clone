@@ -6,7 +6,7 @@ const TeamCard = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true });
 
   return (
-    <section className="embla -mx-28 mt-20">
+    <section className="embla -mx-28 mt-20 cursor-grab">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {teamLists.map((team) => (
@@ -17,7 +17,7 @@ const TeamCard = () => {
                     <img
                       src={team.image}
                       alt={team.name}
-                      className="rounded-4xl w-[380px] h-[450px] lg:w-[450px] lg:h-[520px]"
+                      className="rounded-4xl w-[380px] h-[450px] lg:w-[420px] lg:h-[500px]"
                     />
                   </div>
 

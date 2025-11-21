@@ -3,12 +3,12 @@ import Button from "../components/Button";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import IntroVideo from "../components/IntroVideo";
-import ViewProject from "../components/section/ViewProject";
+import ComboCard from "../components/section/ComboCard";
 import About from "../components/section/About";
 import Progress from "../components/section/Progress";
 import Partner from "../components/section/Partner";
 import ScrollMarquee from "../components/section/ScrollMarquee";
-import Dribbble from "../components/section/Dribbble";
+import Dish from "../components/section/Dish";
 import SocialLink from "../components/section/SocialLink";
 import Footer from "../components/section/Footer";
 import { AnimatePresence, motion } from "framer-motion";
@@ -132,12 +132,12 @@ const LandingPage = () => {
 
         <IntroVideo />
         <OurCombo />
-        <ViewProject />
+        <ComboCard />
         <About />
         <Progress />
         <Partner />
         <ScrollMarquee />
-        <Dribbble />
+        <Dish />
 
         <div
           id="join"

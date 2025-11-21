@@ -1,84 +1,14 @@
 import lightLogo from "/redLogo.png";
 import darkLogo from "/whiteLogo.png";
-// import project1Img from "../assets/images/loftloom-main-landscape.webp";
-// import project2Img from "../assets/images/imusic-main-landscape.webp";
-// import project3Img from "../assets/images/technis-main-landscape.webp";
 import comboImg1 from "/images/comboPacks/family-combo.png";
 import comboImg2 from "/images/comboPacks/friends-combo.png";
 import comboImg3 from "/images/comboPacks/solo-combo.png";
 import comboImg4 from "/images/comboPacks/light-solo-combo.png";
-// import project3Img1 from "../assets/images/technis-main.webp";
-// import project4Img from "../assets/images/8octa-main.webp";
-// import project5Img from "../assets/images/merit-global-main.webp";
-// import project6Img from "../assets/images/reyden-main.webp";
-// import project7Img from "../assets/images/crowdmouth-main.webp";
-// import project8Img from "../assets/images/stuffosome-main.webp";
-// import project9Img from "../assets/images/shore-main.webp";
-// import project10Img from "../assets/images/keypro-main.webp";
-// import project11Img from "../assets/images/essence-realty-main.webp";
-// import project12Img from "../assets/images/metagram-main.webp";
-// import project13Img from "../assets/images/better-penny-main.webp";
-// import project14Img from "../assets/images/forever-dolls-main.webp";
-// import project15Img from "../assets/images/aeomax-main.webp";
-// import project16Img from "../assets/images/fast-resume-main.webp";
-// import project17Img from "../assets/images/financr-main.webp";
-// import project18Img from "../assets/images/monotex-main.webp";
-// import project19Img from "../assets/images/homebid-main.webp";
-// import project20Img from "../assets/images/ogre-main.webp";
-// import project21Img from "../assets/images/flow-row-main.webp";
 import client1 from "../assets/images/malte-kramer.webp";
 import client2 from "../assets/images/doug-petrie.webp";
 import client3 from "../assets/images/zoltan-csonka.webp";
 import client4 from "../assets/images/albert-mizuno.webp";
 import client5 from "../assets/images/stephen-dash.webp";
-// import dribbble1 from "../assets/images/dribbble1.webp";
-// import dribbble2 from "../assets/images/dribbble2.webp";
-// import dribbble3 from "../assets/images/dribbble3.webp";
-// import dribbble4 from "../assets/images/dribbble4.webp";
-// import dribbble5 from "../assets/images/dribbble5.webp";
-// import dribbble6 from "../assets/images/dribbble6.webp";
-// import socialImage3 from "../assets/images/linkedin.svg";
-// import socialImage2 from "../assets/images/instagram.svg";
-// import socialImage1 from "../assets/images/facebook.svg";
-import partnerSideAImg1 from "../assets/images/aboutUs/luxurypresence.svg";
-import partnerSideAImg2 from "../assets/images/aboutUs/fast-resume.svg";
-import partnerSideAImg3 from "../assets/images/aboutUs/technis.svg";
-import partnerSideAImg4 from "../assets/images/aboutUs/betterpenny.svg";
-import partnerSideAImg5 from "../assets/images/aboutUs/ockto.svg";
-import partnerSideAImg6 from "../assets/images/aboutUs/credible.svg";
-import partnerSideAImg7 from "../assets/images/aboutUs/reyden.svg";
-import partnerSideAImg8 from "../assets/images/aboutUs/casting-networks.svg";
-import partnerSideAImg9 from "../assets/images/aboutUs/yellowtail.svg";
-import partnerSideAImg10 from "../assets/images/aboutUs/joonko.svg";
-import partnerSideBImg1 from "../assets/images/aboutUs/hulamaids.svg";
-import partnerSideBImg2 from "../assets/images/aboutUs/helm.webp";
-import partnerSideBImg3 from "../assets/images/aboutUs/flowrow.webp";
-import partnerSideBImg4 from "../assets/images/aboutUs/foreverdolls.svg";
-import partnerSideBImg5 from "../assets/images/aboutUs/spotlight-news.svg";
-import partnerSideBImg6 from "../assets/images/aboutUs/known-singles.svg";
-import partnerSideBImg7 from "../assets/images/aboutUs/essence-realty.svg";
-import partnerSideBImg8 from "../assets/images/aboutUs/larry-lake.svg";
-import techStackAImg1 from "../assets/images/services/angular.svg";
-import techStackAImg2 from "../assets/images/services/bootstrap.svg";
-import techStackAImg3 from "../assets/images/services/css3.svg";
-import techStackAImg4 from "../assets/images/services/figma.svg";
-import techStackAImg5 from "../assets/images/services/html5.svg";
-import techStackAImg6 from "../assets/images/services/jquery.svg";
-import techStackAImg7 from "../assets/images/services/js.svg";
-import techStackAImg8 from "../assets/images/services/jsfoundation.svg";
-import techStackAImg9 from "../assets/images/services/laravel.svg";
-import techStackAImg10 from "../assets/images/services/less.svg";
-import techStackBImg1 from "../assets/images/services/magento.svg";
-import techStackBImg2 from "../assets/images/services/nextjs.svg";
-import techStackBImg3 from "../assets/images/services/nodejs.svg";
-import techStackBImg4 from "../assets/images/services/php.svg";
-import techStackBImg5 from "../assets/images/services/react.svg";
-import techStackBImg6 from "../assets/images/services/sass.svg";
-import techStackBImg7 from "../assets/images/services/shopify.svg";
-import techStackBImg8 from "../assets/images/services/sketch.svg";
-import techStackBImg9 from "../assets/images/services/tailwindcss.svg";
-import techStackBImg10 from "../assets/images/services/wordpress.svg";
-import techStackBImg11 from "../assets/images/services/xd.svg";
 import teamImg1 from "../assets/images/team/sunny_rathod.webp";
 import teamImg2 from "../assets/images/team/prabhatsinh_maka.webp";
 import teamImg3 from "../assets/images/team/gaurav_joshi.webp";
@@ -441,83 +371,83 @@ const sideMenuLists = [
 //   },
 // ];
 
-const partnerSideA = [
-  {
-    id: 1,
-    image: partnerSideAImg1,
-  },
-  {
-    id: 2,
-    image: partnerSideAImg2,
-  },
-  {
-    id: 3,
-    image: partnerSideAImg3,
-  },
-  {
-    id: 4,
-    image: partnerSideAImg4,
-  },
-  {
-    id: 5,
-    image: partnerSideAImg5,
-  },
-  {
-    id: 6,
-    image: partnerSideAImg6,
-  },
-  {
-    id: 7,
-    image: partnerSideAImg7,
-  },
-  {
-    id: 8,
-    image: partnerSideAImg8,
-  },
-  {
-    id: 9,
-    image: partnerSideAImg9,
-  },
-  {
-    id: 10,
-    image: partnerSideAImg10,
-  },
-];
+// const partnerSideA = [
+//   {
+//     id: 1,
+//     image: partnerSideAImg1,
+//   },
+//   {
+//     id: 2,
+//     image: partnerSideAImg2,
+//   },
+//   {
+//     id: 3,
+//     image: partnerSideAImg3,
+//   },
+//   {
+//     id: 4,
+//     image: partnerSideAImg4,
+//   },
+//   {
+//     id: 5,
+//     image: partnerSideAImg5,
+//   },
+//   {
+//     id: 6,
+//     image: partnerSideAImg6,
+//   },
+//   {
+//     id: 7,
+//     image: partnerSideAImg7,
+//   },
+//   {
+//     id: 8,
+//     image: partnerSideAImg8,
+//   },
+//   {
+//     id: 9,
+//     image: partnerSideAImg9,
+//   },
+//   {
+//     id: 10,
+//     image: partnerSideAImg10,
+//   },
+// ];
 
-const partnerSideB = [
-  {
-    id: 1,
-    image: partnerSideBImg1,
-  },
-  {
-    id: 2,
-    image: partnerSideBImg2,
-  },
-  {
-    id: 3,
-    image: partnerSideBImg3,
-  },
-  {
-    id: 4,
-    image: partnerSideBImg4,
-  },
-  {
-    id: 5,
-    image: partnerSideBImg5,
-  },
-  {
-    id: 6,
-    image: partnerSideBImg6,
-  },
-  {
-    id: 7,
-    image: partnerSideBImg7,
-  },
-  {
-    id: 8,
-    image: partnerSideBImg8,
-  },
-];
+// const partnerSideB = [
+//   {
+//     id: 1,
+//     image: partnerSideBImg1,
+//   },
+//   {
+//     id: 2,
+//     image: partnerSideBImg2,
+//   },
+//   {
+//     id: 3,
+//     image: partnerSideBImg3,
+//   },
+//   {
+//     id: 4,
+//     image: partnerSideBImg4,
+//   },
+//   {
+//     id: 5,
+//     image: partnerSideBImg5,
+//   },
+//   {
+//     id: 6,
+//     image: partnerSideBImg6,
+//   },
+//   {
+//     id: 7,
+//     image: partnerSideBImg7,
+//   },
+//   {
+//     id: 8,
+//     image: partnerSideBImg8,
+//   },
+// ];
 
 const serviceLists = [
   {
@@ -634,94 +564,94 @@ const processLists = [
   },
 ];
 
-const techStackListsA = [
-  {
-    id: 1,
-    image: techStackAImg1,
-  },
-  {
-    id: 2,
-    image: techStackAImg2,
-  },
-  {
-    id: 3,
-    image: techStackAImg3,
-  },
-  {
-    id: 4,
-    image: techStackAImg4,
-  },
-  {
-    id: 5,
-    image: techStackAImg5,
-  },
-  {
-    id: 6,
-    image: techStackAImg6,
-  },
-  {
-    id: 7,
-    image: techStackAImg7,
-  },
-  {
-    id: 8,
-    image: techStackAImg8,
-  },
-  {
-    id: 9,
-    image: techStackAImg9,
-  },
-  {
-    id: 10,
-    image: techStackAImg10,
-  },
-];
-const techStackListsB = [
-  {
-    id: 1,
-    image: techStackBImg1,
-  },
-  {
-    id: 2,
-    image: techStackBImg2,
-  },
-  {
-    id: 3,
-    image: techStackBImg3,
-  },
-  {
-    id: 4,
-    image: techStackBImg4,
-  },
-  {
-    id: 5,
-    image: techStackBImg5,
-  },
-  {
-    id: 6,
-    image: techStackBImg6,
-  },
-  {
-    id: 7,
-    image: techStackBImg7,
-  },
-  {
-    id: 8,
-    image: techStackBImg8,
-  },
-  {
-    id: 9,
-    image: techStackBImg9,
-  },
-  {
-    id: 10,
-    image: techStackBImg10,
-  },
-  {
-    id: 11,
-    image: techStackBImg11,
-  },
-];
+// const techStackListsA = [
+//   {
+//     id: 1,
+//     image: techStackAImg1,
+//   },
+//   {
+//     id: 2,
+//     image: techStackAImg2,
+//   },
+//   {
+//     id: 3,
+//     image: techStackAImg3,
+//   },
+//   {
+//     id: 4,
+//     image: techStackAImg4,
+//   },
+//   {
+//     id: 5,
+//     image: techStackAImg5,
+//   },
+//   {
+//     id: 6,
+//     image: techStackAImg6,
+//   },
+//   {
+//     id: 7,
+//     image: techStackAImg7,
+//   },
+//   {
+//     id: 8,
+//     image: techStackAImg8,
+//   },
+//   {
+//     id: 9,
+//     image: techStackAImg9,
+//   },
+//   {
+//     id: 10,
+//     image: techStackAImg10,
+//   },
+// ];
+// const techStackListsB = [
+//   {
+//     id: 1,
+//     image: techStackBImg1,
+//   },
+//   {
+//     id: 2,
+//     image: techStackBImg2,
+//   },
+//   {
+//     id: 3,
+//     image: techStackBImg3,
+//   },
+//   {
+//     id: 4,
+//     image: techStackBImg4,
+//   },
+//   {
+//     id: 5,
+//     image: techStackBImg5,
+//   },
+//   {
+//     id: 6,
+//     image: techStackBImg6,
+//   },
+//   {
+//     id: 7,
+//     image: techStackBImg7,
+//   },
+//   {
+//     id: 8,
+//     image: techStackBImg8,
+//   },
+//   {
+//     id: 9,
+//     image: techStackBImg9,
+//   },
+//   {
+//     id: 10,
+//     image: techStackBImg10,
+//   },
+//   {
+//     id: 11,
+//     image: techStackBImg11,
+//   },
+// ];
 
 const teamLists = [
   {
@@ -921,13 +851,13 @@ export {
   socialLists,
   sideMenuLists,
   // workLists,
-  partnerSideA,
-  partnerSideB,
+  // partnerSideA,
+  // partnerSideB,
   // awardLists,
   serviceLists,
   processLists,
-  techStackListsA,
-  techStackListsB,
+  // techStackListsA,
+  // techStackListsB,
   teamLists,
   teamHireLists,
   eventListsA,

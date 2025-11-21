@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useMediaQuery } from "react-responsive";
 
-const ViewProject = () => {
+const ComboCard = () => {
   const isTablet = useMediaQuery({ maxWidth: 770 });
   useGSAP(() => {
     const start = isTablet ? "top 80%" : "top 100%";
@@ -103,4 +103,4 @@ const ViewProject = () => {
   );
 };
 
-export default ViewProject;
+export default ComboCard;

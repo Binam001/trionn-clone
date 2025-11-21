@@ -295,7 +295,7 @@ const Team = () => {
               {/* <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
             </div>
             <div className="relative joinKitchenCrew">
-              <p>crew</p>
+              <p className="text-(--yellow)">crew</p>
               {/* <div className="textShadow3 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
             </div>
           </div>

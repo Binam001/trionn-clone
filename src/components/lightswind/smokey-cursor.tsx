@@ -1292,11 +1292,7 @@ SmokeyCursorProps) {
       color.b *= 5;
       const dx = 10 * 0.5;
       const dy = 30 * 0.5;
-      splat(pointer.texcoordX, pointer.texcoordY, dx, dy, {
-        r: 255,
-        g: 100,
-        b: 70,
-      });
+      splat(pointer.texcoordX, pointer.texcoordY, dx, dy, color);
     }
 
     function splat(

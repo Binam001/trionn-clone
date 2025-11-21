@@ -89,12 +89,12 @@ const AboutUs = () => {
       duration: 1,
       delay: 1,
     });
-    gsap.from("#yellowHat", {
-      yPercent: -200,
-      rotate: 180,
-      duration: 1,
-      delay: 1,
-    });
+    // gsap.from("#yellowHat", {
+    //   yPercent: -200,
+    //   rotate: 180,
+    //   duration: 1,
+    //   delay: 1,
+    // });
     gsap.from("#honors", {
       xPercent: -25,
       opacity: 0,
@@ -223,17 +223,16 @@ const AboutUs = () => {
           perspective—every dish is created from a world of inspiration."
         />
 
-        <div
+        {/* <div
           id="yellowHat"
           className="absolute -top-10 lg:-top-15 hidden md:block"
-          // className="absolute right-8 md:right-44 -top-4 lg:-top-16"
         >
           <img
             src="/images/costume/yellowHat.png"
             alt="Yellow Hat"
             className="size-16 lg:size-28 rotate-30 ml-10"
           />
-        </div>
+        </div> */}
         {/* <div className="flex justify-center">
         <a href="#aboutSecondDesc">
           <CircleArrowDown

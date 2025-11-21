@@ -1,4 +1,4 @@
-import PartnerCard from "../PartnerCard";
+import CustomerCard from "../CustomerCard";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
@@ -63,7 +63,7 @@ const Partner = () => {
         </p>
       </div>
 
-      <PartnerCard />
+      <CustomerCard />
     </div>
   );
 };

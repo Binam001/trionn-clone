@@ -96,25 +96,25 @@ const AboutUs = () => {
       duration: 1,
       delay: 1,
     });
-    gsap.from("#honors", {
-      xPercent: -25,
-      opacity: 0,
-      stagger: 0.1,
-      scrollTrigger: {
-        trigger: "#honors",
-        start: "top 80%",
-        end: "center 30%",
-        scrub: 1.5,
-      },
-    });
     gsap.from("#awards", {
-      xPercent: 25,
+      xPercent: -25,
       opacity: 0,
       stagger: 0.1,
       scrollTrigger: {
         trigger: "#awards",
         start: "top 80%",
-        end: "center 30%",
+        end: "center center",
+        scrub: 1.5,
+      },
+    });
+    gsap.from("#certificates", {
+      xPercent: 25,
+      opacity: 0,
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: "#certificates",
+        start: "top 80%",
+        end: "center center",
         scrub: 1.5,
       },
     });
@@ -225,11 +225,11 @@ const AboutUs = () => {
           />
         </div>
 
-        <div id="yellowHat" className="absolute top-5">
+        <div id="yellowHat" className="absolute top-5 hidden md:block">
           <img
             src="/images/costume/yellowHat.png"
             alt="Yellow Hat"
-            className="size-16 lg:size-28 rotate-30 ml-10"
+            className="size-8 lg:size-28 rotate-30 ml-10"
           />
         </div>
         {/* <div className="flex justify-center">
@@ -302,7 +302,7 @@ const AboutUs = () => {
           <Progress />
         </div>
 
-        <div className="mt-20 md:mt-40 max-w-[100vw] px-20">
+        <div className="mt-8 md:mt-32 max-w-[100vw] px-4">
           <Partner />
         </div>
 
@@ -347,12 +347,12 @@ const AboutUs = () => {
         <div className="text-center space-y-8 my-20 w-full">
           <div className="relative text-4xl md:text-5xl lg:text-8xl leading-[0.75] text-(--title-color) font-[Britannic] uppercase">
             <div className="relative">
-              <p id="honors">awards</p>
+              <p id="awards">awards</p>
               {/* <div className="textShadow1 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}
             </div>
 
             <div className="relative">
-              <p id="awards">
+              <p id="certificates">
                 & <span className="text-(--yellow)">certificates</span>
               </p>
               {/* <div className="textShadow2 bg-(--background) w-full h-full absolute top-0 -mt-3 lg:-mt-6 opacity-90"></div> */}

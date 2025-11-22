@@ -167,7 +167,7 @@ const LandingPage = () => {
 
         <div
           id="join"
-          className="mt-8 lg:mt-32 flex flex-col items-center text-6xl md:text-7xl lg:text-9xl leading-[0.8] text-(--title-color) font-[Britannic] uppercase"
+          className="mt-0 md:mt-8 lg:mt-32 flex flex-col items-center text-6xl md:text-7xl lg:text-9xl leading-[0.8] text-(--title-color) font-[Britannic] uppercase"
         >
           <span id="join1Text">dine</span>
           <span id="join2Text">with</span>

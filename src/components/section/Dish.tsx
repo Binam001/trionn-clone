@@ -56,7 +56,7 @@ const Dish = () => {
   return (
     <div
       id="dishSectionWrapper"
-      className="relative h-screen mt-8 md:mt-16 lg:mt-32 flex flex-col justify-center items-center"
+      className="relative h-screen mt-0 md:mt-16 lg:mt-32 flex flex-col justify-center items-center"
     >
       <div>
         <img src="/redLogo.png" alt="shyam's logo" className="w-24 md:w-32" />

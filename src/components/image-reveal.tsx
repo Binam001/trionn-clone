@@ -38,6 +38,7 @@ export const ImageHover = ({
   text2: string;
   text3: string;
 }) => {
+  const isTablet = useMediaQuery({ maxWidth: 770 });
   const isMobile = useMediaQuery({ maxWidth: 430 });
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -240,10 +241,10 @@ export const ImageHover = ({
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
-        {isHovering && (
+        {!isTablet && isHovering && (
           <img
             ref={cursorRef}
-            src="/flame4.gif"
+            src="/flame.gif"
             alt="Custom Cursor"
             className="fixed pointer-events-none z-50 w-16 h-16 object-contain transition-opacity duration-150 ease-out"
             style={{

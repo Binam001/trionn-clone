@@ -56,7 +56,7 @@ const About = () => {
         <h1 className="text4">behind</h1>
         <h1 className="text4">the feast</h1>
       </div>
-      <p className="text5 w-full lg:w-[60%] text-xl lg:text-4xl font-[Poppins] text-(--text-color) mt-10">
+      <p className="text5 w-full lg:w-[50%] md:text-xl lg:text-2xl font-[Poppins] text-(--text-color) mt-10">
         As a celebrated name in the culinary world and we transcend flavor,
         turning every dish into a lasting memory.
       </p>
@@ -68,7 +68,7 @@ const About = () => {
           experience becomes unforgettable and truly remarkable.
         </p>
         <div id="btn2">
-          <Button title="About Us" />
+          <Button href="/aboutus" title="About Us" />
         </div>
       </div>
     </div>

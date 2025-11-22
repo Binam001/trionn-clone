@@ -104,12 +104,12 @@ const Navbar = () => {
             <button
               onClick={() => setIsAudioOn(!isAudioOn)}
               className={`p-1 rounded-full cursor-pointer
-                ${open ? "bg-(--background)" : "bg-(--yellow)"}`}
+                ${open ? "bg-(--background)" : ""}`}
             >
               <img
                 src={!isAudioOn ? soundBar : animatedSoundBar}
                 alt="sound-bar"
-                className={`size-6 ${open ? "invert" : "invert-0"}`}
+                className={`size-6 invert`}
               />
             </button>
             <audio ref={audioRef} src={audio} loop />
@@ -136,9 +136,9 @@ const Navbar = () => {
                 className="flex items-center gap-4 cursor-pointer uppercase text-(--background) font-bold"
               >
                 close
-                <div className="bg-(--background) size-11 rounded-full flex flex-col justify-center items-center mx-auto relative">
-                  <div className="absolute w-6 h-0.5 bg-(--title-color) rotate-45 transition-all duration-300" />
-                  <div className="absolute w-6 h-0.5 bg-(--title-color) -rotate-45 transition-all duration-300" />
+                <div className="bg-(--background) size-8 rounded-full flex flex-col justify-center items-center mx-auto relative">
+                  <div className="absolute w-5 h-0.5 bg-(--title-color) rotate-45 transition-all duration-300" />
+                  <div className="absolute w-5 h-0.5 bg-(--title-color) -rotate-45 transition-all duration-300" />
                 </div>
               </button>
             )}

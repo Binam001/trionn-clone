@@ -10,12 +10,15 @@ import PageTitle from "../components/section/PageTitle";
 import Footer from "../components/section/Footer";
 import SocialLink from "../components/section/SocialLink";
 import { AnimatePresence, motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
 const Contact = () => {
   // const [activeContent, setActiveContent] = useState("button1");
   // const handleButtonClick = (contentKey: any) => {
   //   setActiveContent(contentKey);
   // };
+
+  const isMobile = useMediaQuery({ maxWidth: 430 });
 
   function getCurrentLocalTimeInfo() {
     const now = new Date();
@@ -256,8 +259,18 @@ const Contact = () => {
                   />
                 </div>
 
-                <div className="mt-10 w-max">
-                  <Button title="Submit" />
+                <div className="mt-10">
+                  {!isMobile ? (
+                    <div className="w-max">
+                      <Button title="Submit" />
+                    </div>
+                  ) : (
+                    <div className="w-full">
+                      <button className="px-4 py-2 text-(--title-color) bg-(--yellow) rounded-full w-full">
+                        Submit
+                      </button>
+                    </div>
+                  )}
                 </div>
               </form>
             </div>

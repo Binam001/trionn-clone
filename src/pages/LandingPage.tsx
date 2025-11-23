@@ -29,6 +29,13 @@ const LandingPage = () => {
   const navigate = useNavigate();
 
   useGSAP(() => {
+    gsap.from(".landgingPageBtn", {
+      yPercent: 100,
+      opacity: 0,
+      duration: 1,
+      delay: 2,
+    });
+
     gsap.from("#join1Text, #join2Text", {
       xPercent: 50,
       opacity: 0,
@@ -133,7 +140,7 @@ const LandingPage = () => {
               </div>
             </div>
           )}
-          <div className="hidden md:flex justify-between md:mb-20 lg:mb-15 xl:mb-0">
+          <div className="landgingPageBtn hidden md:flex justify-between md:mb-20 lg:mb-15 xl:mb-0">
             <Button onClick={() => setOpenMenu(true)} title="View Menu" />
 
             <Button onClick={() => navigate("/contact")} title="Get in touch" />

@@ -189,7 +189,7 @@ export const ImageHover = ({
         };
 
   const overlayOpacity =
-    hovered && lerpedPos && radius > 0 ? "opacity-90" : "opacity-100";
+    hovered && lerpedPos && radius > 0 ? "opacity-10" : "opacity-100";
 
   useGSAP(() => {
     if (isMobile) return;
@@ -291,7 +291,7 @@ export const ImageHover = ({
         </div>
 
         <div
-          className={`w-screen h-full bg-black/80 backdrop-blur-[6px] transition-all duration-300 pointer-events-none z-10 text-white ${overlayOpacity}`}
+          className={`w-screen h-full bg-black/85 backdrop-blur-[6px] transition-all duration-300 pointer-events-none z-10 text-white ${overlayOpacity}`}
           style={maskStyle}
         >
           <div

@@ -113,7 +113,7 @@ html {
 
 @layer utilities {
   .text-outline-effect {
-    -webkit-text-stroke: 2px red;
+    -webkit-text-stroke: 2px #ffcb04;
     color: transparent;
   }
 }

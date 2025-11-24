@@ -147,7 +147,7 @@ const LandingPage = () => {
               <div className="w-full md:hidden z-10">
                 <button
                   onClick={() => setOpenMenu(true)}
-                  className="landgingPageBtn w-[80%] px-4 py-2 text-(--title-color) bg-(--yellow) rounded-full md:hidden"
+                  className="landgingPageBtn px-4 py-2 text-(--title-color) bg-(--yellow) rounded-full md:hidden"
                 >
                   View Menu
                 </button>
@@ -155,7 +155,7 @@ const LandingPage = () => {
               <img
                 src="/images/sweets/sweets8.png"
                 alt="sweets"
-                className="xl:float-right h-full translate-x-4"
+                className="xl:float-right h-full translate-x-1/2"
               />
             </div>
             {/* <div

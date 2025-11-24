@@ -155,7 +155,7 @@ const LandingPage = () => {
               <img
                 src="/images/sweets/sweets8.png"
                 alt="sweets"
-                className="xl:float-right h-full translate-x-1/2"
+                className="xl:float-right h-full translate-x-[20%]"
               />
             </div>
             {/* <div

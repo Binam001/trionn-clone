@@ -118,9 +118,9 @@ const LandingPage = () => {
         <div className="relative">
           <div
             id="landingPageTopSection"
-            className="fixed bg-(--title-color) h-screen w-screen -mx-4 md:-mx-20 -mt-20 flex items-center"
+            className="fixed bg-(--title-color) h-screen w-screen -mx-4 md:-mx-20 -mt-20 flex items-center flex-col gap-8 md:gap-0 md:flex-row"
           >
-            <div className="w-full md:w-[60%] h-full pl-4 md:pl-16 flex flex-col items-center md:items-start justify-center md:justify-between gap-8 xl:gap-16 py-16 lg:py-32 z-10">
+            <div className="w-full md:w-[60%] md:h-full md:pl-16 flex flex-col md:justify-between md:gap-8 xl:gap-16 pt-16 md:py-16 lg:py-32 z-10">
               {/* text */}
               <div className="text-white text-center md:text-left">
                 <div
@@ -141,19 +141,21 @@ const LandingPage = () => {
               <div className="w-max landgingPageBtn hidden md:block">
                 <Button onClick={() => setOpenMenu(true)} title="View Menu" />
               </div>
-              <button
-                onClick={() => setOpenMenu(true)}
-                className="landgingPageBtn w-[80%] px-4 py-2 text-(--title-color) bg-(--yellow) rounded-full md:hidden"
-              >
-                View Menu
-              </button>
             </div>
 
-            <div className="w-full md:w-[40%] translate-x-[40%] md:translate-x-4 absolute md:relative">
+            <div className="w-full md:w-[40%] h-1/2 md:h-fit md:translate-x-4 flex items-center px-4 md:px-0">
+              <div className="w-full md:hidden z-10">
+                <button
+                  onClick={() => setOpenMenu(true)}
+                  className="landgingPageBtn w-[80%] px-4 py-2 text-(--title-color) bg-(--yellow) rounded-full md:hidden"
+                >
+                  View Menu
+                </button>
+              </div>
               <img
                 src="/images/sweets/sweets8.png"
                 alt="sweets"
-                className="xl:float-right"
+                className="xl:float-right h-full translate-x-4"
               />
             </div>
             {/* <div

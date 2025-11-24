@@ -118,19 +118,22 @@ const LandingPage = () => {
         <div className="relative">
           <div
             id="landingPageTopSection"
-            className="fixed bg-(--title-color) h-screen w-screen -mx-20 -mt-20 flex items-center"
+            className="fixed bg-(--title-color) h-screen w-screen -mx-4 md:-mx-20 -mt-20 flex items-center"
           >
-            <div className="w-[60%] pl-4 md:pl-16 flex flex-col justify-between h-full py-32">
+            <div className="w-full md:w-[60%] h-full pl-4 md:pl-16 flex flex-col justify-center md:justify-between gap-8 xl:gap-16 py-16 lg:py-32">
               {/* text */}
               <div className="text-white">
                 <div
                   id="landingPageTitle"
-                  className="text-xl md:text-4xl lg:text-6xl uppercase font-[Britannic] flex flex-col"
+                  className="text-xl md:text-4xl lg:text-6xl uppercase font-[Britannic] flex flex-col whitespace-nowrap"
                 >
                   <span>taste the</span>
                   <span>magic of every bite!</span>
                 </div>
-                <div id="landingPageDesc" className="font-{Poppins]">
+                <div
+                  id="landingPageDesc"
+                  className="text-sm md:text-base font-[Poppins]"
+                >
                   <p>Happiness is Homemade - So Are Our Sweets!</p>
                 </div>
               </div>
@@ -140,7 +143,14 @@ const LandingPage = () => {
               </div>
             </div>
 
-            <div
+            <div className="md:w-[40%] translate-x-4 h-fit">
+              <img
+                src="/images/sweets/sweets8.png"
+                alt="sweets"
+                className="xl:float-right"
+              />
+            </div>
+            {/* <div
               className="w-[40%] bg-yellow-500 h-full relative"
               style={{ clipPath: "circle(60% at 73% 50%)" }}
             >
@@ -156,7 +166,7 @@ const LandingPage = () => {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* <div className="py-8 md:pt-0 md:pb-20 relative h-full lg:h-screen flex flex-col md:gap-0 md:justify-between xl:justify-evenly"> */}

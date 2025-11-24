@@ -95,9 +95,9 @@ const LandingPage = () => {
       >
         <div className="py-8 md:pt-0 md:pb-20 relative h-full lg:h-screen flex flex-col md:gap-0 md:justify-between xl:justify-evenly">
           <PageTitle
-            text1="bringing smiles"
-            text2="with every"
-            highlighter="bite"
+            text1="sweets that make"
+            text2="every visit"
+            highlighter="special"
             desc="We unleash bold flavors, crafting unforgettable dining moments through imaginative dishes, heartfelt hospitality, and culinary mastery that excites every palate."
           />
           <div className="circular-brand">

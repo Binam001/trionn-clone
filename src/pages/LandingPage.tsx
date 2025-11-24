@@ -120,12 +120,12 @@ const LandingPage = () => {
             id="landingPageTopSection"
             className="fixed bg-(--title-color) h-screen w-screen -mx-4 md:-mx-20 -mt-20 flex items-center"
           >
-            <div className="w-full md:w-[60%] h-full pl-4 md:pl-16 flex flex-col justify-center md:justify-between gap-8 xl:gap-16 py-16 lg:py-32">
+            <div className="w-full md:w-[60%] h-full pl-4 md:pl-16 flex flex-col items-center md:items-start justify-center md:justify-between gap-8 xl:gap-16 py-16 lg:py-32 z-10">
               {/* text */}
-              <div className="text-white">
+              <div className="text-white text-center md:text-left">
                 <div
                   id="landingPageTitle"
-                  className="text-xl md:text-4xl lg:text-6xl uppercase font-[Britannic] flex flex-col whitespace-nowrap"
+                  className="text-3xl md:text-4xl lg:text-6xl uppercase font-[Britannic] flex flex-col whitespace-nowrap"
                 >
                   <span>taste the</span>
                   <span>magic of every bite!</span>
@@ -138,12 +138,18 @@ const LandingPage = () => {
                 </div>
               </div>
               {/* button */}
-              <div className="w-max landgingPageBtn">
+              <div className="w-max landgingPageBtn hidden md:block">
                 <Button onClick={() => setOpenMenu(true)} title="View Menu" />
               </div>
+              <button
+                onClick={() => setOpenMenu(true)}
+                className="landgingPageBtn w-[80%] px-4 py-2 text-(--title-color) bg-(--yellow) rounded-full md:hidden"
+              >
+                View Menu
+              </button>
             </div>
 
-            <div className="md:w-[40%] translate-x-4 h-fit">
+            <div className="w-full md:w-[40%] translate-x-[40%] md:translate-x-4 absolute md:relative">
               <img
                 src="/images/sweets/sweets8.png"
                 alt="sweets"

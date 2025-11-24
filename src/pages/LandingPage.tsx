@@ -147,7 +147,7 @@ const LandingPage = () => {
               <div className="w-full md:hidden z-10">
                 <button
                   onClick={() => setOpenMenu(true)}
-                  className="landgingPageBtn px-4 py-2 text-(--title-color) bg-(--yellow) rounded-full md:hidden"
+                  className="landgingPageBtn px-4 py-2 text-(--title-color) bg-(--yellow) rounded-full md:hidden whitespace-nowrap"
                 >
                   View Menu
                 </button>

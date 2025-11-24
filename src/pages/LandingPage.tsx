@@ -2,7 +2,7 @@
 import Button from "../components/Button";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import IntroVideo from "../components/IntroVideo";
+// import IntroVideo from "../components/IntroVideo";
 import ComboCard from "../components/section/ComboCard";
 import About from "../components/section/About";
 import Progress from "../components/section/Progress";
@@ -12,23 +12,36 @@ import Dish from "../components/section/Dish";
 import SocialLink from "../components/section/SocialLink";
 import Footer from "../components/section/Footer";
 import { AnimatePresence, motion } from "framer-motion";
-import PageTitle from "../components/section/PageTitle";
+// import PageTitle from "../components/section/PageTitle";
 import OurCombo from "../components/section/OurCombo";
 import { useState } from "react";
 import MenuSlider from "../components/MenuSlider";
 import CircularBrand from "../components/CircularBrand";
 import { useMediaQuery } from "react-responsive";
 import Component from "../components/ThumbnailCarousel";
-import { useNavigate } from "react-router-dom";
 import { CircleX } from "lucide-react";
 
 const LandingPage = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const isTablet = useMediaQuery({ maxWidth: "770px" });
 
-  const navigate = useNavigate();
-
   useGSAP(() => {
+    gsap.from("#landingPageTitle", {
+      opacity: 0,
+      filter: "blur(100px)",
+      yPercent: 100,
+      duration: 2,
+      ease: "expo.out",
+      delay: 1,
+    });
+    gsap.from("#landingPageDesc", {
+      opacity: 0,
+      filter: "blur(50px)",
+      yPercent: 100,
+      duration: 2,
+      ease: "expo.out",
+      delay: 1.5,
+    });
     gsap.from(".landgingPageBtn", {
       yPercent: 100,
       opacity: 0,
@@ -58,14 +71,23 @@ const LandingPage = () => {
       },
     });
 
-    gsap.from(".circular-brand", {
-      xPercent: 200,
+    // gsap.from(".circular-brand", {
+    //   xPercent: 200,
+    //   opacity: 0,
+    //   duration: 2,
+    //   scrollTrigger: {
+    //     trigger: ".circular-brand",
+    //     start: "top 10%",
+    //     end: "bottom center",
+    //     scrub: 1,
+    //   },
+    // });
+    gsap.to("#landingPageTopSection", {
       opacity: 0,
-      duration: 2,
+      // filter: "blur(5px)",
       scrollTrigger: {
-        trigger: ".circular-brand",
-        start: "top 10%",
-        end: "bottom center",
+        trigger: "#landingPageSecondSection",
+        start: "center center",
         scrub: 1,
       },
     });
@@ -93,13 +115,57 @@ const LandingPage = () => {
           duration: 0.1,
         }}
       >
-        <div className="py-8 md:pt-0 md:pb-20 relative h-full lg:h-screen flex flex-col md:gap-0 md:justify-between xl:justify-evenly">
-          <PageTitle
+        <div className="relative">
+          <div
+            id="landingPageTopSection"
+            className="fixed bg-(--title-color) h-screen w-screen -mx-20 -mt-20 flex items-center"
+          >
+            <div className="w-[60%] pl-4 md:pl-16 flex flex-col justify-between h-full py-32">
+              {/* text */}
+              <div className="text-white">
+                <div
+                  id="landingPageTitle"
+                  className="text-xl md:text-4xl lg:text-6xl uppercase font-[Britannic] flex flex-col"
+                >
+                  <span>taste the</span>
+                  <span>magic of every bite!</span>
+                </div>
+                <div id="landingPageDesc" className="font-{Poppins]">
+                  <p>Happiness is Homemade - So Are Our Sweets!</p>
+                </div>
+              </div>
+              {/* button */}
+              <div className="w-max landgingPageBtn">
+                <Button onClick={() => setOpenMenu(true)} title="View Menu" />
+              </div>
+            </div>
+
+            <div
+              className="w-[40%] bg-yellow-500 h-full relative"
+              style={{ clipPath: "circle(60% at 73% 50%)" }}
+            >
+              <div
+                className="w-full bg-black h-full relative"
+                style={{ clipPath: "circle(60% at 76% 50%)" }}
+              >
+                <div className="absolute bottom-0 left-0">
+                  <img
+                    src="/images/sweets/sweets7.png"
+                    alt="sweets"
+                    className="ml-1"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* <div className="py-8 md:pt-0 md:pb-20 relative h-full lg:h-screen flex flex-col md:gap-0 md:justify-between xl:justify-evenly"> */}
+          {/* <PageTitle
             text1="sweets that make"
             text2="every visit"
             highlighter="special"
             desc="We unleash bold flavors, crafting unforgettable dining moments through imaginative dishes, heartfelt hospitality, and culinary mastery that excites every palate."
-          />
+          /> */}
           <div className="circular-brand">
             <CircularBrand />
           </div>
@@ -140,15 +206,15 @@ const LandingPage = () => {
               </div>
             </div>
           )}
-          <div className="landgingPageBtn hidden md:flex justify-between md:mb-20 lg:mb-15 xl:mb-0">
+          {/* <div className="landgingPageBtn hidden md:flex justify-between md:mb-20 lg:mb-15 xl:mb-0">
             <Button onClick={() => setOpenMenu(true)} title="View Menu" />
 
             <Button onClick={() => navigate("/contact")} title="Get in touch" />
-          </div>
+          </div> */}
         </div>
 
-        <IntroVideo />
-        <div className="md:hidden flex flex-col gap-4 mt-8">
+        {/* <IntroVideo /> */}
+        {/* <div className="md:hidden flex flex-col gap-4 mt-8">
           <button
             onClick={() => setOpenMenu(true)}
             className="px-4 py-2 text-(--title-color) bg-(--yellow) rounded-full"
@@ -162,9 +228,10 @@ const LandingPage = () => {
           >
             Get in touch
           </button>
+        </div> */}
+        <div id="landingPageSecondSection" className="">
+          <OurCombo />
         </div>
-
-        <OurCombo />
         <ComboCard />
         <About />
         <Progress />

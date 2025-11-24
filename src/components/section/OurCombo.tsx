@@ -49,25 +49,29 @@ const OurCombo = () => {
     });
   });
   return (
-    <div className="mt-20 lg:my-40">
-      <div className="flex justify-between">
-        <div className="text-4xl md:text-5xl lg:text-8xl leading-[0.9] font-[Britannic] text-(--title-color) uppercase">
-          <h1 className="text2">our</h1>
-          <h1 className="text2">combo</h1>
+    // <div className="pt-16 lg:pt-40 bg-linear-to-b from-(--title-color) from-10% to-transparent -mx-4 md:-mx-20">
+    <div className="pt-16 lg:pt-40 -mx-4 md:-mx-20">
+      <div className="h-dvh"></div>
+      <div className="px-4 md:px-20">
+        <div className="flex justify-between">
+          <div className="text-4xl md:text-5xl lg:text-8xl leading-[0.9] font-[Britannic] text-(--title-color) uppercase">
+            <h1 className="text2">our</h1>
+            <h1 className="text2">combo</h1>
+          </div>
+          <div id="btn1" className="hidden md:block">
+            <Button title="Explore Packs" />
+          </div>
         </div>
-        <div id="btn1" className="hidden md:block">
-          <Button title="Explore Packs" />
-        </div>
-      </div>
 
-      <div className="flex justify-between items-center">
-        <p
-          id="text3"
-          className="w-full md:w-1/2 lg:text-xl text-(--text-color) overflow-hidden font-[Poppins]"
-        >
-          In the world of taste adventures, our meals are beloved by all who
-          visit.
-        </p>
+        <div className="flex justify-between items-center">
+          <p
+            id="text3"
+            className="w-full md:w-1/2 lg:text-xl text-(--text-color) overflow-hidden font-[Poppins]"
+          >
+            In the world of taste adventures, our meals are beloved by all who
+            visit.
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import SideMenu from "./section/SideMenu";
 import { AnimatePresence, motion } from "framer-motion";
 import { darkLogo, lightLogo } from "../constants";
 import { useAudio } from "../context/AudioContext";
+import { useLocation } from "react-router-dom";
 // import { darkLogo, lightLogo } from "../constants";
 
 const Navbar = () => {
@@ -24,6 +25,33 @@ const Navbar = () => {
 
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const SCROLL_THRESHOLD = window.innerHeight - 80;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      const isLandingPage = location.pathname === "/";
+
+      if (isLandingPage) {
+        if (currentScrollY > SCROLL_THRESHOLD && !scrolled) {
+          setScrolled(true);
+        } else if (currentScrollY <= SCROLL_THRESHOLD && scrolled) {
+          setScrolled(false);
+        }
+      } else {
+        setScrolled(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [scrolled, location.pathname]);
 
   const { isAudioOn, setIsAudioOn } = useAudio();
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -77,15 +105,25 @@ const Navbar = () => {
       transition: { duration: 0.4, ease: "easeIn" as any },
     },
   };
+  const logoSrc = scrolled ? lightLogo : darkLogo;
+  const audioBg = scrolled ? "bg-(--background)" : "invert";
+  const menuText = scrolled ? "text-(--title-color)" : "text-white";
+  const menuBtn = scrolled ? "bg-(--title-color)" : "bg-white";
 
   return (
     <>
       <nav
         className={`fixed ${
-          open ? "bg-transparent" : "bg-white/80 backdrop-blur-3xl"
+          open
+            ? "bg-transparent"
+            : scrolled
+            ? "bg-white/80 backdrop-blur-3xl"
+            : "bg-transparent"
         } w-full top-0 left-0 py-3 px-4 md:px-20 z-60 transition-transform duration-500 ease-in-out mix-blend-colo ${
           isVisible ? "translate-y-0" : "-translate-y-full"
-        }`}
+        }
+        
+        `}
       >
         <div className="flex justify-between items-center">
           <div className="cursor-pointer relative">
@@ -93,7 +131,7 @@ const Navbar = () => {
               <img
                 className={`w-18 md:w-24`}
                 // src={theme === "light" ? lightLogo : darkLogo}
-                src={`${open ? darkLogo : lightLogo}`}
+                src={logoSrc}
                 alt="shyam's logo"
               />
             </a>
@@ -104,7 +142,7 @@ const Navbar = () => {
             <button
               onClick={() => setIsAudioOn(!isAudioOn)}
               className={`p-1 rounded-full cursor-pointer
-                ${open ? "bg-(--background)" : ""}`}
+                ${audioBg}`}
             >
               <img
                 src={!isAudioOn ? soundBar : animatedSoundBar}
@@ -121,12 +159,16 @@ const Navbar = () => {
                 onClick={() => setOpen(true)}
                 className="flex items-center gap-4 cursor-pointer uppercase"
               >
-                <span className="text-(--title-color) font-bold">menu</span>
+                <span className={`${menuText} font-bold`}>menu</span>
                 <div className="">
                   {/* <div className="bg-(--icon-bg-color) size-11 rounded-full justify-center flex items-center mx-auto"> */}
                   <div className="w-fit items-end flex gap-1 justify-center flex-col">
-                    <div className="w-6 h-0.5 bg-(--title-color) transition-all duration-300" />
-                    <div className="w-4 h-0.5 bg-(--title-color) transition-all duration-300" />
+                    <div
+                      className={`w-6 h-0.5 ${menuBtn} transition-all duration-300`}
+                    />
+                    <div
+                      className={`w-4 h-0.5 ${menuBtn} transition-all duration-300`}
+                    />
                   </div>
                 </div>
               </button>

@@ -71,14 +71,14 @@ const LandingPage = () => {
       },
     });
 
-    // gsap.from(".circular-brand", {
+    // gsap.from(".circularBrand", {
     //   xPercent: 200,
     //   opacity: 0,
     //   duration: 2,
     //   scrollTrigger: {
-    //     trigger: ".circular-brand",
+    //     trigger: ".circularBrand",
     //     start: "top 10%",
-    //     end: "bottom center",
+    //     // end: "bottom center",
     //     scrub: 1,
     //   },
     // });
@@ -132,7 +132,7 @@ const LandingPage = () => {
                 </div>
                 <div
                   id="landingPageDesc"
-                  className="text-sm md:text-base font-[Poppins]"
+                  className="text-sm md:text-base font-[Poppins] hidden md:block"
                 >
                   <p>Happiness is Homemade - So Are Our Sweets!</p>
                 </div>
@@ -144,19 +144,28 @@ const LandingPage = () => {
             </div>
 
             <div className="w-full md:w-[40%] h-1/2 md:h-fit md:translate-x-4 flex items-center px-4 md:px-0">
-              <div className="w-full md:hidden z-10">
-                <button
-                  onClick={() => setOpenMenu(true)}
-                  className="landgingPageBtn px-4 py-2 text-(--title-color) bg-(--yellow) rounded-full md:hidden whitespace-nowrap"
-                >
-                  View Menu
-                </button>
+              <div id="landingPageDesc" className="text-white md:hidden">
+                {/* <p> */}
+                <div className="flex flex-col">
+                  <span>Happiness</span>
+                  <span className="whitespace-nowrap">is Homemade</span>{" "}
+                </div>
+                <span className="whitespace-nowrap">- So Are Our Sweets!</span>
+                {/* </p> */}
               </div>
               <img
                 src="/images/sweets/sweets8.png"
                 alt="sweets"
-                className="xl:float-right h-full translate-x-[20%]"
+                className="xl:float-right h-full translate-x-1"
               />
+            </div>
+            <div className="w-full flex justify-center md:hidden z-10">
+              <button
+                onClick={() => setOpenMenu(true)}
+                className="landgingPageBtn w-[90%] px-4 py-2 text-(--title-color) bg-(--yellow) rounded-full md:hidden"
+              >
+                View Menu
+              </button>
             </div>
             {/* <div
               className="w-[40%] bg-yellow-500 h-full relative"
@@ -184,7 +193,7 @@ const LandingPage = () => {
             highlighter="special"
             desc="We unleash bold flavors, crafting unforgettable dining moments through imaginative dishes, heartfelt hospitality, and culinary mastery that excites every palate."
           /> */}
-          <div className="circular-brand">
+          <div className="circularBrand">
             <CircularBrand />
           </div>
           {openMenu && (
